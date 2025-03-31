@@ -1,7 +1,6 @@
 **PROJETO INTEGRADOR 3 - Puc Campinas / Engenheira De Software 3° Semestre**
 
 Integrantes: 
-Felipe Nonato Leoneli
 Gabriel Branco De Medeiros
 Pedro Bellinetti Silva
 Priscila Amorim Dos Santos
