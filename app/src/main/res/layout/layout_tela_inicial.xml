@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    tools:context=".MainActivity"
+    android:layout_margin="16dp" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo ao SuperID!"
+        android:textSize="28sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BEM-VINDO AO SUPERID! O SUPERID É UMA MANEIRA INOVADORA DE FAZER LOGIN SEM A NECESSIDADE DE SENHAS. COM ELE, VOCÊ PODE ARMAZENAR SUAS SENHAS TRADICIONAIS DE FORMA SEGURA E ACESSÍVEL.\n\nANTES DE PROSSEGUIR, PEDIMOS QUE VOCÊ LEIA E CONCORDE COM NOSSOS TERMOS DE USO. É FUNDAMENTAL QUE VOCÊ ESTEJA CIENTE DE COMO SEUS DADOS SERÃO TRATADOS E PROTEGIDOS."
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        />
+
+    <CheckBox
+        android:id="@+id/checkbox_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eu concordo com os termos de uso.\"
+        android:textColor="#FFFFFF"
+        />
+
+    <Button
+        android:id="@+id/btn_create_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CRIAR CONTA"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_gradient" />
+
+</LinearLayout>
