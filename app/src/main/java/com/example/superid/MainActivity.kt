@@ -1,4 +1,4 @@
-package com.example.projeto_integrador3
+package com.example.superid
 
 import android.os.Bundle
 import android.util.Log // Para regristrar o cliclo de vida dos estados da tela
@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.projeto_integrador3.ui.theme.Projeto_Integrador3Theme
+import com.example.superid.ui.theme.Projeto_Integrador3Theme
 
 class MainActivity : ComponentActivity() {
     val TAG = "MainActivity"

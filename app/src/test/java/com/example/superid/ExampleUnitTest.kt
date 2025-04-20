@@ -1,4 +1,4 @@
-package com.example.projeto_integrador3
+package com.example.superid
 
 import org.junit.Test
 
