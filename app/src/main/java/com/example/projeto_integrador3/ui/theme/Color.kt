@@ -1,4 +1,4 @@
-package com.example.superid.ui.theme
+package com.example.projeto_integrador3.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
