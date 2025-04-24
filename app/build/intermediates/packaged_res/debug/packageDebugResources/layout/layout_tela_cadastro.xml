@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Criar Conta"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLoginPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JÁ TEM UMA CONTA?\nLOGIN"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <EditText
+        android:id="@+id/etCadastrarNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NOME"
+        android:textColorHint="#FFFFFF"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_border_gradient"
+        />
+
+    <EditText
+        android:id="@+id/etCadastrarEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="EMAIL"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/edittext_border_gradient"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etCadastrarSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SENHA"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/edittext_border_gradient"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="32dp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CADASTRAR"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_gradient" />
+
+</LinearLayout>

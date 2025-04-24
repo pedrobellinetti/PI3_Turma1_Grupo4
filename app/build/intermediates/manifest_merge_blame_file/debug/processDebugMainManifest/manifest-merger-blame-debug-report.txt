@@ -1,0 +1,576 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.superid"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-feature
+11-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:5:5-7:36
+12        android:name="android.hardware.camera"
+12-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:6:9-47
+13        android:required="false" />
+13-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:7:9-33
+14
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:8:5-65
+15-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:8:22-62
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:5-67
+16-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:22-64
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:5-79
+17-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:22-76
+18    <uses-permission android:name="android.permission.WAKE_LOCK" />
+18-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:25:5-68
+18-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:25:22-65
+19    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+19-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:26:5-110
+19-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:26:22-107
+20    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+20-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:25:5-79
+20-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:25:22-76
+21    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+21-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:26:5-88
+21-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:26:22-85
+22    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+22-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:27:5-82
+22-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:27:22-79
+23    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+23-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:5-98
+23-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:22-95
+24
+25    <permission
+25-->[androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+26        android:name="com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+26-->[androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+27        android:protectionLevel="signature" />
+27-->[androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+28
+29    <uses-permission android:name="com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+29-->[androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+29-->[androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+30
+31    <application
+31-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:10:5-44:19
+32        android:allowBackup="true"
+32-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:12:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+34        android:dataExtractionRules="@xml/data_extraction_rules"
+34-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:13:9-65
+35        android:debuggable="true"
+36        android:extractNativeLibs="false"
+37        android:fullBackupContent="@xml/backup_rules"
+37-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:14:9-54
+38        android:icon="@mipmap/launcher"
+38-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:15:9-40
+39        android:label="@string/app_name"
+39-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:16:9-41
+40        android:roundIcon="@mipmap/launcher_round"
+40-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:17:9-51
+41        android:supportsRtl="true"
+41-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:18:9-35
+42        android:testOnly="true"
+43        android:theme="@style/Theme.SuperID" >
+43-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:19:9-45
+44
+45        <!-- <application -->
+46        <!-- android:label="@string/title_activity_settings" -->
+47        <!-- android:icon="@mipmap/ic_settings_launcher">  &lt;!&ndash; Corrected line &ndash;&gt; -->
+48        <!-- &lt;!&ndash; other activity settings like intent filters &ndash;&gt; -->
+49        <!-- </application> -->
+50
+51        <activity
+51-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:28:9-39:20
+52            android:name="com.example.superid.MainActivity"
+52-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:29:13-41
+53            android:exported="true"
+53-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:30:13-36
+54            android:label="@string/app_name"
+54-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:31:13-45
+55            android:theme="@style/Theme.SuperID" >
+55-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:32:13-49
+56            <intent-filter>
+56-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:34:13-38:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:35:17-69
+57-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:35:25-66
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:37:17-77
+59-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:37:27-74
+60            </intent-filter>
+61        </activity>
+62        <activity android:name="com.example.superid.RecuperacaoSenhaActivity" />
+62-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:41:9-62
+62-->C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:41:19-59
+63        <activity
+63-->[androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+64            android:name="androidx.compose.ui.tooling.PreviewActivity"
+64-->[androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+65            android:exported="true" />
+65-->[androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+66        <activity
+66-->[androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:23:9-25:39
+67            android:name="androidx.activity.ComponentActivity"
+67-->[androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:24:13-63
+68            android:exported="true" />
+68-->[androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:25:13-36
+69
+70        <service
+70-->[com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:8:9-14:19
+71            android:name="com.google.firebase.components.ComponentDiscoveryService"
+71-->[com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:9:13-84
+72            android:directBootAware="true"
+72-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+73            android:exported="false" >
+73-->[com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:10:13-37
+74            <meta-data
+74-->[com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:11:13-13:85
+75                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+75-->[com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:12:17-119
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:13:17-82
+77            <meta-data
+77-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:69:13-71:85
+78                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+78-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:70:17-109
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:71:17-82
+80            <meta-data
+80-->[com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:12:13-14:85
+81                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
+81-->[com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:13:17-129
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:14:17-82
+83            <meta-data
+83-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:17:13-19:85
+84                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+84-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:18:17-122
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:19:17-82
+86            <meta-data
+86-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:20:13-22:85
+87                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+87-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:21:17-111
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:22:17-82
+89            <meta-data
+89-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:33:13-35:85
+90                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+90-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:34:17-139
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:35:17-82
+92            <meta-data
+92-->[com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:12:13-14:85
+93                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar"
+93-->[com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:13:17-125
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:14:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:30:13-32:85
+96                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+96-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:31:17-118
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:32:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:33:13-35:85
+99                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+99-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:34:17-107
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:35:17-82
+101            <meta-data
+101-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
+102                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+102-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
+105                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+105-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+108                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+108-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+111                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+111-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+113            <meta-data
+113-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+114                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+114-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+116            <meta-data
+116-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+117                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+117-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+119        </service>
+120
+121        <activity
+121-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:29:9-46:20
+122            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+122-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:30:13-80
+123            android:excludeFromRecents="true"
+123-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:31:13-46
+124            android:exported="true"
+124-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:32:13-36
+125            android:launchMode="singleTask"
+125-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:33:13-44
+126            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+126-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:34:13-72
+127            <intent-filter>
+127-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:35:13-45:29
+128                <action android:name="android.intent.action.VIEW" />
+128-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:36:17-69
+128-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:36:25-66
+129
+130                <category android:name="android.intent.category.DEFAULT" />
+130-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:38:17-76
+130-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:38:27-73
+131                <category android:name="android.intent.category.BROWSABLE" />
+131-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:39:17-78
+131-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:39:27-75
+132
+133                <data
+133-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:41:17-44:51
+134                    android:host="firebase.auth"
+134-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:42:21-49
+135                    android:path="/"
+135-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:43:21-37
+136                    android:scheme="genericidp" />
+136-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:44:21-48
+137            </intent-filter>
+138        </activity>
+139        <activity
+139-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:47:9-64:20
+140            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+140-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:48:13-79
+141            android:excludeFromRecents="true"
+141-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:49:13-46
+142            android:exported="true"
+142-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:50:13-36
+143            android:launchMode="singleTask"
+143-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:51:13-44
+144            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+144-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:52:13-72
+145            <intent-filter>
+145-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:53:13-63:29
+146                <action android:name="android.intent.action.VIEW" />
+146-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:36:17-69
+146-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:36:25-66
+147
+148                <category android:name="android.intent.category.DEFAULT" />
+148-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:38:17-76
+148-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:38:27-73
+149                <category android:name="android.intent.category.BROWSABLE" />
+149-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:39:17-78
+149-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:39:27-75
+150
+151                <data
+151-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:41:17-44:51
+152                    android:host="firebase.auth"
+152-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:42:21-49
+153                    android:path="/"
+153-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:43:21-37
+154                    android:scheme="recaptcha" />
+154-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:44:21-48
+155            </intent-filter>
+156        </activity>
+157
+158        <service
+158-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:9:9-15:19
+159            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+159-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:10:13-91
+160            android:directBootAware="true"
+160-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:17:13-43
+161            android:exported="false" >
+161-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:11:13-37
+162            <meta-data
+162-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:12:13-14:85
+163                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+163-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:13:17-120
+164                android:value="com.google.firebase.components.ComponentRegistrar" />
+164-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:14:17-82
+165            <meta-data
+165-->[com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:12:13-14:85
+166                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+166-->[com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:13:17-124
+167                android:value="com.google.firebase.components.ComponentRegistrar" />
+167-->[com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:14:17-82
+168            <meta-data
+168-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:20:13-22:85
+169                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+169-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:21:17-120
+170                android:value="com.google.firebase.components.ComponentRegistrar" />
+170-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:22:17-82
+171        </service>
+172
+173        <provider
+173-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:9:9-13:38
+174            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+174-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:10:13-78
+175            android:authorities="com.example.superid.mlkitinitprovider"
+175-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:11:13-69
+176            android:exported="false"
+176-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:12:13-37
+177            android:initOrder="99" />
+177-->[com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:13:13-35
+178
+179        <receiver
+179-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:29:9-33:20
+180            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+180-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:30:13-85
+181            android:enabled="true"
+181-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:31:13-35
+182            android:exported="false" >
+182-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:32:13-37
+183        </receiver>
+184
+185        <service
+185-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:35:9-38:40
+186            android:name="com.google.android.gms.measurement.AppMeasurementService"
+186-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:36:13-84
+187            android:enabled="true"
+187-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:37:13-35
+188            android:exported="false" />
+188-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:38:13-37
+189        <service
+189-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:39:9-43:72
+190            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+190-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:40:13-87
+191            android:enabled="true"
+191-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:41:13-35
+192            android:exported="false"
+192-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:42:13-37
+193            android:permission="android.permission.BIND_JOB_SERVICE" />
+193-->[com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:43:13-69
+194        <service
+194-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
+195            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+195-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
+196            android:enabled="true"
+196-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
+197            android:exported="false" >
+197-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
+198            <meta-data
+198-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
+199                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+199-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
+200                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+200-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
+201        </service>
+202
+203        <activity
+203-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
+204            android:name="androidx.credentials.playservices.HiddenActivity"
+204-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
+205            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+205-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
+206            android:enabled="true"
+206-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
+207            android:exported="false"
+207-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
+208            android:fitsSystemWindows="true"
+208-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
+209            android:theme="@style/Theme.Hidden" >
+209-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
+210        </activity>
+211        <activity
+211-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+212            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+212-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+213            android:excludeFromRecents="true"
+213-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+214            android:exported="false"
+214-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+215            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+215-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+216        <!--
+217            Service handling Google Sign-In user revocation. For apps that do not integrate with
+218            Google Sign-In, this service will never be started.
+219        -->
+220        <service
+220-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+221            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+221-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+222            android:exported="true"
+222-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+223            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+223-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+224            android:visibleToInstantApps="true" />
+224-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+225
+226        <provider
+226-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+227            android:name="com.google.firebase.provider.FirebaseInitProvider"
+227-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+228            android:authorities="com.example.superid.firebaseinitprovider"
+228-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+229            android:directBootAware="true"
+229-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+230            android:exported="false"
+230-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+231            android:initOrder="100" />
+231-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+232
+233        <service
+233-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:26:9-35:19
+234            android:name="androidx.camera.core.impl.MetadataHolderService"
+234-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:27:13-75
+235            android:enabled="false"
+235-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:28:13-36
+236            android:exported="false" >
+236-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:29:13-37
+237            <meta-data
+237-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:32:13-34:89
+238                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+238-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:33:17-103
+239                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+239-->[androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:34:17-86
+240        </service>
+241
+242        <provider
+242-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+243            android:name="androidx.startup.InitializationProvider"
+243-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+244            android:authorities="com.example.superid.androidx-startup"
+244-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+245            android:exported="false" >
+245-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+246            <meta-data
+246-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+247                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+247-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+248                android:value="androidx.startup" />
+248-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+249            <meta-data
+249-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+250                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+250-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+251                android:value="androidx.startup" />
+251-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+252            <meta-data
+252-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+253                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+253-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+254                android:value="androidx.startup" />
+254-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+255        </provider>
+256
+257        <activity
+257-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+258            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+258-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+259            android:exported="false"
+259-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+260            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+260-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+261
+262        <uses-library
+262-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:23:9-25:40
+263            android:name="android.ext.adservices"
+263-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:24:13-50
+264            android:required="false" />
+264-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:25:13-37
+265
+266        <meta-data
+266-->[com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:21:9-23:69
+267            android:name="com.google.android.gms.version"
+267-->[com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:22:13-58
+268            android:value="@integer/google_play_services_version" />
+268-->[com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:23:13-66
+269
+270        <service
+270-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+271            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+271-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+272            android:exported="false" >
+272-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+273            <meta-data
+273-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+274                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+274-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+275                android:value="cct" />
+275-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+276        </service>
+277        <service
+277-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+278            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+278-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+279            android:exported="false"
+279-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+280            android:permission="android.permission.BIND_JOB_SERVICE" >
+280-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+281        </service>
+282
+283        <receiver
+283-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+284            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+284-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+285            android:exported="false" />
+285-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+286        <receiver
+286-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+287            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+287-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+288            android:directBootAware="false"
+288-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+289            android:enabled="true"
+289-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+290            android:exported="true"
+290-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+291            android:permission="android.permission.DUMP" >
+291-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+292            <intent-filter>
+292-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+293                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+293-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+293-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+294            </intent-filter>
+295            <intent-filter>
+295-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+296                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+296-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+296-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+297            </intent-filter>
+298            <intent-filter>
+298-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+299                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+299-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+299-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+300            </intent-filter>
+301            <intent-filter>
+301-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+302                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+302-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+302-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+303            </intent-filter>
+304        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+305        <activity
+305-->[com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+306            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+306-->[com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:15:13-93
+307            android:exported="false"
+307-->[com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:16:13-37
+308            android:stateNotNeeded="true"
+308-->[com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:17:13-42
+309            android:theme="@style/Theme.PlayCore.Transparent" />
+309-->[com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:18:13-62
+310    </application>
+311
+312</manifest>

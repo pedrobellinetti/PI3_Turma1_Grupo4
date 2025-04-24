@@ -1,0 +1,1123 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:2:1-46:12
+MERGED from [androidx.databinding:viewbinding:8.10.0-alpha08] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c49d428dcacd952ab7598acd015d3ebd\transformed\viewbinding-8.10.0-alpha08\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-view:1.0.0-alpha32] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fb5d0a4bc94d1e49e1793596dc4b1288\transformed\camera-view-1.0.0-alpha32\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c5f1710d91a680c7ce30bf25f30965b4\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\508bebcfc7f334aafa5dc41eda97a992\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d4f6fc4d46dca763787229d22325b6\transformed\material3-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saved-instance-state:1.0.0-alpha11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0d8012939f3549a9cf1ab71c4ccc0caf\transformed\runtime-saved-instance-state-1.0.0-alpha11\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\97361a0b144c192b8600bb403eaad701\transformed\material-ripple-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8545d8e5050c1e3b37205efe0aa211cd\transformed\material-icons-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e9992ec0de92fba037b6a2d3e9c6d469\transformed\material-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\96411c503933f70c271389b89f3752f5\transformed\animation-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d7c0e54310ecf1f7c101e20843cf9c5a\transformed\animation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9be04aea815e4fee3626b5f19d3602a1\transformed\foundation-layout-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7cac8e4424c3f26d17e42b24b9397adf\transformed\foundation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7987831411876a290f3b801782d981e1\transformed\ui-tooling-data-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00deb7f19287d8be55b058be9bc35b40\transformed\ui-unit-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e2c5482795819fbbf39835eea29e47d\transformed\ui-geometry-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\bab3cd4717fb489d3f0fc22339259ef8\transformed\ui-text-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00b72c567a0a94ed58bb0bf591644149\transformed\ui-util-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9029054494d68059eb9e6023bbc86101\transformed\ui-tooling-preview-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1fa55f14e7b9db3437eaad91de42c516\transformed\ui-graphics-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\64ef71621eabb95f48852bf47cd40761\transformed\ui-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:17:1-75:12
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e7cce5a496d9f05bbdb16e2c2b7adb71\transformed\barcode-scanning-17.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\40468374c73817aba080147ab2bbb494\transformed\barcode-scanning-common-17.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-analytics:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\edb182aa0f38218d27ccfd3524557efe\transformed\firebase-analytics-22.4.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2e67abcfe9b99319222a95400aac1f6e\transformed\play-services-measurement-sdk-22.4.0\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\886fa317cc84f613059f4958acacdf8c\transformed\credentials-1.2.0-rc01\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c0afd0cc5aee341a98f6fca840ca2896\transformed\play-services-auth-api-phone-18.0.2\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4550b630db5fdb0e5b0367d38f68cb84\transformed\integrity-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\88afaa62b8f986467b6c8e173cf6f8d7\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:15:1-34:12
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1e89b28db874f26c12e93e48e925ef8d\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fbe159e3f50bd881e8ec6a6f03c96f3d\transformed\vision-interfaces-16.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7f83622b3e0ec3ac21aaabef2a4c2b72\transformed\play-services-fido-20.1.0\AndroidManifest.xml:2:1-10:12
+MERGED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:17:1-38:12
+MERGED from [androidx.camera:camera-lifecycle:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5a4d576c04e5618831919243ee1b31ef\transformed\camera-lifecycle-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:17:1-38:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fed247f45bd33c246afc7bba9a5f46bf\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.recyclerview:recyclerview:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3da3c23f479f6664e3dea32a8a1dedb4\transformed\recyclerview-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5b896086fbd41ba7dd7c50e0553b5830\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\44b0c1bb7433479171c4fa8c4ffd5df3\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f3aabf62bc43746ce17390710d6bc199\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9478dc5e9d8491b4140c509c1bc91fc1\transformed\browser-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\10b1b08cdcdf4a3bfeee66724303c2ba\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d0da89c361af7aebdc5dfa6d19276922\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3b42b34c18d74de66708ee940dae3d51\transformed\play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e1de75af094c15fc8a935d9e4a013b9\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\042cd8436b3dbdfc00d491de9d6db7df\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\aa0787383b3d12014e3e2fbbc8908d6f\transformed\autofill-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2aef5f60bdf2b726745963bd61a81e4a\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\46a059d07edab1f61c83b15bf37dff6b\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9d1ebf20be6dbdafdabb3a9055315b72\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0f0b95a18f770b6b69317f9c8596647e\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9cfc073a64f1c496825f459b694f0ea7\transformed\lifecycle-viewmodel-2.8.7\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8826414b5bbcf3c6580a1997a2cb2b69\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\905107593cc8b9f6cb74b061136cf6c9\transformed\lifecycle-livedata-core-ktx-2.8.7\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d861c391a6e69271f4999daae48853\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7a627ee1995b40364917b2b9c157eaca\transformed\lifecycle-viewmodel-savedstate-2.8.7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df78603b95781d56a4ff3ef1a1808ec5\transformed\lifecycle-livedata-core-2.8.7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8fcac62a2f0adba3cfe69947236dafb3\transformed\lifecycle-viewmodel-ktx-2.8.7\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3d19ee1104351712c8b167f10a9135b3\transformed\lifecycle-livedata-2.8.7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\737352780faade494e4570ac29f9a338\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\754aae324957392022181a252f1c1621\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\73e40b2ee6c820afdc583baf932a4f33\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\799a61d3dbdc4d649c445215f71e457f\transformed\ads-adservices-java-1.1.0-beta11\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8181d0770d3e26d062b4611722d806e8\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff3e336bf9a5b6737311c864b373ee89\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-measurement-base:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f8dd349d3e6786896c4e9e57116ed0a1\transformed\play-services-measurement-base-22.4.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\54f09050da4397d9f7d978691ceb7d12\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\26d00b4e66d18bb1f5a206e5dc034e35\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d41ae2a477c0c789e993435287f1b032\transformed\activity-1.10.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8d412be3fb865a54eb0c8ef5b83724b9\transformed\activity-ktx-1.10.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-compose:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7913e559e0928b10211344bc3cbab235\transformed\activity-compose-1.10.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\55ecd715a72306774813189e6259fe7f\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\be75a068179449761c809a39b96895ab\transformed\core-ktx-1.15.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\270f23c8db4410b0f8f5b4507f5368ef\transformed\googleid-1.1.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ac91db445ea906b06b44884cec970e2\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\aea53a71d560ed670683b62eff17a507\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e1bdba7f48a39c17f771d6ba4afc090d\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\86ac33b7aa66687e0811287600a85913\transformed\firebase-components-18.0.0\AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\93b3520a3ae01887e4d386cc82466c0d\transformed\transport-api-2.2.1\AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4b8703ef28f2b8711cf5f938a7235907\transformed\firebase-encoders-json-17.1.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\21c3d92c4c7dee0a3fb52337f3fff157\transformed\exifinterface-1.3.2\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2154f3d9762e77698224c7f7a72d9643\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a90e214b4107e5af0494c04307dca351\transformed\tracing-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6c8c085c91ccd64973ff458b4959d6d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a4756ea68d5d73fe814d058672fbb45d\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1c9d33f29a6bfd572e9d4a059bb482c5\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e7e5de5dbf8c2fd7f8240581e1ccdc98\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1cbe2cf02d93c618ef169e0528434e3e\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df28bcb79b7a99101e41ca22411e2299\transformed\core-viewtree-1.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f6af81f6ca173513ab8ee1c73a586d25\transformed\grpc-android-1.62.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\117135785d7dcc669c94bf5a7d8b2726\transformed\protolite-well-known-types-18.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fe87bca6eeea78ae9a5877dfcbcde1c3\transformed\image-1.0.0-beta1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:2:1-21:12
+	package
+		INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:5:5-7:36
+	android:required
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:7:9-33
+	android:name
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:6:9-47
+uses-permission#android.permission.CAMERA
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:8:22-62
+application
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:10:5-44:19
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:10:5-44:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.firebase:firebase-analytics:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\edb182aa0f38218d27ccfd3524557efe\transformed\firebase-analytics-22.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\edb182aa0f38218d27ccfd3524557efe\transformed\firebase-analytics-22.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2e67abcfe9b99319222a95400aac1f6e\transformed\play-services-measurement-sdk-22.4.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2e67abcfe9b99319222a95400aac1f6e\transformed\play-services-measurement-sdk-22.4.0\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:23:5-42:19
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:23:5-42:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:26:5-37:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:26:5-37:19
+MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4550b630db5fdb0e5b0367d38f68cb84\transformed\integrity-1.3.0\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4550b630db5fdb0e5b0367d38f68cb84\transformed\integrity-1.3.0\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\88afaa62b8f986467b6c8e173cf6f8d7\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\88afaa62b8f986467b6c8e173cf6f8d7\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:21:5-32:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:21:5-32:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1e89b28db874f26c12e93e48e925ef8d\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:21:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1e89b28db874f26c12e93e48e925ef8d\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:21:5-20
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7f83622b3e0ec3ac21aaabef2a4c2b72\transformed\play-services-fido-20.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7f83622b3e0ec3ac21aaabef2a4c2b72\transformed\play-services-fido-20.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:25:5-36:19
+MERGED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:25:5-36:19
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:25:5-36:19
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:25:5-36:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3b42b34c18d74de66708ee940dae3d51\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3b42b34c18d74de66708ee940dae3d51\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff3e336bf9a5b6737311c864b373ee89\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff3e336bf9a5b6737311c864b373ee89\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f8dd349d3e6786896c4e9e57116ed0a1\transformed\play-services-measurement-base-22.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f8dd349d3e6786896c4e9e57116ed0a1\transformed\play-services-measurement-base-22.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\54f09050da4397d9f7d978691ceb7d12\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\54f09050da4397d9f7d978691ceb7d12\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6c8c085c91ccd64973ff458b4959d6d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6c8c085c91ccd64973ff458b4959d6d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fe87bca6eeea78ae9a5877dfcbcde1c3\transformed\image-1.0.0-beta1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fe87bca6eeea78ae9a5877dfcbcde1c3\transformed\image-1.0.0-beta1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:11:5-19:19
+	android:extractNativeLibs
+		INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:18:9-35
+	android:label
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:16:9-41
+	android:fullBackupContent
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:14:9-54
+	android:roundIcon
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:17:9-51
+	tools:targetApi
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:20:9-29
+	android:icon
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:15:9-40
+	android:allowBackup
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:19:9-45
+	android:dataExtractionRules
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:13:9-65
+activity#com.example.superid.MainActivity
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:28:9-39:20
+	android:label
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:31:13-45
+	android:exported
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:32:13-49
+	android:name
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:29:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:34:13-38:29
+action#android.intent.action.MAIN
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:37:17-77
+	android:name
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:37:27-74
+activity#com.example.superid.RecuperacaoSenhaActivity
+ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:41:9-62
+	android:name
+		ADDED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml:41:19-59
+uses-sdk
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.10.0-alpha08] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c49d428dcacd952ab7598acd015d3ebd\transformed\viewbinding-8.10.0-alpha08\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.10.0-alpha08] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c49d428dcacd952ab7598acd015d3ebd\transformed\viewbinding-8.10.0-alpha08\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.0.0-alpha32] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fb5d0a4bc94d1e49e1793596dc4b1288\transformed\camera-view-1.0.0-alpha32\AndroidManifest.xml:20:5-23:145
+MERGED from [androidx.camera:camera-view:1.0.0-alpha32] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fb5d0a4bc94d1e49e1793596dc4b1288\transformed\camera-view-1.0.0-alpha32\AndroidManifest.xml:20:5-23:145
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c5f1710d91a680c7ce30bf25f30965b4\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c5f1710d91a680c7ce30bf25f30965b4\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\508bebcfc7f334aafa5dc41eda97a992\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\508bebcfc7f334aafa5dc41eda97a992\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d4f6fc4d46dca763787229d22325b6\transformed\material3-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d4f6fc4d46dca763787229d22325b6\transformed\material3-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saved-instance-state:1.0.0-alpha11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0d8012939f3549a9cf1ab71c4ccc0caf\transformed\runtime-saved-instance-state-1.0.0-alpha11\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saved-instance-state:1.0.0-alpha11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0d8012939f3549a9cf1ab71c4ccc0caf\transformed\runtime-saved-instance-state-1.0.0-alpha11\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\97361a0b144c192b8600bb403eaad701\transformed\material-ripple-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\97361a0b144c192b8600bb403eaad701\transformed\material-ripple-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8545d8e5050c1e3b37205efe0aa211cd\transformed\material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8545d8e5050c1e3b37205efe0aa211cd\transformed\material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e9992ec0de92fba037b6a2d3e9c6d469\transformed\material-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e9992ec0de92fba037b6a2d3e9c6d469\transformed\material-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\96411c503933f70c271389b89f3752f5\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\96411c503933f70c271389b89f3752f5\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d7c0e54310ecf1f7c101e20843cf9c5a\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d7c0e54310ecf1f7c101e20843cf9c5a\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9be04aea815e4fee3626b5f19d3602a1\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9be04aea815e4fee3626b5f19d3602a1\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7cac8e4424c3f26d17e42b24b9397adf\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7cac8e4424c3f26d17e42b24b9397adf\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7987831411876a290f3b801782d981e1\transformed\ui-tooling-data-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7987831411876a290f3b801782d981e1\transformed\ui-tooling-data-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00deb7f19287d8be55b058be9bc35b40\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00deb7f19287d8be55b058be9bc35b40\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e2c5482795819fbbf39835eea29e47d\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e2c5482795819fbbf39835eea29e47d\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\bab3cd4717fb489d3f0fc22339259ef8\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\bab3cd4717fb489d3f0fc22339259ef8\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00b72c567a0a94ed58bb0bf591644149\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00b72c567a0a94ed58bb0bf591644149\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9029054494d68059eb9e6023bbc86101\transformed\ui-tooling-preview-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9029054494d68059eb9e6023bbc86101\transformed\ui-tooling-preview-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1fa55f14e7b9db3437eaad91de42c516\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1fa55f14e7b9db3437eaad91de42c516\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\64ef71621eabb95f48852bf47cd40761\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\64ef71621eabb95f48852bf47cd40761\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:21:5-23:151
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:21:5-23:151
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e7cce5a496d9f05bbdb16e2c2b7adb71\transformed\barcode-scanning-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e7cce5a496d9f05bbdb16e2c2b7adb71\transformed\barcode-scanning-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\40468374c73817aba080147ab2bbb494\transformed\barcode-scanning-common-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\40468374c73817aba080147ab2bbb494\transformed\barcode-scanning-common-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-analytics:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\edb182aa0f38218d27ccfd3524557efe\transformed\firebase-analytics-22.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\edb182aa0f38218d27ccfd3524557efe\transformed\firebase-analytics-22.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2e67abcfe9b99319222a95400aac1f6e\transformed\play-services-measurement-sdk-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2e67abcfe9b99319222a95400aac1f6e\transformed\play-services-measurement-sdk-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\886fa317cc84f613059f4958acacdf8c\transformed\credentials-1.2.0-rc01\AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\886fa317cc84f613059f4958acacdf8c\transformed\credentials-1.2.0-rc01\AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:21:5-44
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c0afd0cc5aee341a98f6fca840ca2896\transformed\play-services-auth-api-phone-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c0afd0cc5aee341a98f6fca840ca2896\transformed\play-services-auth-api-phone-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:19:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4550b630db5fdb0e5b0367d38f68cb84\transformed\integrity-1.3.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4550b630db5fdb0e5b0367d38f68cb84\transformed\integrity-1.3.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\88afaa62b8f986467b6c8e173cf6f8d7\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\88afaa62b8f986467b6c8e173cf6f8d7\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1e89b28db874f26c12e93e48e925ef8d\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1e89b28db874f26c12e93e48e925ef8d\transformed\firebase-appcheck-interop-17.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fbe159e3f50bd881e8ec6a6f03c96f3d\transformed\vision-interfaces-16.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fbe159e3f50bd881e8ec6a6f03c96f3d\transformed\vision-interfaces-16.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7f83622b3e0ec3ac21aaabef2a4c2b72\transformed\play-services-fido-20.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7f83622b3e0ec3ac21aaabef2a4c2b72\transformed\play-services-fido-20.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.camera:camera-lifecycle:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5a4d576c04e5618831919243ee1b31ef\transformed\camera-lifecycle-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-lifecycle:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5a4d576c04e5618831919243ee1b31ef\transformed\camera-lifecycle-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fed247f45bd33c246afc7bba9a5f46bf\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fed247f45bd33c246afc7bba9a5f46bf\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3da3c23f479f6664e3dea32a8a1dedb4\transformed\recyclerview-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3da3c23f479f6664e3dea32a8a1dedb4\transformed\recyclerview-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5b896086fbd41ba7dd7c50e0553b5830\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5b896086fbd41ba7dd7c50e0553b5830\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\44b0c1bb7433479171c4fa8c4ffd5df3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\44b0c1bb7433479171c4fa8c4ffd5df3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f3aabf62bc43746ce17390710d6bc199\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f3aabf62bc43746ce17390710d6bc199\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9478dc5e9d8491b4140c509c1bc91fc1\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9478dc5e9d8491b4140c509c1bc91fc1\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\10b1b08cdcdf4a3bfeee66724303c2ba\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\10b1b08cdcdf4a3bfeee66724303c2ba\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d0da89c361af7aebdc5dfa6d19276922\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d0da89c361af7aebdc5dfa6d19276922\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3b42b34c18d74de66708ee940dae3d51\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3b42b34c18d74de66708ee940dae3d51\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e1de75af094c15fc8a935d9e4a013b9\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e1de75af094c15fc8a935d9e4a013b9\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\042cd8436b3dbdfc00d491de9d6db7df\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\042cd8436b3dbdfc00d491de9d6db7df\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\aa0787383b3d12014e3e2fbbc8908d6f\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\aa0787383b3d12014e3e2fbbc8908d6f\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2aef5f60bdf2b726745963bd61a81e4a\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2aef5f60bdf2b726745963bd61a81e4a\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\46a059d07edab1f61c83b15bf37dff6b\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\46a059d07edab1f61c83b15bf37dff6b\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9d1ebf20be6dbdafdabb3a9055315b72\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9d1ebf20be6dbdafdabb3a9055315b72\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0f0b95a18f770b6b69317f9c8596647e\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0f0b95a18f770b6b69317f9c8596647e\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9cfc073a64f1c496825f459b694f0ea7\transformed\lifecycle-viewmodel-2.8.7\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9cfc073a64f1c496825f459b694f0ea7\transformed\lifecycle-viewmodel-2.8.7\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8826414b5bbcf3c6580a1997a2cb2b69\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8826414b5bbcf3c6580a1997a2cb2b69\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\905107593cc8b9f6cb74b061136cf6c9\transformed\lifecycle-livedata-core-ktx-2.8.7\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\905107593cc8b9f6cb74b061136cf6c9\transformed\lifecycle-livedata-core-ktx-2.8.7\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d861c391a6e69271f4999daae48853\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d861c391a6e69271f4999daae48853\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7a627ee1995b40364917b2b9c157eaca\transformed\lifecycle-viewmodel-savedstate-2.8.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7a627ee1995b40364917b2b9c157eaca\transformed\lifecycle-viewmodel-savedstate-2.8.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df78603b95781d56a4ff3ef1a1808ec5\transformed\lifecycle-livedata-core-2.8.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df78603b95781d56a4ff3ef1a1808ec5\transformed\lifecycle-livedata-core-2.8.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8fcac62a2f0adba3cfe69947236dafb3\transformed\lifecycle-viewmodel-ktx-2.8.7\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8fcac62a2f0adba3cfe69947236dafb3\transformed\lifecycle-viewmodel-ktx-2.8.7\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3d19ee1104351712c8b167f10a9135b3\transformed\lifecycle-livedata-2.8.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3d19ee1104351712c8b167f10a9135b3\transformed\lifecycle-livedata-2.8.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\737352780faade494e4570ac29f9a338\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\737352780faade494e4570ac29f9a338\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\754aae324957392022181a252f1c1621\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\754aae324957392022181a252f1c1621\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\73e40b2ee6c820afdc583baf932a4f33\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\73e40b2ee6c820afdc583baf932a4f33\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\799a61d3dbdc4d649c445215f71e457f\transformed\ads-adservices-java-1.1.0-beta11\AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\799a61d3dbdc4d649c445215f71e457f\transformed\ads-adservices-java-1.1.0-beta11\AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8181d0770d3e26d062b4611722d806e8\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8181d0770d3e26d062b4611722d806e8\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff3e336bf9a5b6737311c864b373ee89\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff3e336bf9a5b6737311c864b373ee89\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f8dd349d3e6786896c4e9e57116ed0a1\transformed\play-services-measurement-base-22.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f8dd349d3e6786896c4e9e57116ed0a1\transformed\play-services-measurement-base-22.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\54f09050da4397d9f7d978691ceb7d12\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\54f09050da4397d9f7d978691ceb7d12\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\26d00b4e66d18bb1f5a206e5dc034e35\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\26d00b4e66d18bb1f5a206e5dc034e35\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d41ae2a477c0c789e993435287f1b032\transformed\activity-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d41ae2a477c0c789e993435287f1b032\transformed\activity-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8d412be3fb865a54eb0c8ef5b83724b9\transformed\activity-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8d412be3fb865a54eb0c8ef5b83724b9\transformed\activity-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7913e559e0928b10211344bc3cbab235\transformed\activity-compose-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.10.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7913e559e0928b10211344bc3cbab235\transformed\activity-compose-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\55ecd715a72306774813189e6259fe7f\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\55ecd715a72306774813189e6259fe7f\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\be75a068179449761c809a39b96895ab\transformed\core-ktx-1.15.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\be75a068179449761c809a39b96895ab\transformed\core-ktx-1.15.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\270f23c8db4410b0f8f5b4507f5368ef\transformed\googleid-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\270f23c8db4410b0f8f5b4507f5368ef\transformed\googleid-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ac91db445ea906b06b44884cec970e2\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ac91db445ea906b06b44884cec970e2\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\aea53a71d560ed670683b62eff17a507\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\aea53a71d560ed670683b62eff17a507\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e1bdba7f48a39c17f771d6ba4afc090d\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e1bdba7f48a39c17f771d6ba4afc090d\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\86ac33b7aa66687e0811287600a85913\transformed\firebase-components-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\86ac33b7aa66687e0811287600a85913\transformed\firebase-components-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\93b3520a3ae01887e4d386cc82466c0d\transformed\transport-api-2.2.1\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\93b3520a3ae01887e4d386cc82466c0d\transformed\transport-api-2.2.1\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4b8703ef28f2b8711cf5f938a7235907\transformed\firebase-encoders-json-17.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4b8703ef28f2b8711cf5f938a7235907\transformed\firebase-encoders-json-17.1.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\21c3d92c4c7dee0a3fb52337f3fff157\transformed\exifinterface-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\21c3d92c4c7dee0a3fb52337f3fff157\transformed\exifinterface-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2154f3d9762e77698224c7f7a72d9643\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2154f3d9762e77698224c7f7a72d9643\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a90e214b4107e5af0494c04307dca351\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a90e214b4107e5af0494c04307dca351\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6c8c085c91ccd64973ff458b4959d6d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6c8c085c91ccd64973ff458b4959d6d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a4756ea68d5d73fe814d058672fbb45d\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a4756ea68d5d73fe814d058672fbb45d\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1c9d33f29a6bfd572e9d4a059bb482c5\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1c9d33f29a6bfd572e9d4a059bb482c5\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e7e5de5dbf8c2fd7f8240581e1ccdc98\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e7e5de5dbf8c2fd7f8240581e1ccdc98\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1cbe2cf02d93c618ef169e0528434e3e\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1cbe2cf02d93c618ef169e0528434e3e\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df28bcb79b7a99101e41ca22411e2299\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df28bcb79b7a99101e41ca22411e2299\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f6af81f6ca173513ab8ee1c73a586d25\transformed\grpc-android-1.62.2\AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f6af81f6ca173513ab8ee1c73a586d25\transformed\grpc-android-1.62.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\117135785d7dcc669c94bf5a7d8b2726\transformed\protolite-well-known-types-18.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\117135785d7dcc669c94bf5a7d8b2726\transformed\protolite-well-known-types-18.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fe87bca6eeea78ae9a5877dfcbcde1c3\transformed\image-1.0.0-beta1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fe87bca6eeea78ae9a5877dfcbcde1c3\transformed\image-1.0.0-beta1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [androidx.camera:camera-view:1.0.0-alpha32] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fb5d0a4bc94d1e49e1793596dc4b1288\transformed\camera-view-1.0.0-alpha32\AndroidManifest.xml:23:9-142
+	android:targetSdkVersion
+		INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\PI3\SuperID2\app\src\main\AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\AndroidManifest.xml:24:13-63
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:27:9-36:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:27:9-36:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:22:9-31:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:22:9-31:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:30:9-38:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:10:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:9:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar
+ADDED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\dd23a7a92a1fa140ffea09ac80d36b5f\transformed\firebase-auth-ktx-23.2.0\AndroidManifest.xml:12:17-119
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:8:5-79
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:22:5-79
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f6af81f6ca173513ab8ee1c73a586d25\transformed\grpc-android-1.62.2\AndroidManifest.xml:7:5-79
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f6af81f6ca173513ab8ee1c73a586d25\transformed\grpc-android-1.62.2\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:22-76
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:29:9-46:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:31:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:33:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:32:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:34:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:30:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:35:13-45:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:36:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:38:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:39:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:39:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:41:17-44:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:43:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:42:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:44:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:47:9-64:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:49:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:51:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:50:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:52:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:48:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:53:13-63:29
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:69:13-71:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:71:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\504d6f85c0abe7561fee6b1278163a7a\transformed\firebase-auth-23.2.0\AndroidManifest.xml:70:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar
+ADDED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore-ktx:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a59c6832f40e53ff4d4db572f8c39019\transformed\firebase-firestore-ktx-25.1.3\AndroidManifest.xml:13:17-129
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6e50b6985614c41d82aef5dcc84538e5\transformed\firebase-firestore-25.1.3\AndroidManifest.xml:21:17-111
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:11:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:10:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\6b21f1de3b9fea0079d11247ab8bad43\transformed\play-services-mlkit-barcode-scanning-18.3.0\AndroidManifest.xml:13:17-120
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:17.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7c98fef2bbede738b4788074625ff92a\transformed\vision-common-17.3.0\AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:18.9.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\82028a0c886b983c929944fc0b93ded1\transformed\common-18.9.0\AndroidManifest.xml:21:17-120
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:25:22-65
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\860bea9f7a015f7d5384fd61c9043dac\transformed\play-services-measurement-22.4.0\AndroidManifest.xml:40:13-87
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\4dcb597cd0d849c07e477fd67dfbe4bb\transformed\play-services-measurement-impl-22.4.0\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\f0367111708a17f0cfb81965484ac5a3\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:25:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:27:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:26:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\463b006797aa6a70d72426bace2387eb\transformed\play-services-measurement-sdk-api-22.4.0\AndroidManifest.xml:28:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:27:22-79
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9b9934a072ccfb0ea36dd1db6f1f32ce\transformed\play-services-measurement-api-22.4.0\AndroidManifest.xml:34:17-139
+service#androidx.credentials.playservices.CredentialProviderMetadataHolder
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
+	android:enabled
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
+	android:exported
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:28:13-60
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
+meta-data#androidx.credentials.CREDENTIAL_PROVIDER_KEY
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
+	android:value
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
+activity#androidx.credentials.playservices.HiddenActivity
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
+	android:fitsSystemWindows
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
+	android:enabled
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
+	android:configChanges
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
+	android:theme
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+meta-data#com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar
+ADDED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage-ktx:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\db50c2444a29e481977616055f39ca58\transformed\firebase-storage-ktx-21.0.1\AndroidManifest.xml:13:17-125
+meta-data#com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar
+ADDED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:31:17-118
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\813fd02e5f315952bff4745a68e58b6f\transformed\firebase-storage-21.0.1\AndroidManifest.xml:34:17-107
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:5-98
+	android:name
+		ADDED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b07be3be476a415aad6908396a95e503\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:22-95
+meta-data#com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar
+ADDED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:25:13-27:85
+	android:value
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:27:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:26:17-120
+meta-data#com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar
+ADDED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:28:13-30:85
+	android:value
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:30:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b173980b3b711041432360bac17ba7dd\transformed\firebase-appcheck-18.0.0\AndroidManifest.xml:29:17-117
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+ADDED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3c3157c42b7cdb2bc6c897f3a5acf18c\transformed\firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\79178c3071387de1b20f74a83a8c76e5\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:26:9-35:19
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:31:9-35:78
+MERGED from [androidx.camera:camera-core:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\AndroidManifest.xml:31:9-35:78
+	tools:node
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:31:13-31
+	android:enabled
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:28:13-36
+	android:exported
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:29:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:30:13-75
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:27:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:32:13-34:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:34:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.1.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\AndroidManifest.xml:33:17-103
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+permission#com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+uses-permission#com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+uses-library#android.ext.adservices
+ADDED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\AndroidManifest.xml:24:13-50
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.5.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\AndroidManifest.xml:22:13-58
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ca8cbbc2a0d3d3a53bb6029726f6263\transformed\transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9f9d4c313de3c13e80f16f012cd619ca\transformed\transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:17:13-42
+	android:exported
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:16:13-37
+	android:theme
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:18:13-62
+	android:name
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\AndroidManifest.xml:15:13-93
