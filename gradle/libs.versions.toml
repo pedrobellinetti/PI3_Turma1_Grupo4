@@ -1,5 +1,13 @@
 [versions]
+<<<<<<< HEAD
 agp = "8.7.2"
+=======
+<<<<<<< HEAD
+agp = "8.10.0-alpha08"
+=======
+agp = "8.8.0"
+>>>>>>> 6daf279 (v0.1)
+>>>>>>> 163a548 (Main consertada)
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"

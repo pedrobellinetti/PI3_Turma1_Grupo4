@@ -15,6 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.google.firebase.auth.FirebaseAuth
+<<<<<<< HEAD
+=======
+import com.example.superid.Login
+>>>>>>> 6daf279 (v0.1)
 
 @Composable
 fun LoginForm(
@@ -86,6 +90,7 @@ fun LoginForm(
             Text(text = status, modifier = Modifier.padding(top = 16.dp))
         }
     }
+<<<<<<< HEAD
 }
 
         /*
@@ -102,3 +107,6 @@ fun LoginForm(
         4. 0000    0000    0001    0010    0000    0001    0010    0110
            B = ?  Col=?  Lin.=?   TAG = ?
          */
+=======
+}
+>>>>>>> 6daf279 (v0.1)

@@ -22,6 +22,11 @@
 //
 //class Login {
 //
+<<<<<<< HEAD
+=======
+//    val
+//
+>>>>>>> 6daf279 (v0.1)
 //    // Cadastro do usuário
 //    @Composable
 //    fun UserRegistrationForm(onSuccess: () -> Unit,
