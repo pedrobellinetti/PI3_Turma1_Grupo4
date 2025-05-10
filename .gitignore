@@ -9,6 +9,7 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/app/build/
 /captures
 .externalNativeBuild
 .cxx
@@ -17,8 +18,4 @@ local.properties
 *.log
 *.tmp
 *.out
-<<<<<<< HEAD
-=======
 C:\PI3\SuperID2\app\src\main\java\com\example\superid\acessibilidade
-
->>>>>>> 6daf279 (v0.1)
