@@ -256,11 +256,11 @@ MERGED from [com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/cac
 	android:fullBackupContent
 		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:14:9-54
 	android:roundIcon
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:17:9-51
+		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:17:9-48
 	tools:targetApi
 		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:20:9-29
 	android:icon
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:15:9-40
+		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
 		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
