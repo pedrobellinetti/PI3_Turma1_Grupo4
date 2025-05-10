@@ -42,12 +42,10 @@ android {
         compose = true
         viewBinding = true
     }
-<<<<<<< HEAD
-=======
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.9"
     }
->>>>>>> 6daf279 (v0.1)
 }
 
 dependencies {
@@ -81,8 +79,6 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.1.0")
     implementation("androidx.camera:camera-view:1.0.0-alpha32")
 
-<<<<<<< HEAD
-=======
     // Jetpack Compose
 
     implementation(platform("androidx.compose:compose-bom:2024.04.01"))
@@ -90,7 +86,6 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.runtime:runtime")
 
->>>>>>> 6daf279 (v0.1)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

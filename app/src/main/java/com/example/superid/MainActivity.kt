@@ -1,9 +1,6 @@
 package com.example.superid
 
-<<<<<<< HEAD
 //import com.example.superid.Login
-=======
->>>>>>> 6daf279 (v0.1)
 import QrScanScreen
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -40,13 +37,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.superid.ui.screens.LoginForm
 import com.example.superid.ui.screens.MainScreen
-<<<<<<< HEAD
 import com.example.superid.ui.screens.PasswordManagerScreen
 import com.example.superid.ui.screens.PasswordRecoveryScreen
-=======
 import com.example.superid.ui.screens.PasswordRecoveryScreen
 import com.example.superid.ui.screens.UserRegistrationForm
->>>>>>> 6daf279 (v0.1)
 import com.example.superid.ui.screens.gerarAccessToken
 import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.auth.FirebaseAuth
@@ -91,7 +85,6 @@ fun GreetingPreview() {
 }
 
 // Cadastro do usuário
-<<<<<<< HEAD
 @Composable
 fun UserRegistrationForm(onSuccess: () -> Unit,
                          onNavigateToLogin: () -> Unit
@@ -143,7 +136,7 @@ fun UserRegistrationForm(onSuccess: () -> Unit,
         Text(status)
     }
 }
-=======
+
 @Preview
 @Composable
 
@@ -203,7 +196,6 @@ fun UserRegistrationForm(onSuccess: () -> Unit,
 
 @androidx.annotation.OptIn(ExperimentalGetImage::class)
 @OptIn(ExperimentalMaterial3Api::class)
-@Composable
 fun AuthApp() {
     var currentScreen by remember { mutableStateOf(AuthScreen.LOGIN) }
 
@@ -234,7 +226,6 @@ fun AuthApp() {
 
 // Tela de Login
 
-<<<<<<< HEAD
     @Composable
     fun LoginForm(
         onNavigateToRegister: () -> Unit,
@@ -462,7 +453,6 @@ fun AuthApp() {
             }
         }
     }
-=======
     // TODO: Deletar linhas comentadas
 //    @Composable
 //    fun LoginForm(
@@ -692,6 +682,5 @@ fun AuthApp() {
 //            }
 //        }
 //    }
->>>>>>> 6daf279 (v0.1)
 }
 

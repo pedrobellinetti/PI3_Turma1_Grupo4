@@ -1,186 +1,166 @@
 [
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\layout_layout_tela_senhas.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\layout\\layout_tela_senhas.xml"
+        "merged": "com.example.superid.app-debug-70:/layout_layout_tela_inicial.xml.flat",
+        "source": "com.example.superid.app-main-72:/layout/layout_tela_inicial.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\layout_layout_tela_inicial.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\layout\\layout_tela_inicial.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-hdpi_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-hdpi/launcher_round.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.superid.app-debug-70:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-anydpi-v26_launcher_round.xml.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-anydpi-v26/launcher_round.xml"
+        "merged": "com.example.superid.app-debug-70:/drawable_btn_gradient.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/btn_gradient.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xhdpi_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xhdpi/launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\xml\\data_extraction_rules.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-anydpi-v26_settings_launcher.xml.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-anydpi-v26/settings_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_btn_gradient.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\btn_gradient.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-anydpi-v26_launcher.xml.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-anydpi-v26/launcher.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/layout_layout_recuperacao_senha.xml.flat",
+        "source": "com.example.superid.app-main-72:/layout/layout_recuperacao_senha.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_settings_foreground.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\settings_foreground.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.superid.app-debug-70:/layout_layout_tela_senhas.xml.flat",
+        "source": "com.example.superid.app-main-72:/layout/layout_tela_senhas.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-xxxhdpi_launcher.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-xxxhdpi\\launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/drawable_settings_foreground.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/settings_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-xxxhdpi_launcher_round.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-xxxhdpi\\launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/xml_backup_rules.xml.flat",
+        "source": "com.example.superid.app-main-72:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_edittext_border_gradient.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\edittext_border_gradient.xml"
+        "merged": "com.example.superid.app-debug-70:/drawable_ic_add.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/ic_add.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/drawable_circle_background.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/circle_background.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-xhdpi_launcher_round.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-xhdpi\\launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.superid.app-main-72:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-anydpi-v26_launcher.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-anydpi-v26\\launcher.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_settings_background.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\settings_background.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-mdpi_launcher.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-mdpi\\launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-mdpi_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-mdpi/launcher_round.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/xml_backup_rules.xml.flat",
-        "source": "com.example.superid.app-main-7:/xml/backup_rules.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxxhdpi_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxxhdpi/launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-xxhdpi_launcher_round.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-xxhdpi\\launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxxhdpi_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxxhdpi/launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-anydpi-v26_launcher_round.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-anydpi-v26\\launcher_round.xml"
+        "merged": "com.example.superid.app-debug-70:/layout_layout_tela_login.xml.flat",
+        "source": "com.example.superid.app-main-72:/layout/layout_tela_login.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-anydpi-v26_settings_launcher.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-anydpi-v26\\settings_launcher.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_circle_background.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\circle_background.xml"
+        "merged": "com.example.superid.app-debug-70:/drawable_settings_background.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/settings_background.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/layout_layout_tela_inicial.xml.flat",
-        "source": "com.example.superid.app-main-7:/layout/layout_tela_inicial.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-hdpi_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-hdpi/launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\layout_layout_tela_cadastro.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\layout\\layout_tela_cadastro.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-mdpi_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-mdpi/launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\layout_layout_tela_login.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\layout\\layout_tela_login.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxhdpi_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxhdpi/launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-xxhdpi_launcher.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-xxhdpi\\launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/drawable_edittext_border_gradient.xml.flat",
+        "source": "com.example.superid.app-main-72:/drawable/edittext_border_gradient.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\layout_item_senha.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\layout\\item_senha.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-xhdpi_launcher.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-xhdpi\\launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xxhdpi_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xxhdpi/launcher_round.webp"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-anydpi-v26_launcher_round.xml.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-anydpi-v26/launcher_round.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.superid.app-debug-70:/layout_item_senha.xml.flat",
+        "source": "com.example.superid.app-main-72:/layout/item_senha.xml"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\drawable_ic_add.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\drawable\\ic_add.xml"
+        "merged": "com.example.superid.app-debug-70:/layout_layout_tela_cadastro.xml.flat",
+        "source": "com.example.superid.app-main-72:/layout/layout_tela_cadastro.xml"
     },
     {
-        "merged": "com.example.superid.app-debug-5:/mipmap-anydpi-v26_launcher.xml.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-anydpi-v26/launcher.xml"
+        "merged": "com.example.superid.app-debug-70:/mipmap-xhdpi_launcher.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-xhdpi/launcher.webp"
     },
     {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-mdpi_launcher_round.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-mdpi\\launcher_round.webp"
-    },
-    {
-        "merged": "com.example.superid.app-debug-5:/mipmap-anydpi-v26_settings_launcher.xml.flat",
-        "source": "com.example.superid.app-main-7:/mipmap-anydpi-v26/settings_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\layout_layout_recuperacao_senha.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\layout\\layout_recuperacao_senha.xml"
-    },
-    {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-hdpi_launcher_round.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-hdpi\\launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-debug-5:\\mipmap-hdpi_launcher.webp.flat",
-        "source": "C:\\Users\\ROG Pedro\\.gradle\\daemon\\8.11.1\\com.example.superid.app-main-7:\\mipmap-hdpi\\launcher.webp"
+        "merged": "com.example.superid.app-debug-70:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.superid.app-main-72:/mipmap-mdpi/ic_launcher_round.webp"
     }
 ]

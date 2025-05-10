@@ -15,10 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.google.firebase.auth.FirebaseAuth
-<<<<<<< HEAD
-=======
-import com.example.superid.Login
->>>>>>> 6daf279 (v0.1)
+
+//import com.example.superid.Login
 
 @Composable
 fun LoginForm(
@@ -90,23 +88,4 @@ fun LoginForm(
             Text(text = status, modifier = Modifier.padding(top = 16.dp))
         }
     }
-<<<<<<< HEAD
 }
-
-        /*
-        Um processador trabalha com palavras de 32 bits.
-        A cache associada é quadrada e tem capacidade de 4MB. A MP possui
-        capacidade de 8GB. Pergunta-se:
-
-        1. Quantos bits são efetivamente utilizados no endereçamento?
-
-        2. Mapeamento Direto
-
-        3. Qual o número de blocos da MP? E o tamanho do bloco?
-
-        4. 0000    0000    0001    0010    0000    0001    0010    0110
-           B = ?  Col=?  Lin.=?   TAG = ?
-         */
-=======
-}
->>>>>>> 6daf279 (v0.1)

@@ -1,73 +1,73 @@
-com.example.superid.app-pngs-0 C:\PI3\SuperID2\app\build\generated\res\pngs\debug
-com.example.superid.app-res-1 C:\PI3\SuperID2\app\build\generated\res\processDebugGoogleServices
-com.example.superid.app-resValues-2 C:\PI3\SuperID2\app\build\generated\res\resValues\debug
-com.example.superid.app-packageDebugResources-3 C:\PI3\SuperID2\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.superid.app-packageDebugResources-4 C:\PI3\SuperID2\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.superid.app-debug-5 C:\PI3\SuperID2\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.superid.app-debug-6 C:\PI3\SuperID2\app\src\debug\res
-com.example.superid.app-main-7 C:\PI3\SuperID2\app\src\main\res
-com.example.superid.app-ui-util-release-8 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00b72c567a0a94ed58bb0bf591644149\transformed\ui-util-release\res
-com.example.superid.app-ui-unit-release-9 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\00deb7f19287d8be55b058be9bc35b40\transformed\ui-unit-release\res
-com.example.superid.app-runtime-saved-instance-state-1.0.0-alpha11-10 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0d8012939f3549a9cf1ab71c4ccc0caf\transformed\runtime-saved-instance-state-1.0.0-alpha11\res
-com.example.superid.app-ui-geometry-release-11 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0e2c5482795819fbbf39835eea29e47d\transformed\ui-geometry-release\res
-com.example.superid.app-savedstate-1.2.1-12 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\0f0b95a18f770b6b69317f9c8596647e\transformed\savedstate-1.2.1\res
-com.example.superid.app-emoji2-1.3.0-13 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\19767f349047867f79b4bbf8387aee38\transformed\emoji2-1.3.0\res
-com.example.superid.app-annotation-experimental-1.4.1-14 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1cbe2cf02d93c618ef169e0528434e3e\transformed\annotation-experimental-1.4.1\res
-com.example.superid.app-ui-graphics-release-15 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\1fa55f14e7b9db3437eaad91de42c516\transformed\ui-graphics-release\res
-com.example.superid.app-fragment-1.5.4-16 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\26d00b4e66d18bb1f5a206e5dc034e35\transformed\fragment-1.5.4\res
-com.example.superid.app-startup-runtime-1.1.1-17 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\2ce613bb57bf01d1114c70c92b7c33fb\transformed\startup-runtime-1.1.1\res
-com.example.superid.app-play-services-base-18.5.0-18 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3687fb3471b53407639c2f3b84fcd5fd\transformed\play-services-base-18.5.0\res
-com.example.superid.app-core-1.15.0-19 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\388793281833245067e866dec6a1f0a6\transformed\core-1.15.0\res
-com.example.superid.app-cardview-1.0.0-20 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3ac91db445ea906b06b44884cec970e2\transformed\cardview-1.0.0\res
-com.example.superid.app-lifecycle-livedata-2.8.7-21 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3d19ee1104351712c8b167f10a9135b3\transformed\lifecycle-livedata-2.8.7\res
-com.example.superid.app-recyclerview-1.4.0-22 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\3da3c23f479f6664e3dea32a8a1dedb4\transformed\recyclerview-1.4.0\res
-com.example.superid.app-appcompat-1.7.0-23 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\508bebcfc7f334aafa5dc41eda97a992\transformed\appcompat-1.7.0\res
-com.example.superid.app-customview-poolingcontainer-1.0.0-24 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\55ecd715a72306774813189e6259fe7f\transformed\customview-poolingcontainer-1.0.0\res
-com.example.superid.app-camera-lifecycle-1.1.0-25 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\5a4d576c04e5618831919243ee1b31ef\transformed\camera-lifecycle-1.1.0\res
-com.example.superid.app-camera-camera2-1.1.0-26 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\649ebb57feff7de77b560582642c5ec7\transformed\camera-camera2-1.1.0\res
-com.example.superid.app-ui-release-27 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\64ef71621eabb95f48852bf47cd40761\transformed\ui-release\res
-com.example.superid.app-lifecycle-runtime-ktx-release-28 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\737352780faade494e4570ac29f9a338\transformed\lifecycle-runtime-ktx-release\res
-com.example.superid.app-runtime-release-29 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\73e40b2ee6c820afdc583baf932a4f33\transformed\runtime-release\res
-com.example.superid.app-runtime-saveable-release-30 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\754aae324957392022181a252f1c1621\transformed\runtime-saveable-release\res
-com.example.superid.app-camera-core-1.1.0-31 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\76430b53dab0d4822390e938411d829d\transformed\camera-core-1.1.0\res
-com.example.superid.app-activity-compose-1.10.1-32 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7913e559e0928b10211344bc3cbab235\transformed\activity-compose-1.10.1\res
-com.example.superid.app-ui-tooling-data-release-33 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7987831411876a290f3b801782d981e1\transformed\ui-tooling-data-release\res
-com.example.superid.app-ads-adservices-java-1.1.0-beta11-34 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\799a61d3dbdc4d649c445215f71e457f\transformed\ads-adservices-java-1.1.0-beta11\res
-com.example.superid.app-lifecycle-viewmodel-savedstate-2.8.7-35 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7a627ee1995b40364917b2b9c157eaca\transformed\lifecycle-viewmodel-savedstate-2.8.7\res
-com.example.superid.app-foundation-release-36 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\7cac8e4424c3f26d17e42b24b9397adf\transformed\foundation-release\res
-com.example.superid.app-material-icons-core-release-37 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8545d8e5050c1e3b37205efe0aa211cd\transformed\material-icons-core-release\res
-com.example.superid.app-lifecycle-viewmodel-release-38 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8826414b5bbcf3c6580a1997a2cb2b69\transformed\lifecycle-viewmodel-release\res
-com.example.superid.app-credentials-1.2.0-rc01-39 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\886fa317cc84f613059f4958acacdf8c\transformed\credentials-1.2.0-rc01\res
-com.example.superid.app-play-services-auth-20.7.0-40 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8a5bffe087d52d58ca77dac11b2c38fb\transformed\play-services-auth-20.7.0\res
-com.example.superid.app-activity-ktx-1.10.1-41 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8d412be3fb865a54eb0c8ef5b83724b9\transformed\activity-ktx-1.10.1\res
-com.example.superid.app-lifecycle-viewmodel-ktx-2.8.7-42 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\8fcac62a2f0adba3cfe69947236dafb3\transformed\lifecycle-viewmodel-ktx-2.8.7\res
-com.example.superid.app-ui-tooling-preview-release-43 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9029054494d68059eb9e6023bbc86101\transformed\ui-tooling-preview-release\res
-com.example.superid.app-lifecycle-livedata-core-ktx-2.8.7-44 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\905107593cc8b9f6cb74b061136cf6c9\transformed\lifecycle-livedata-core-ktx-2.8.7\res
-com.example.superid.app-ui-tooling-release-45 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\936c34478f8e0ece431a6169c5977876\transformed\ui-tooling-release\res
-com.example.superid.app-browser-1.4.0-46 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9478dc5e9d8491b4140c509c1bc91fc1\transformed\browser-1.4.0\res
-com.example.superid.app-animation-core-release-47 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\96411c503933f70c271389b89f3752f5\transformed\animation-core-release\res
-com.example.superid.app-material-ripple-release-48 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\97361a0b144c192b8600bb403eaad701\transformed\material-ripple-release\res
-com.example.superid.app-foundation-layout-release-49 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9be04aea815e4fee3626b5f19d3602a1\transformed\foundation-layout-release\res
-com.example.superid.app-savedstate-ktx-1.2.1-50 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9d1ebf20be6dbdafdabb3a9055315b72\transformed\savedstate-ktx-1.2.1\res
-com.example.superid.app-firebase-common-21.0.0-51 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\9e8c822d49c419b887f325b696e86321\transformed\firebase-common-21.0.0\res
-com.example.superid.app-core-runtime-2.2.0-52 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a4756ea68d5d73fe814d058672fbb45d\transformed\core-runtime-2.2.0\res
-com.example.superid.app-profileinstaller-1.4.0-53 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a74d421bf86e675f90d5088e8a9a96d6\transformed\profileinstaller-1.4.0\res
-com.example.superid.app-play-services-basement-18.5.0-54 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a853106beec8001ff54e40db7065f7a7\transformed\play-services-basement-18.5.0\res
-com.example.superid.app-tracing-1.2.0-55 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\a90e214b4107e5af0494c04307dca351\transformed\tracing-1.2.0\res
-com.example.superid.app-lifecycle-process-2.8.7-56 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b37edc5f7be520e3f6e1ec9047bb5c30\transformed\lifecycle-process-2.8.7\res
-com.example.superid.app-credentials-play-services-auth-1.2.0-rc01-57 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\b8b182ea4dd213bd14e623b310970356\transformed\credentials-play-services-auth-1.2.0-rc01\res
-com.example.superid.app-ui-text-release-58 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\bab3cd4717fb489d3f0fc22339259ef8\transformed\ui-text-release\res
-com.example.superid.app-core-ktx-1.15.0-59 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\be75a068179449761c809a39b96895ab\transformed\core-ktx-1.15.0\res
-com.example.superid.app-appcompat-resources-1.7.0-60 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\c5f1710d91a680c7ce30bf25f30965b4\transformed\appcompat-resources-1.7.0\res
-com.example.superid.app-activity-1.10.1-61 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d41ae2a477c0c789e993435287f1b032\transformed\activity-1.10.1\res
-com.example.superid.app-material3-release-62 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d4f6fc4d46dca763787229d22325b6\transformed\material3-release\res
-com.example.superid.app-lifecycle-runtime-release-63 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d4d861c391a6e69271f4999daae48853\transformed\lifecycle-runtime-release\res
-com.example.superid.app-animation-release-64 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\d7c0e54310ecf1f7c101e20843cf9c5a\transformed\animation-release\res
-com.example.superid.app-core-viewtree-1.0.0-65 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df28bcb79b7a99101e41ca22411e2299\transformed\core-viewtree-1.0.0\res
-com.example.superid.app-lifecycle-livedata-core-2.8.7-66 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\df78603b95781d56a4ff3ef1a1808ec5\transformed\lifecycle-livedata-core-2.8.7\res
-com.example.superid.app-ads-adservices-1.1.0-beta11-67 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e667f22a3cf561199b32d2e08fffd4a7\transformed\ads-adservices-1.1.0-beta11\res
-com.example.superid.app-material-release-68 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\e9992ec0de92fba037b6a2d3e9c6d469\transformed\material-release\res
-com.example.superid.app-ui-test-manifest-1.6.6-69 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ea9855d16fc60fea3b7f809489ce6c0e\transformed\ui-test-manifest-1.6.6\res
-com.example.superid.app-camera-view-1.0.0-alpha32-70 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fb5d0a4bc94d1e49e1793596dc4b1288\transformed\camera-view-1.0.0-alpha32\res
-com.example.superid.app-emoji2-views-helper-1.3.0-71 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\fed247f45bd33c246afc7bba9a5f46bf\transformed\emoji2-views-helper-1.3.0\res
-com.example.superid.app-core-common-2.0.3-72 C:\Users\ROG Pedro\.gradle\caches\8.11.1\transforms\ff2fb8e0d974f78aebebf49b2659895b\transformed\core-common-2.0.3\res
+com.example.superid.app-savedstate-1.2.1-0 /home/skylar/.gradle/caches/8.14/transforms/04a22144584490b3edd3f8e6cf434ad1/transformed/savedstate-1.2.1/res
+com.example.superid.app-emoji2-1.3.0-1 /home/skylar/.gradle/caches/8.14/transforms/0676f6e4dae1f2aee97fb7885c2cde55/transformed/emoji2-1.3.0/res
+com.example.superid.app-appcompat-1.7.0-2 /home/skylar/.gradle/caches/8.14/transforms/067a3bbd2184b665dd2f4daaab9e8e59/transformed/appcompat-1.7.0/res
+com.example.superid.app-core-ktx-1.15.0-3 /home/skylar/.gradle/caches/8.14/transforms/0f08b562f8a48923ca9b87adfa276cbb/transformed/core-ktx-1.15.0/res
+com.example.superid.app-material-icons-core-release-4 /home/skylar/.gradle/caches/8.14/transforms/13fa96f03f6b5bca20d23da425b3c32e/transformed/material-icons-core-release/res
+com.example.superid.app-appcompat-resources-1.7.0-5 /home/skylar/.gradle/caches/8.14/transforms/14759d01d6910734a4401ae9f80fa531/transformed/appcompat-resources-1.7.0/res
+com.example.superid.app-lifecycle-viewmodel-savedstate-2.8.7-6 /home/skylar/.gradle/caches/8.14/transforms/1719b8703240e049ebaf9fe136f97f9f/transformed/lifecycle-viewmodel-savedstate-2.8.7/res
+com.example.superid.app-profileinstaller-1.4.0-7 /home/skylar/.gradle/caches/8.14/transforms/174420ce7989d326662a2263e092e1da/transformed/profileinstaller-1.4.0/res
+com.example.superid.app-lifecycle-livedata-core-ktx-2.8.7-8 /home/skylar/.gradle/caches/8.14/transforms/1fb19fe60d0b27984127f0456b5e4936/transformed/lifecycle-livedata-core-ktx-2.8.7/res
+com.example.superid.app-camera-lifecycle-1.1.0-9 /home/skylar/.gradle/caches/8.14/transforms/260088999adeaa2ed0191acceb148eaa/transformed/camera-lifecycle-1.1.0/res
+com.example.superid.app-lifecycle-process-2.8.7-10 /home/skylar/.gradle/caches/8.14/transforms/262a1f78ecfee8ed870ab78f8fbb239e/transformed/lifecycle-process-2.8.7/res
+com.example.superid.app-startup-runtime-1.1.1-11 /home/skylar/.gradle/caches/8.14/transforms/31bb992f15560a7a4b954f94ead8d9c8/transformed/startup-runtime-1.1.1/res
+com.example.superid.app-lifecycle-runtime-release-12 /home/skylar/.gradle/caches/8.14/transforms/334048db288a767695db3f9b7e775a88/transformed/lifecycle-runtime-release/res
+com.example.superid.app-annotation-experimental-1.4.1-13 /home/skylar/.gradle/caches/8.14/transforms/3643d44b9c7ec8dca9ad4f008f309d9b/transformed/annotation-experimental-1.4.1/res
+com.example.superid.app-core-viewtree-1.0.0-14 /home/skylar/.gradle/caches/8.14/transforms/3df35400246a6b9fefab62dab40f5e29/transformed/core-viewtree-1.0.0/res
+com.example.superid.app-ui-tooling-preview-release-15 /home/skylar/.gradle/caches/8.14/transforms/4cd3d353751840c458215e0ec39e72c8/transformed/ui-tooling-preview-release/res
+com.example.superid.app-ui-release-16 /home/skylar/.gradle/caches/8.14/transforms/4f8c9b8ce53bc8d4e823e8fe4908f5b4/transformed/ui-release/res
+com.example.superid.app-core-runtime-2.2.0-17 /home/skylar/.gradle/caches/8.14/transforms/4fbe1c4fb58cf7455338c7f5f3026af6/transformed/core-runtime-2.2.0/res
+com.example.superid.app-play-services-basement-18.5.0-18 /home/skylar/.gradle/caches/8.14/transforms/55f6e111ab6b6253d6a2bba6b03cc663/transformed/play-services-basement-18.5.0/res
+com.example.superid.app-animation-core-release-19 /home/skylar/.gradle/caches/8.14/transforms/58bf1d224388a5256666f18e46f15256/transformed/animation-core-release/res
+com.example.superid.app-recyclerview-1.4.0-20 /home/skylar/.gradle/caches/8.14/transforms/5d1d173ef9c6273f603b590af5c742d4/transformed/recyclerview-1.4.0/res
+com.example.superid.app-lifecycle-viewmodel-ktx-2.8.7-21 /home/skylar/.gradle/caches/8.14/transforms/6848858d89acc3acb9a85689dd2ff6f2/transformed/lifecycle-viewmodel-ktx-2.8.7/res
+com.example.superid.app-foundation-release-22 /home/skylar/.gradle/caches/8.14/transforms/68753dd2b4d76706d700be533152bb96/transformed/foundation-release/res
+com.example.superid.app-material-ripple-release-23 /home/skylar/.gradle/caches/8.14/transforms/6b34bd8e08a734d729fabfeeb5547a97/transformed/material-ripple-release/res
+com.example.superid.app-lifecycle-runtime-ktx-release-24 /home/skylar/.gradle/caches/8.14/transforms/7781e4a3ab64d9a359974a0f8fdec029/transformed/lifecycle-runtime-ktx-release/res
+com.example.superid.app-animation-release-25 /home/skylar/.gradle/caches/8.14/transforms/78e0a322e146537fdf432e37f4bc4924/transformed/animation-release/res
+com.example.superid.app-tracing-1.2.0-26 /home/skylar/.gradle/caches/8.14/transforms/899f8ad03c5922c18049e7718fcf5fed/transformed/tracing-1.2.0/res
+com.example.superid.app-lifecycle-livedata-2.8.7-27 /home/skylar/.gradle/caches/8.14/transforms/8aa1f11de148de15c7941ced00d4edbb/transformed/lifecycle-livedata-2.8.7/res
+com.example.superid.app-play-services-base-18.5.0-28 /home/skylar/.gradle/caches/8.14/transforms/8c05db1bf3ec567ab7f7ecd6d20445cd/transformed/play-services-base-18.5.0/res
+com.example.superid.app-material3-release-29 /home/skylar/.gradle/caches/8.14/transforms/8c3b671544688aaec28d131782782261/transformed/material3-release/res
+com.example.superid.app-ui-util-release-30 /home/skylar/.gradle/caches/8.14/transforms/93b3440c910b52e080db838dfd4a14c1/transformed/ui-util-release/res
+com.example.superid.app-ads-adservices-1.1.0-beta11-31 /home/skylar/.gradle/caches/8.14/transforms/9b86217c2d18e0f14a274cc1e34053ab/transformed/ads-adservices-1.1.0-beta11/res
+com.example.superid.app-lifecycle-viewmodel-release-32 /home/skylar/.gradle/caches/8.14/transforms/9beb8f1f93dadf1d7f7f9c7223295c95/transformed/lifecycle-viewmodel-release/res
+com.example.superid.app-camera-view-1.0.0-alpha32-33 /home/skylar/.gradle/caches/8.14/transforms/a0fe5709832420e4375d71f4bf623933/transformed/camera-view-1.0.0-alpha32/res
+com.example.superid.app-ui-unit-release-34 /home/skylar/.gradle/caches/8.14/transforms/a2bd29afbd7a042de3755c33997411b6/transformed/ui-unit-release/res
+com.example.superid.app-ui-tooling-data-release-35 /home/skylar/.gradle/caches/8.14/transforms/a58a27b3e117f35faa3829680bc97efa/transformed/ui-tooling-data-release/res
+com.example.superid.app-core-1.15.0-36 /home/skylar/.gradle/caches/8.14/transforms/ab304b8cadfb4a70484b519222a64f41/transformed/core-1.15.0/res
+com.example.superid.app-credentials-play-services-auth-1.2.0-rc01-37 /home/skylar/.gradle/caches/8.14/transforms/adb67e369d1a7eb327841443090d51c4/transformed/credentials-play-services-auth-1.2.0-rc01/res
+com.example.superid.app-activity-1.10.1-38 /home/skylar/.gradle/caches/8.14/transforms/aeea8eb120a0d7ef5b89efc7323ea2a3/transformed/activity-1.10.1/res
+com.example.superid.app-ui-graphics-release-39 /home/skylar/.gradle/caches/8.14/transforms/b75c4aecad7d26602c3196be52441824/transformed/ui-graphics-release/res
+com.example.superid.app-camera-camera2-1.1.0-40 /home/skylar/.gradle/caches/8.14/transforms/b7be85dc0f1e2ab9b404cb53fa2a8994/transformed/camera-camera2-1.1.0/res
+com.example.superid.app-runtime-saveable-release-41 /home/skylar/.gradle/caches/8.14/transforms/ba8b4241ddf79012fa50f310d33c44d5/transformed/runtime-saveable-release/res
+com.example.superid.app-credentials-1.2.0-rc01-42 /home/skylar/.gradle/caches/8.14/transforms/bb7a9a60af7c7915ee1f8b2a57b3e496/transformed/credentials-1.2.0-rc01/res
+com.example.superid.app-lifecycle-livedata-core-2.8.7-43 /home/skylar/.gradle/caches/8.14/transforms/bcf5bc50fdf0a740155e65152b72defe/transformed/lifecycle-livedata-core-2.8.7/res
+com.example.superid.app-activity-ktx-1.10.1-44 /home/skylar/.gradle/caches/8.14/transforms/bd6b29c6cfa1f0baabd474b5a70d4357/transformed/activity-ktx-1.10.1/res
+com.example.superid.app-camera-core-1.1.0-45 /home/skylar/.gradle/caches/8.14/transforms/bf91ab4418dea8b902d8119be644dcfb/transformed/camera-core-1.1.0/res
+com.example.superid.app-browser-1.4.0-46 /home/skylar/.gradle/caches/8.14/transforms/c188139ac7010660e8bec2fc11353fd1/transformed/browser-1.4.0/res
+com.example.superid.app-runtime-release-47 /home/skylar/.gradle/caches/8.14/transforms/c4bda2a0200a06f3e1957e308f484b10/transformed/runtime-release/res
+com.example.superid.app-firebase-common-21.0.0-48 /home/skylar/.gradle/caches/8.14/transforms/c7b19d842c6f2a147db809a08ab5b56c/transformed/firebase-common-21.0.0/res
+com.example.superid.app-savedstate-ktx-1.2.1-49 /home/skylar/.gradle/caches/8.14/transforms/d016574dd7ad3c074f26d78fc2ebc768/transformed/savedstate-ktx-1.2.1/res
+com.example.superid.app-activity-compose-1.10.1-50 /home/skylar/.gradle/caches/8.14/transforms/d4eeec10ddd270003227eaa49145136a/transformed/activity-compose-1.10.1/res
+com.example.superid.app-ui-test-manifest-1.6.6-51 /home/skylar/.gradle/caches/8.14/transforms/d53ba7a7eb7a8aba511bccbc40af44fd/transformed/ui-test-manifest-1.6.6/res
+com.example.superid.app-ui-geometry-release-52 /home/skylar/.gradle/caches/8.14/transforms/d7798190b974e9c612c09c14841a7e74/transformed/ui-geometry-release/res
+com.example.superid.app-fragment-1.5.4-53 /home/skylar/.gradle/caches/8.14/transforms/db53811eb3e6ff3821e2cd645dd14203/transformed/fragment-1.5.4/res
+com.example.superid.app-ads-adservices-java-1.1.0-beta11-54 /home/skylar/.gradle/caches/8.14/transforms/dc0a960b2718c88d1cf90c0ab7e64583/transformed/ads-adservices-java-1.1.0-beta11/res
+com.example.superid.app-runtime-saved-instance-state-1.0.0-alpha11-55 /home/skylar/.gradle/caches/8.14/transforms/eee32dfb8366d1c3516e63b8f0c75503/transformed/runtime-saved-instance-state-1.0.0-alpha11/res
+com.example.superid.app-play-services-auth-20.7.0-56 /home/skylar/.gradle/caches/8.14/transforms/ef7e94e3ed8b545da7f4253853d6dd03/transformed/play-services-auth-20.7.0/res
+com.example.superid.app-core-common-2.0.3-57 /home/skylar/.gradle/caches/8.14/transforms/f101246bd6618fa09b906e73c3b66061/transformed/core-common-2.0.3/res
+com.example.superid.app-cardview-1.0.0-58 /home/skylar/.gradle/caches/8.14/transforms/f4399d08ee213294236bfc7e90efcc40/transformed/cardview-1.0.0/res
+com.example.superid.app-material-release-59 /home/skylar/.gradle/caches/8.14/transforms/f5bba0d9d76c72e6f9b26af1d8a9acd9/transformed/material-release/res
+com.example.superid.app-emoji2-views-helper-1.3.0-60 /home/skylar/.gradle/caches/8.14/transforms/f5cbcac6e5fb0776df271fb42eecb16b/transformed/emoji2-views-helper-1.3.0/res
+com.example.superid.app-ui-text-release-61 /home/skylar/.gradle/caches/8.14/transforms/f60416c896972fb5c39322da4728ec7f/transformed/ui-text-release/res
+com.example.superid.app-ui-tooling-release-62 /home/skylar/.gradle/caches/8.14/transforms/fbcca39ea725cfd977f779762cf95c48/transformed/ui-tooling-release/res
+com.example.superid.app-foundation-layout-release-63 /home/skylar/.gradle/caches/8.14/transforms/feced1ac04092b9d356a51b793b44ad7/transformed/foundation-layout-release/res
+com.example.superid.app-customview-poolingcontainer-1.0.0-64 /home/skylar/.gradle/caches/8.14/transforms/ffdb73f6fc78fec01d4ffaceb8589362/transformed/customview-poolingcontainer-1.0.0/res
+com.example.superid.app-pngs-65 /home/skylar/PI3_Turma1_Grupo4/app/build/generated/res/pngs/debug
+com.example.superid.app-res-66 /home/skylar/PI3_Turma1_Grupo4/app/build/generated/res/processDebugGoogleServices
+com.example.superid.app-resValues-67 /home/skylar/PI3_Turma1_Grupo4/app/build/generated/res/resValues/debug
+com.example.superid.app-packageDebugResources-68 /home/skylar/PI3_Turma1_Grupo4/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.superid.app-packageDebugResources-69 /home/skylar/PI3_Turma1_Grupo4/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.superid.app-debug-70 /home/skylar/PI3_Turma1_Grupo4/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.superid.app-debug-71 /home/skylar/PI3_Turma1_Grupo4/app/src/debug/res
+com.example.superid.app-main-72 /home/skylar/PI3_Turma1_Grupo4/app/src/main/res

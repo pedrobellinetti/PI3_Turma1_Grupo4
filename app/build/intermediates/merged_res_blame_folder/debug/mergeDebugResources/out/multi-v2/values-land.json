@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-3:/values-land/values-land.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-68:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ROG Pedro\\.gradle\\caches\\8.11.1\\transforms\\508bebcfc7f334aafa5dc41eda97a992\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",
+                    "source": "/home/skylar/.gradle/caches/8.14/transforms/067a3bbd2184b665dd2f4daaab9e8e59/transformed/appcompat-1.7.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
