@@ -16,10 +16,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.SearchBarDefaults.colors
 import androidx.compose.ui.draw.clip
 import com.example.superid.R
+import com.google.firebase.auth.FirebaseAuthException
 
-@OptIn(ExperimentalMaterial3Api::class)
+
+@OptIn(ExperimentalMaterial3Api::class) //responsal por habilitar o uso de APIs experimentais
 @Composable
 fun LoginForm(
     onNavigateToRegister: () -> Unit,
@@ -125,11 +128,25 @@ fun LoginForm(
                                 Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
                                 onLoginSuccess()
                             } else {
-                                Toast.makeText(context, "Erro: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                                val errorMessage = when (task.exception) {
+                                    is FirebaseAuthException -> {
+                                        when ((task.exception as FirebaseAuthException).errorCode) {
+                                            "ERROR_INVALID_EMAIL" -> "Formato de e-mail inválido."
+                                            "ERROR_WRONG_PASSWORD" -> "Senha incorreta."
+                                            "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
+                                            "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
+                                            "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
+                                            "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso."
+                                            else -> "Ocorreu um erro ao realizar o login. Garanta que os dados estão corretos"
+                                        }
+                                    }
+                                    else -> "Ocorreu um erro inesperado. Garanta que os dados estão corretos."
+                                }
+                                Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
                         }
                 } else {
-                    Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
                 }
             },
             modifier = Modifier
