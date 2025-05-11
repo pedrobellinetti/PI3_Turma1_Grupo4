@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-46:12
 MERGED from [androidx.databinding:viewbinding:8.10.0] /home/skylar/.gradle/caches/8.14/transforms/cec499a59c71240d7fbd779d82dcbab5/transformed/viewbinding-8.10.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-view:1.0.0-alpha32] /home/skylar/.gradle/caches/8.14/transforms/a0fe5709832420e4375d71f4bf623933/transformed/camera-view-1.0.0-alpha32/AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/skylar/.gradle/caches/8.14/transforms/14759d01d6910734a4401ae9f80fa531/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
@@ -131,28 +131,28 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.1] /home/skylar
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/skylar/.gradle/caches/8.14/transforms/a07669fcf7eb33af0273d1e5a9028e58/transformed/image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.14/transforms/f101246bd6618fa09b906e73c3b66061/transformed/core-common-2.0.3/AndroidManifest.xml:2:1-21:12
 	package
-		INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+		INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+		INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+		INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:11-69
 uses-feature#android.hardware.camera
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:5:5-7:36
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:5:5-7:36
 	android:required
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:7:9-33
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:7:9-33
 	android:name
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:6:9-47
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:6:9-47
 uses-permission#android.permission.CAMERA
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:5-65
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:5-65
 	android:name
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:22-62
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:22-62
 application
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-44:19
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-44:19
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-44:19
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-44:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] /home/skylar/.gradle/caches/8.14/transforms/fbcca39ea725cfd977f779762cf95c48/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.6] /home/skylar/.gradle/caches/8.14/transforms/fbcca39ea725cfd977f779762cf95c48/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.6] /home/skylar/.gradle/caches/8.14/transforms/d53ba7a7eb7a8aba511bccbc40af44fd/transformed/ui-test-manifest-1.6.6/AndroidManifest.xml:22:5-26:19
@@ -246,55 +246,55 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/skylar/.gradle/cac
 MERGED from [com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.14/transforms/f101246bd6618fa09b906e73c3b66061/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.14/transforms/f101246bd6618fa09b906e73c3b66061/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
 	android:extractNativeLibs
-		INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+		INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.14/transforms/ab304b8cadfb4a70484b519222a64f41/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:18:9-35
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:18:9-35
 	android:label
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:16:9-41
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:16:9-41
 	android:fullBackupContent
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:14:9-54
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:14:9-54
 	android:roundIcon
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:17:9-48
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:17:9-48
 	tools:targetApi
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:20:9-29
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:20:9-29
 	android:icon
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:15:9-43
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:19:9-45
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:19:9-45
 	android:dataExtractionRules
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:13:9-65
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:13:9-65
 activity#com.example.superid.MainActivity
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:28:9-39:20
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:28:9-39:20
 	android:label
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:31:13-45
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:31:13-45
 	android:exported
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:30:13-36
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:30:13-36
 	android:theme
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:32:13-49
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:32:13-49
 	android:name
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:29:13-41
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:29:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:34:13-38:29
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:34:13-38:29
 action#android.intent.action.MAIN
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:35:17-69
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:35:25-66
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:37:17-77
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:37:27-74
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:37:27-74
 activity#com.example.superid.RecuperacaoSenhaActivity
-ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:41:9-62
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:41:9-62
 	android:name
-		ADDED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:41:19-59
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:41:19-59
 uses-sdk
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
-INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.10.0] /home/skylar/.gradle/caches/8.14/transforms/cec499a59c71240d7fbd779d82dcbab5/transformed/viewbinding-8.10.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.10.0] /home/skylar/.gradle/caches/8.14/transforms/cec499a59c71240d7fbd779d82dcbab5/transformed/viewbinding-8.10.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.camera:camera-view:1.0.0-alpha32] /home/skylar/.gradle/caches/8.14/transforms/a0fe5709832420e4375d71f4bf623933/transformed/camera-view-1.0.0-alpha32/AndroidManifest.xml:20:5-23:145
@@ -550,9 +550,9 @@ MERGED from [com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/cac
 	tools:overrideLibrary
 		ADDED from [androidx.camera:camera-view:1.0.0-alpha32] /home/skylar/.gradle/caches/8.14/transforms/a0fe5709832420e4375d71f4bf623933/transformed/camera-view-1.0.0-alpha32/AndroidManifest.xml:23:9-142
 	android:targetSdkVersion
-		INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+		INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/skylar/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
+		INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
 activity#androidx.compose.ui.tooling.PreviewActivity
 ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] /home/skylar/.gradle/caches/8.14/transforms/fbcca39ea725cfd977f779762cf95c48/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
 	android:exported

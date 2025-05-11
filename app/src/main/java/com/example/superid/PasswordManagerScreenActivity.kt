@@ -3,36 +3,66 @@ package com.example.superid
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material3.ExperimentalMaterial3Api
-import com.example.superid.databinding.LayoutTelaSenhasBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
+import com.example.superid.ui.screens.PasswordManagerScreen
 import com.google.firebase.auth.FirebaseAuth
 
-class MainScreenActivity : AppCompatActivity() {
-    lateinit var binding: LayoutTelaSenhasBinding
-
+class MainScreenActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
 
-        val auth = FirebaseAuth.getInstance()
-
-        binding.fabAdd.setOnClickListener {
-            val uid = auth.currentUser?.uid.toString()
-            if (uid == null) {
-                // TODO: Cuidar do caso se o usuário não estiver autenticado
-                Toast.makeText(
-                    this,
-                    "Usuário não autenticado",
-                    Toast.LENGTH_SHORT
-                ).show()
+        setContent {
+            if (uid != null) {
+                PasswordManagerScreen(uid = uid)
             } else {
-                val intent = Intent(this, this::class.java)
-                intent.putExtra("uid", uid)
-                startActivity(intent)
+                Toast.makeText(this, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
                 finish()
             }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun MainScreen() {
+    val context = LocalContext.current
+    val auth = FirebaseAuth.getInstance()
+
+    Scaffold(
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    val uid = auth.currentUser?.uid
+                    if (uid == null) {
+                        Toast.makeText(context, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
+                    } else {
+                        val intent = Intent(context, MainScreenActivity::class.java)
+                        intent.putExtra("uid", uid)
+                        context.startActivity(intent)
+                    }
+                }
+            ) {
+                Text("+")
+            }
+        }
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+                .padding(16.dp)
+        ) {
+            Text("Bem-vindo à Tela de Senhas", style = MaterialTheme.typography.headlineSmall)
+
         }
     }
 }

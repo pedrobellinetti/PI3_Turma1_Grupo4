@@ -14,8 +14,12 @@ drawable ic_add
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_settings
+drawable logo
 drawable settings_background
 drawable settings_foreground
+font inter_18pt_bold
+font inter_18pt_medium
+font inter_18pt_regular
 id btnCadastrar
 id btnConfigSenha
 id btnEntrar
