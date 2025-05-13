@@ -11,22 +11,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.example.superid.ui.screens.PasswordManagerScreen
 import com.google.firebase.auth.FirebaseAuth
 
-class MainScreenActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
+class PasswordManagerScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val uid = FirebaseAuth.getInstance().currentUser?.uid
-
         setContent {
-            if (uid != null) {
-                PasswordManagerScreen(uid = uid)
-            } else {
-                Toast.makeText(this, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
-                finish()
-            }
+            MainScreen()
         }
     }
 }
@@ -45,7 +36,7 @@ fun MainScreen() {
                     if (uid == null) {
                         Toast.makeText(context, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
                     } else {
-                        val intent = Intent(context, MainScreenActivity::class.java)
+                        val intent = Intent(context, PasswordManagerScreenActivity::class.java)
                         intent.putExtra("uid", uid)
                         context.startActivity(intent)
                     }

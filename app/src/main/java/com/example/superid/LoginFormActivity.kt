@@ -1,20 +1,26 @@
 package com.example.superid
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.ui.platform.LocalContext
 import com.example.superid.ui.screens.LoginForm
 
 class LoginFormActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val context = LocalContext.current
             LoginForm(
                 onNavigateToRegister = {
-                    // startActivity(Intent(this, RegisterActivity::class.java))
+                    startActivity(Intent(context, UserRegistrationFormActivity::class.java))
                 },
                 onLoginSuccess = {
-                    finish() // Fecha essa tela e volta à anterior
+                    finish() // Fecha essa tela e volta à anterior (se houver)
+                },
+                onNavigateToForgotPassword = {
+                    startActivity(Intent(context, RecuperacaoSenhaActivity::class.java))
                 }
             )
         }

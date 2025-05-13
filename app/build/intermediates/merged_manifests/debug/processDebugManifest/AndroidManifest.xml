@@ -59,7 +59,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.superid.LoginFormActivity" />
         <activity android:name="com.example.superid.RecuperacaoSenhaActivity" />
+        <activity android:name="com.example.superid.PasswordManagerScreenActivity" />
+        <activity android:name="com.example.superid.UserRegistrationFormActivity" />
         <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />

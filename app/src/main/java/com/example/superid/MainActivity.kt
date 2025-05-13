@@ -3,6 +3,7 @@ package com.example.superid
 //import com.example.superid.Login
 import QrScanScreen
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -66,22 +67,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SuperIDTheme {
-        Greeting("Android")
-    }
-}
-
 // Cadastro do usuário
 @Composable
 fun UserRegistrationForm(onSuccess: () -> Unit,
@@ -142,11 +127,15 @@ fun UserRegistrationForm(onSuccess: () -> Unit,
 @Composable
 fun AuthApp() {
     var currentScreen by remember { mutableStateOf(AuthScreen.LOGIN) }
+    val context = LocalContext.current
 
     when (currentScreen) {
         AuthScreen.LOGIN -> LoginForm(
             onNavigateToRegister = { currentScreen = AuthScreen.REGISTER },
-            onLoginSuccess = { currentScreen = AuthScreen.MAIN }
+            onLoginSuccess = { currentScreen = AuthScreen.MAIN },
+            onNavigateToForgotPassword = {
+                context.startActivity(Intent(context, RecuperacaoSenhaActivity::class.java))
+            }
         )
 
         AuthScreen.REGISTER -> UserRegistrationForm(
@@ -398,4 +387,3 @@ fun AuthApp() {
         }
     }
 }
-

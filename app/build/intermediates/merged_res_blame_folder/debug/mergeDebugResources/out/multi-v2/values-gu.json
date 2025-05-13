@@ -4,24 +4,7 @@
             "outputFile": "com.example.superid.app-mergeDebugResources-68:/values-gu/values-gu.xml",
             "map": [
                 {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/067a3bbd2184b665dd2f4daaab9e8e59/transformed/appcompat-1.7.0/res/values-gu/values-gu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,212,316,423,510,610,730,808,885,976,1069,1164,1258,1358,1451,1546,1640,1731,1822,1902,2008,2109,2206,2315,2415,2525,2685,2788",
-                        "endColumns": "106,103,106,86,99,119,77,76,90,92,94,93,99,92,94,93,90,90,79,105,100,96,108,99,109,159,102,80",
-                        "endOffsets": "207,311,418,505,605,725,803,880,971,1064,1159,1253,1353,1446,1541,1635,1726,1817,1897,2003,2104,2201,2310,2410,2520,2680,2783,2864"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,129",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,212,316,423,510,610,730,808,885,976,1069,1164,1258,1358,1451,1546,1640,1731,1822,1902,2008,2109,2206,2315,2415,2525,2685,13564",
-                        "endColumns": "106,103,106,86,99,119,77,76,90,92,94,93,99,92,94,93,90,90,79,105,100,96,108,99,109,159,102,80",
-                        "endOffsets": "207,311,418,505,605,725,803,880,971,1064,1159,1253,1353,1446,1541,1635,1726,1817,1897,2003,2104,2201,2310,2410,2520,2680,2783,13640"
-                    }
-                },
-                {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/ab304b8cadfb4a70484b519222a64f41/transformed/core-1.15.0/res/values-gu/values-gu.xml",
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/4d51e8d5e11bb889d183ec6795529286/transformed/core-1.15.0/res/values-gu/values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,41 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/c188139ac7010660e8bec2fc11353fd1/transformed/browser-1.4.0/res/values-gu/values-gu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,156,257,366",
-                        "endColumns": "100,100,108,100",
-                        "endOffsets": "151,252,361,462"
-                    },
-                    "to": {
-                        "startLines": "58,62,63,64",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "6079,6459,6560,6669",
-                        "endColumns": "100,100,108,100",
-                        "endOffsets": "6175,6555,6664,6765"
-                    }
-                },
-                {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/55f6e111ab6b6253d6a2bba6b03cc663/transformed/play-services-basement-18.5.0/res/values-gu/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "142",
-                        "endOffsets": "337"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "4885",
-                        "endColumns": "146",
-                        "endOffsets": "5027"
-                    }
-                },
-                {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/8c05db1bf3ec567ab7f7ecd6d20445cd/transformed/play-services-base-18.5.0/res/values-gu/values.xml",
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/3b9701420d124419e88753eddc4bb2b7/transformed/play-services-base-18.5.0/res/values-gu/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -89,41 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/68753dd2b4d76706d700be533152bb96/transformed/foundation-release/res/values-gu/values-gu.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,140",
-                        "endColumns": "84,84",
-                        "endOffsets": "135,220"
-                    },
-                    "to": {
-                        "startLines": "135,136",
-                        "startColumns": "4,4",
-                        "startOffsets": "14079,14164",
-                        "endColumns": "84,84",
-                        "endOffsets": "14159,14244"
-                    }
-                },
-                {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/bb7a9a60af7c7915ee1f8b2a57b3e496/transformed/credentials-1.2.0-rc01/res/values-gu/values-gu.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,166",
-                        "endColumns": "110,111",
-                        "endOffsets": "161,273"
-                    },
-                    "to": {
-                        "startLines": "29,30",
-                        "startColumns": "4,4",
-                        "startOffsets": "2788,2899",
-                        "endColumns": "110,111",
-                        "endOffsets": "2894,3006"
-                    }
-                },
-                {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/8c3b671544688aaec28d131782782261/transformed/material3-release/res/values-gu/values-gu.xml",
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/01619abaf36aa4ec49f934571b2778af/transformed/material3-release/res/values-gu/values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -140,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/skylar/.gradle/caches/8.14/transforms/4f8c9b8ce53bc8d4e823e8fe4908f5b4/transformed/ui-release/res/values-gu/values-gu.xml",
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/b9130193609c9b0f403be16d3dfd8a4e/transformed/ui-release/res/values-gu/values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -154,6 +69,91 @@
                         "startOffsets": "3729,3821,6180,6273,6372,6770,6856,13088,13175,13261,13329,13398,13481,13645,13821,13897,13963",
                         "endColumns": "91,81,92,98,86,85,100,86,85,67,68,82,82,74,75,65,115",
                         "endOffsets": "3816,3898,6268,6367,6454,6851,6952,13170,13256,13324,13393,13476,13559,13715,13892,13958,14074"
+                    }
+                },
+                {
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/fbe6ba0e42bf17dff0822a2ce4e6b216/transformed/play-services-basement-18.5.0/res/values-gu/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "142",
+                        "endOffsets": "337"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "4885",
+                        "endColumns": "146",
+                        "endOffsets": "5027"
+                    }
+                },
+                {
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/892f4fb1138dda5313dbfa056358ea5f/transformed/browser-1.4.0/res/values-gu/values-gu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,156,257,366",
+                        "endColumns": "100,100,108,100",
+                        "endOffsets": "151,252,361,462"
+                    },
+                    "to": {
+                        "startLines": "58,62,63,64",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "6079,6459,6560,6669",
+                        "endColumns": "100,100,108,100",
+                        "endOffsets": "6175,6555,6664,6765"
+                    }
+                },
+                {
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/71cb79aea9469ac9719377d8de2ad699/transformed/appcompat-1.7.0/res/values-gu/values-gu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,316,423,510,610,730,808,885,976,1069,1164,1258,1358,1451,1546,1640,1731,1822,1902,2008,2109,2206,2315,2415,2525,2685,2788",
+                        "endColumns": "106,103,106,86,99,119,77,76,90,92,94,93,99,92,94,93,90,90,79,105,100,96,108,99,109,159,102,80",
+                        "endOffsets": "207,311,418,505,605,725,803,880,971,1064,1159,1253,1353,1446,1541,1635,1726,1817,1897,2003,2104,2201,2310,2410,2520,2680,2783,2864"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,129",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,316,423,510,610,730,808,885,976,1069,1164,1258,1358,1451,1546,1640,1731,1822,1902,2008,2109,2206,2315,2415,2525,2685,13564",
+                        "endColumns": "106,103,106,86,99,119,77,76,90,92,94,93,99,92,94,93,90,90,79,105,100,96,108,99,109,159,102,80",
+                        "endOffsets": "207,311,418,505,605,725,803,880,971,1064,1159,1253,1353,1446,1541,1635,1726,1817,1897,2003,2104,2201,2310,2410,2520,2680,2783,13640"
+                    }
+                },
+                {
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/9041abe6cb5a734b19a7dc872c58d4a1/transformed/credentials-1.2.0-rc01/res/values-gu/values-gu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,166",
+                        "endColumns": "110,111",
+                        "endOffsets": "161,273"
+                    },
+                    "to": {
+                        "startLines": "29,30",
+                        "startColumns": "4,4",
+                        "startOffsets": "2788,2899",
+                        "endColumns": "110,111",
+                        "endOffsets": "2894,3006"
+                    }
+                },
+                {
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/b45511aa297816ad433105235dcbb4cc/transformed/foundation-release/res/values-gu/values-gu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,140",
+                        "endColumns": "84,84",
+                        "endOffsets": "135,220"
+                    },
+                    "to": {
+                        "startLines": "135,136",
+                        "startColumns": "4,4",
+                        "startOffsets": "14079,14164",
+                        "endColumns": "84,84",
+                        "endOffsets": "14159,14244"
                     }
                 }
             ]
