@@ -46,9 +46,9 @@ fun LoginForm(
                 .fillMaxWidth()
                 .background(
                     color = MaterialTheme.colorScheme.primaryContainer, // Cor de fundo do container
-                    shape = RoundedCornerShape(bottomStart = 50.dp) // Cantos arredondados inferiores
+//                    shape = RoundedCornerShape(bottomStart = 50.dp) // Cantos arredondados inferiores
                 )
-                .padding(vertical = 60.dp), // Espaçamento interno vertical
+                .padding(vertical = 50.dp), // Espaçamento interno vertical
             contentAlignment = Alignment.Center
         ) {
             Column(
