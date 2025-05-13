@@ -1,7 +1,5 @@
 package com.example.superid
 
-//import com.example.superid.Login
-import QrScanScreen
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -39,6 +37,8 @@ import com.example.superid.ui.screens.LoginForm
 import com.example.superid.ui.screens.MainScreen
 import com.example.superid.ui.screens.PasswordManagerScreen
 import com.example.superid.ui.screens.PasswordRecoveryScreen
+import com.example.superid.ui.screens.QrScanScreen
+import com.example.superid.ui.screens.UserRegistrationForm
 import com.example.superid.ui.screens.gerarAccessToken
 import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.auth.FirebaseAuth
@@ -48,8 +48,6 @@ import java.util.UUID
 
 //import androidx.compose.material3.ExposedDropdownMenuBox
 //import androidx.compose.material3.ExposedDropdownMenuDefaults
-
-
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -63,75 +61,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SuperIDTheme {
-        Greeting("Android")
-    }
-}
-
-// Cadastro do usuário
-@Composable
-fun UserRegistrationForm(onSuccess: () -> Unit,
-                         onNavigateToLogin: () -> Unit
-) {
-    var nome by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-    var status by remember { mutableStateOf("") }
-
-    val context = LocalContext.current
-
-    Column {
-        var modifier = Modifier.padding(16.dp)
-        OutlinedTextField(value = nome, onValueChange = { nome = it }, label = { Text("Nome") })
-        OutlinedTextField(value = email, onValueChange = { email = it }, label = { Text("E-mail") })
-        OutlinedTextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Senha Mestre") })
-
-        Button({
-            val auth = FirebaseAuth.getInstance()
-            val firestore = Firebase.firestore
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val user = auth.currentUser
-                        user?.sendEmailVerification()
-
-                        val uid = user?.uid ?: ""
-                        val fakeImei = UUID.randomUUID().toString()
-                        val userDoc = hashMapOf("nome" to nome, "imei" to fakeImei)
-                        firestore.collection("users").document(uid).set(userDoc)
-                            .addOnSuccessListener {
-                                status = "Usuário cadastrado com sucesso!"
-                                onSuccess()
-                            }
-                            .addOnFailureListener { e ->
-                                status = "Erro ao cadastrar usuário: ${e.message}"
-                            }
-                    } else {
-                        status = "Erro ao cadastrar usuário: ${task.exception?.message}"
-                    }
-                }
-        }) {
-            Text("Cadastrar")
-        }
-        Text(status)
     }
 }
 
@@ -150,8 +79,7 @@ fun AuthApp() {
         )
 
         AuthScreen.REGISTER -> UserRegistrationForm(
-            onNavigateToLogin = { currentScreen = AuthScreen.LOGIN },
-            onSuccess = { currentScreen = AuthScreen.LOGIN }
+            onNavigateToLogin = { currentScreen = AuthScreen.LOGIN }
         )
 
         AuthScreen.MAIN -> {
@@ -166,51 +94,6 @@ fun AuthApp() {
         AuthScreen.RECOVERY -> PasswordRecoveryScreen(
             recuperarSenha = { currentScreen = AuthScreen.LOGIN }
         )
-    }
-
-// Tela de Login
-
-    @Composable
-    fun LoginForm(
-        onNavigateToRegister: () -> Unit,
-        onLoginSuccess: () -> Unit
-    ) {
-        var email by remember { mutableStateOf("") }
-        var senha by remember { mutableStateOf("") }
-        var status by remember { mutableStateOf("") }
-
-        val auth = FirebaseAuth.getInstance()
-
-        Column(Modifier.padding(16.dp)) {
-            OutlinedTextField(
-                value = email, onValueChange = { email = it },
-                label = { Text("Email") })
-            OutlinedTextField(
-                value = senha, onValueChange = { senha = it },
-                label = { Text("Senha") })
-
-            Button(onClick = {
-                auth.signInWithEmailAndPassword(email, senha)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            if (auth.currentUser?.isEmailVerified == true) {
-                                status = "Login realizado com sucesso!"
-                                onLoginSuccess()
-                            } else {
-                                status = "Verifique seu e-mail antes de fazer login!"
-                            }
-                        } else {
-                            status = "Erro ao fazer login: ${task.exception?.message}"
-                        }
-                    }
-            }) {
-                Text("Entrar")
-            }
-            TextButton(onClick = onNavigateToRegister) {
-                Text("Não tem conta? Registre-se!")
-            }
-            Text(status)
-        }
     }
 
     // Tela principal
@@ -315,6 +198,10 @@ fun AuthApp() {
                 }
             }
 
+            OutlinedTextField(
+                value = categoria, onValueChange = { categoria = it },
+                label = { Text("Categoria") })
+
             Button(onClick = {
                 val novaSenha = Senha(
                     categoria = categoria,
@@ -394,4 +281,3 @@ fun AuthApp() {
         }
     }
 }
-
