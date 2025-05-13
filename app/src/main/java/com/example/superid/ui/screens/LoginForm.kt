@@ -46,21 +46,22 @@ fun LoginForm(
                 .fillMaxWidth()
                 .background(
                     color = MaterialTheme.colorScheme.primaryContainer, // Cor de fundo do container
-//                    shape = RoundedCornerShape(bottomStart = 50.dp) // Cantos arredondados inferiores
                 )
-                .padding(vertical = 50.dp), // Espaçamento interno vertical
+                .padding(vertical = 30.dp), // Espaçamento interno vertical
             contentAlignment = Alignment.Center
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(30.dp)
             ) {
                 Text(
                     text = "Super ID",
                     style = MaterialTheme.typography.headlineMedium,
                     color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
-                Spacer(modifier=Modifier.padding(12.dp))
+                Spacer(modifier=Modifier.padding(7.dp))
                 Image(
                     painter = painterResource(id = R.drawable.logo),
                     contentDescription = "Logo do Super ID",
@@ -73,7 +74,7 @@ fun LoginForm(
 
         // Título "Login sem senha"
         Text(
-            text = "Login sem senha",
+            text = "Entre na sua conta",
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.padding(top = 30.dp)
@@ -85,7 +86,7 @@ fun LoginForm(
             onValueChange = { email = it },
             label = { Text("Digite seu e-mail", style = MaterialTheme.typography.labelLarge) },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
@@ -104,7 +105,7 @@ fun LoginForm(
             label = { Text("Digite sua senha", style = MaterialTheme.typography.labelLarge) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
-                .fillMaxWidth()
+                .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
@@ -117,6 +118,18 @@ fun LoginForm(
                 unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        TextButton(
+                onClick = { },
+        modifier = Modifier
+            .align(Alignment.Start)
+            .padding(start = 72.dp)
+        ) {
+        Text(
+            "Esqueceu sua senha?",
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+    }
 
         // Botão Entrar
         Button(
@@ -150,7 +163,7 @@ fun LoginForm(
                 }
             },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(161.dp)
                 .padding(horizontal = 16.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.primary,
@@ -165,16 +178,16 @@ fun LoginForm(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.padding(top = 24.dp)
+            modifier = Modifier.padding(top = 32.dp)
         ) {
             TextButton(onClick = onNavigateToRegister) {
                 Text("Não tem conta? Cadastre-se", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
             }
-            TextButton(onClick = { /* ... */ }) {
-                Text("Esqueceu sua senha?", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
-            }
             if (status.isNotEmpty()) {
                 Text(text = status, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
+            }
+            TextButton(onClick = { /* ... */ }) {
+                Text("Login sem senha", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
             }
         }
     }

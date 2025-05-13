@@ -1,26 +1,26 @@
 [
     {
-        "merged": "com.example.superid.app-mergeDebugResources-69:/layout/layout_tela_senhas.xml",
-        "source": "com.example.superid.app-main-72:/layout/layout_tela_senhas.xml"
+        "merged": "com.example.superid.app-mergeDebugResources-66:/layout/layout_tela_senhas.xml",
+        "source": "com.example.superid.app-main-69:/layout/layout_tela_senhas.xml"
     },
     {
-        "merged": "com.example.superid.app-mergeDebugResources-69:/layout/layout_tela_cadastro.xml",
-        "source": "com.example.superid.app-main-72:/layout/layout_tela_cadastro.xml"
+        "merged": "com.example.superid.app-mergeDebugResources-66:/layout/layout_recuperacao_senha.xml",
+        "source": "com.example.superid.app-main-69:/layout/layout_recuperacao_senha.xml"
     },
     {
-        "merged": "com.example.superid.app-mergeDebugResources-69:/layout/layout_tela_inicial.xml",
-        "source": "com.example.superid.app-main-72:/layout/layout_tela_inicial.xml"
+        "merged": "com.example.superid.app-mergeDebugResources-66:/layout/layout_tela_inicial.xml",
+        "source": "com.example.superid.app-main-69:/layout/layout_tela_inicial.xml"
     },
     {
-        "merged": "com.example.superid.app-mergeDebugResources-69:/layout/item_senha.xml",
-        "source": "com.example.superid.app-main-72:/layout/item_senha.xml"
+        "merged": "com.example.superid.app-mergeDebugResources-66:/layout/item_senha.xml",
+        "source": "com.example.superid.app-main-69:/layout/item_senha.xml"
     },
     {
-        "merged": "com.example.superid.app-mergeDebugResources-69:/layout/layout_recuperacao_senha.xml",
-        "source": "com.example.superid.app-main-72:/layout/layout_recuperacao_senha.xml"
+        "merged": "com.example.superid.app-mergeDebugResources-66:/layout/layout_tela_cadastro.xml",
+        "source": "com.example.superid.app-main-69:/layout/layout_tela_cadastro.xml"
     },
     {
-        "merged": "com.example.superid.app-mergeDebugResources-69:/layout/layout_tela_login.xml",
-        "source": "com.example.superid.app-main-72:/layout/layout_tela_login.xml"
+        "merged": "com.example.superid.app-mergeDebugResources-66:/layout/layout_tela_login.xml",
+        "source": "com.example.superid.app-main-69:/layout/layout_tela_login.xml"
     }
 ]

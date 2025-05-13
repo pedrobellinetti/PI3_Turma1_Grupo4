@@ -1,51 +1,33 @@
 package com.example.superid.ui.screens
 
+import android.content.Intent
 import android.util.Base64
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.example.superid.PasswordFormActivity
 import com.example.superid.Senha
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.SecureRandom
-
-
-// Gerar accessToken
+import androidx.compose.ui.graphics.Color
 
 fun gerarAccessToken(): String {
-    val bytes = ByteArray(192) // 192 bytes = 256 chars em Base64
+    val bytes = ByteArray(192)
     SecureRandom().nextBytes(bytes)
     return Base64.encodeToString(bytes, Base64.NO_WRAP)
 }
 
-// Tela de gerenciamento de senhas
-
-@ExperimentalMaterial3Api
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PasswordManagerScreen(uid: String) {
-    // Local context
     val context = LocalContext.current
-
     val db = Firebase.firestore
     val senhas = remember { mutableStateListOf<Senha>() }
     val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Acesso Físico", "Outros")
@@ -55,10 +37,10 @@ fun PasswordManagerScreen(uid: String) {
     var descricao by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
     var idEdicao by remember { mutableStateOf<String?>(null) }
-    var menuExpandido by remember { mutableStateOf(false) }
+
+    val scrollState = rememberScrollState()
 
     // Carregar senhas
-
     LaunchedEffect(uid) {
         db.collection("users").document(uid).collection("passwords")
             .get()
@@ -71,120 +53,71 @@ fun PasswordManagerScreen(uid: String) {
             }
     }
 
-    Column(Modifier.padding(16.dp)) {
-        Text("Cadastrar nova senha")
-
-        OutlinedTextField(value = login, onValueChange = { login = it }, label = { Text("Login") })
-        OutlinedTextField(value = descricao, onValueChange = { descricao = it }, label = { Text("Descrição") })
-        OutlinedTextField(value = senha, onValueChange = { senha = it }, label = { Text("Senha") })
-
-        ExposedDropdownMenuBox(
-            expanded = menuExpandido,
-            onExpandedChange = { menuExpandido = !menuExpandido }
+    Box(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier
+                .verticalScroll(scrollState)
+                .padding(16.dp)
         ) {
-            OutlinedTextField(
-                value = categoria,
-                onValueChange = {},
-                readOnly = true,
-                label = { Text("Categoria") },
-                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = menuExpandido) },
-                modifier = Modifier.menuAnchor()
-            )
+            Text("Senhas cadastradas:", style = MaterialTheme.typography.headlineSmall)
 
-            ExposedDropdownMenu(
-                expanded = menuExpandido,
-                onDismissRequest = { menuExpandido = false }
-            ) {
-                categoriasDisponiveis.forEach{ opcao ->
-                    DropdownMenuItem(
-                        text = { Text(opcao) },
-                        onClick = {
-                            categoria = opcao
-                            menuExpandido = false
-                        }
-                    )
-                }
-            }
-        }
+            senhas.groupBy { it.categoria }.forEach { (nomeCategoria, lista) ->
+                Column(Modifier.padding(vertical = 8.dp)) {
+                    Text("Categoria: $nomeCategoria", style = MaterialTheme.typography.titleMedium)
+                    Spacer(modifier = Modifier.height(8.dp))
 
-        OutlinedTextField(value = categoria, onValueChange = { categoria = it },
-            label = { Text("Categoria") })
+                    lista.forEach { itemSenha ->
+                        Card(
+                            modifier = Modifier
+                                .padding(vertical = 4.dp)
+                                .fillMaxWidth()
+                        ) {
+                            Column(modifier = Modifier.padding(16.dp)) {
+                                Text("Descrição: ${itemSenha.descricao}")
+                                Text("Login: ${itemSenha.login}")
+                                Text("Senha: ${itemSenha.senhaCriptografada.take(8)}...")
 
-        Button(onClick = {
-            val novaSenha = Senha(
-                categoria = categoria,
-                login = login,
-                descricao = descricao,
-                senhaCriptografada = senha,
-                accessToken = gerarAccessToken()
-            )
+                                Spacer(modifier = Modifier.height(8.dp))
 
-            val ref = db.collection("users").document(uid).collection("passwords")
-
-            if (idEdicao != null) {
-                // Atualiza senha, mudando a já existe
-                ref.document(idEdicao!!).set(novaSenha)
-                    .addOnSuccessListener {
-                        // Atualiza lista local após mudança da senha
-                        senhas.replaceAll {
-                            if (it.id == idEdicao) {
-                                novaSenha.copy(id = idEdicao!!)
-                            } else {
-                                it
+                                Row {
+                                    Button(onClick = {
+                                        login = itemSenha.login
+                                        descricao = itemSenha.descricao
+                                        categoria = itemSenha.categoria
+                                        senha = itemSenha.senhaCriptografada
+                                        idEdicao = itemSenha.id
+                                    }) {
+                                        Text("Editar")
+                                    }
+                                    Spacer(modifier = Modifier.width(8.dp))
+                                    Button(onClick = {
+                                        db.collection("users").document(uid)
+                                            .collection("passwords").document(itemSenha.id).delete()
+                                        senhas.remove(itemSenha)
+                                    }) {
+                                        Text("Excluir")
+                                    }
+                                }
                             }
                         }
                     }
-            } else {
-                // Adiciona nova senha
-                ref.add(novaSenha).addOnSuccessListener { doc ->
-                    senhas.add(novaSenha.copy(id = doc.id))
                 }
             }
-
-            // Limpando campos de registro
-
-            login = ""
-            descricao = ""
-            categoria = ""
-            senha = ""
-            idEdicao = null
-        }) {
-            Text(if (idEdicao != null) "Atualizar" else "Salvar senha")
         }
 
-        HorizontalDivider(Modifier.padding(vertical = 16.dp))
-        Text("Senhas cadastradas:")
-
-        senhas.groupBy { it.categoria }.forEach { (nomeCategoria, lista) ->
-            Text("Categoria: $nomeCategoria", style = MaterialTheme.typography.titleMedium)
-
-            lista.forEach { itemSenha ->
-                Column(Modifier.padding(vertical = 8.dp)) {
-                    Text("Descrição: ${itemSenha.descricao}")
-                    Text("Login: ${itemSenha.login}")
-                    Text("Senha: ${itemSenha.senhaCriptografada.take(8)}...")
-
-                    Row {
-                        Button(onClick = {
-                            login = itemSenha.login
-                            descricao = itemSenha.descricao
-                            categoria = itemSenha.categoria
-                            senha = itemSenha.senhaCriptografada
-                            idEdicao = itemSenha.id
-                        }) {
-                            Text("Editar")
-                        }
-                        Spacer(modifier = Modifier.padding(horizontal = 8.dp))
-                        Button(onClick = {
-                            db.collection("users").document(uid)
-                                .collection("passwords").document(itemSenha.id).delete()
-                            senhas.remove(itemSenha)
-                        }) {
-                            Text("Excluir")
-                        }
-                    }
-                }
-            }
+        // Botão flutuante para adicionar nova senha
+        ExtendedFloatingActionButton (
+            onClick = {
+                val intent = Intent(context, PasswordFormActivity::class.java)
+                intent.putExtra("uid", uid)
+                context.startActivity(intent)
+            },
+            containerColor = Color(0xFF8000FF),
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(16.dp)
+        ) {
+            Text("+ CREATE", color = MaterialTheme.colorScheme.onPrimary)
         }
     }
 }

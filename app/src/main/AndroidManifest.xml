@@ -18,11 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperID"
         tools:targetApi="31">
-<!--        <application-->
-<!--        android:label="@string/title_activity_settings"-->
-<!--        android:icon="@mipmap/ic_settings_launcher">  &lt;!&ndash; Corrected line &ndash;&gt;-->
-<!--            &lt;!&ndash; other activity settings like intent filters &ndash;&gt;-->
-<!--            </application>-->
+        <!--        <application-->
+        <!--        android:label="@string/title_activity_settings"-->
+        <!--        android:icon="@mipmap/ic_settings_launcher">  &lt;!&ndash; Corrected line &ndash;&gt;-->
+        <!--            &lt;!&ndash; other activity settings like intent filters &ndash;&gt;-->
+        <!--            </application>-->
 
 
         <activity
@@ -38,8 +38,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".LoginFormActivity" />
         <activity android:name=".RecuperacaoSenhaActivity" />
-
+        <activity android:name=".PasswordManagerScreenActivity" />
+        <activity android:name=".UserRegistrationActivity" />
 
     </application>
 

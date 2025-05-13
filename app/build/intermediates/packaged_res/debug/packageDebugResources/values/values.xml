@@ -8,7 +8,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <drawable name="ic_settings"/>
-    <string name="app_name">SuperID</string>
+    <string name="app_name">Super ID</string>
     <string name="gcm_defaultSenderId" translatable="false">193728231431</string>
     <string name="google_api_key" translatable="false">AIzaSyCM-6mmIxWz7L28qwFDldIsswuKyHkCCuY</string>
     <string name="google_app_id" translatable="false">1:193728231431:android:92ff7721debb287677d2a2</string>
