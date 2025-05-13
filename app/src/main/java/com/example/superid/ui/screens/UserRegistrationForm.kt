@@ -48,7 +48,7 @@ fun UserRegistrationForm(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = MaterialTheme.colorScheme.primaryContainer)
-                .padding(vertical = 16.dp)
+                .padding(vertical = 33.dp)
         ) {
             // Botão de voltar alinhado à esquerda
             IconButton(
@@ -69,10 +69,10 @@ fun UserRegistrationForm(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .align(Alignment.Center)
-                    .padding(24.dp)
+                    .padding(29.dp)
             ) {
                 Text(
-                    text = "Cadastre-se",
+                    text = "Super ID",
                     style = MaterialTheme.typography.headlineMedium,
                     color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
@@ -86,14 +86,21 @@ fun UserRegistrationForm(
                 )
             }
         }
-        Spacer(Modifier.padding(15.dp))
+
+        Text(
+            text = "Bem-vindo(a) ao Super ID! Cadastre-se",
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.onBackground,
+            modifier = Modifier.padding(top = 30.dp)
+        )
+
         // Campos de E-mail, Nome e Senha
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
             label = { Text("Digite seu e-mail", style = MaterialTheme.typography.labelLarge) },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
@@ -111,7 +118,7 @@ fun UserRegistrationForm(
             onValueChange = { nome = it },
             label = { Text("Digite seu nome", style = MaterialTheme.typography.labelLarge) },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
@@ -130,7 +137,7 @@ fun UserRegistrationForm(
             label = { Text("Digite sua senha", style = MaterialTheme.typography.labelLarge) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
-                .fillMaxWidth()
+                .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
@@ -181,7 +188,7 @@ fun UserRegistrationForm(
                 }
             },
             modifier = Modifier
-                .fillMaxWidth()
+                .width(161.dp)
                 .padding(horizontal = 16.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.primary,
