@@ -7,7 +7,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.superid.ui.screens.UserRegistrationForm
 
@@ -21,7 +20,6 @@ class UserRegistrationActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     UserRegistrationForm(onNavigateToLogin = {
-                        //TODO Redirecionar para a tela de login tenha conta
                         //TODO redirecionar para a tela de senhas
                         finish()
                     })

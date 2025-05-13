@@ -22,11 +22,12 @@ import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuthException
 
 
-@OptIn(ExperimentalMaterial3Api::class) //responsal por habilitar o uso de APIs experimentais
+@OptIn(ExperimentalMaterial3Api::class) //Responsável por habilitar o uso de APIs experimentais
 @Composable
 fun LoginForm(
     onNavigateToRegister: () -> Unit,
-    onLoginSuccess: () -> Unit
+    onLoginSuccess: () -> Unit,
+    onNavigateToForgotPassword: () -> Unit
 ) {
     val context = LocalContext.current
     var email by remember { mutableStateOf("") }
@@ -119,17 +120,17 @@ fun LoginForm(
             )
         )
         TextButton(
-                onClick = { },
-        modifier = Modifier
-            .align(Alignment.Start)
-            .padding(start = 72.dp)
+            onClick = onNavigateToForgotPassword,
+            modifier = Modifier
+                .align(Alignment.Start)
+                .padding(start = 72.dp)
         ) {
-        Text(
-            "Esqueceu sua senha?",
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
-    }
+            Text(
+                "Esqueceu sua senha?",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.primary
+            )
+        }
 
         // Botão Entrar
         Button(
