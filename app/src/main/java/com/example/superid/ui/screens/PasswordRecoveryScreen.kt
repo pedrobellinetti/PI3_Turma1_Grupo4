@@ -1,6 +1,7 @@
 package com.example.superid.ui.screens
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -106,17 +108,34 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
         )
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Botão "Recuperar"
         Button(
             onClick = {
-                FirebaseAuth.getInstance().sendPasswordResetEmail(email)
-                    .addOnCompleteListener { task ->
-                        status = if (task.isSuccessful) {
-                            "Email de redefinição enviado com sucesso!"
-                        } else {
-                            "Erro ao enviar email de redefinição: ${task.exception?.message}"
+                if (email.isNotBlank()) {
+                    FirebaseAuth.getInstance().sendPasswordResetEmail(email.trim())
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(
+                                    context,
+                                    "Enviamos um link para seu e-mail para redefinir(caso esteja cadastrado)",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            } else {
+                                val errorMessage = when (task.exception) {
+                                    is FirebaseAuthException -> {
+                                        when ((task.exception as FirebaseAuthException).errorCode) {
+                                            "ERROR_INVALID_EMAIL" -> "Formato de e-mail inválido."
+                                            "ERROR_USER_NOT_FOUND" -> "Se o e-mail estiver correto, pode não haver conta associada a ele."
+                                            else -> "Ocorreu um erro ao enviar o e-mail. Tente novamente."
+                                        }
+                                    }
+                                    else -> "Erro inesperado. Verifique o e-mail digitado e tente novamente."
+                                }
+                                Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
+                            }
                         }
-                    }
+                } else {
+                    Toast.makeText(context, "Por favor, digite seu e-mail.", Toast.LENGTH_SHORT).show()
+                }
             },
             modifier = Modifier
                 .width(161.dp)
