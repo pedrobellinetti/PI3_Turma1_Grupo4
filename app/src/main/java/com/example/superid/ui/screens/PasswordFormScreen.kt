@@ -35,7 +35,7 @@ import androidx.compose.foundation.verticalScroll
 @Composable
 fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
     val db = Firebase.firestore
-    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Acesso Físico", "Outros")
+    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Teclado de Acesso Físico", "Outros")
 
     var categoria by remember { mutableStateOf("Sites Web") }
     var login by remember { mutableStateOf("") }

@@ -26,7 +26,6 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -39,7 +38,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.superid.ui.screens.LoginForm
 import com.example.superid.ui.screens.MainScreen
@@ -52,17 +50,12 @@ import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.util.UUID
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.sp
 
 
@@ -180,7 +173,10 @@ fun TermsOfServiceScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
-                elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
+                elevation = CardDefaults.cardElevation(defaultElevation = 20.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.secondaryContainer
+                )
             ) {
                 Column(
                     modifier = Modifier
@@ -231,7 +227,7 @@ fun TermsOfServiceScreen(
 
             HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp))
 
-            PasswordManagerScreen(uid = uid) // Corrigido para usar PascalCase
+            PasswordManagerScreen(uid = uid)
         }
     }
 
