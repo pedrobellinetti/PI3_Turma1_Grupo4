@@ -998,6 +998,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accept
 string android_credentials_TYPE_PASSWORD_CREDENTIAL
 string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
@@ -1030,6 +1031,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string decline
 string default_error_message
 string default_popup_window_title
 string dropdown_menu
@@ -1114,6 +1116,9 @@ string status_bar_notification_info_overflow
 string switch_role
 string tab
 string template_percent
+string terms_of_service_agreement
+string terms_of_service_content
+string terms_of_service_title
 string tooltip_description
 string tooltip_label
 style AlertDialog_AppCompat

@@ -453,42 +453,42 @@
 242-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/58cf726e2af192e690de1a6d47e77d33/transformed/camera-camera2-1.1.0/AndroidManifest.xml:34:17-86
 243        </service>
 244
-245        <activity
-245-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-246            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-246-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-247            android:exported="false"
-247-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-248            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-248-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-249
-250        <provider
-250-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-251            android:name="androidx.startup.InitializationProvider"
-251-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-252            android:authorities="com.example.superid.androidx-startup"
-252-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-253            android:exported="false" >
-253-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-254            <meta-data
-254-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-255                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-255-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-256                android:value="androidx.startup" />
-256-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-257            <meta-data
-257-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/fee05cd1653a3ec36b70a9de8fa40ad7/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
-258                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-258-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/fee05cd1653a3ec36b70a9de8fa40ad7/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
-259                android:value="androidx.startup" />
-259-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/fee05cd1653a3ec36b70a9de8fa40ad7/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
-260            <meta-data
-260-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/bbb3fe9f407ac4f125482ca03d121be4/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-261                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-261-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/bbb3fe9f407ac4f125482ca03d121be4/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-262                android:value="androidx.startup" />
-262-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/bbb3fe9f407ac4f125482ca03d121be4/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-263        </provider>
+245        <provider
+245-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+246            android:name="androidx.startup.InitializationProvider"
+246-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+247            android:authorities="com.example.superid.androidx-startup"
+247-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+248            android:exported="false" >
+248-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+249            <meta-data
+249-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+250                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+250-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+251                android:value="androidx.startup" />
+251-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/627a1b845a6037147eabbb6ad13bcd34/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+252            <meta-data
+252-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/fee05cd1653a3ec36b70a9de8fa40ad7/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+253                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+253-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/fee05cd1653a3ec36b70a9de8fa40ad7/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+254                android:value="androidx.startup" />
+254-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/fee05cd1653a3ec36b70a9de8fa40ad7/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+255            <meta-data
+255-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/bbb3fe9f407ac4f125482ca03d121be4/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+256                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+256-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/bbb3fe9f407ac4f125482ca03d121be4/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+257                android:value="androidx.startup" />
+257-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/bbb3fe9f407ac4f125482ca03d121be4/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+258        </provider>
+259
+260        <activity
+260-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+261            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+261-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+262            android:exported="false"
+262-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+263            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+263-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
 264
 265        <uses-library
 265-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/477e0eec28ab642711db82c5d09a6e78/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:23:9-25:40

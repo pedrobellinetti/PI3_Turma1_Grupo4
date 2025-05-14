@@ -22,7 +22,7 @@ import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuthException
 
 
-@OptIn(ExperimentalMaterial3Api::class) //responsal por habilitar o uso de APIs experimentais
+@OptIn(ExperimentalMaterial3Api::class) //Responsável por habilitar o uso de APIs experimentais
 @Composable
 fun LoginForm(
     onNavigateToRegister: () -> Unit,
