@@ -1,51 +1,76 @@
-<<<<<<< HEAD
-# Gradle files
+# ============================
+# Android Studio / IntelliJ
+# ============================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ============================
+# Gradle
+# ============================
 .gradle/
 build/
+!gradle/wrapper/gradle-wrapper.jar
+**/build/
+**/bin/
 
-# Local configuration file (sdk path, etc)
+# ============================
+# Local Config
+# ============================
 local.properties
+*.keystore
+*.jks
+*.pem
 
-# Log/OS Files
+# ============================
+# Mac & Linux System Files
+# ============================
+.DS_Store
+*.swp
+*~
+
+# ============================
+# Log & Temp Files
+# ============================
 *.log
+*.tmp
 
-# Android Studio generated files and folders
+# ============================
+# Android Specific
+# ============================
 captures/
 .externalNativeBuild/
 .cxx/
-*.apk
-output.json
+outputs/
 
-# IntelliJ
-*.iml
-.idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+# ============================
+# Kotlin/Java Files
+# ============================
+*.class
+*.jar
+*.war
+*.ear
 
-# Keystore files
-*.jks
-*.keystore
+# ============================
+# Misc
+# ============================
+*.bak
+*.orig
+*.rej
 
-# Google Services (e.g. APIs or Firebase)
+# ============================
+# Node.js (caso use scripts JS)
+# ============================
+node_modules/
+npm-debug.log
+
+# ============================
+# Firebase / Google Services
+# ============================
 google-services.json
 
-# Android Profiling
-*.hprof
-=======
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
->>>>>>> master
+.qodo
+.qodo\
+.\qodo\
+.\.qodo\

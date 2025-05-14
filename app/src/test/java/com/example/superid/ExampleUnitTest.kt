@@ -1,4 +1,4 @@
-package com.example.userid
+package com.example.superid
 
 import org.junit.Test
 

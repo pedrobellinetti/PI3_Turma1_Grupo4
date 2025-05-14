@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "/home/skylar/.gradle/caches/8.11.1/transforms/c7ae150826f2c8bd24c12b339f8a2caf/transformed/appcompat-1.1.0/res/values-watch-v21/values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}
