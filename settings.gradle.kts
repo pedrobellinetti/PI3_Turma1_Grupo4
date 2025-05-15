@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Projeto_Integrador3"
+rootProject.name = "SuperID"
 include(":app")
  
