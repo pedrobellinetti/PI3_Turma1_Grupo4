@@ -28,7 +28,8 @@ import com.google.firebase.auth.FirebaseAuthException
 @Composable
 fun LoginForm(
     onNavigateToRegister: () -> Unit,
-    onLoginSuccess: () -> Unit
+    onLoginSuccess: () -> Unit,
+    onNavigateToForgotPassword: () -> Unit
 ) {
     val context = LocalContext.current
     var email by remember { mutableStateOf("") }
@@ -134,7 +135,7 @@ fun LoginForm(
             )
         )
         TextButton(
-                onClick = { },
+                onClick = onNavigateToForgotPassword,
         modifier = Modifier
             .align(Alignment.Start)
             .padding(start = 72.dp)
@@ -200,9 +201,6 @@ fun LoginForm(
             }
             if (status.isNotEmpty()) {
                 Text(text = status, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
-            }
-            TextButton(onClick = { /* ... */ }) {
-                Text("Login sem senha", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSecondary)
             }
         }
     }

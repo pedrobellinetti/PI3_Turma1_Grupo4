@@ -1,6 +1,7 @@
 package com.example.superid
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -100,7 +101,10 @@ fun AuthApp() {
 
         AuthScreen.LOGIN -> LoginForm(
             onNavigateToRegister = { currentAuthScreen = AuthScreen.REGISTER },
-            onLoginSuccess = { currentAuthScreen = AuthScreen.MAIN }
+            onLoginSuccess = { currentAuthScreen = AuthScreen.MAIN },
+            onNavigateToForgotPassword = {
+                context.startActivity(Intent(context, RecuperacaoSenhaActivity::class.java))
+            }
         )
 
         AuthScreen.REGISTER -> UserRegistrationForm(
@@ -117,7 +121,7 @@ fun AuthApp() {
         )
 
         AuthScreen.RECOVERY -> PasswordRecoveryScreen(
-            recuperarSenha = { currentAuthScreen = AuthScreen.LOGIN }
+            onNavigateToLogin = { currentAuthScreen = AuthScreen.LOGIN }
         )
     }
 }
