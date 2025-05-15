@@ -15,6 +15,7 @@ android {
     defaultConfig {
         applicationId = "com.example.superid"
         minSdk = 24
+        //noinspection OldTargetApi
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -48,7 +49,7 @@ dependencies {
 
 
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
@@ -72,9 +73,10 @@ dependencies {
     // QR Scanner MLKit
 
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
-    implementation("androidx.camera:camera-camera2:1.1.0")
-    implementation("androidx.camera:camera-lifecycle:1.1.0")
-    implementation("androidx.camera:camera-view:1.0.0-alpha32")
+    implementation ("androidx.camera:camera-core:1.3.0")
+    implementation ("androidx.camera:camera-camera2:1.3.0")
+    implementation ("androidx.camera:camera-lifecycle:1.3.0")
+    implementation ("androidx.camera:camera-view:1.3.0")
 
 
     implementation(libs.androidx.core.ktx)

@@ -1,5 +1,6 @@
 package com.example.superid
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +8,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.camera.core.ExperimentalGetImage
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -30,10 +32,15 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.core.app.ActivityCompat
 import com.example.superid.ui.screens.LoginForm
 import com.example.superid.ui.screens.MainScreen
 import com.example.superid.ui.screens.PasswordManagerScreen
@@ -60,6 +67,14 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
                     AuthApp()
                 }
+            }
+        }
+        // Solicitar permissão da câmera
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 0)
+
+        setContent {
+            MaterialTheme {
+                QRScannerScreen()
             }
         }
     }
@@ -279,6 +294,30 @@ fun PasswordManagerScreen(uid: String) {
                     }
                 }
             }
+        }
+    }
+}
+
+//telaScanner
+@Composable
+fun QRScannerScreen() {
+    var scannedCode by remember { mutableStateOf<String?>(null) }
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        QRCodeScanner { code ->
+            scannedCode = code
+        }
+
+        scannedCode?.let {
+            Text(
+                text = "QR Code: $it",
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(16.dp),
+                color = Color.White,
+                fontSize = 18.sp,
+                textAlign = TextAlign.Center
+            )
         }
     }
 }
