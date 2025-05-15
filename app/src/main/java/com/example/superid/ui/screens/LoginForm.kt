@@ -15,6 +15,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.SearchBarDefaults.colors
 import androidx.compose.ui.draw.clip
@@ -26,8 +28,7 @@ import com.google.firebase.auth.FirebaseAuthException
 @Composable
 fun LoginForm(
     onNavigateToRegister: () -> Unit,
-    onLoginSuccess: () -> Unit,
-    onNavigateToForgotPassword: () -> Unit
+    onLoginSuccess: () -> Unit
 ) {
     val context = LocalContext.current
     var email by remember { mutableStateOf("") }
@@ -51,6 +52,19 @@ fun LoginForm(
                 .padding(vertical = 30.dp), // Espaçamento interno vertical
             contentAlignment = Alignment.Center
         ) {
+            // Botão de voltar alinhado à esquerda
+            IconButton(
+                onClick = onNavigateToRegister,
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(start = 8.dp, top = 24.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Voltar para Login",
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
@@ -120,17 +134,17 @@ fun LoginForm(
             )
         )
         TextButton(
-            onClick = onNavigateToForgotPassword,
-            modifier = Modifier
-                .align(Alignment.Start)
-                .padding(start = 72.dp)
+                onClick = { },
+        modifier = Modifier
+            .align(Alignment.Start)
+            .padding(start = 72.dp)
         ) {
-            Text(
-                "Esqueceu sua senha?",
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.primary
-            )
-        }
+        Text(
+            "Esqueceu sua senha?",
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.onSecondary
+        )
+    }
 
         // Botão Entrar
         Button(
@@ -182,13 +196,13 @@ fun LoginForm(
             modifier = Modifier.padding(top = 32.dp)
         ) {
             TextButton(onClick = onNavigateToRegister) {
-                Text("Não tem conta? Cadastre-se", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+                Text("Não tem conta? Cadastre-se", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSecondary)
             }
             if (status.isNotEmpty()) {
                 Text(text = status, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
             }
             TextButton(onClick = { /* ... */ }) {
-                Text("Login sem senha", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+                Text("Login sem senha", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSecondary)
             }
         }
     }

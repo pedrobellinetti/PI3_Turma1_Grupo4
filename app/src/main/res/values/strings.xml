@@ -1,3 +1,103 @@
 <resources>
     <string name="app_name">Super ID</string>
+
+    <string name="terms_of_service_title">
+        Olá!\n\nBem-Vindo(a) ao SuperID, por favor, antes de cadastrar-se, leia e aceite nossos Termos.
+    </string>
+
+    <string name="terms_of_service_agreement">
+        O SuperID é um gerenciador de autentica
+        ções, desenvolvido para simplificar e proteger o seu acesso a diversos serviços online e aplicativos.
+        Com o SuperID, você pode des
+        frutar de um método de login sem senha em sites parceiros, além de armazenar suas senhas
+        tradicionais de forma segura e organizada.
+        Nosso objetivo é proporcionar uma experiência de autenticação mais fluida e robusta, focando na sua segurança e conveniência.
+    </string>
+
+    <string name="terms_of_service_content"><![CDATA[
+1. Aceitação dos Termos\n\n
+
+Ao acessar e utilizar o aplicativo SuperID, você concorda em cumprir e estar sujeito a estes Ter
+mos e Condições de Uso. Se você não concordar com todos os termos e condições, não utilize o aplicativo.\n\n
+
+2. Descrição do Serviço\n\n
+
+O SuperID oferece um ecossistema para gerencia
+mento de autenticações, compreendendo:\n
+2.1. Login sem Senha: Permite o acesso a sites par
+ceiros através da leitura de um QRCode gerado pe
+lo site e autenticação via Aplicativo.\n
+2.2. Gerenciamento de Senhas: Permite o cadas
+tro, alteração e exclusão de senhas de acesso a
+diversos serviços, organizadas por categorias.
+As senhas são armazenadas de forma criptografada.\n\n
+
+3. Cadastro e Conta do Usuário\n\n
+
+3.1. Para utilizar o Aplicativo pela primeira vez, o usuário deverá realizar um cadastro inicial, forne
+cendo Nome, Email e definindo uma Senha Mestre.\n
+3.2. O Email fornecido deverá ser validado através do sistema Firebase Authentication. A validação do email é necessária para utilizar a funcionalida
+de da Login sem Senha e a recuperação da Senha Mestre.\n
+3.3. Ao criar a conta, o Aplicativo coletará e arma
+zenará o UID (User ID) fornecido e o IMEI (Interna
+tional Mobile Equipment Identity) do dispositivo.\n\n
+
+4. Uso Aceitável\n\n
+
+Você concorda em utilizar o Aplicativo de forma ética e legal, abstendo-se de:\n
+- Violar leis ou regulamentos aplicáveis.\n
+- Tentar acessar dados de outros usuários sem autorização.\n
+- Interferir no funcionamento do Aplicativo ou de serviços conectados.\n
+- Utilizar o Aplicativo para atividades ilegais ou fraudulentas.\n\n
+
+5. Gerenciamento de Senhas\n\n
+
+5.1. Após o login com a Senha Mestre, o usuário poderá cadastrar, alterar e excluir senhas de ace
+sso a outros serviços.\n
+5.2. As senhas poderão ser organizadas em cate
+gorias, sendo "Sites Web" uma categoria padrão e obrigatória. O usuário poderá criar outras catego
+rias.\n
+5.3. Para cada senha cadastrada, o Aplicativo gerará um accessToken único de 256 caracteres em Base64.\n
+5.4. As senhas informadas pelo usuário serão criptografadas antes de serem armazenadas.\n\n
+
+6. Login sem Senha em Sites Parceiros\n\n
+
+6.1. Sites parceiros do SuperID oferecem a opção de login via leitura de um QRCode.\n
+6.2. Ao escanear o QRCode com o Aplicativo e confirmar a autenticação (após inserir a Senha Mestre), o Aplicativo comunicará a aprovação do login ao sistema SuperID.\n\n
+
+7. Recuperação da Senha Mestre\n\n
+
+7.1. Caso o usuário esqueça a Senha Mestre, pode
+rá solicitar a redefinição através do email cadastra
+do.\n
+7.2. A redefinição da Senha Mestre só será possí
+vel se o email da conta tiver sido previamente vali
+dado.\n\n
+
+8. Propriedade Intelectual\n\n
+
+O Aplicativo SuperID e seu conteúdo (incluindo, mas não se limitando a, design, código, gráficos e logotipos) são de propriedade dos autores deste projeto e estão protegidos por leis de propriedade intelectual.\n\n
+
+9. Limitação de Responsabilidade\n\n
+
+Os autores e a Pontifícia Universidade Católica de Campinas não se responsabilizam por quaisquer danos diretos, indiretos, incidentais, consequenci
+ais ou especiais decorrentes do uso ou da impossi
+bilidade de uso do Aplicativo, incluindo a perda de dados ou acesso não autorizado. O Aplicativo é fornecido "como está" para fins educacionais e de aprendizado.\n\n
+
+10. Alterações nos Termos e Condições\n\n
+
+Os autores se reservam o direito de modificar estes Termos e Condições a qualquer momento, sendo as alterações comunicadas através do Apli
+cativo ou por outros meios. O uso contínuo do Apli
+cativo após a publicação das alterações constitui a sua aceitação dos novos Termos e Condições.\n\n
+
+11. Lei Aplicável e Foro\n
+
+Estes Termos e Condições serão regidos e inter
+pretados de acordo com as leis da República Federativa do Brasil. Fica eleito o foro da Comarca de Campinas, Estado de São Paulo, para dirimir quaisquer dúvidas ou litígios oriundos destes Ter
+mos e Condições, com renúncia a qualquer outro, por mais privilegiado que seja.\n\n
+
+    ]]></string>
+
+    <string name="accept">Aceitar</string>
+    <string name="decline">Recusar</string>
 </resources>

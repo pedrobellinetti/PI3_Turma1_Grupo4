@@ -30,7 +30,7 @@ fun PasswordManagerScreen(uid: String) {
     val context = LocalContext.current
     val db = Firebase.firestore
     val senhas = remember { mutableStateListOf<Senha>() }
-    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Acesso Físico", "Outros")
+    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico", "Outros")
 
     var categoria by remember { mutableStateOf("Sites Web") }
     var login by remember { mutableStateOf("") }
