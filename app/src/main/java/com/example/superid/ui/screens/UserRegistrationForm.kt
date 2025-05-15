@@ -50,19 +50,6 @@ fun UserRegistrationForm(
                 .background(color = MaterialTheme.colorScheme.primaryContainer)
                 .padding(vertical = 33.dp)
         ) {
-            // Botão de voltar alinhado à esquerda
-            IconButton(
-                onClick = onNavigateToLogin,
-                modifier = Modifier
-                    .align(Alignment.TopStart)
-                    .padding(start = 8.dp, top = 24.dp)
-            ) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Voltar para Login",
-                    tint = MaterialTheme.colorScheme.onPrimaryContainer
-                )
-            }
 
             // Conteúdo centralizado: Título + Logo
             Column(
@@ -209,7 +196,7 @@ fun UserRegistrationForm(
                 Text(
                     "Já tem conta? Login",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
             }
         }

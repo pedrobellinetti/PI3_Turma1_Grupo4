@@ -20,13 +20,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.superid.PasswordFormActivity
-import com.example.superid.Senha
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.SecureRandom
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.style.TextAlign
 import com.example.superid.PasswordManagerScreenActivity
+import com.example.superid.Senha
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
