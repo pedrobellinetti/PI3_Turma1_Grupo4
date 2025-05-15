@@ -301,6 +301,10 @@ activity#com.example.superid.UserRegistrationActivity
 ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:44:9-62
 	android:name
 		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:44:19-59
+activity#com.example.superid.PasswordFormActivity
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:45:9-57
+	android:name
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:45:19-55
 uses-sdk
 INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml

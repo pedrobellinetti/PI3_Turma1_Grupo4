@@ -63,6 +63,7 @@
         <activity android:name="com.example.superid.RecuperacaoSenhaActivity" />
         <activity android:name="com.example.superid.PasswordManagerScreenActivity" />
         <activity android:name="com.example.superid.UserRegistrationActivity" />
+        <activity android:name="com.example.superid.PasswordFormActivity" />
         <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />

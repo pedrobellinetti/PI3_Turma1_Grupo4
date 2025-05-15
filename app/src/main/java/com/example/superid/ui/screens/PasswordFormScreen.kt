@@ -1,115 +1,256 @@
 package com.example.superid.ui.screens
 
+import android.content.Intent
 import android.util.Base64
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.activity.ComponentActivity
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.superid.Senha
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.SecureRandom
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
+    val context = LocalContext.current
     val db = Firebase.firestore
-    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Acesso Físico", "Outros")
+    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico", "Outros")
+    var senhaCriada by remember { mutableStateOf("") }
 
-    var categoria by remember { mutableStateOf("Sites Web") }
     var login by remember { mutableStateOf("") }
     var descricao by remember { mutableStateOf("") }
-    var senha by remember { mutableStateOf("") }
+    var senhaValor by remember { mutableStateOf("") }
+    var label by remember { mutableStateOf(categoriasDisponiveis.firstOrNull() ?: "") }
     var menuExpandido by remember { mutableStateOf(false) }
+
+    fun gerarAccessToken(): String {
+        val random = SecureRandom()
+        val bytes = ByteArray(32)
+        random.nextBytes(bytes)
+        return Base64.encodeToString(bytes, Base64.NO_WRAP)
+    }
 
     val scrollState = rememberScrollState()
 
     Column(
         modifier = Modifier
-            .verticalScroll(scrollState)
-            .padding(16.dp)
+            .fillMaxSize()
     ) {
-        Text("Cadastrar nova senha", style = MaterialTheme.typography.headlineSmall)
-
-        Spacer(modifier = Modifier.padding(vertical = 8.dp))
-        OutlinedTextField(value = login, onValueChange = { login = it }, label = { Text("Login") })
-        OutlinedTextField(value = descricao, onValueChange = { descricao = it }, label = { Text("Descrição") })
-        OutlinedTextField(value = senha, onValueChange = { senha = it }, label = { Text("Senha") })
-
-        ExposedDropdownMenuBox(
-            expanded = menuExpandido,
-            onExpandedChange = { menuExpandido = !menuExpandido }
+        // Barra Superior Personalizada
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(color = MaterialTheme.colorScheme.primaryContainer)
+                .padding(vertical = 33.dp)
         ) {
-            OutlinedTextField(
-                value = categoria,
-                onValueChange = {},
-                readOnly = true,
-                label = { Text("Categoria") },
-                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = menuExpandido) },
-                modifier = Modifier.menuAnchor()
-            )
-
-            ExposedDropdownMenu(
-                expanded = menuExpandido,
-                onDismissRequest = { menuExpandido = false }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterStart),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                categoriasDisponiveis.forEach { opcao ->
-                    DropdownMenuItem(
-                        text = { Text(opcao) },
-                        onClick = {
-                            categoria = opcao
-                            menuExpandido = false
-                        }
+                IconButton(
+                    onClick = {
+                        (context as? ComponentActivity)?.onBackPressedDispatcher?.onBackPressed()
+                    }
+                    , modifier = Modifier.padding(start = 8.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Voltar",
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                 }
+                Text(
+                    "Criar Senha", // Título da tela
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(modifier = Modifier.width(48.dp)) // Espaço para alinhar o título
             }
         }
 
-        Spacer(modifier = Modifier.padding(8.dp))
-
-        Button(onClick = {
-            val novaSenha = Senha(
-                categoria = categoria,
-                login = login,
-                descricao = descricao,
-                senhaCriptografada = senha,
-                accessToken = gerarAccessToken()
+        Column(
+            modifier = Modifier
+                .verticalScroll(scrollState)
+                .fillMaxWidth()
+                .padding(32.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            OutlinedTextField(
+                value = login,
+                onValueChange = { login = it },
+                label = { Text("Login", style = MaterialTheme.typography.labelLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 8.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = MaterialTheme.colorScheme.primary,
+                    unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                    focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    cursorColor = MaterialTheme.colorScheme.primary,
+                    focusedLabelColor = MaterialTheme.colorScheme.primary,
+                    unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            )
+            OutlinedTextField(
+                value = descricao,
+                onValueChange = { descricao = it },
+                label = { Text("URL", style = MaterialTheme.typography.labelLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 8.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = MaterialTheme.colorScheme.primary,
+                    unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                    focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    cursorColor = MaterialTheme.colorScheme.primary,
+                    focusedLabelColor = MaterialTheme.colorScheme.primary,
+                    unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            )
+            OutlinedTextField(
+                value = senhaValor,
+                onValueChange = { senhaValor = it },
+                label = { Text("Senha", style = MaterialTheme.typography.labelLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 16.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = MaterialTheme.colorScheme.primary,
+                    unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                    focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    cursorColor = MaterialTheme.colorScheme.primary,
+                    focusedLabelColor = MaterialTheme.colorScheme.primary,
+                    unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             )
 
-            db.collection("users").document(uid).collection("passwords")
-                .add(novaSenha)
-                .addOnSuccessListener {
-                    onSenhaSalva()
-                }
+            ExposedDropdownMenuBox(
+                expanded = menuExpandido,
+                onExpandedChange = { menuExpandido = !menuExpandido },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 24.dp)
+            ) {
+                OutlinedTextField(
+                    value = label,
+                    onValueChange = {},
+                    readOnly = true,
+                    label = { Text("Categoria", style = MaterialTheme.typography.labelLarge) },
+                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = menuExpandido) },
+                    modifier = Modifier
+                        .menuAnchor()
+                        .width(315.dp),
+                    shape = RoundedCornerShape(15.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = MaterialTheme.colorScheme.primary,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                        focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                        cursorColor = MaterialTheme.colorScheme.primary,
+                        focusedLabelColor = MaterialTheme.colorScheme.primary,
+                        unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                )
 
-            login = ""
-            descricao = ""
-            categoria = "Sites Web"
-            senha = ""
-        }) {
-            Text("Salvar senha")
+                ExposedDropdownMenu(
+                    expanded = menuExpandido,
+                    onDismissRequest = { menuExpandido = false }
+                ) {
+                    categoriasDisponiveis.forEach { categoria ->
+                        DropdownMenuItem(
+                            text = { Text(categoria, style = MaterialTheme.typography.bodyLarge) },
+                            onClick = {
+                                label = categoria
+                                menuExpandido = false
+                            }
+                        )
+                    }
+                }
+            }
+
+            // Botão de criação da senha
+            Button(
+                onClick = {
+                    val novaSenha = Senha(
+                        categoria = label,
+                        login = login,
+                        descricao = descricao,
+                        senhaCriptografada = senhaValor,
+                        accessToken = gerarAccessToken()
+                    )
+
+                    // Salvar no Firestore
+                    db.collection("users").document(uid).collection("passwords")
+                        .add(novaSenha)
+                        .addOnSuccessListener {
+                            senhaCriada = "Senha para $login foi criada com sucesso!"
+                            onSenhaSalva() // Invoca o callback após salvar a senha
+
+                            // Enviar dados para PasswordManagerScreen usando Intent
+                            val intent = Intent()
+                            intent.putExtra("senhaCriptografada", senhaValor) // Corrigido para senhaValor
+                            intent.putExtra("login", login)
+                            intent.putExtra("descricao", descricao)
+                            intent.putExtra("categoria", label)
+                            intent.putExtra("uid", uid)
+                            (context as? ComponentActivity)?.setResult(android.app.Activity.RESULT_OK, intent) // ActivityResult
+                            (context as? ComponentActivity)?.finish() // Encerra esta activity e volta para a anterior
+
+                        }
+                        .addOnFailureListener { e ->
+                            senhaCriada = "Erro ao criar senha: ${e.message}"
+                        }
+
+                    // Limpar os campos após salvar
+                    login = ""
+                    descricao = ""
+                    label = categoriasDisponiveis.firstOrNull() ?: ""
+                    senhaValor = ""
+                },
+                modifier = Modifier
+                    .width(161.dp)
+                    .padding(horizontal = 16.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Text("Criar", style = MaterialTheme.typography.labelLarge)
+            }
+
+            // Exibição do feedback da senha criada
+            if (senhaCriada.isNotEmpty()) {
+                Text(
+                    text = senhaCriada,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.secondary,
+                    modifier = Modifier.padding(top = 16.dp)
+                )
+            }
         }
     }
 }
-
