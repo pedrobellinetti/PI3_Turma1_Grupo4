@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-66:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/home/skylar/.gradle/caches/8.11.1/transforms/4cfbdcab11e8b8e147aacdc97410ca34/transformed/play-services-base-18.5.0/res/values-en-rGB/values.xml",

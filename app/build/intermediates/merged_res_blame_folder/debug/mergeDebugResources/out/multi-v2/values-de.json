@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-de/values-de.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-66:/values-de/values-de.xml",
             "map": [
                 {
                     "source": "/home/skylar/.gradle/caches/8.11.1/transforms/da410f15de867b0f4331628e3e14fc73/transformed/ui-release/res/values-de/values-de.xml",

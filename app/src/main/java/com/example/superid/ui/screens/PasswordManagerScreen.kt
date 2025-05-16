@@ -6,8 +6,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ExitToApp
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.outlined.ExitToApp
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -30,7 +34,7 @@ import com.example.superid.PasswordManagerScreenActivity
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordManagerScreen(uid: String, senhas: List<Senha>, onLogout: () -> Unit, onCreatePassword: (String) -> Unit) {
+fun PasswordManagerScreen(uid: String, senhas: MutableList<Senha>, onLogout: () -> Unit, onCreatePassword: (String) -> Unit) {
     val context = LocalContext.current
     val db = Firebase.firestore
     var searchText by remember { mutableStateOf("") }
@@ -57,19 +61,31 @@ fun PasswordManagerScreen(uid: String, senhas: List<Senha>, onLogout: () -> Unit
             .padding(horizontal = 16.dp, vertical = 24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        SearchBar(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 16.dp),
-            query = searchText,
-            onQueryChange = { searchText = it },
-            onSearch = { /* TODO: Implementar ação de pesquisa se necessário */ },
-            active = false, // Manter inativo por padrão
-            onActiveChange = { /* TODO: Implementar lógica de ativação se necessário */ },
-            placeholder = { Text("Pesquisar senhas") },
-            leadingIcon = { Icon(Icons.Filled.Search, contentDescription = "Pesquisar") }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween // Para alinhar a SearchBar à esquerda e o ícone à direita
         ) {
-            // Conteúdo adicional da SearchBar quando ativa
+            SearchBar(
+                modifier = Modifier
+                    .weight(1f) // A SearchBar ocupa a maior parte do espaço
+                    .padding(bottom = 8.dp, end = 8.dp), // Adiciona um pequeno espaço à direita
+                query = searchText,
+                onQueryChange = { searchText = it },
+                onSearch = { /* TODO: Implementar ação de pesquisa se necessário */ },
+                active = false,
+                onActiveChange = { /* TODO: Implementar lógica de ativação se necessário */ },
+                placeholder = { Text("Pesquisar senhas") },
+                leadingIcon = { Icon(Icons.Filled.Search, contentDescription = "Pesquisar") }
+            ) {
+                // Conteúdo adicional da SearchBar quando ativa
+            }
+            IconButton(onClick = onLogout, modifier = Modifier
+                .padding(bottom = 8.dp)
+                .height(40.dp)
+            ){
+                Icon(imageVector = Icons.Outlined.ExitToApp, contentDescription = "Sair")
+            }
         }
 
         Text(
@@ -94,9 +110,13 @@ fun PasswordManagerScreen(uid: String, senhas: List<Senha>, onLogout: () -> Unit
                     PasswordItem(
                         senha = senha,
                         uid = uid,
-                        onSenhaRemoved = { /* TODO: Implementar remoção */ }) { senhaParaEditar ->
-                        onCreatePassword(uid)
-                    }
+                        onSenhaRemoved = { senhaRemovida ->
+                            senhas.remove(senhaRemovida)
+                        },
+                        onEditClicked = { senhaParaEditar ->
+                            // TODO: Implementar a navegação para a tela de edição
+                        }
+                    )
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
@@ -114,9 +134,13 @@ fun PasswordManagerScreen(uid: String, senhas: List<Senha>, onLogout: () -> Unit
                     PasswordItem(
                         senha = senha,
                         uid = uid,
-                        onSenhaRemoved = { /* TODO: Implementar remoção */ }) { senhaParaEditar ->
-                        onCreatePassword(uid)
-                    }
+                        onSenhaRemoved = { senhaRemovida ->
+                            senhas.remove(senhaRemovida)
+                        },
+                        onEditClicked = { senhaParaEditar ->
+                            // TODO: Implementar a navegação para a tela de edição
+                        }
+                    )
                 }
             }
         }
@@ -128,16 +152,6 @@ fun PasswordManagerScreen(uid: String, senhas: List<Senha>, onLogout: () -> Unit
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.Bottom
         ) {
-            Button(
-                onClick = onLogout,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Transparent,
-                    contentColor = Color(0xFF8000FF)
-                ),
-                elevation = ButtonDefaults.elevatedButtonElevation(0.dp),
-            ) {
-                Text("Sair")
-            }
             Button(
                 onClick = { onCreatePassword(uid) },
                 colors = ButtonDefaults.buttonColors(
@@ -151,11 +165,11 @@ fun PasswordManagerScreen(uid: String, senhas: List<Senha>, onLogout: () -> Unit
     }
 }
 
-
-
 @Composable
 fun PasswordItem(senha: Senha, uid: String, onSenhaRemoved: (Senha) -> Unit, onEditClicked: (Senha) -> Unit) {
     val db = Firebase.firestore
+    var expanded by remember { mutableStateOf(false) }
+
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -177,9 +191,48 @@ fun PasswordItem(senha: Senha, uid: String, onSenhaRemoved: (Senha) -> Unit, onE
                 Text(text = senha.login, color = Color.Gray, fontSize = 14.sp)
                 Text(text = "*******", color = Color.Gray, fontSize = 14.sp) // Exibir senha mascarada
             }
-            Row {
-                IconButton(onClick = { onEditClicked(senha) }) {
-                    Icon(Icons.Filled.Edit, contentDescription = "Editar")
+            Box {
+                IconButton(onClick = { expanded = true }) {
+                    Icon(Icons.Filled.MoreVert, contentDescription = "Opções")
+                }
+                DropdownMenu(
+                    expanded = expanded,
+                    onDismissRequest = { expanded = false }
+                ) {
+                    DropdownMenuItem(
+                        text = { Text("Editar Senha") },
+                        onClick = {
+                            expanded = false
+                            onEditClicked(senha)
+                        },
+                        leadingIcon = {
+                            Icon(
+                                Icons.Filled.Edit,
+                                contentDescription = "Editar Senha"
+                            )
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text("Excluir Senha") },
+                        onClick = {
+                            expanded = false
+                            db.collection("users").document(uid).collection("passwords").document(senha.id)
+                                .delete()
+                                .addOnSuccessListener {
+                                    println("Documento deletado com sucesso!")
+                                    onSenhaRemoved(senha) // Chama a função para atualizar a lista
+                                }
+                                .addOnFailureListener { e ->
+                                    println("Erro ao deletar o documento: $e")
+                                }
+                        },
+                        leadingIcon = {
+                            Icon(
+                                Icons.Filled.Delete,
+                                contentDescription = "Excluir Senha"
+                            )
+                        }
+                    )
                 }
             }
         }

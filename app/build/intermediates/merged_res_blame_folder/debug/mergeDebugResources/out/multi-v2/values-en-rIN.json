@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-66:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/home/skylar/.gradle/caches/8.11.1/transforms/8b108983d107dd864850dc3962187abd/transformed/material3-release/res/values-en-rIN/values-en-rIN.xml",

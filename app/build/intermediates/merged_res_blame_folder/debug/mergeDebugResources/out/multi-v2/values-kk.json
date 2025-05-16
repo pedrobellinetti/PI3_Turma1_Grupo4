@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-kk/values-kk.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-66:/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/home/skylar/.gradle/caches/8.11.1/transforms/7a1f2759ac639dcb124f40b52bef71df/transformed/play-services-basement-18.5.0/res/values-kk/values.xml",

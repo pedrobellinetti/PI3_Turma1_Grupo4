@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-66:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "/home/skylar/.gradle/caches/8.11.1/transforms/b28398b7bbfb6baa482f08d78619e315/transformed/core-1.15.0/res/values-b+sr+Latn/values-b+sr+Latn.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.superid.app-mergeDebugResources-65:/values-sk/values-sk.xml",
+            "outputFile": "com.example.superid.app-mergeDebugResources-66:/values-sk/values-sk.xml",
             "map": [
                 {
                     "source": "/home/skylar/.gradle/caches/8.11.1/transforms/9cc9a6388bc3817e497af23cd96188de/transformed/credentials-1.2.0-rc01/res/values-sk/values-sk.xml",
