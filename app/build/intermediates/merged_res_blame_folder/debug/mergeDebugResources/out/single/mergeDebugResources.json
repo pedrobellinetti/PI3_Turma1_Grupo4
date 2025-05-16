@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-mdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-mdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/font_inter_18pt_medium.ttf.flat",
+        "source": "com.example.superid.app-main-69:/font/inter_18pt_medium.ttf"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_logo.png.flat",
+        "source": "com.example.superid.app-main-69:/drawable/logo.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_settings_foreground.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/settings_foreground.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_btn_gradient.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/btn_gradient.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_ic_add.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-hdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-hdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.superid.app-main-69:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_edittext_border_gradient.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/edittext_border_gradient.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_circle_background.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/circle_background.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_settings_background.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/settings_background.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.superid.app-main-69:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/font_inter_18pt_bold.ttf.flat",
+        "source": "com.example.superid.app-main-69:/font/inter_18pt_bold.ttf"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.superid.app-main-69:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/font_inter_18pt_regular.ttf.flat",
+        "source": "com.example.superid.app-main-69:/font/inter_18pt_regular.ttf"
+    },
+    {
+        "merged": "com.example.superid.app-debug-67:/xml_backup_rules.xml.flat",
+        "source": "com.example.superid.app-main-69:/xml/backup_rules.xml"
+    }
+]

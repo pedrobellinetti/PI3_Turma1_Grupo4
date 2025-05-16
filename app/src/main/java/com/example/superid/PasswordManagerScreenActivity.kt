@@ -1,36 +1,34 @@
 package com.example.superid
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material3.ExperimentalMaterial3Api
-import com.example.superid.databinding.LayoutTelaSenhasBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.ui.Modifier
+import com.example.superid.ui.screens.PasswordManagerScreen
+import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.auth.FirebaseAuth
 
-class MainScreenActivity : AppCompatActivity() {
-    lateinit var binding: LayoutTelaSenhasBinding
-
-    @OptIn(ExperimentalMaterial3Api::class)
+class PasswordManagerScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-
-        val auth = FirebaseAuth.getInstance()
-        binding.fabAdd.setOnClickListener {
-            val uid = auth.currentUser?.uid.toString()
-            if (uid == null) {
-                // TODO: Cuidar do caso se o usuário não estiver autenticado
-                Toast.makeText(
-                    this,
-                    "Usuário não autenticado",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                val intent = Intent(this, this::class.java)
-                intent.putExtra("uid", uid)
-                startActivity(intent)
-                finish()
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        setContent {
+            SuperIDTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    if (uid != null) {
+                        PasswordManagerScreen(uid = uid)
+                    } else {
+                        // Lidar com o caso em que o UID é nulo, talvez mostrar uma tela de erro ou voltar para o login
+                        // Por exemplo:
+                        // Text("Erro: Usuário não autenticado.")
+                    }
+                }
             }
         }
     }
