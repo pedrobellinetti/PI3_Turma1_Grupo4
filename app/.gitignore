@@ -1,1 +1,52 @@
-/build
+# Diretórios de build
+/build/
+/captures/
+/outputs/
+/intermediates/
+/generated/
+
+# Arquivos locais do Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Configurações locais
+local.properties
+*.keystore
+*.jks
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+*.lock
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Caches
+.gradle/
+.cache/
+.kotlinc/
+
+# Arquivos de distribuição ou APK
+*.apk
+*.ap_
+*.aar
+
+# Firebase / Google Services
+google-services.json
+
+# Testes / cobertura
+*.ec
+*.hprof
+
+# Outros
+.env
+*.db
+*.sqlite
+
+# VSCode
+.vscode/
