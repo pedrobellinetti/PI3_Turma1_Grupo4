@@ -1,5 +1,6 @@
 package com.example.superid
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,20 +15,19 @@ import com.google.firebase.auth.FirebaseAuth
 class PasswordManagerScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
         setContent {
             SuperIDTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    if (uid != null) {
-                        PasswordManagerScreen(uid = uid)
-                    } else {
-                        // Lidar com o caso em que o UID é nulo, talvez mostrar uma tela de erro ou voltar para o login
-                        // Por exemplo:
-                        // Text("Erro: Usuário não autenticado.")
-                    }
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    PasswordManagerScreen(
+                        uid = uid,
+                        onLogout = {  },
+                        onCreatePassword = { currentUid ->
+                            val intent = Intent(this, PasswordFormActivity::class.java)
+                            intent.putExtra("uid", currentUid)
+                            startActivity(intent)
+                        }
+                    )
                 }
             }
         }

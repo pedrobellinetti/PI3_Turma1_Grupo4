@@ -6,5 +6,6 @@ data class Senha(
     val login: String = "",
     val descricao: String = "",
     val senhaCriptografada: String = "",
-    val accessToken: String = ""
+    val accessToken: String = "",
+    var nome: String = ""
 )

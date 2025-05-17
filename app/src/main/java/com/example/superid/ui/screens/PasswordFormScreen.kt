@@ -113,7 +113,7 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
             OutlinedTextField(
                 value = login,
                 onValueChange = { login = it },
-                label = { Text("Login", style = MaterialTheme.typography.bodyLarge) },
+                label = { Text("Login (Opcional)", style = MaterialTheme.typography.bodyLarge) },
                 modifier = Modifier
                     .width(315.dp)
                     .padding(bottom = 8.dp),
@@ -200,8 +200,8 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
             // Botão de criação da senha
             Button(
                 onClick = {
-                    if (login.isBlank() || senhaValor.isBlank()) {
-                        Toast.makeText(context, "Login e senha são obrigatórios", Toast.LENGTH_SHORT).show()
+                    if (senhaValor.isBlank()) {
+                        Toast.makeText(context, "Senha é obrigatória", Toast.LENGTH_SHORT).show()
                     } else {
                         val categoriaFinal = if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
                             novaCategoria.trim().also { nova ->
@@ -217,7 +217,8 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
                             login = login,
                             descricao = descricao,
                             senhaCriptografada = senhaValor,
-                            accessToken = gerarAccessToken()
+                            accessToken = gerarAccessToken(),
+                            nome = nome
                         )
 
                         // Salvar no Firestore
