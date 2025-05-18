@@ -26,6 +26,13 @@ class PasswordManagerScreenActivity : ComponentActivity() {
                             val intent = Intent(this, PasswordFormActivity::class.java)
                             intent.putExtra("uid", currentUid)
                             startActivity(intent)
+                        },
+                        onEditPassword = { passwordId ->
+                            val intent = Intent(this, PasswordFormActivity::class.java)
+                            intent.putExtra("uid", uid)
+                            intent.putExtra("passwordId", passwordId)
+                            intent.putExtra("isEditMode", true)
+                            startActivity(intent)
                         }
                     )
                 }

@@ -43,6 +43,7 @@
         <activity android:name=".PasswordManagerScreenActivity" />
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".PasswordFormActivity"/>
+        <activity android:name=".EditPasswordActivity" />
     </application>
 
 </manifest>

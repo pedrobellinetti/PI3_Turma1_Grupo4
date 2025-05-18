@@ -62,7 +62,7 @@ fun LoginForm(
             ) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Voltar para Login",
+                    contentDescription = "Voltar para Cadastro",
                     tint = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }

@@ -167,7 +167,7 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
                 Text(
                     "Voltar para Login",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
             }
         }

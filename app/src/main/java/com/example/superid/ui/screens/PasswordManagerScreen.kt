@@ -22,23 +22,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.superid.EditPasswordActivity
 import com.example.superid.PasswordFormActivity
 import com.example.superid.Senha
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.security.SecureRandom
-import androidx.compose.runtime.remember
-import androidx.compose.ui.text.style.TextAlign
-import com.example.superid.PasswordManagerScreenActivity
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (String) -> Unit) {
+fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (String) -> Unit, onEditPassword: (String) -> Unit) {
     val db = Firebase.firestore
     val senhas = remember { mutableStateListOf<Senha>() }
     var listenerRegistration: ListenerRegistration? = null
@@ -46,6 +43,8 @@ fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (
     val onSenhaRemoved: (Senha) -> Unit = { senhaParaRemover ->
         senhas.removeIf { it.id == senhaParaRemover.id }
     }
+
+    val context = LocalContext.current
 
     DisposableEffect(uid) {
         listenerRegistration = db.collection("users").document(uid).collection("passwords")
@@ -90,7 +89,13 @@ fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (
         senhas = senhas, // Passa a lista de estado
         onLogout = onLogout,
         onCreatePassword = onCreatePassword,
-        onSenhaRemoved = onSenhaRemoved
+        onSenhaRemoved = onSenhaRemoved,
+        onEditPassword = { senhaId ->
+            val intent = Intent(context, EditPasswordActivity::class.java)
+            intent.putExtra("UID", uid)
+            intent.putExtra("SENHA_ID", senhaId)
+            context.startActivity(intent)
+        }
     )
 }
 
@@ -101,7 +106,8 @@ fun PasswordListContent(
     senhas: List<Senha>,
     onLogout: () -> Unit,
     onCreatePassword: (String) -> Unit,
-    onSenhaRemoved: (Senha) -> Unit
+    onSenhaRemoved: (Senha) -> Unit,
+    onEditPassword: (String) -> Unit
 ) {
     val context = LocalContext.current
     val db = Firebase.firestore
@@ -167,7 +173,7 @@ fun PasswordListContent(
                 modifier = Modifier
                     .weight(1f)
                     .padding(bottom = 75.dp)
-            ){
+            ) {
                 senhasAgrupadas.forEach { (categoria, listaSenhas) ->
                     item {
                         Text(
@@ -179,7 +185,14 @@ fun PasswordListContent(
                         )
                     }
                     items(listaSenhas) { senha ->
-                        PasswordItem(senha = senha, uid = uid, onSenhaRemoved = onSenhaRemoved, onEditClicked = { })
+                        PasswordItem(
+                            senha = senha,
+                            uid = uid,
+                            onSenhaRemoved = onSenhaRemoved,
+                            onEditClicked = { senhaParaEditar ->
+                                onEditPassword(senhaParaEditar.id ?: "")
+                            }
+                        )
                     }
                 }
             }

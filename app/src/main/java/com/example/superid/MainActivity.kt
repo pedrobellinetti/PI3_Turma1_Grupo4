@@ -55,6 +55,7 @@ fun AuthApp(modifier: Modifier = Modifier) {
     val db = Firebase.firestore
     val uid = remember { mutableStateOf(FirebaseAuth.getInstance().currentUser?.uid ?: "") }
     val senhas = remember { mutableStateListOf<Senha>() }
+    var senhaIdParaEditar by remember { mutableStateOf<String?>(null) } // Estado para armazenar o ID da senha a ser editada
 
     when (currentScreen) {
         AuthScreen.LOGIN -> LoginForm(
@@ -71,7 +72,7 @@ fun AuthApp(modifier: Modifier = Modifier) {
 
         AuthScreen.MAIN -> {
             PasswordManagerScreen(
-                uid = uid.value, // Passa o valor do estado
+                uid = uid.value,
                 onLogout = {
                     FirebaseAuth.getInstance().signOut()
                     currentScreen = AuthScreen.LOGIN
@@ -79,6 +80,13 @@ fun AuthApp(modifier: Modifier = Modifier) {
                 onCreatePassword = { currentUid ->
                     val intent = Intent(context, PasswordFormActivity::class.java)
                     intent.putExtra("uid", currentUid)
+                    context.startActivity(intent)
+                },
+                onEditPassword = { senhaId ->
+                    senhaIdParaEditar = senhaId
+                    val intent = Intent(context, EditPasswordActivity::class.java)
+                    intent.putExtra("UID", uid.value)
+                    intent.putExtra("SENHA_ID", senhaId)
                     context.startActivity(intent)
                 }
             )
@@ -91,6 +99,11 @@ fun AuthApp(modifier: Modifier = Modifier) {
         AuthScreen.RECOVERY -> PasswordRecoveryScreen(
             onNavigateToLogin = { currentScreen = AuthScreen.LOGIN }
         )
+
+        AuthScreen.EDIT_PASSWORD -> {
+            // Esta tela agora será iniciada diretamente através de startActivity
+            // Você pode remover este caso do when, pois a navegação é feita com Intent
+        }
 
         else -> {
             //TODO

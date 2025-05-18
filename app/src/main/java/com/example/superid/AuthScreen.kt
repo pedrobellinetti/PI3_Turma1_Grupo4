@@ -1,5 +1,5 @@
 package com.example.superid
 
 enum class AuthScreen {
-    LOGIN, REGISTER, MAIN, QR_LOGIN, RECOVERY
+    LOGIN, REGISTER, MAIN, QR_LOGIN, RECOVERY, EDIT_PASSWORD
 }
