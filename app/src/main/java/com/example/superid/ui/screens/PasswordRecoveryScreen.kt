@@ -1,6 +1,5 @@
 package com.example.superid.ui.screens
 
-import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

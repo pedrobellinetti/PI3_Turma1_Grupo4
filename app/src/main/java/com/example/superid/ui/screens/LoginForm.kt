@@ -13,12 +13,10 @@ import com.google.firebase.auth.FirebaseAuth
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.SearchBarDefaults.colors
 import androidx.compose.ui.draw.clip
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuthException
@@ -62,7 +60,7 @@ fun LoginForm(
             ) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Voltar para Login",
+                    contentDescription = "Voltar para Cadastro",
                     tint = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
@@ -87,8 +85,6 @@ fun LoginForm(
                 )
             }
         }
-
-        // Título "Login sem senha"
         Text(
             text = "Entre na sua conta",
             style = MaterialTheme.typography.titleMedium,
@@ -135,17 +131,17 @@ fun LoginForm(
             )
         )
         TextButton(
-                onClick = onNavigateToForgotPassword,
-        modifier = Modifier
-            .align(Alignment.Start)
-            .padding(start = 72.dp)
+            onClick = onNavigateToForgotPassword,
+            modifier = Modifier
+                .align(Alignment.Start)
+                .padding(start = 60.dp)
         ) {
-        Text(
-            "Esqueceu sua senha?",
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.onSecondary
-        )
-    }
+            Text(
+                "Esqueceu sua senha?",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSecondary
+            )
+        }
 
         // Botão Entrar
         Button(

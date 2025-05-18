@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-48:12
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:2:1-49:12
 MERGED from [androidx.databinding:viewbinding:8.10.0] /home/skylar/.gradle/caches/8.11.1/transforms/933729c8f348ec25bb5f01e2381f2576/transformed/viewbinding-8.10.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/8b108983d107dd864850dc3962187abd/transformed/material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/956b3c97ce5758f9f4b331eb2a14cd7e/transformed/material-release/AndroidManifest.xml:2:1-7:12
@@ -20,6 +20,7 @@ MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/
 MERGED from [androidx.compose.animation:animation-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/ceca683deb5ad5cdf7ba84662be228fd/transformed/animation-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/896e6a1730fe500fd14d926ddbca1fda/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/92799783dc4bf1cf031afbadffbdf65c/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/9927100796ac4bba2c29432ac128fecf/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/52f03f2388747e7946565cd0c7c5fa11/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/da410f15de867b0f4331628e3e14fc73/transformed/ui-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/358974798722c74fc9f3c5e58f0c2011/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:17:1-28:12
@@ -149,8 +150,8 @@ ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidMan
 	android:name
 		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:22-62
 application
-ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-46:19
-INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-46:19
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-47:19
+INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-47:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/eda7e1a79eda2c8715cb9ba496fc7d99/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/eda7e1a79eda2c8715cb9ba496fc7d99/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/358974798722c74fc9f3c5e58f0c2011/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:22:5-26:19
@@ -305,6 +306,10 @@ activity#com.example.superid.PasswordFormActivity
 ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:45:9-57
 	android:name
 		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:45:19-55
+activity#com.example.superid.EditPasswordActivity
+ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:46:9-58
+	android:name
+		ADDED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:46:19-55
 uses-sdk
 INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml
@@ -341,6 +346,8 @@ MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /home/
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/896e6a1730fe500fd14d926ddbca1fda/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/92799783dc4bf1cf031afbadffbdf65c/transformed/foundation-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/92799783dc4bf1cf031afbadffbdf65c/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/9927100796ac4bba2c29432ac128fecf/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/9927100796ac4bba2c29432ac128fecf/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/52f03f2388747e7946565cd0c7c5fa11/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/52f03f2388747e7946565cd0c7c5fa11/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/da410f15de867b0f4331628e3e14fc73/transformed/ui-release/AndroidManifest.xml:5:5-44
