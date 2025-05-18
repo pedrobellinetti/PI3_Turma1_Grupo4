@@ -1,59 +1,35 @@
 package com.example.superid
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
+import com.example.superid.ui.screens.PasswordManagerScreen
+import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.auth.FirebaseAuth
 
 class PasswordManagerScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
         setContent {
-            MainScreen()
-        }
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun MainScreen() {
-    val context = LocalContext.current
-    val auth = FirebaseAuth.getInstance()
-
-    Scaffold(
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = {
-                    val uid = auth.currentUser?.uid
-                    if (uid == null) {
-                        Toast.makeText(context, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
+            SuperIDTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    if (uid != null) {
+                        PasswordManagerScreen(uid = uid)
                     } else {
-                        val intent = Intent(context, PasswordManagerScreenActivity::class.java)
-                        intent.putExtra("uid", uid)
-                        context.startActivity(intent)
+                        // Lidar com o caso em que o UID é nulo, talvez mostrar uma tela de erro ou voltar para o login
+                        // Por exemplo:
+                        // Text("Erro: Usuário não autenticado.")
                     }
                 }
-            ) {
-                Text("+")
             }
-        }
-    ) { paddingValues ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-                .padding(16.dp)
-        ) {
-            Text("Bem-vindo à Tela de Senhas", style = MaterialTheme.typography.headlineSmall)
-
         }
     }
 }
