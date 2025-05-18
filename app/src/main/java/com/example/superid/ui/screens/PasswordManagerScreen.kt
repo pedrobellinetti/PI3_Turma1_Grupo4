@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ExitToApp
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.MoreVert
@@ -148,11 +150,24 @@ fun PasswordListContent(
                 textAlign = TextAlign.Start
             )
 
-            val senhasAgrupadas = senhas.groupBy { it.categoria }
+            val senhasFiltradas = if (searchText.isBlank()) {
+                senhas
+            } else {
+                senhas.filter {
+                    it.nome.contains(searchText, ignoreCase = true) ||
+                            it.login.contains(searchText, ignoreCase = true) ||
+                            it.descricao.contains(searchText, ignoreCase = true) ||
+                            it.categoria.contains(searchText, ignoreCase = true) ||
+                            it.senhaCriptografada.contains(searchText, ignoreCase = true)
+                }
+            }
+            val senhasAgrupadas = senhasFiltradas.groupBy { it.categoria }
 
             LazyColumn(
-                modifier = Modifier.weight(1f) // Permite que a LazyColumn ocupe o espaço restante
-            ) {
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(bottom = 75.dp)
+            ){
                 senhasAgrupadas.forEach { (categoria, listaSenhas) ->
                     item {
                         Text(
@@ -169,24 +184,36 @@ fun PasswordListContent(
                 }
             }
         }
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
-                .align(Alignment.BottomCenter), // Alinha o Row na parte inferior e central
+                .align(Alignment.BottomCenter),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.Bottom
         ) {
             Button(
-                onClick = { onCreatePassword(uid) },
+                onClick = { /* TODO: Implementar para abrir a camera  */ },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary
-                )
+                    containerColor = Color.Transparent,
+                    contentColor = MaterialTheme.colorScheme.onBackground
+                ),
+                elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp, pressedElevation = 0.dp, focusedElevation = 0.dp),
+                modifier = Modifier.weight(1f), // Ocupa o máximo de espaço a esquerda
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp) // Adiciona um pouco de padding interno
             ) {
-                Text("+ Cadastrar")
+                Text("Ler QRcode", textAlign = TextAlign.Start)
             }
+
+            FloatingActionButton(
+                onClick = { onCreatePassword(uid) },
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary,
+                shape = CircleShape // Define a forma do FAB como círculo
+            ) {
+                Icon(Icons.Filled.Add, "Adicionar nova senha")
+            }
+            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }
