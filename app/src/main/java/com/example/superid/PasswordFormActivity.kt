@@ -14,9 +14,7 @@ class PasswordFormActivity : ComponentActivity() {
 
         setContent {
             SuperIDTheme {
-                PasswordFormScreen(uid = uid) {
-                    finish() // Fecha essa tela e volta para a anterior
-                }
+                PasswordFormScreen(uid = uid) { }
             }
         }
     }

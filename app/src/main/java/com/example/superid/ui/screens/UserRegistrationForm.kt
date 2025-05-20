@@ -1,22 +1,23 @@
 package com.example.superid.ui.screens
 
 import android.widget.Toast
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import com.google.firebase.auth.FirebaseAuth
-import androidx.compose.ui.res.painterResource
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.ui.draw.clip
 import com.example.superid.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -25,9 +26,12 @@ fun UserRegistrationForm(
     onNavigateToLogin: () -> Unit
 ) {
     val context = LocalContext.current
+    var nome by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
-    var nome by remember { mutableStateOf("") }
+    var senhaError by remember { mutableStateOf(false) }
+    var emailError by remember { mutableStateOf(false) }
+    var nomeError by remember { mutableStateOf(false) }
     val auth = FirebaseAuth.getInstance()
 
     Column(
@@ -74,25 +78,7 @@ fun UserRegistrationForm(
             modifier = Modifier.padding(top = 30.dp)
         )
 
-        // Campos de E-mail, Nome e Senha
-        OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text("Digite seu e-mail", style = MaterialTheme.typography.labelLarge) },
-            modifier = Modifier
-                .width(315.dp)
-                .padding(horizontal = 16.dp),
-            shape = RoundedCornerShape(15.dp),
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedBorderColor = MaterialTheme.colorScheme.outline,
-                focusedTextColor = MaterialTheme.colorScheme.onBackground,
-                unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
-                cursorColor = MaterialTheme.colorScheme.primary,
-                focusedLabelColor = MaterialTheme.colorScheme.primary,
-                unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        )
+        // Campos de Nome, E-mail e Senha
         OutlinedTextField(
             value = nome,
             onValueChange = { nome = it },
@@ -103,18 +89,44 @@ fun UserRegistrationForm(
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                unfocusedBorderColor = if (nomeError) Color.Red else MaterialTheme.colorScheme.outline,
                 focusedTextColor = MaterialTheme.colorScheme.onBackground,
                 unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 cursorColor = MaterialTheme.colorScheme.primary,
                 focusedLabelColor = MaterialTheme.colorScheme.primary,
-                unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                unfocusedLabelColor = if (nomeError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        if (nomeError) {
+            Text(text = "Por favor, digite seu nome.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        }
+
+        OutlinedTextField(
+            value = email,
+            onValueChange = { email = it },
+            label = { Text("Digite seu e-mail", style = MaterialTheme.typography.labelLarge) },
+            modifier = Modifier
+                .width(315.dp)
+                .padding(horizontal = 16.dp),
+            shape = RoundedCornerShape(15.dp),
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = MaterialTheme.colorScheme.primary,
+                unfocusedBorderColor = if (emailError) Color.Red else MaterialTheme.colorScheme.outline,
+                focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                cursorColor = MaterialTheme.colorScheme.primary,
+                focusedLabelColor = MaterialTheme.colorScheme.primary,
+                unfocusedLabelColor = if (emailError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        )
+        if (emailError) {
+            Text(text = "Por favor, digite um e-mail válido.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        }
+
         OutlinedTextField(
             value = senha,
             onValueChange = { senha = it },
-            label = { Text("Digite sua senha", style = MaterialTheme.typography.labelLarge) },
+            label = { Text("Digite sua senha (mínimo 6 caracteres)", style = MaterialTheme.typography.labelLarge) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
                 .width(315.dp)
@@ -122,19 +134,48 @@ fun UserRegistrationForm(
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                unfocusedBorderColor = if (senhaError) Color.Red else MaterialTheme.colorScheme.outline,
                 focusedTextColor = MaterialTheme.colorScheme.onBackground,
                 unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 cursorColor = MaterialTheme.colorScheme.primary,
                 focusedLabelColor = MaterialTheme.colorScheme.primary,
-                unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                unfocusedLabelColor = if (senhaError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        if (senhaError) {
+            Text(text = "A senha precisa ter no mínimo 6 caracteres.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        }
 
         // Botão Cadastrar
         Button(
             onClick = {
-                if (email.isNotBlank() && senha.isNotBlank() && nome.isNotBlank()) {
+                var hasValidationError = false
+
+                if (nome.isBlank()) {
+                    nomeError = true
+                    hasValidationError = true
+                } else {
+                    nomeError = false
+                }
+
+                if (email.isBlank()) {
+                    emailError = true
+                    hasValidationError = true
+                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    emailError = true
+                    hasValidationError = true
+                } else {
+                    emailError = false
+                }
+
+                if (senha.length < 6) {
+                    senhaError = true
+                    hasValidationError = true
+                } else {
+                    senhaError = false
+                }
+
+                if (!hasValidationError) {
                     auth.createUserWithEmailAndPassword(email, senha)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
@@ -152,8 +193,6 @@ fun UserRegistrationForm(
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
                                         when ((task.exception as FirebaseAuthException).errorCode) {
-                                            "ERROR_INVALID_EMAIL" -> "Formato de e-mail inválido."
-                                            "ERROR_WEAK_PASSWORD" -> "A senha precisa ter pelo menos 6 caracteres."
                                             "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso."
                                             else -> "Ocorreu um erro ao realizar o cadastro."
                                         }
@@ -163,8 +202,6 @@ fun UserRegistrationForm(
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
                         }
-                } else {
-                    Toast.makeText(context, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
                 }
             },
             modifier = Modifier

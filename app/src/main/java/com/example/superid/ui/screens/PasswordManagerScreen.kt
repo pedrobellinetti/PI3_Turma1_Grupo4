@@ -1,6 +1,7 @@
 package com.example.superid.ui.screens
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -36,12 +37,15 @@ fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (
     val db = Firebase.firestore
     val senhas = remember { mutableStateListOf<Senha>() }
     var listenerRegistration: ListenerRegistration? = null
-
-    val onSenhaRemoved: (Senha) -> Unit = { senhaParaRemover ->
-        senhas.removeIf { it.id == senhaParaRemover.id }
-    }
-
     val context = LocalContext.current
+
+    val onSenhaRemoved: (Boolean, String?) -> Unit = { sucesso, mensagem ->
+        Toast.makeText(
+            context,
+            mensagem ?: if (sucesso) "Senha excluída com sucesso!" else "Erro ao excluir senha.",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
 
     DisposableEffect(uid) {
         listenerRegistration = db.collection("users").document(uid).collection("passwords")
@@ -81,12 +85,23 @@ fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (
         }
     }
 
-    PasswordListContent( // Chama a composable para exibir a lista
+    PasswordListContent(
         uid = uid,
-        senhas = senhas, // Passa a lista de estado
+        senhas = senhas,
         onLogout = onLogout,
         onCreatePassword = onCreatePassword,
-        onSenhaRemoved = onSenhaRemoved,
+        onSenhaRemoved = { senhaParaRemover ->
+            db.collection("users").document(uid).collection("passwords").document(senhaParaRemover.id)
+                .delete()
+                .addOnSuccessListener {
+                    println("Documento deletado com sucesso!")
+                    onSenhaRemoved(true, null)
+                }
+                .addOnFailureListener { e ->
+                    println("Erro ao deletar: $e")
+                    onSenhaRemoved(false, "Falha ao excluir senha.")
+                }
+        },
         onEditPassword = { senhaId ->
             val intent = Intent(context, EditPasswordActivity::class.java)
             intent.putExtra("UID", uid)
@@ -104,14 +119,15 @@ fun PasswordListContent(
     onLogout: () -> Unit,
     onCreatePassword: (String) -> Unit,
     onSenhaRemoved: (Senha) -> Unit,
-    onEditPassword: (String) -> Unit
+    onEditPassword: (String) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
     val db = Firebase.firestore
     var searchText by remember { mutableStateOf("") }
 
-    Box( // Envolve a Column principal
-        modifier = Modifier.fillMaxSize()
+    Box(
+        modifier = modifier.fillMaxSize()
     ) {
         Column(
             modifier = Modifier
@@ -126,8 +142,8 @@ fun PasswordListContent(
             ) {
                 SearchBar(
                     modifier = Modifier
-                        .weight(1f) // A SearchBar ocupa a maior parte do espaço
-                        .padding(bottom = 8.dp, end = 8.dp), // Adiciona um pequeno espaço à direita
+                        .weight(1f)
+                        .padding(bottom = 8.dp, end = 8.dp),
                     query = searchText,
                     onQueryChange = { searchText = it },
                     onSearch = { /* TODO: Implementar ação de pesquisa se necessário */ },
@@ -209,8 +225,8 @@ fun PasswordListContent(
                     contentColor = MaterialTheme.colorScheme.onBackground
                 ),
                 elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp, pressedElevation = 0.dp, focusedElevation = 0.dp),
-                modifier = Modifier.weight(1f), // Ocupa o máximo de espaço a esquerda
-                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp) // Adiciona um pouco de padding interno
+                modifier = Modifier.weight(1f),
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp)
             ) {
                 Text("Ler QRcode", textAlign = TextAlign.Start)
             }
@@ -219,7 +235,7 @@ fun PasswordListContent(
                 onClick = { onCreatePassword(uid) },
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary,
-                shape = CircleShape // Define a forma do FAB como círculo
+                shape = CircleShape
             ) {
                 Icon(Icons.Filled.Add, "Adicionar nova senha")
             }
@@ -232,6 +248,7 @@ fun PasswordListContent(
 fun PasswordItem(senha: Senha, uid: String, onSenhaRemoved: (Senha) -> Unit, onEditClicked: (Senha) -> Unit) {
     val db = Firebase.firestore
     var expanded by remember { mutableStateOf(false) }
+    val context = LocalContext.current
 
     Card(
         modifier = Modifier
@@ -274,8 +291,14 @@ fun PasswordItem(senha: Senha, uid: String, onSenhaRemoved: (Senha) -> Unit, onE
                             expanded = false
                             db.collection("users").document(uid).collection("passwords").document(senha.id)
                                 .delete()
-                                .addOnSuccessListener { println("Documento deletado com sucesso!"); onSenhaRemoved(senha) }
-                                .addOnFailureListener { e -> println("Erro ao deletar: $e") }
+                                .addOnSuccessListener {
+                                    println("Documento deletado com sucesso!")
+                                }
+                                .addOnFailureListener { e ->
+                                    println("Erro ao deletar: $e")
+                                    Toast.makeText(context, "Falha ao excluir senha.", Toast.LENGTH_SHORT).show()
+                                }
+                            onSenhaRemoved(senha)
                         },
                         leadingIcon = { Icon(Icons.Filled.Delete, contentDescription = "Excluir Senha") }
                     )

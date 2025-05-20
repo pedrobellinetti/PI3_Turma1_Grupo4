@@ -1,28 +1,28 @@
 package com.example.superid.ui.screens
 
 import android.widget.Toast
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.unit.dp
-import com.google.firebase.auth.FirebaseAuth
-import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.*
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.unit.dp
 import com.example.superid.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 
-
-@OptIn(ExperimentalMaterial3Api::class) //Responsável por habilitar o uso de APIs experimentais
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginForm(
     onNavigateToRegister: () -> Unit,
@@ -32,23 +32,24 @@ fun LoginForm(
     val context = LocalContext.current
     var email by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
-    var status by remember { mutableStateOf("") }
+    var emailError by remember { mutableStateOf(false) }
+    var senhaError by remember { mutableStateOf(false) }
     val auth = FirebaseAuth.getInstance()
 
     Column(
         modifier = Modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp) // Espaçamento entre os elementos principais
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // Container superior personalizado
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
-                    color = MaterialTheme.colorScheme.primaryContainer, // Cor de fundo do container
+                    color = MaterialTheme.colorScheme.primaryContainer,
                 )
-                .padding(vertical = 30.dp), // Espaçamento interno vertical
+                .padding(vertical = 30.dp),
             contentAlignment = Alignment.Center
         ) {
             // Botão de voltar alinhado à esquerda
@@ -75,7 +76,7 @@ fun LoginForm(
                     style = MaterialTheme.typography.headlineMedium,
                     color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
-                Spacer(modifier=Modifier.padding(7.dp))
+                Spacer(modifier = Modifier.padding(7.dp))
                 Image(
                     painter = painterResource(id = R.drawable.logo),
                     contentDescription = "Logo do Super ID",
@@ -103,14 +104,18 @@ fun LoginForm(
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                unfocusedBorderColor = if (emailError) Color.Red else MaterialTheme.colorScheme.outline,
                 focusedTextColor = MaterialTheme.colorScheme.onBackground,
                 unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 cursorColor = MaterialTheme.colorScheme.primary,
                 focusedLabelColor = MaterialTheme.colorScheme.primary,
-                unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                unfocusedLabelColor = if (emailError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        if (emailError) {
+            Text(text = "Por favor, digite seu e-mail.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        }
+
         OutlinedTextField(
             value = senha,
             onValueChange = { senha = it },
@@ -122,14 +127,18 @@ fun LoginForm(
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                unfocusedBorderColor = if (senhaError) Color.Red else MaterialTheme.colorScheme.outline,
                 focusedTextColor = MaterialTheme.colorScheme.onBackground,
                 unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 cursorColor = MaterialTheme.colorScheme.primary,
                 focusedLabelColor = MaterialTheme.colorScheme.primary,
-                unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                unfocusedLabelColor = if (senhaError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        if (senhaError) {
+            Text(text = "Sua senha contém no mínimo 6 caracteres.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        }
+
         TextButton(
             onClick = onNavigateToForgotPassword,
             modifier = Modifier
@@ -146,7 +155,34 @@ fun LoginForm(
         // Botão Entrar
         Button(
             onClick = {
-                if (email.isNotBlank() && senha.isNotBlank()) {
+                var hasValidationError = false
+                var currentEmailError = false
+                var currentSenhaError = false
+
+                if (email.isBlank()) {
+                    emailError = true
+                    currentEmailError = true
+                    hasValidationError = true
+                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    emailError = true
+                    hasValidationError = true
+                } else {
+                    emailError = false
+                }
+
+                if (senha.length < 6) {
+                    senhaError = true
+                    currentSenhaError = true
+                    hasValidationError = true
+                } else if (senha.isBlank()) {
+                    senhaError = true
+                    currentSenhaError = true
+                    hasValidationError = true
+                } else {
+                    senhaError = false
+                }
+
+                if (!hasValidationError) {
                     auth.signInWithEmailAndPassword(email, senha)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful && auth.currentUser?.isEmailVerified == true) {
@@ -156,22 +192,18 @@ fun LoginForm(
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
                                         when ((task.exception as FirebaseAuthException).errorCode) {
-                                            "ERROR_INVALID_EMAIL" -> "Formato de e-mail inválido."
                                             "ERROR_WRONG_PASSWORD" -> "Senha incorreta."
-                                            "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
                                             "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso."
-                                            else -> "Ocorreu um erro ao realizar o login. Garanta que os dados estão corretos"
+                                            else -> "Usuário não encontrado."
                                         }
                                     }
-                                    else -> "Ocorreu um erro inesperado. Garanta que os dados estão corretos."
+                                    else -> "Ocorreu um erro inesperado."
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
                         }
-                } else {
-                    Toast.makeText(context, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
                 }
             },
             modifier = Modifier
@@ -194,9 +226,6 @@ fun LoginForm(
         ) {
             TextButton(onClick = onNavigateToRegister) {
                 Text("Não tem conta? Cadastre-se", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSecondary)
-            }
-            if (status.isNotEmpty()) {
-                Text(text = status, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
             }
         }
     }

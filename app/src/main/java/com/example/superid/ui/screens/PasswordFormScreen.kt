@@ -1,6 +1,5 @@
 package com.example.superid.ui.screens
 
-import android.content.Intent
 import android.util.Base64
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -227,16 +226,6 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
                             .addOnSuccessListener {
                                 Toast.makeText(context, "Senha cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
                                 onSenhaSalva()
-
-                                val intent = Intent()
-                                intent.putExtra("senhaCriptografada", senhaValor)
-                                intent.putExtra("login", login)
-                                intent.putExtra("descricao", descricao)
-                                intent.putExtra("categoria", categoriaFinal)
-                                intent.putExtra("uid", uid)
-                                (context as? ComponentActivity)?.setResult(android.app.Activity.RESULT_OK, intent)
-                                (context as? ComponentActivity)?.finish()
-
                             }
                             .addOnFailureListener { e ->
                                 Toast.makeText(context, "Erro ao cadastrar senha: ${e.message}", Toast.LENGTH_SHORT).show()
