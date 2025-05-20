@@ -49,6 +49,8 @@ import com.example.superid.ui.screens.PasswordManagerScreen
 import com.example.superid.ui.screens.PasswordRecoveryScreen
 import com.example.superid.ui.screens.QrScanScreen
 import com.example.superid.ui.screens.UserRegistrationForm
+import com.example.superid.ui.theme.AcceptButtonDark
+import com.example.superid.ui.theme.AcceptButtonLight
 import com.example.superid.ui.theme.RecusarButtonTextDark
 import com.example.superid.ui.theme.RecusarButtonTextLight
 import com.example.superid.ui.theme.SuperIDTheme
@@ -145,9 +147,9 @@ fun TermsOfServiceScreen(
     onAcceptTerms: () -> Unit,
     onDeclineTerms: () -> Unit
 ) {
-    val recusarTextColor = if (isSystemInDarkTheme()) RecusarButtonTextDark else RecusarButtonTextLight
-
-
+    val isDarkTheme = isSystemInDarkTheme()
+    val aceitarButtonColor = if (isDarkTheme) AcceptButtonDark else AcceptButtonLight
+    val recusarTextColor = if (isDarkTheme) RecusarButtonTextDark else RecusarButtonTextLight
     Scaffold(
         topBar = {
             TopAppBar(
@@ -173,17 +175,17 @@ fun TermsOfServiceScreen(
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
                 OutlinedButton(onClick = onDeclineTerms) {
-                    Text(stringResource(R.string.decline))
+                    Text(stringResource(R.string.decline), color = recusarTextColor)
                 }
-                Button(onClick = onAcceptTerms,
+                Button(
+                    onClick = onAcceptTerms,
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color.White,
-                        contentColor = recusarTextColor
-                    ), border =
-                        BorderStroke(1.dp, Color.Gray)
-                ){
-                    Text(stringResource(R.string.accept)
-                    )
+                        containerColor = aceitarButtonColor,
+                        contentColor = Color.White
+                    ),
+                    border = BorderStroke(1.dp, Color.Gray)
+                ) {
+                    Text(stringResource(R.string.accept))
                 }
             }
         }

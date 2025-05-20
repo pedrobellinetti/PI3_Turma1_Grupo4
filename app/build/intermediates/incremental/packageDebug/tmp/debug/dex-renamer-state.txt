@@ -1,12 +1,12 @@
-#Mon May 19 22:25:45 BRT 2025
-base.0=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
-base.3=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
-base.4=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
-base.5=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
-base.6=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
-base.7=/home/pedro/Área de Trabalho/Coding/kotlin/PUC/PI3/app/build/intermediates/dex/debug/mergeExtDexDebug/classes4.dex
+#Mon May 19 23:18:33 BRT 2025
+base.0=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.3=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.5=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.6=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+base.7=C\:\\Users\\Pichau\\PI3_Turma1_Grupo4\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes4.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=11/classes.dex

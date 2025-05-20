@@ -14,8 +14,6 @@
 
 package com.example.superid.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 // Light Theme colors
@@ -28,6 +26,7 @@ val LightInputFieldColor = Color(0xFFD9D9D9) // Campos de texto (e-mail, senha)
 val LightUserItemContainer = Color(0xFFB1A8C9) // Containers que o usuário cria (exibição de senhas)
 val LightBackgroundColor = Color(0xFFFFFFFF) // Fundo branco geral
 val RecusarButtonTextLight = Color(0xFF0A0A0A)
+val AcceptButtonLight = Color(0xFF795548) // Marrom
 
 // Dark Theme colors
 val DarkTextPrimary = Color(0xFFFFFFFF) //
@@ -40,6 +39,7 @@ val RecusarButtonTextDark = Color.White
 val DarkInputFieldColor = Color(0xFF3B3B3B) //
 val DarkUserItemContainer = Color(0xFFB1A8C9) //
 val DarkBackgroundColor = Color(0xFF121212) //
+val AcceptButtonDark = Color(0xFF9C27B0) // Roxo
 
 
 
