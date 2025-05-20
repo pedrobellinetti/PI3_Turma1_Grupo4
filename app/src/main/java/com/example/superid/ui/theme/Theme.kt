@@ -36,12 +36,14 @@ private val LightColorScheme = lightColorScheme(
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = ButtonColor,
-    onPrimary = TextOnPrimary,
-    background = TopContainer,
-    onBackground = BackgroundColor,
-    surface = InputFieldColor,
-    onSurface = TextPrimary
+    primary = DarkButtonColor,
+    onPrimary = DarkButtonText,
+    onSecondary = DarkTextSecondary,
+    background = DarkBackgroundColor,
+    surface = DarkTopContainer,
+    onBackground = DarkTextPrimary,
+    onSurface = DarkTextSecondary,
+    secondaryContainer = DarkUserItemContainer
 )
 
 @Composable
