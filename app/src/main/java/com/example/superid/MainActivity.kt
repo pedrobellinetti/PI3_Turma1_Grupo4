@@ -174,7 +174,12 @@ fun TermsOfServiceScreen(
                     .padding(16.dp),
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
-                OutlinedButton(onClick = onDeclineTerms) {
+                OutlinedButton(
+                    onClick = onDeclineTerms,
+                    colors = ButtonDefaults.outlinedButtonColors(
+                        containerColor = if (isDarkTheme) Color.White else Color.Transparent
+                    )
+                ) {
                     Text(stringResource(R.string.decline), color = recusarTextColor)
                 }
                 Button(
