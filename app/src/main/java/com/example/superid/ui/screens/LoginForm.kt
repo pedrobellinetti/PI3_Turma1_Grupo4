@@ -36,6 +36,11 @@ fun LoginForm(
     var senhaError by remember { mutableStateOf(false) }
     val auth = FirebaseAuth.getInstance()
 
+    // Estado para controlar a visibilidade do primeiro AlertDialog
+    var showEmailVerificationDialog by remember { mutableStateOf(false) }
+    // Estado para controlar a visibilidade do segundo AlertDialog (após 'Aceitar')
+    var showInfoDialogAfterAccept by remember { mutableStateOf(false) }
+
     Column(
         modifier = Modifier
             .fillMaxSize(),
@@ -156,12 +161,9 @@ fun LoginForm(
         Button(
             onClick = {
                 var hasValidationError = false
-                var currentEmailError = false
-                var currentSenhaError = false
 
                 if (email.isBlank()) {
                     emailError = true
-                    currentEmailError = true
                     hasValidationError = true
                 } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     emailError = true
@@ -172,11 +174,9 @@ fun LoginForm(
 
                 if (senha.length < 6) {
                     senhaError = true
-                    currentSenhaError = true
                     hasValidationError = true
                 } else if (senha.isBlank()) {
                     senhaError = true
-                    currentSenhaError = true
                     hasValidationError = true
                 } else {
                     senhaError = false
@@ -185,9 +185,16 @@ fun LoginForm(
                 if (!hasValidationError) {
                     auth.signInWithEmailAndPassword(email, senha)
                         .addOnCompleteListener { task ->
-                            if (task.isSuccessful && auth.currentUser?.isEmailVerified == true) {
-                                Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
-                                onLoginSuccess()
+                            if (task.isSuccessful) {
+                                val user = auth.currentUser
+                                if (user != null && !user.isEmailVerified) {
+                                    // Se o e-mail não estiver verificado, mostra o primeiro AlertDialog
+                                    showEmailVerificationDialog = true
+                                } else {
+                                    // Se o e-mail estiver verificado, procede com o login normalmente
+                                    Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
+                                    onLoginSuccess()
+                                }
                             } else {
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
@@ -195,8 +202,8 @@ fun LoginForm(
                                             "ERROR_WRONG_PASSWORD" -> "Senha incorreta."
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
-                                            "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso."
-                                            else -> "Usuário não encontrado."
+                                            "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
+                                            else -> "Ocorreu um erro inesperado."
                                         }
                                     }
                                     else -> "Ocorreu um erro inesperado."
@@ -217,8 +224,58 @@ fun LoginForm(
             Text("Entrar", style = MaterialTheme.typography.labelLarge)
         }
 
+        // --- Diálogos ---
+        if (showEmailVerificationDialog) {
+            AlertDialog(
+                onDismissRequest = {
+                    showEmailVerificationDialog = false
+                    onLoginSuccess() // Permite o acesso mesmo se ele recusar a validação
+                },
+                title = { Text("Verificação de E-mail Necessária") },
+                text = {
+                    Text("Seu e-mail não foi verificado. Você poderá usar as outras funcionalidades, mas o 'Login Sem Senha' não estará disponível. Deseja continuar assim?")
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        showEmailVerificationDialog = false
+                        showInfoDialogAfterAccept = true // Mostra o segundo AlertDialog
+                    }) {
+                        Text("Aceitar")
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = {
+                        showEmailVerificationDialog = false
+                        Toast.makeText(context, "Por favor, verifique seu e-mail para prosseguir.", Toast.LENGTH_LONG).show()
+                    }) {
+                        Text("Recusar")
+                    }
+                }
+            )
+        }
 
-        // Links inferiores
+        if (showInfoDialogAfterAccept) {
+            AlertDialog(
+                onDismissRequest = {
+                    showInfoDialogAfterAccept = false
+                    onLoginSuccess() // Redireciona para a tela principal
+                },
+                title = { Text("Informação Adicional") },
+                text = {
+                    Text("Você pode verificar seu e-mail a qualquer momento pelo link que enviamos para o seu e-mail para habilitar o 'Login Sem Senha'.")
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        showInfoDialogAfterAccept = false
+                        onLoginSuccess() // Redireciona para a tela principal
+                    }) {
+                        Text("OK")
+                    }
+                }
+            )
+        }
+
+        // Link inferior
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp),

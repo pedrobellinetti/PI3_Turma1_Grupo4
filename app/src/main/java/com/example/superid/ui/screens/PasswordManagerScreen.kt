@@ -146,13 +146,13 @@ fun PasswordListContent(
                         .padding(bottom = 8.dp, end = 8.dp),
                     query = searchText,
                     onQueryChange = { searchText = it },
-                    onSearch = { /* TODO: Implementar ação de pesquisa se necessário */ },
-                    active = false,
-                    onActiveChange = { /* TODO: Implementar lógica de ativação se necessário */ },
+                    onSearch = { /* A pesquisa já é em tempo real via onQueryChange, nenhuma ação adicional é necessária aqui */ },
+                    active = false, // Mantém a SearchBar sempre no estado inativo/compacto
+                    onActiveChange = { /* Não é necessário para uma SearchBar que não ativa/expande */ },
                     placeholder = { Text("Pesquisar senhas") },
                     leadingIcon = { Icon(Icons.Filled.Search, contentDescription = "Pesquisar") }
                 ) {
-                    // Conteúdo adicional da SearchBar quando ativa
+                    // Conteúdo adicional da SearchBar quando ativa (não será exibido pois 'active' é sempre false)
                 }
                 IconButton(onClick = onLogout, modifier = Modifier.padding(top = 16.dp)) {
                     Icon(imageVector = Icons.Outlined.ExitToApp, contentDescription = "Sair")
