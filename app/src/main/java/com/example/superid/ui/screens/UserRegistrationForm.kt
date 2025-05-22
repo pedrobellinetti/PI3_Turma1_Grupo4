@@ -1,5 +1,7 @@
 package com.example.superid.ui.screens
 
+import android.content.Context
+import android.provider.Settings
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.Timestamp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,6 +37,7 @@ fun UserRegistrationForm(
     var emailError by remember { mutableStateOf(false) }
     var nomeError by remember { mutableStateOf(false) }
     val auth = FirebaseAuth.getInstance()
+    val db = FirebaseFirestore.getInstance() // Instância do Firestore
 
     Column(
         modifier = Modifier
@@ -179,16 +184,43 @@ fun UserRegistrationForm(
                     auth.createUserWithEmailAndPassword(email, senha)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                Toast.makeText(context, "Cadastro realizado com sucesso! Verifique seu e-mail.", Toast.LENGTH_LONG).show()
-                                auth.currentUser?.sendEmailVerification()
-                                    ?.addOnCompleteListener { verificationTask ->
-                                        if (verificationTask.isSuccessful) {
-                                            Toast.makeText(context, "E-mail de verificação enviado.", Toast.LENGTH_SHORT).show()
-                                        } else {
-                                            Toast.makeText(context, "Falha ao enviar e-mail de verificação.", Toast.LENGTH_SHORT).show()
+                                val user = auth.currentUser
+                                val uid = user?.uid
+                                val androidId = getAndroidId(context) // Obter o Android ID
+
+                                if (uid != null && androidId.isNotEmpty()) { // Verificação para garantir que o Android ID não é vazio
+                                    val userData = hashMapOf(
+                                        "nome" to nome,
+                                        "email" to email,
+                                        "uid" to uid,
+                                        "imei(Android ID)" to androidId, // Usando "imei" como nome do campo, mas o valor é o Android ID
+                                        "data_criacao" to Timestamp.now() // Para saber quando o registro foi criado.
+                                    )
+
+                                    db.collection("users")
+                                        .document(uid) // Usar o UID como ID do documento
+                                        .set(userData)
+                                        .addOnSuccessListener {
+                                            Toast.makeText(context, "Cadastro realizado com sucesso! Verifique seu e-mail.", Toast.LENGTH_LONG).show()
+                                            user.sendEmailVerification()
+                                                ?.addOnCompleteListener { verificationTask ->
+                                                    if (verificationTask.isSuccessful) {
+                                                        Toast.makeText(context, "E-mail de verificação enviado.", Toast.LENGTH_SHORT).show()
+                                                    } else {
+                                                        Toast.makeText(context, "Falha ao enviar e-mail de verificação.", Toast.LENGTH_SHORT).show()
+                                                    }
+                                                }
+                                            onNavigateToLogin()
                                         }
-                                    }
-                                onNavigateToLogin()
+                                        .addOnFailureListener { e ->
+                                            Toast.makeText(context, "Erro ao salvar dados do usuário: ${e.message}", Toast.LENGTH_LONG).show()
+                                            // Se o salvamento no Firestore falhar, remove o usuário do Authentication
+                                            user.delete()
+                                        }
+                                } else {
+                                    Toast.makeText(context, "Erro: UID ou Android ID não disponíveis.", Toast.LENGTH_LONG).show()
+                                    user?.delete() // Deleta o usuário do Authentication se não conseguir UID ou Android ID
+                                }
                             } else {
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
@@ -231,4 +263,9 @@ fun UserRegistrationForm(
             }
         }
     }
+}
+
+// Função para obter o Android ID
+fun getAndroidId(context: Context): String {
+    return Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
 }
