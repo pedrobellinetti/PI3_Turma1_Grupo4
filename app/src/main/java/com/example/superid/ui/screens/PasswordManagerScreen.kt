@@ -30,6 +30,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.example.superid.utils.EncryptionUtil
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,6 +39,7 @@ fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (
     val senhas = remember { mutableStateListOf<Senha>() }
     var listenerRegistration: ListenerRegistration? = null
     val context = LocalContext.current
+    val masterPasswordForDecryption by remember { mutableStateOf("PinMestrePI2025!") }
 
     val onSenhaRemoved: (Boolean, String?) -> Unit = { sucesso, mensagem ->
         Toast.makeText(
@@ -89,6 +91,7 @@ fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (
         uid = uid,
         senhas = senhas,
         onLogout = onLogout,
+        masterPasswordInput = masterPasswordForDecryption,
         onCreatePassword = onCreatePassword,
         onSenhaRemoved = { senhaParaRemover ->
             db.collection("users").document(uid).collection("passwords").document(senhaParaRemover.id)
@@ -117,6 +120,7 @@ fun PasswordListContent(
     uid: String,
     senhas: List<Senha>,
     onLogout: () -> Unit,
+    masterPasswordInput: String,
     onCreatePassword: (String) -> Unit,
     onSenhaRemoved: (Senha) -> Unit,
     onEditPassword: (String) -> Unit,
@@ -125,6 +129,7 @@ fun PasswordListContent(
     val context = LocalContext.current
     val db = Firebase.firestore
     var searchText by remember { mutableStateOf("") }
+    val masterPasswordToUse = if (masterPasswordInput.isNotBlank()) masterPasswordInput else "PinMestrePI2025!"
 
     Box(
         modifier = modifier.fillMaxSize()
@@ -201,6 +206,7 @@ fun PasswordListContent(
                         PasswordItem(
                             senha = senha,
                             uid = uid,
+                            masterPasswordInput = masterPasswordToUse,
                             onSenhaRemoved = onSenhaRemoved,
                             onEditClicked = { senhaParaEditar ->
                                 onEditPassword(senhaParaEditar.id ?: "")
@@ -245,10 +251,23 @@ fun PasswordListContent(
 }
 
 @Composable
-fun PasswordItem(senha: Senha, uid: String, onSenhaRemoved: (Senha) -> Unit, onEditClicked: (Senha) -> Unit) {
+fun PasswordItem(
+    senha: Senha,
+    uid: String,
+    masterPasswordInput: String,
+    onSenhaRemoved: (Senha) -> Unit,
+    onEditClicked: (Senha) -> Unit
+) {
     val db = Firebase.firestore
     var expanded by remember { mutableStateOf(false) }
     val context = LocalContext.current
+
+    val masterPasswordToUse = if (masterPasswordInput.isNotBlank()) masterPasswordInput else "PinMestrePI2025!"
+
+    // Descriptografa a senha uma única vez quando os dados mudam
+    val decryptedPassword = remember(senha.senhaCriptografada, senha.iv, senha.salt, masterPasswordToUse) {
+        EncryptionUtil.decrypt(senha.senhaCriptografada, senha.iv, senha.salt, masterPasswordToUse)
+    }
 
     Card(
         modifier = Modifier
@@ -269,7 +288,11 @@ fun PasswordItem(senha: Senha, uid: String, onSenhaRemoved: (Senha) -> Unit, onE
             Column {
                 Text(text = senha.nome, fontWeight = FontWeight.Medium)
                 Text(text = senha.login, color = Color.Black, fontSize = 14.sp)
-                Text(text = senha.senhaCriptografada, color = Color.Black, fontSize = 14.sp)
+                Text(
+                    text = decryptedPassword ?: "Erro ao descriptografar",
+                    color = Color.Black,
+                    fontSize = 14.sp
+                )
                 Text(text = senha.descricao, fontWeight = FontWeight.Medium)
             }
             Box {

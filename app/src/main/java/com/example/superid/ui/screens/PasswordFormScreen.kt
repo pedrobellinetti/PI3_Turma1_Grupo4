@@ -21,6 +21,7 @@ import com.example.superid.Senha
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.SecureRandom
+import com.example.superid.utils.EncryptionUtil
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,8 +29,6 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
     val context = LocalContext.current
     val db = Firebase.firestore
     val categoriasIniciais = remember { mutableStateListOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico") }
-    var senhaCriada by remember { mutableStateOf("") }
-
     var nome by remember { mutableStateOf("") }
     var login by remember { mutableStateOf("") }
     var descricao by remember { mutableStateOf("") }
@@ -38,6 +37,7 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
     var menuExpandido by remember { mutableStateOf(false) }
     var novaCategoria by remember { mutableStateOf("") }
     var mostrarCampoNovaCategoria by remember { mutableStateOf(false) }
+    val masterPasswordDemo = "PinMestrePI2025!"
 
     fun gerarAccessToken(): String {
         val random = SecureRandom()
@@ -202,35 +202,64 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
                     if (senhaValor.isBlank()) {
                         Toast.makeText(context, "Senha é obrigatória", Toast.LENGTH_SHORT).show()
                     } else {
-                        val categoriaFinal = if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
-                            novaCategoria.trim().also { nova ->
-                                if (nova.isNotBlank() && !categoriasIniciais.contains(nova)) {
-                                    categoriasIniciais.add(nova)
-                                }
-                            }
+                        // 1. Gerar um salt para a derivação da chave PBE
+                        val saltBytes = EncryptionUtil.generateSalt()
+
+                        // 2. Criptografar a senha usando a senha mestra (masterPasswordDemo) e o salt
+                        val encryptedResult = EncryptionUtil.encrypt(senhaValor, masterPasswordDemo, saltBytes)
+
+                        var encryptedPass: String? = null
+                        var iv: String? = null
+                        var saltBase64: String? = null
+
+                        if (encryptedResult != null) {
+                            // Desestruturar e atribuir aos val's declarados acima
+                            val (tempEncryptedPass, tempIv, tempSaltBase64) = encryptedResult
+                            encryptedPass = tempEncryptedPass
+                            iv = tempIv
+                            saltBase64 = tempSaltBase64
                         } else {
-                            label
+                            // Se encryptedResult for null, significa que houve um erro na criptografia
+                            Toast.makeText(context, "Erro ao criptografar a senha.", Toast.LENGTH_SHORT).show()
                         }
-                        val novaSenha = Senha(
-                            categoria = categoriaFinal,
-                            login = login,
-                            descricao = descricao,
-                            senhaCriptografada = senhaValor,
-                            accessToken = gerarAccessToken(),
-                            nome = nome
-                        )
 
-                        // Salvar no Firestore
-                        db.collection("users").document(uid).collection("passwords")
-                            .add(novaSenha)
-                            .addOnSuccessListener {
-                                Toast.makeText(context, "Senha cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
-                                onSenhaSalva()
-                            }
-                            .addOnFailureListener { e ->
-                                Toast.makeText(context, "Erro ao cadastrar senha: ${e.message}", Toast.LENGTH_SHORT).show()
+                        // Verificar novamente se a criptografia foi bem-sucedida antes de criar o objeto Senha
+                        if (encryptedPass != null && iv != null && saltBase64 != null) {
+
+                            // Mover a lógica de categoriaFinal para ser parte do fluxo de sucesso
+                            val categoriaFinal = if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
+                                novaCategoria.trim().also { nova ->
+                                    if (nova.isNotBlank() && !categoriasIniciais.contains(nova)) {
+                                        categoriasIniciais.add(nova)
+                                    }
+                                }
+                            } else {
+                                label
                             }
 
+                            val novaSenha = Senha(
+                                categoria = categoriaFinal,
+                                login = login,
+                                descricao = descricao,
+                                senhaCriptografada = encryptedPass,
+                                iv = iv,
+                                salt = saltBase64,
+                                accessToken = gerarAccessToken(),
+                                nome = nome
+                            )
+
+                            // Salvar no Firestore
+                            db.collection("users").document(uid).collection("passwords")
+                                .add(novaSenha)
+                                .addOnSuccessListener {
+                                    Toast.makeText(context, "Senha cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
+                                    onSenhaSalva()
+                                }
+                                .addOnFailureListener { e ->
+                                    Toast.makeText(context, "Erro ao cadastrar senha: ${e.message}", Toast.LENGTH_SHORT).show()
+                                }
+                        }
+                        // Limpar campos SEMPRE, independentemente do sucesso da criptografia/salvamento
                         nome = ""
                         login = ""
                         descricao = ""
