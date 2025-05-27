@@ -1119,6 +1119,7 @@ string template_percent
 string terms_of_service_agreement
 string terms_of_service_content
 string terms_of_service_title
+string title_activity_camera
 string tooltip_description
 string tooltip_label
 style AlertDialog_AppCompat

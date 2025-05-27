@@ -1,5 +1,6 @@
 package com.example.superid.ui.screens
 
+import android.content.SharedPreferences
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,10 +22,13 @@ import androidx.compose.ui.unit.dp
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
+import androidx.compose.foundation.rememberScrollState // Importe este
+import androidx.compose.foundation.verticalScroll // Importe este
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginForm(
+    sharedPreferences: SharedPreferences,
     onNavigateToRegister: () -> Unit,
     onLoginSuccess: () -> Unit,
     onNavigateToForgotPassword: () -> Unit
@@ -41,9 +45,12 @@ fun LoginForm(
     // Estado para controlar a visibilidade do segundo AlertDialog (após 'Aceitar')
     var showInfoDialogAfterAccept by remember { mutableStateOf(false) }
 
+    val scrollState = rememberScrollState()
+
     Column(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .verticalScroll(scrollState), // Adicione o modificador verticalScroll aqui
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
@@ -106,6 +113,7 @@ fun LoginForm(
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
+            singleLine = true,
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
@@ -129,6 +137,7 @@ fun LoginForm(
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
+            singleLine = true,
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
@@ -188,6 +197,7 @@ fun LoginForm(
                             if (task.isSuccessful) {
                                 val user = auth.currentUser
                                 if (user != null && !user.isEmailVerified) {
+                                    sharedPreferences.edit().putBoolean("emailValidado", user.isEmailVerified).apply()
                                     // Se o e-mail não estiver verificado, mostra o primeiro AlertDialog
                                     showEmailVerificationDialog = true
                                 } else {
@@ -203,7 +213,7 @@ fun LoginForm(
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
                                             "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
-                                            else -> "Ocorreu um erro inesperado."
+                                            else -> "Usuário não encontrado."
                                         }
                                     }
                                     else -> "Ocorreu um erro inesperado."

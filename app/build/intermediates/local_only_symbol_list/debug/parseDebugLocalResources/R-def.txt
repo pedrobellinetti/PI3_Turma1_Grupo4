@@ -36,6 +36,7 @@ string project_id
 string terms_of_service_agreement
 string terms_of_service_content
 string terms_of_service_title
+string title_activity_camera
 style Theme.SuperID
 xml backup_rules
 xml data_extraction_rules

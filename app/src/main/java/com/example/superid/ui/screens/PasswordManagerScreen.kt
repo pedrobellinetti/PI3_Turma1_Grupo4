@@ -1,6 +1,5 @@
 package com.example.superid.ui.screens
 
-import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,98 +18,109 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.superid.EditPasswordActivity
 import com.example.superid.Senha
-import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.example.superid.utils.EncryptionUtil
+import com.google.firebase.auth.FirebaseAuth
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordManagerScreen(uid: String, onLogout: () -> Unit, onCreatePassword: (String) -> Unit, onEditPassword: (String) -> Unit) {
+fun PasswordManagerScreen(
+    uid: String,
+    onLogout: () -> Unit,
+    onCreatePassword: () -> Unit,
+    onEditPassword: (Senha) -> Unit,
+    onReadQrCode: () -> Unit
+) {
     val db = Firebase.firestore
     val senhas = remember { mutableStateListOf<Senha>() }
     var listenerRegistration: ListenerRegistration? = null
     val context = LocalContext.current
-    val masterPasswordForDecryption by remember { mutableStateOf("PinMestrePI2025!") }
+    val lifecycleOwner = LocalLifecycleOwner.current
+    val masterPasswordForDecryption by remember { mutableStateOf("PinMestrePI2025!") } // Sua senha mestre
+    val auth = FirebaseAuth.getInstance()
 
-    val onSenhaRemoved: (Boolean, String?) -> Unit = { sucesso, mensagem ->
-        Toast.makeText(
-            context,
-            mensagem ?: if (sucesso) "Senha excluída com sucesso!" else "Erro ao excluir senha.",
-            Toast.LENGTH_SHORT
-        ).show()
-    }
+    var isEmailVerified by remember { mutableStateOf(auth.currentUser?.isEmailVerified ?: false) }
 
-    DisposableEffect(uid) {
+    // DisposableEffect para carregar status de verificação e listener do Firestore
+    DisposableEffect(uid, lifecycleOwner) {
+        val observer = object : DefaultLifecycleObserver {
+            override fun onResume(owner: LifecycleOwner) {
+                auth.currentUser?.reload()?.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        isEmailVerified = auth.currentUser?.isEmailVerified ?: false
+                    } else {
+                        Toast.makeText(context, "Falha ao recarregar status do usuário: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+        lifecycleOwner.lifecycle.addObserver(observer)
+
+        // Firestore listener
         listenerRegistration = db.collection("users").document(uid).collection("passwords")
             .addSnapshotListener { snapshots, e ->
                 if (e != null) {
-                    println("Erro ao ouvir mudanças: $e")
+                    println("Erro ao ouvir mudanças nas senhas: $e")
                     return@addSnapshotListener
                 }
 
+                // Limpa a lista para reconstruí-la com as últimas mudanças
+                // Isso é importante para evitar duplicações ou itens antigos
+                senhas.clear()
                 if (snapshots != null) {
-                    for (docChange in snapshots.documentChanges) {
-                        when (docChange.type) {
-                            DocumentChange.Type.ADDED -> {
-                                docChange.document.toObject(Senha::class.java).copy(id = docChange.document.id)
-                                    .let { newSenha ->
-                                        senhas.add(newSenha)
-                                    }
-                            }
-                            DocumentChange.Type.MODIFIED -> {
-                                docChange.document.toObject(Senha::class.java).copy(id = docChange.document.id)
-                                    .let { updatedSenha ->
-                                        val index = senhas.indexOfFirst { it.id == updatedSenha.id }
-                                        if (index != -1) {
-                                            senhas[index] = updatedSenha
-                                        }
-                                    }
-                            }
-                            DocumentChange.Type.REMOVED -> {
-                                senhas.removeAll { it.id == docChange.document.id }
-                            }
+                    for (doc in snapshots.documents) {
+                        doc.toObject(Senha::class.java)?.copy(id = doc.id)?.let {
+                            senhas.add(it)
                         }
                     }
+                    // O DocumentChange.Type é mais complexo para manter a ordem e evitar duplicações
+                    // se você não limpar a lista. Para LazyColumn, limpar e adicionar é mais simples
+                    // se a ordem não for crítica (que pode ser ajustada com um sort/orderBy do Firestore).
+                    // Se precisar de ordenação específica, adicione `.orderBy("sua_ordem")` no Firestore.
                 }
             }
         onDispose {
             listenerRegistration?.remove()
+            lifecycleOwner.lifecycle.removeObserver(observer)
         }
     }
+
+    // Lógica para remover senha (centralizada aqui para Toast e atualização de lista)
+    val onRemoveSenha: (Senha) -> Unit = { senhaParaRemover ->
+        db.collection("users").document(uid).collection("passwords").document(senhaParaRemover.id)
+            .delete()
+            .addOnSuccessListener {
+                Toast.makeText(context, "Senha excluída com sucesso!", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(context, "Erro ao excluir senha: ${e.message}", Toast.LENGTH_LONG).show()
+            }
+    }
+
 
     PasswordListContent(
         uid = uid,
         senhas = senhas,
         onLogout = onLogout,
         masterPasswordInput = masterPasswordForDecryption,
-        onCreatePassword = onCreatePassword,
-        onSenhaRemoved = { senhaParaRemover ->
-            db.collection("users").document(uid).collection("passwords").document(senhaParaRemover.id)
-                .delete()
-                .addOnSuccessListener {
-                    println("Documento deletado com sucesso!")
-                    onSenhaRemoved(true, null)
-                }
-                .addOnFailureListener { e ->
-                    println("Erro ao deletar: $e")
-                    onSenhaRemoved(false, "Falha ao excluir senha.")
-                }
-        },
-        onEditPassword = { senhaId ->
-            val intent = Intent(context, EditPasswordActivity::class.java)
-            intent.putExtra("UID", uid)
-            intent.putExtra("SENHA_ID", senhaId)
-            context.startActivity(intent)
-        }
+        onCreatePassword = onCreatePassword, // Passa o callback
+        onSenhaRemoved = onRemoveSenha, // Passa a função centralizada de remover
+        onEditPassword = onEditPassword, // Passa o callback
+        onReadQrCode = onReadQrCode, // Passa o callback
+        isEmailVerified = isEmailVerified
     )
 }
 
@@ -121,15 +131,17 @@ fun PasswordListContent(
     senhas: List<Senha>,
     onLogout: () -> Unit,
     masterPasswordInput: String,
-    onCreatePassword: (String) -> Unit,
-    onSenhaRemoved: (Senha) -> Unit,
-    onEditPassword: (String) -> Unit,
+    onCreatePassword: () -> Unit, // Callback para criar senha
+    onSenhaRemoved: (Senha) -> Unit, // Callback para remover senha
+    onEditPassword: (Senha) -> Unit, // Callback para editar senha
+    onReadQrCode: () -> Unit, // Callback para ler QR code
+    isEmailVerified: Boolean,
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    val db = Firebase.firestore
     var searchText by remember { mutableStateOf("") }
     val masterPasswordToUse = if (masterPasswordInput.isNotBlank()) masterPasswordInput else "PinMestrePI2025!"
+    val qrcodeButtonEnabled = isEmailVerified // RF4: "Login Sem Senha" disponível apenas com e-mail verificado
 
     Box(
         modifier = modifier.fillMaxSize()
@@ -151,14 +163,12 @@ fun PasswordListContent(
                         .padding(bottom = 8.dp, end = 8.dp),
                     query = searchText,
                     onQueryChange = { searchText = it },
-                    onSearch = { /* A pesquisa já é em tempo real via onQueryChange, nenhuma ação adicional é necessária aqui */ },
-                    active = false, // Mantém a SearchBar sempre no estado inativo/compacto
+                    onSearch = { /* A pesquisa já é em tempo real via onQueryChange */ },
+                    active = false,
                     onActiveChange = { /* Não é necessário para uma SearchBar que não ativa/expande */ },
                     placeholder = { Text("Pesquisar senhas") },
                     leadingIcon = { Icon(Icons.Filled.Search, contentDescription = "Pesquisar") }
-                ) {
-                    // Conteúdo adicional da SearchBar quando ativa (não será exibido pois 'active' é sempre false)
-                }
+                ) { /* Content not used */ }
                 IconButton(onClick = onLogout, modifier = Modifier.padding(top = 16.dp)) {
                     Icon(imageVector = Icons.Outlined.ExitToApp, contentDescription = "Sair")
                 }
@@ -169,7 +179,7 @@ fun PasswordListContent(
                 style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+                    .padding(top = 16.dp, bottom = 16.dp)
                     .wrapContentWidth(Alignment.Start),
                 textAlign = TextAlign.Start
             )
@@ -205,12 +215,9 @@ fun PasswordListContent(
                     items(listaSenhas) { senha ->
                         PasswordItem(
                             senha = senha,
-                            uid = uid,
                             masterPasswordInput = masterPasswordToUse,
-                            onSenhaRemoved = onSenhaRemoved,
-                            onEditClicked = { senhaParaEditar ->
-                                onEditPassword(senhaParaEditar.id ?: "")
-                            }
+                            onSenhaRemoved = onSenhaRemoved, // Passa o callback centralizado
+                            onEditClicked = onEditPassword // Passa o callback
                         )
                     }
                 }
@@ -225,7 +232,8 @@ fun PasswordListContent(
             verticalAlignment = Alignment.Bottom
         ) {
             Button(
-                onClick = { /* TODO: Implementar para abrir a camera  */ },
+                onClick = onReadQrCode, // Chama o callback para ler QR code
+                enabled = qrcodeButtonEnabled,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Transparent,
                     contentColor = MaterialTheme.colorScheme.onBackground
@@ -238,7 +246,7 @@ fun PasswordListContent(
             }
 
             FloatingActionButton(
-                onClick = { onCreatePassword(uid) },
+                onClick = onCreatePassword, // Chama o callback para criar nova senha
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary,
                 shape = CircleShape
@@ -253,18 +261,15 @@ fun PasswordListContent(
 @Composable
 fun PasswordItem(
     senha: Senha,
-    uid: String,
     masterPasswordInput: String,
-    onSenhaRemoved: (Senha) -> Unit,
-    onEditClicked: (Senha) -> Unit
+    onSenhaRemoved: (Senha) -> Unit, // Recebe o callback para remover
+    onEditClicked: (Senha) -> Unit // Recebe o callback para editar
 ) {
-    val db = Firebase.firestore
     var expanded by remember { mutableStateOf(false) }
     val context = LocalContext.current
 
     val masterPasswordToUse = if (masterPasswordInput.isNotBlank()) masterPasswordInput else "PinMestrePI2025!"
 
-    // Descriptografa a senha uma única vez quando os dados mudam
     val decryptedPassword = remember(senha.senhaCriptografada, senha.iv, senha.salt, masterPasswordToUse) {
         EncryptionUtil.decrypt(senha.senhaCriptografada, senha.iv, senha.salt, masterPasswordToUse)
     }
@@ -293,7 +298,7 @@ fun PasswordItem(
                     color = Color.Black,
                     fontSize = 14.sp
                 )
-                Text(text = senha.descricao, fontWeight = FontWeight.Medium)
+                Text(text = senha.descricao, color = Color.Black, fontSize = 14.sp)
             }
             Box {
                 IconButton(onClick = { expanded = true }) {
@@ -305,23 +310,17 @@ fun PasswordItem(
                 ) {
                     DropdownMenuItem(
                         text = { Text("Editar Senha") },
-                        onClick = { expanded = false; onEditClicked(senha) },
+                        onClick = {
+                            expanded = false
+                            onEditClicked(senha) // Chama o callback passando o objeto Senha
+                        },
                         leadingIcon = { Icon(Icons.Filled.Edit, contentDescription = "Editar Senha") }
                     )
                     DropdownMenuItem(
                         text = { Text("Excluir Senha") },
                         onClick = {
                             expanded = false
-                            db.collection("users").document(uid).collection("passwords").document(senha.id)
-                                .delete()
-                                .addOnSuccessListener {
-                                    println("Documento deletado com sucesso!")
-                                }
-                                .addOnFailureListener { e ->
-                                    println("Erro ao deletar: $e")
-                                    Toast.makeText(context, "Falha ao excluir senha.", Toast.LENGTH_SHORT).show()
-                                }
-                            onSenhaRemoved(senha)
+                            onSenhaRemoved(senha) // Chama o callback para remover
                         },
                         leadingIcon = { Icon(Icons.Filled.Delete, contentDescription = "Excluir Senha") }
                     )

@@ -1,5 +1,6 @@
 package com.example.superid.ui.screens
 
+import android.content.Context
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
@@ -23,29 +24,65 @@ import com.example.superid.Senha
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Unit) {
+fun EditPasswordScreen(
+    uid: String,
+    senhaToEdit: Senha?,
+    onSuccess: () -> Unit,
+    onBack: () -> Unit
+) {
     val context = LocalContext.current
     val db = Firebase.firestore
-    val categoriasIniciais = remember { mutableStateListOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico") }
+    val masterPasswordDemo = "PinMestrePI2025!"
+
+    val sharedPreferences = remember { context.getSharedPreferences("SuperID_Prefs", Context.MODE_PRIVATE) }
+    val CATEGORIES_KEY = "user_custom_categories"
+    val CATEGORY_DELIMITER = "___"
+
+    val defaultCategories = remember { mutableStateListOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico") }
+
+    val userCategories = remember { mutableStateListOf<String>() }
 
     var nome by remember { mutableStateOf("") }
     var login by remember { mutableStateOf("") }
     var descricao by remember { mutableStateOf("") }
-    var senhaValor by remember { mutableStateOf("") } // Esta é a senha PURA para o campo de texto
-    var label by remember { mutableStateOf(categoriasIniciais.firstOrNull() ?: "") }
+    var senhaValor by remember { mutableStateOf("") }
+    var label by remember { mutableStateOf("") }
     var menuExpandido by remember { mutableStateOf(false) }
     var novaCategoria by remember { mutableStateOf("") }
     var mostrarCampoNovaCategoria by remember { mutableStateOf(false) }
 
-    // Variáveis para armazenar os valores criptografados originais do Firestore
     var originalEncryptedPass: String? by remember { mutableStateOf(null) }
     var originalIv: String? by remember { mutableStateOf(null) }
     var originalSalt: String? by remember { mutableStateOf(null) }
 
-    val masterPasswordDemo = "PinMestrePI2025!"
+    fun saveCategoriesToSharedPreferences() {
+        val customCategoriesToSave = userCategories.filter { it !in defaultCategories }
+        val categoriesString = customCategoriesToSave.joinToString(CATEGORY_DELIMITER)
+        sharedPreferences.edit().putString(CATEGORIES_KEY, categoriesString).apply()
+    }
 
-    LaunchedEffect(senhaId) {
-        db.collection("users").document(uid).collection("passwords").document(senhaId)
+    LaunchedEffect(Unit) {
+        userCategories.addAll(defaultCategories)
+
+        val savedCategoriesString = sharedPreferences.getString(CATEGORIES_KEY, null)
+        if (!savedCategoriesString.isNullOrBlank()) {
+            val customCategories = savedCategoriesString.split(CATEGORY_DELIMITER).filter { it.isNotBlank() }
+            customCategories.forEach { categoryName ->
+                if (!userCategories.contains(categoryName)) {
+                    userCategories.add(categoryName)
+                }
+            }
+        }
+    }
+
+    LaunchedEffect(senhaToEdit?.id) {
+        if (senhaToEdit?.id == null) {
+            Toast.makeText(context, "Senha para edição não fornecida.", Toast.LENGTH_SHORT).show()
+            onBack()
+            return@LaunchedEffect
+        }
+
+        db.collection("users").document(uid).collection("passwords").document(senhaToEdit.id)
             .get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
@@ -55,11 +92,15 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
                         login = senhaData.login
                         descricao = senhaData.descricao
                         label = senhaData.categoria
+
+                        if (!defaultCategories.contains(label) && !userCategories.contains(label)) {
+                            userCategories.add(label)
+                        }
+
                         originalEncryptedPass = senhaData.senhaCriptografada
                         originalIv = senhaData.iv
                         originalSalt = senhaData.salt
 
-                        // Descriptografar a senha para preencher o campo
                         if (originalEncryptedPass != null && originalIv != null && originalSalt != null) {
                             val decrypted = EncryptionUtil.decrypt(
                                 originalEncryptedPass!!,
@@ -74,16 +115,16 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
 
                     } else {
                         Toast.makeText(context, "Dados da senha inválidos", Toast.LENGTH_SHORT).show()
-                        (context as? ComponentActivity)?.onBackPressedDispatcher?.onBackPressed()
+                        onBack()
                     }
                 } else {
                     Toast.makeText(context, "Senha não encontrada", Toast.LENGTH_SHORT).show()
-                    (context as? ComponentActivity)?.onBackPressedDispatcher?.onBackPressed()
+                    onBack()
                 }
             }
             .addOnFailureListener { e ->
                 Toast.makeText(context, "Erro ao carregar senha: ${e.message}", Toast.LENGTH_SHORT).show()
-                (context as? ComponentActivity)?.onBackPressedDispatcher?.onBackPressed()
+                onBack()
             }
     }
 
@@ -94,7 +135,6 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // Barra Superior Personalizada
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -110,7 +150,7 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
             ) {
                 IconButton(
                     onClick = {
-                        (context as? ComponentActivity)?.onBackPressedDispatcher?.onBackPressed()
+                        onBack()
                     },
                     modifier = Modifier.padding(start = 16.dp)
                 ) {
@@ -135,7 +175,7 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
 
         Column(
             modifier = Modifier
-                .verticalScroll(scrollState)
+                .verticalScroll(scrollState) // Adicione este modificador
                 .fillMaxWidth()
                 .padding(horizontal = 32.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -205,11 +245,13 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
                     expanded = menuExpandido,
                     onDismissRequest = { menuExpandido = false }
                 ) {
-                    categoriasIniciais.forEach { categoria ->
+                    userCategories.forEach { categoria ->
                         DropdownMenuItem(
                             text = { Text(categoria, style = MaterialTheme.typography.bodyLarge) },
                             onClick = {
                                 label = categoria
+                                mostrarCampoNovaCategoria = false
+                                novaCategoria = ""
                                 menuExpandido = false
                             }
                         )
@@ -218,6 +260,7 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
                         text = { Text("Adicionar nova categoria", style = MaterialTheme.typography.bodyLarge) },
                         onClick = {
                             mostrarCampoNovaCategoria = true
+                            label = ""
                             menuExpandido = false
                         }
                     )
@@ -228,7 +271,7 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
                 OutlinedTextField(
                     value = novaCategoria,
                     onValueChange = { novaCategoria = it },
-                    label = { Text("Adicionar categoria (Opcional)", style = MaterialTheme.typography.bodyLarge) },
+                    label = { Text("Nome da nova categoria", style = MaterialTheme.typography.bodyLarge) },
                     modifier = Modifier
                         .width(315.dp)
                         .padding(bottom = 16.dp),
@@ -237,55 +280,61 @@ fun EditPasswordScreen(senhaId: String, uid: String, onSenhaAtualizada: () -> Un
                 )
             }
 
-            // Botão de salvar alterações
             Button(
                 onClick = {
-                    if (senhaValor.isBlank()) {
+                    if (nome.isBlank()) {
+                        Toast.makeText(context, "Nome é obrigatório", Toast.LENGTH_SHORT).show()
+                    } else if (senhaValor.isBlank()) {
                         Toast.makeText(context, "Senha é obrigatória", Toast.LENGTH_SHORT).show()
-                    } else {
-                        // 1. Gerar um novo salt para a criptografia da senha atualizada
+                    } else if (label.isBlank() && !mostrarCampoNovaCategoria) {
+                        Toast.makeText(context, "Por favor, selecione ou adicione uma categoria.", Toast.LENGTH_SHORT).show()
+                    } else if (mostrarCampoNovaCategoria && novaCategoria.isBlank()) {
+                        Toast.makeText(context, "Nome da nova categoria é obrigatório.", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        val categoriaFinal = if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
+                            novaCategoria.trim()
+                        } else {
+                            label
+                        }
+
+                        if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
+                            if (!userCategories.contains(categoriaFinal)) {
+                                userCategories.add(categoriaFinal)
+                                saveCategoriesToSharedPreferences()
+                                Toast.makeText(context, "Nova categoria '${categoriaFinal}' adicionada!", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(context, "Categoria '${categoriaFinal}' já existe.", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
                         val newSaltBytes = EncryptionUtil.generateSalt()
 
-                        // 2. Criptografar a senha ATUAL (senhaValor) usando a senha mestra e o novo salt
                         val encryptedResult = EncryptionUtil.encrypt(senhaValor, masterPasswordDemo, newSaltBytes)
 
-                        // Mudei o 'return@Button' para um 'if' que envolve o resto da lógica
                         if (encryptedResult != null) {
                             val (newEncryptedPass, newIv, newSaltBase64) = encryptedResult
 
-                            val categoriaFinal = if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
-                                novaCategoria.trim().also { nova ->
-                                    if (nova.isNotBlank() && !categoriasIniciais.contains(nova)) {
-                                        categoriasIniciais.add(nova)
-                                    }
-                                }
-                            } else {
-                                label
-                            }
-
-                            // Atualizar o mapa com os novos valores criptografados
                             val updates = hashMapOf<String, Any>(
                                 "nome" to nome,
                                 "login" to login,
                                 "descricao" to descricao,
-                                "senhaCriptografada" to newEncryptedPass, // Nova senha criptografada
-                                "iv" to newIv,                             // Novo IV
-                                "salt" to newSaltBase64,                   // Novo Salt
+                                "senhaCriptografada" to newEncryptedPass,
+                                "iv" to newIv,
+                                "salt" to newSaltBase64,
                                 "categoria" to categoriaFinal
                             )
 
-                            db.collection("users").document(uid).collection("passwords").document(senhaId)
+                            db.collection("users").document(uid).collection("passwords").document(senhaToEdit?.id!!)
                                 .update(updates)
                                 .addOnSuccessListener {
                                     Toast.makeText(context, "Senha atualizada com sucesso!", Toast.LENGTH_SHORT).show()
-                                    onSenhaAtualizada()
-                                    (context as? ComponentActivity)?.finish() // Volta para a tela anterior
+                                    onSuccess()
                                 }
                                 .addOnFailureListener { e ->
                                     Toast.makeText(context, "Erro ao atualizar senha: ${e.message}", Toast.LENGTH_SHORT).show()
                                 }
                         } else {
-                            // Se encryptedResult for null, significa que houve um erro na criptografia
                             Toast.makeText(context, "Erro ao criptografar a senha para salvar.", Toast.LENGTH_SHORT).show()
                         }
                     }

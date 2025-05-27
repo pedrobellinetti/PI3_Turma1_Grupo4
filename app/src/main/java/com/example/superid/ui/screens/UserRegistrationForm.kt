@@ -1,12 +1,13 @@
 package com.example.superid.ui.screens
 
 import android.content.Context
-import android.provider.Settings
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState // Importe este
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll // Importe este
 import androidx.compose.material3.*
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.*
@@ -19,41 +20,40 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.example.superid.R
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.Timestamp
+import com.example.superid.data.RegistrationData
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserRegistrationForm(
-    onNavigateToLogin: () -> Unit
+    onNavigateToLogin: () -> Unit,
+    onRegisterAttempt: (data: RegistrationData) -> Unit
 ) {
     val context = LocalContext.current
+
     var nome by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
     var senhaError by remember { mutableStateOf(false) }
     var emailError by remember { mutableStateOf(false) }
     var nomeError by remember { mutableStateOf(false) }
-    val auth = FirebaseAuth.getInstance()
-    val db = FirebaseFirestore.getInstance() // Instância do Firestore
+    var generalError by remember { mutableStateOf("") }
+
+    // Adicione um ScrollState para controlar a rolagem
+    val scrollState = rememberScrollState()
 
     Column(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .verticalScroll(scrollState), // Adicione o modificador verticalScroll aqui
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Container superior personalizado
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = MaterialTheme.colorScheme.primaryContainer)
                 .padding(vertical = 33.dp)
         ) {
-
-            // Conteúdo centralizado: Título + Logo
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
@@ -83,14 +83,18 @@ fun UserRegistrationForm(
             modifier = Modifier.padding(top = 30.dp)
         )
 
-        // Campos de Nome, E-mail e Senha
         OutlinedTextField(
             value = nome,
-            onValueChange = { nome = it },
+            onValueChange = {
+                nome = it
+                nomeError = false
+                generalError = ""
+            },
             label = { Text("Digite seu nome", style = MaterialTheme.typography.labelLarge) },
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
+            singleLine = true,
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
@@ -108,20 +112,25 @@ fun UserRegistrationForm(
 
         OutlinedTextField(
             value = email,
-            onValueChange = { email = it },
+            onValueChange = {
+                email = it
+                emailError = false
+                generalError = ""
+            },
             label = { Text("Digite seu e-mail", style = MaterialTheme.typography.labelLarge) },
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
+            singleLine = true,
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
-                unfocusedBorderColor = if (emailError) Color.Red else MaterialTheme.colorScheme.outline,
+                unfocusedBorderColor = if (emailError || generalError.isNotEmpty()) Color.Red else MaterialTheme.colorScheme.outline,
                 focusedTextColor = MaterialTheme.colorScheme.onBackground,
                 unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 cursorColor = MaterialTheme.colorScheme.primary,
                 focusedLabelColor = MaterialTheme.colorScheme.primary,
-                unfocusedLabelColor = if (emailError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
+                unfocusedLabelColor = if (emailError || generalError.isNotEmpty()) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
         if (emailError) {
@@ -130,12 +139,17 @@ fun UserRegistrationForm(
 
         OutlinedTextField(
             value = senha,
-            onValueChange = { senha = it },
+            onValueChange = {
+                senha = it
+                senhaError = false
+                generalError = ""
+            },
             label = { Text("Digite sua senha (mínimo 6 caracteres)", style = MaterialTheme.typography.labelLarge) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
+            singleLine = true,
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
@@ -151,89 +165,32 @@ fun UserRegistrationForm(
             Text(text = "A senha precisa ter no mínimo 6 caracteres.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
         }
 
-        // Botão Cadastrar
+        if (generalError.isNotEmpty()) {
+            Text(text = generalError, color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        }
+
         Button(
             onClick = {
                 var hasValidationError = false
+                generalError = ""
 
                 if (nome.isBlank()) {
                     nomeError = true
                     hasValidationError = true
-                } else {
-                    nomeError = false
                 }
-
-                if (email.isBlank()) {
+                if (email.isBlank() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     emailError = true
                     hasValidationError = true
-                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    emailError = true
-                    hasValidationError = true
-                } else {
-                    emailError = false
                 }
-
                 if (senha.length < 6) {
                     senhaError = true
                     hasValidationError = true
-                } else {
-                    senhaError = false
                 }
 
                 if (!hasValidationError) {
-                    auth.createUserWithEmailAndPassword(email, senha)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                val user = auth.currentUser
-                                val uid = user?.uid
-                                val androidId = getAndroidId(context) // Obter o Android ID
-
-                                if (uid != null && androidId.isNotEmpty()) { // Verificação para garantir que o Android ID não é vazio
-                                    val userData = hashMapOf(
-                                        "nome" to nome,
-                                        "email" to email,
-                                        "uid" to uid,
-                                        "imei(Android ID)" to androidId, // Usando "imei" como nome do campo, mas o valor é o Android ID
-                                        "data_criacao" to Timestamp.now() // Para saber quando o registro foi criado.
-                                    )
-
-                                    db.collection("users")
-                                        .document(uid) // Usar o UID como ID do documento
-                                        .set(userData)
-                                        .addOnSuccessListener {
-                                            Toast.makeText(context, "Cadastro realizado com sucesso! Verifique seu e-mail.", Toast.LENGTH_LONG).show()
-                                            user.sendEmailVerification()
-                                                ?.addOnCompleteListener { verificationTask ->
-                                                    if (verificationTask.isSuccessful) {
-                                                        Toast.makeText(context, "E-mail de verificação enviado.", Toast.LENGTH_SHORT).show()
-                                                    } else {
-                                                        Toast.makeText(context, "Falha ao enviar e-mail de verificação.", Toast.LENGTH_SHORT).show()
-                                                    }
-                                                }
-                                            onNavigateToLogin()
-                                        }
-                                        .addOnFailureListener { e ->
-                                            Toast.makeText(context, "Erro ao salvar dados do usuário: ${e.message}", Toast.LENGTH_LONG).show()
-                                            // Se o salvamento no Firestore falhar, remove o usuário do Authentication
-                                            user.delete()
-                                        }
-                                } else {
-                                    Toast.makeText(context, "Erro: UID ou Android ID não disponíveis.", Toast.LENGTH_LONG).show()
-                                    user?.delete() // Deleta o usuário do Authentication se não conseguir UID ou Android ID
-                                }
-                            } else {
-                                val errorMessage = when (task.exception) {
-                                    is FirebaseAuthException -> {
-                                        when ((task.exception as FirebaseAuthException).errorCode) {
-                                            "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso."
-                                            else -> "Ocorreu um erro ao realizar o cadastro."
-                                        }
-                                    }
-                                    else -> "Ocorreu um erro inesperado durante o cadastro."
-                                }
-                                Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
-                            }
-                        }
+                    onRegisterAttempt(RegistrationData(nome, email, senha))
+                } else {
+                    Toast.makeText(context, "Por favor, preencha todos os campos corretamente.", Toast.LENGTH_SHORT).show()
                 }
             },
             modifier = Modifier
@@ -247,7 +204,6 @@ fun UserRegistrationForm(
             Text("Cadastrar", style = MaterialTheme.typography.labelLarge)
         }
 
-        // Link para Login
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
@@ -263,9 +219,4 @@ fun UserRegistrationForm(
             }
         }
     }
-}
-
-// Função para obter o Android ID
-fun getAndroidId(context: Context): String {
-    return Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
 }

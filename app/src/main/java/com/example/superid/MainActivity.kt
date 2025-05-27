@@ -1,54 +1,40 @@
 package com.example.superid
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.camera.core.ExperimentalGetImage
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.superid.ui.screens.LoginForm
 import com.example.superid.ui.screens.PasswordManagerScreen
 import com.example.superid.ui.screens.PasswordRecoveryScreen
 import com.example.superid.ui.screens.QrScanScreen
 import com.example.superid.ui.screens.UserRegistrationForm
+import com.example.superid.ui.screens.WelcomeScreen
+import com.example.superid.ui.screens.TermsOfServiceScreen
+import com.example.superid.ui.screens.EditPasswordScreen
+import com.example.superid.ui.screens.PasswordFormScreen
 import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.firestore
+import com.example.superid.ui.screens.getAndroidId
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SuperIDTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
+                    // AuthApp é a função Composable que gerencia todo o fluxo de autenticação e navegação.
                     AuthApp(Modifier.padding(paddingValues))
                 }
             }
@@ -64,155 +51,232 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// Controlar a tela atual
 @androidx.annotation.OptIn(ExperimentalGetImage::class)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AuthApp(modifier: Modifier = Modifier) {
-    var currentScreen by remember { mutableStateOf(AuthScreen.TERMS) }
-    val context = LocalContext.current
+    val context = LocalContext.current // Obtém o contexto Android para acessar recursos como SharedPreferences e Toast.
+    // sharedPreferences: Usado para armazenar dados persistentes e simples, como o estado de aceitação dos termos e login.
+    val sharedPreferences = remember { context.getSharedPreferences("SuperID_Prefs", Context.MODE_PRIVATE) }
+
+    // auth: Instância do Firebase Authentication para gerenciar a autenticação de usuários.
+    val auth = FirebaseAuth.getInstance()
+    // db: Instância do Firebase Firestore, o banco de dados NoSQL baseado em documentos.
     val db = Firebase.firestore
+
+    // currentScreen: Estado mutável que controla qual tela é exibida atualmente.
+    var currentScreen by remember { mutableStateOf(AuthScreen.LOADING) }
+
+    // uid: Estado mutável para armazenar o User ID (UID) do usuário logado.
+    // É inicializado com o UID do usuário atual do Firebase, se houver.
     val uid = remember { mutableStateOf(FirebaseAuth.getInstance().currentUser?.uid ?: "") }
-    val senhas = remember { mutableStateListOf<Senha>() }
-    var senhaIdParaEditar by remember { mutableStateOf<String?>(null) } // Estado para armazenar o ID da senha a ser editada
 
-    when (currentScreen) {
-        AuthScreen.TERMS -> TermsOfServiceScreen(
-            onAcceptTerms = {
-                currentScreen = AuthScreen.REGISTER // ou LOGIN, dependendo do fluxo desejado
-            },
-            onDeclineTerms = {
-                Toast.makeText(context, "Você precisa aceitar os termos para usar o aplicativo.", Toast.LENGTH_LONG).show()
+    // passwordDataToEdit: Estado mutável para passar os dados de uma senha para a tela de edição.
+    var passwordDataToEdit by remember { mutableStateOf<Senha?>(null) }
+
+    /**
+     * LaunchedEffect(Unit): Um efeito colateral que é executado apenas uma vez durante a inicialização da tela.
+     * Usado para determinar a tela inicial da aplicação ao carregar.
+     */
+    LaunchedEffect(Unit) {
+        val termosAceitos = sharedPreferences.getBoolean("termosAceitos", false)
+        val usuarioLogado = auth.currentUser != null
+        val primeiroAcessoApp = sharedPreferences.getBoolean("primeiroAcessoApp", true)
+
+        if (usuarioLogado) {
+            // Se o usuário já está logado, navega diretamente para o gerenciador de senhas.
+            currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER
+            uid.value = auth.currentUser?.uid ?: ""
+            // Atualiza a flag de primeiro acesso para 'false' se já passou por isso.
+            sharedPreferences.edit().putBoolean("primeiroAcessoApp", false).apply()
+        } else if (primeiroAcessoApp) {
+            // Se é o primeiro acesso ao aplicativo, exibe a tela de boas-vindas.
+            currentScreen = AuthScreen.WELCOME
+        } else {
+            // Se não é o primeiro acesso e o usuário não está logado, verifica a aceitação dos termos.
+            if (!termosAceitos) {
+                // Se os termos não foram aceitos (ex: app reinstalado, dados limpos), exibe a tela de termos.
+                currentScreen = AuthScreen.TERMS
+            } else {
+                // Caso contrário (termos já aceitos, mas usuário não logado), exibe a tela de login.
+                currentScreen = AuthScreen.LOGIN
             }
-        )
-
-        AuthScreen.LOGIN -> LoginForm(
-            onNavigateToRegister = { currentScreen = AuthScreen.REGISTER },
-            onLoginSuccess = { currentScreen = AuthScreen.MAIN },
-            onNavigateToForgotPassword = {
-                context.startActivity(Intent(context, RecuperacaoSenhaActivity::class.java))
-            }
-        )
-
-        AuthScreen.REGISTER -> UserRegistrationForm(
-            onNavigateToLogin = { currentScreen = AuthScreen.LOGIN }
-        )
-
-        AuthScreen.MAIN -> {
-            PasswordManagerScreen(
-                uid = uid.value,
-                onLogout = {
-                    FirebaseAuth.getInstance().signOut()
-                    currentScreen = AuthScreen.LOGIN
-                },
-                onCreatePassword = { currentUid ->
-                    val intent = Intent(context, PasswordFormActivity::class.java)
-                    intent.putExtra("uid", currentUid)
-                    context.startActivity(intent)
-                },
-                onEditPassword = { senhaId ->
-                    senhaIdParaEditar = senhaId
-                    val intent = Intent(context, EditPasswordActivity::class.java)
-                    intent.putExtra("UID", uid.value)
-                    intent.putExtra("SENHA_ID", senhaId)
-                    context.startActivity(intent)
-                }
-            )
-        }
-
-        AuthScreen.QR_LOGIN -> QrScanScreen(
-            onLoginAprovado = { currentScreen = AuthScreen.MAIN }
-        )
-
-        AuthScreen.RECOVERY -> PasswordRecoveryScreen(
-            onNavigateToLogin = { currentScreen = AuthScreen.LOGIN }
-        )
-        else -> {
-            //TODO
         }
     }
-}
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TermsOfServiceScreen(
-    onAcceptTerms: () -> Unit,
-    onDeclineTerms: () -> Unit
-) {
+    /**
+     * Box:  atua como o host para a tela atualmente selecionada.
+     */
+    Box(modifier = modifier.fillMaxSize()) {
+        /**
+         * when (currentScreen): Uma estrutura de controle que exibe uma Composable diferente
+         * com base no valor do estado `currentScreen`, controlando a navegação.
+         */
+        when (currentScreen) {
+            AuthScreen.LOADING -> { }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
-                ),
-                title = {
-                    Text(
-                        stringResource(R.string.terms_of_service_title),
-                        fontSize = 16.sp,
-                        modifier = Modifier.padding(top = 16.dp),
-                        color = MaterialTheme.colorScheme.onPrimaryContainer
-                    )
-                },
-                modifier = Modifier.height(170.dp)
+            AuthScreen.WELCOME -> WelcomeScreen(
+                onContinueClick = {
+                    // Após a tela de boas-vindas, marca que o primeiro acesso foi concluído
+                    // e navega para a tela de termos de serviço.
+                    sharedPreferences.edit().putBoolean("primeiroAcessoApp", false).apply()
+                    currentScreen = AuthScreen.TERMS
+                }
             )
-        },
-        bottomBar = {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                OutlinedButton(onClick = onDeclineTerms) {
-                    Text(stringResource(R.string.decline))
-                }
-                Button(onClick = onAcceptTerms) {
-                    Text(stringResource(R.string.accept))
-                }
-            }
-        }
-    ) { paddingValues ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-                .padding(16.dp)
-                .verticalScroll(rememberScrollState()),
-        ) {
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                elevation = CardDefaults.cardElevation(defaultElevation = 20.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.secondaryContainer
+
+            AuthScreen.TERMS -> {
+                // Exibe a tela de Termos.
+                // Esta tela não recebe dados de registro diretamente neste ponto.
+                TermsOfServiceScreen(
+                    onAcceptTermsAndRegisterSuccess = {
+                        // Callback acionado quando o usuário aceita os termos.
+                        // Atualiza a preferência de termos aceitos e navega para a tela de registro.
+                        sharedPreferences.edit().putBoolean("termosAceitos", true).apply()
+                        Toast.makeText(context, "Termos aceitos com sucesso!", Toast.LENGTH_SHORT).show()
+                        currentScreen = AuthScreen.REGISTER
+                    },
+                    onDeclineTerms = {
+                        // Lida com a recusa dos termos, voltando para a tela de boas-vindas
+                        Toast.makeText(context, "Você precisa aceitar os termos para prosseguir.", Toast.LENGTH_LONG).show()
+                        currentScreen = AuthScreen.WELCOME
+                    }
                 )
-            ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    horizontalAlignment = Alignment.Start
-                ) {
-                    Text(
-                        stringResource(R.string.terms_of_service_agreement),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onBackground,
-                        textAlign = TextAlign.Start,
-                        fontSize = 16.sp,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
             }
-            Text(
-                stringResource(R.string.terms_of_service_content),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.fillMaxWidth()
+
+            AuthScreen.REGISTER -> UserRegistrationForm(
+                onNavigateToLogin = { currentScreen = AuthScreen.LOGIN },
+                // onRegisterAttempt: Callback acionado pela UserRegistrationForm quando o usuário
+                // finaliza o preenchimento dos dados de registro.
+                onRegisterAttempt = { data ->
+                    // Inicia o processo de criação de usuário no Firebase Authentication.
+                    auth.createUserWithEmailAndPassword(data.email, data.senha)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                // Se a criação da conta no Firebase Auth for um sucesso:
+                                val user = auth.currentUser // Obtém o usuário recém-criado
+                                val currentUid = user?.uid // Obtém o UID (ID único) do usuário
+                                val androidId = getAndroidId(context) // Obtém o Android ID do dispositivo
+
+                                if (currentUid != null && androidId.isNotEmpty()) {
+                                    // Prepara os dados do usuário para serem armazenados no Firestore.
+                                    val userData = hashMapOf(
+                                        "nome" to data.nome,
+                                        "email" to data.email,
+                                        "uid" to currentUid,
+                                        "imei(Android ID)" to androidId, // O requisito pedia IMEI, mas Android ID é mais acessível.
+                                        "data_criacao" to com.google.firebase.Timestamp.now() // Adiciona um timestamp de criação.
+                                    )
+
+                                    // Salva os dados do usuário em uma coleção "users" no Firestore,
+                                    // usando o UID como ID do documento.
+                                    db.collection("users")
+                                        .document(currentUid)
+                                        .set(userData)
+                                        .addOnSuccessListener {
+                                            // Se os dados forem salvos com sucesso no Firestore:
+                                            Toast.makeText(context, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show()
+
+                                            // Envia um e-mail de verificação para o usuário.
+                                            user.sendEmailVerification()
+                                                ?.addOnCompleteListener { verificationTask ->
+                                                    if (verificationTask.isSuccessful) {
+                                                        Toast.makeText(context, "E-mail de verificação enviado. Por favor, verifique sua caixa de entrada.", Toast.LENGTH_SHORT).show()
+                                                    } else {
+                                                        Toast.makeText(context, "Falha ao enviar e-mail de verificação. Você ainda pode usar outras funcionalidades.", Toast.LENGTH_SHORT).show()
+                                                    }
+                                                    // Após o cadastro e o envio do e-mail de verificação, navega para a tela de Login.
+                                                    currentScreen = AuthScreen.LOGIN
+                                                }
+                                        }
+                                        .addOnFailureListener { e ->
+                                            Toast.makeText(context, "Erro ao salvar dados do usuário: ${e.message}. Tente novamente.", Toast.LENGTH_LONG).show()
+                                            currentScreen = AuthScreen.REGISTER // Permanece na tela de registro para nova tentativa.
+                                        }
+                                } else {
+                                    // Caso raro onde UID ou Android ID não foram obtidos.
+                                    Toast.makeText(context, "Erro: Não foi possível obter identificadores do dispositivo. Tente novamente.", Toast.LENGTH_LONG).show()
+                                    currentScreen = AuthScreen.REGISTER
+                                }
+                            } else {
+                                // Lida com erros na criação do usuário via Firebase Authentication.
+                                val errorMessage = when (task.exception) {
+                                    is FirebaseAuthException -> {
+                                        // Mensagens de erro específicas para FirebaseAuth.
+                                        when ((task.exception as FirebaseAuthException).errorCode) {
+                                            "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso. Por favor, faça login ou use outro e-mail."
+                                            "ERROR_WEAK_PASSWORD" -> "A senha é muito fraca. Use no mínimo 6 caracteres para sua senha mestre."
+                                            else -> "Ocorreu um erro ao realizar o cadastro. ${task.exception?.message}"
+                                        }
+                                    }
+                                    else -> "Ocorreu um erro inesperado durante o cadastro. Verifique sua conexão."
+                                }
+                                Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
+                                currentScreen = AuthScreen.REGISTER // Permanece na tela de registro para que o usuário corrija.
+                            }
+                        }
+                }
             )
 
-            Spacer(modifier = Modifier.height(32.dp))
+            AuthScreen.LOGIN -> LoginForm(
+                sharedPreferences = sharedPreferences, // Passa SharedPreferences para a tela de login.
+                onNavigateToRegister = { currentScreen = AuthScreen.REGISTER }, // Permite navegar para o registro.
+                onLoginSuccess = {
+                    // Após um login bem-sucedido, atualiza o estado de login e navega para o gerenciador de senhas.
+                    sharedPreferences.edit().putBoolean("usuarioLogado", true).apply()
+                    uid.value = auth.currentUser?.uid ?: "" // Atualiza o UID do usuário logado.
+                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER
+                },
+                onNavigateToForgotPassword = { currentScreen = AuthScreen.RECOVERY } // Permite navegar para recuperação de senha.
+            )
+
+            AuthScreen.MAIN_PASSWORD_MANAGER -> PasswordManagerScreen(
+                uid = uid.value, // Passa o UID do usuário logado para a tela.
+                onLogout = {
+                    // Realiza o logout do Firebase, limpa as preferências de login e retorna à tela de login.
+                    auth.signOut()
+                    sharedPreferences.edit().putBoolean("usuarioLogado", false).apply()
+                    uid.value = ""
+                    currentScreen = AuthScreen.LOGIN
+                },
+                onCreatePassword = { currentScreen = AuthScreen.CREATE_PASSWORD }, // Navega para criar uma nova senha.
+                onEditPassword = { senhaToEdit ->
+                    passwordDataToEdit = senhaToEdit // Define a senha a ser editada.
+                    currentScreen = AuthScreen.EDIT_PASSWORD // Navega para a tela de edição.
+                },
+                onReadQrCode = { currentScreen = AuthScreen.QR_LOGIN } // Navega para a leitura de QR Code.
+            )
+
+            AuthScreen.CREATE_PASSWORD -> PasswordFormScreen(
+                uid = uid.value, // Passa o UID para associar a senha ao usuário.
+                onSuccess = {
+                    Toast.makeText(context, "Senha salva com sucesso!", Toast.LENGTH_SHORT).show()
+                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER // Retorna ao gerenciador após salvar.
+                },
+                onBack = { currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER } // Retorna ao gerenciador sem salvar.
+            )
+
+            AuthScreen.EDIT_PASSWORD -> EditPasswordScreen(
+                uid = uid.value, // Passa o UID.
+                senhaToEdit = passwordDataToEdit, // Passa os dados da senha a ser editada.
+                onSuccess = {
+                    Toast.makeText(context, "Senha atualizada com sucesso!", Toast.LENGTH_SHORT).show()
+                    passwordDataToEdit = null // Limpa o estado da senha em edição.
+                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER // Retorna ao gerenciador após atualizar.
+                },
+                onBack = {
+                    passwordDataToEdit = null // Limpa o estado da senha em edição.
+                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER // Retorna ao gerenciador sem atualizar.
+                }
+            )
+
+            AuthScreen.QR_LOGIN -> QrScanScreen(
+                onLoginAprovado = { currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER }, // Login via QR aprovado, vai para o gerenciador.
+                onBack = { currentScreen = AuthScreen.LOGIN } // Retorna para a tela de login.
+            )
+
+            AuthScreen.RECOVERY -> PasswordRecoveryScreen(
+                onNavigateToLogin = { currentScreen = AuthScreen.LOGIN } // Após recuperação, volta para o login.
+            )
         }
     }
 }

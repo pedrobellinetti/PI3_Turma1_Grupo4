@@ -1118,8 +1118,9 @@ int string template_percent 0x7f0e0090
 int string terms_of_service_agreement 0x7f0e0091
 int string terms_of_service_content 0x7f0e0092
 int string terms_of_service_title 0x7f0e0093
-int string tooltip_description 0x7f0e0094
-int string tooltip_label 0x7f0e0095
+int string title_activity_camera 0x7f0e0094
+int string tooltip_description 0x7f0e0095
+int string tooltip_label 0x7f0e0096
 int style AlertDialog_AppCompat 0x7f0f0000
 int style AlertDialog_AppCompat_Light 0x7f0f0001
 int style Animation_AppCompat_Dialog 0x7f0f0002
