@@ -3,7 +3,6 @@ package com.example.superid.ui.screens
 import android.content.Context
 import android.util.Base64
 import android.widget.Toast
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -23,6 +22,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.SecureRandom
 import com.example.superid.utils.EncryptionUtil
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.material.icons.filled.Delete
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,8 +56,13 @@ fun PasswordFormScreen(
     var novaCategoria by remember { mutableStateOf("") }
     var mostrarCampoNovaCategoria by remember { mutableStateOf(false) }
 
+    // Variável de estado para controlar a visibilidade do diálogo de confirmação
+    var showDeleteConfirmationDialog by remember { mutableStateOf(false) }
+    // Variável de estado para armazenar a categoria a ser excluída
+    var categoryToDelete by remember { mutableStateOf("") }
+
     // Efeito para carregar as categorias personalizadas do SharedPreferences ao iniciar a tela
-    LaunchedEffect(Unit) { // Use Unit como chave para executar apenas uma vez
+    LaunchedEffect(Unit) { // Unit como chave para executar apenas uma vez
         // Adiciona as categorias padrão primeiro
         userCategories.addAll(defaultCategories)
 
@@ -77,11 +83,30 @@ fun PasswordFormScreen(
         }
     }
 
-    // Função para salvar as categorias no SharedPreferences
+    // Função para salvar as categorias personalizadas no SharedPreferences
     fun saveCategoriesToSharedPreferences() {
         val customCategoriesToSave = userCategories.filter { it !in defaultCategories } // Salva apenas as personalizadas
         val categoriesString = customCategoriesToSave.joinToString(CATEGORY_DELIMITER)
         sharedPreferences.edit().putString(CATEGORIES_KEY, categoriesString).apply()
+    }
+
+    // Função para deletar uma categoria
+    fun deleteCategory(categoryName: String) {
+        if (categoryName == "Sites Web") {
+            Toast.makeText(context, "A categoria 'Sites Web' não pode ser excluída.", Toast.LENGTH_LONG).show()
+        } else {
+            // Verifica se a categoria existe e a remove
+            if (userCategories.remove(categoryName)) {
+                saveCategoriesToSharedPreferences()
+                Toast.makeText(context, "Categoria '$categoryName' excluída com sucesso!", Toast.LENGTH_SHORT).show()
+                // Se a categoria excluída era a selecionada, selecione a primeira disponível
+                if (label == categoryName) {
+                    label = userCategories.firstOrNull() ?: ""
+                }
+            } else {
+                Toast.makeText(context, "Erro: Categoria '$categoryName' não encontrada.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     fun gerarAccessToken(): String {
@@ -139,7 +164,8 @@ fun PasswordFormScreen(
 
         Column(
             modifier = Modifier
-                .verticalScroll(scrollState) // Adicione este modificador
+                .imePadding()
+                .verticalScroll(scrollState)
                 .fillMaxWidth()
                 .padding(horizontal = 32.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -217,6 +243,22 @@ fun PasswordFormScreen(
                                 mostrarCampoNovaCategoria = false
                                 novaCategoria = ""
                                 menuExpandido = false
+                            },
+                            // Icone de exclusão para categorias que podem ser excluídas
+                            trailingIcon = {
+                                if (categoria != "Sites Web") { // Apenas mostra o ícone para categorias não-padrão
+                                    IconButton(onClick = {
+                                        categoryToDelete = categoria
+                                        showDeleteConfirmationDialog = true
+                                        menuExpandido = false // Fecha o menu
+                                    }) {
+                                        Icon(
+                                            imageVector = Icons.Default.Delete,
+                                            contentDescription = "Excluir categoria",
+                                            tint = MaterialTheme.colorScheme.error
+                                        )
+                                    }
+                                }
                             }
                         )
                     }
@@ -244,6 +286,32 @@ fun PasswordFormScreen(
                 )
             }
 
+            // Diálogo de confirmação de exclusão
+            if (showDeleteConfirmationDialog) {
+                AlertDialog(
+                    onDismissRequest = { showDeleteConfirmationDialog = false },
+                    title = { Text("Confirmar Exclusão") },
+                    text = { Text("Tem certeza que deseja excluir a categoria '${categoryToDelete}'? Senhas associadas a esta categoria não serão afetadas, apenas a categoria será removida da sua lista.") },
+                    confirmButton = {
+                        Button(
+                            onClick = {
+                                deleteCategory(categoryToDelete)
+                                showDeleteConfirmationDialog = false
+                            }
+                        ) {
+                            Text("Excluir")
+                        }
+                    },
+                    dismissButton = {
+                        Button(
+                            onClick = { showDeleteConfirmationDialog = false }
+                        ) {
+                            Text("Cancelar")
+                        }
+                    }
+                )
+            }
+
             // Botão de criação da senha
             Button(
                 onClick = {
@@ -267,7 +335,7 @@ fun PasswordFormScreen(
                             if (!userCategories.contains(categoriaFinal)) {
                                 userCategories.add(categoriaFinal)
                                 saveCategoriesToSharedPreferences()
-                                Toast.makeText(context, "Nova categoria '${categoriaFinal}' adicionada localmente!", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, "Nova categoria '${categoriaFinal}' adicionada!", Toast.LENGTH_SHORT).show()
                             } else {
                                 Toast.makeText(context, "Categoria '${categoriaFinal}' já existe.", Toast.LENGTH_SHORT).show()
                             }

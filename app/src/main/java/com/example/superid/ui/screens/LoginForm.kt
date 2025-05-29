@@ -22,8 +22,12 @@ import androidx.compose.ui.unit.dp
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
-import androidx.compose.foundation.rememberScrollState // Importe este
-import androidx.compose.foundation.verticalScroll // Importe este
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,15 +46,32 @@ fun LoginForm(
 
     // Estado para controlar a visibilidade do primeiro AlertDialog
     var showEmailVerificationDialog by remember { mutableStateOf(false) }
-    // Estado para controlar a visibilidade do segundo AlertDialog (após 'Aceitar')
-    var showInfoDialogAfterAccept by remember { mutableStateOf(false) }
+
+    // Estado para controlar a visibilidade da senha no campo de texto
+    var passwordVisible by remember { mutableStateOf(false) }
 
     val scrollState = rememberScrollState()
+
+    // Função para reenviar o e-mail de verificação
+    fun resendVerificationEmail() {
+        val user = auth.currentUser
+        user?.sendEmailVerification()
+            ?.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(context, "Novo e-mail de verificação enviado! Verifique sua caixa de entrada e pasta de spam.", Toast.LENGTH_LONG).show()
+                } else {
+                    val errorMessage = task.exception?.message ?: "Erro ao reenviar e-mail de verificação."
+                    Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(scrollState), // Adicione o modificador verticalScroll aqui
+            .imePadding()
+            .verticalScroll(scrollState),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
@@ -129,11 +150,26 @@ fun LoginForm(
             Text(text = "Por favor, digite seu e-mail.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
         }
 
+        // ---- CAMPO DA SENHA COM O OLHINHO ----
         OutlinedTextField(
             value = senha,
             onValueChange = { senha = it },
             label = { Text("Digite sua senha", style = MaterialTheme.typography.labelLarge) },
-            visualTransformation = PasswordVisualTransformation(),
+            // VisualTransformation baseado no estado passwordVisible
+            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+            trailingIcon = {
+                // Ícone de olho (aberto ou fechado)
+                val image = if (passwordVisible)
+                    Icons.Filled.Visibility
+                else Icons.Filled.VisibilityOff
+
+                // Descrição para acessibilidade
+                val description = if (passwordVisible) "Ocultar senha" else "Mostrar senha"
+
+                IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                    Icon(imageVector = image, contentDescription = description)
+                }
+            },
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
@@ -197,11 +233,11 @@ fun LoginForm(
                             if (task.isSuccessful) {
                                 val user = auth.currentUser
                                 if (user != null && !user.isEmailVerified) {
-                                    sharedPreferences.edit().putBoolean("emailValidado", user.isEmailVerified).apply()
-                                    // Se o e-mail não estiver verificado, mostra o primeiro AlertDialog
+                                    // Se o e-mail NÃO estiver verificado, mostra o diálogo
                                     showEmailVerificationDialog = true
                                 } else {
-                                    // Se o e-mail estiver verificado, procede com o login normalmente
+                                    // Se o e-mail ESTIVER verificado, procede com o login normalmente
+                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply()
                                     Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
                                     onLoginSuccess()
                                 }
@@ -212,11 +248,10 @@ fun LoginForm(
                                             "ERROR_WRONG_PASSWORD" -> "Senha incorreta."
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
-                                            "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
-                                            else -> "Usuário não encontrado."
+                                            else -> "Ocorreu um erro inesperado."
                                         }
                                     }
-                                    else -> "Ocorreu um erro inesperado."
+                                    else -> "Usuário não encontrada."
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
@@ -239,51 +274,43 @@ fun LoginForm(
             AlertDialog(
                 onDismissRequest = {
                     showEmailVerificationDialog = false
-                    onLoginSuccess() // Permite o acesso mesmo se ele recusar a validação
+                    Toast.makeText(
+                        context,
+                        "Verificação de e-mail pendente. Faça login novamente.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 },
-                title = { Text("Verificação de E-mail Necessária") },
+                title = { Text("Verificação de E-mail Pendente") },
                 text = {
-                    Text("Seu e-mail não foi verificado. Você poderá usar as outras funcionalidades, mas o 'Login Sem Senha' não estará disponível. Deseja continuar assim?")
+                    Text("Seu e-mail ainda não foi verificado. Deseja reenviar o e-mail de verificação ou prosseguir mesmo assim?")
                 },
                 confirmButton = {
-                    TextButton(onClick = {
-                        showEmailVerificationDialog = false
-                        showInfoDialogAfterAccept = true // Mostra o segundo AlertDialog
-                    }) {
-                        Text("Aceitar")
+                    // Use uma Row para agrupar e centralizar os dois botões
+                    Row(
+                        modifier = Modifier.fillMaxWidth(), // Faz a Row ocupar a largura total do diálogo
+                        horizontalArrangement = Arrangement.Start, // Centraliza os botões horizontalmente
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        // Botão "Reenviar E-mail de Verificação"
+                        TextButton(onClick = {
+                            resendVerificationEmail() // Chame a função de reenviar
+                            showEmailVerificationDialog = false // Fecha o diálogo
+                        }) {
+                            Text("Reenviar E-mail")
+                        }
+                        Spacer(Modifier.width(8.dp)) // Espaço entre os botões
+                        // Botão "Prosseguir"
+                        TextButton(onClick = {
+                            showEmailVerificationDialog = false
+                            onLoginSuccess()
+                        }) {
+                            Text("Prosseguir")
+                        }
                     }
                 },
-                dismissButton = {
-                    TextButton(onClick = {
-                        showEmailVerificationDialog = false
-                        Toast.makeText(context, "Por favor, verifique seu e-mail para prosseguir.", Toast.LENGTH_LONG).show()
-                    }) {
-                        Text("Recusar")
-                    }
-                }
             )
         }
 
-        if (showInfoDialogAfterAccept) {
-            AlertDialog(
-                onDismissRequest = {
-                    showInfoDialogAfterAccept = false
-                    onLoginSuccess() // Redireciona para a tela principal
-                },
-                title = { Text("Informação Adicional") },
-                text = {
-                    Text("Você pode verificar seu e-mail a qualquer momento pelo link que enviamos para o seu e-mail para habilitar o 'Login Sem Senha'.")
-                },
-                confirmButton = {
-                    TextButton(onClick = {
-                        showInfoDialogAfterAccept = false
-                        onLoginSuccess() // Redireciona para a tela principal
-                    }) {
-                        Text("OK")
-                    }
-                }
-            )
-        }
 
         // Link inferior
         Column(

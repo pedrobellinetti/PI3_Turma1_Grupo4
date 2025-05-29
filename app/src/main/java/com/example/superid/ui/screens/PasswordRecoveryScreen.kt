@@ -155,7 +155,7 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        // Link para Voltar ao Login (agora como TextButton na parte inferior)
+        // Link para Voltar ao Login
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier

@@ -2,7 +2,6 @@ package com.example.superid.ui.screens
 
 import android.content.Context
 import android.widget.Toast
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -21,6 +20,13 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.example.superid.utils.EncryptionUtil
 import com.example.superid.Senha
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.material.icons.filled.Visibility // Ícone de olho aberto
+import androidx.compose.material.icons.filled.VisibilityOff // Ícone de olho fechado
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,14 +57,40 @@ fun EditPasswordScreen(
     var novaCategoria by remember { mutableStateOf("") }
     var mostrarCampoNovaCategoria by remember { mutableStateOf(false) }
 
+    // Variável de estado para controlar a visibilidade da senha
+    var passwordVisible by remember { mutableStateOf(false) }
+
     var originalEncryptedPass: String? by remember { mutableStateOf(null) }
     var originalIv: String? by remember { mutableStateOf(null) }
     var originalSalt: String? by remember { mutableStateOf(null) }
+
+    // Variáveis de estado para controlar a visibilidade do diálogo de confirmação de exclusão de categoria
+    var showDeleteCategoryConfirmationDialog by remember { mutableStateOf(false) }
+    var categoryToDelete by remember { mutableStateOf("") }
 
     fun saveCategoriesToSharedPreferences() {
         val customCategoriesToSave = userCategories.filter { it !in defaultCategories }
         val categoriesString = customCategoriesToSave.joinToString(CATEGORY_DELIMITER)
         sharedPreferences.edit().putString(CATEGORIES_KEY, categoriesString).apply()
+    }
+
+    // Função para deletar uma categoria
+    fun deleteCategory(categoryName: String) {
+        if (categoryName == "Sites Web") {
+            Toast.makeText(context, "A categoria 'Sites Web' não pode ser excluída.", Toast.LENGTH_LONG).show()
+        } else {
+            // Verifica se a categoria existe e a remove
+            if (userCategories.remove(categoryName)) {
+                saveCategoriesToSharedPreferences()
+                Toast.makeText(context, "Categoria '$categoryName' excluída com sucesso!", Toast.LENGTH_SHORT).show()
+                // Se a categoria excluída era a selecionada, seleciona a primeira disponível
+                if (label == categoryName) {
+                    label = userCategories.firstOrNull() ?: ""
+                }
+            } else {
+                Toast.makeText(context, "Erro: Categoria '$categoryName' não encontrada.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     LaunchedEffect(Unit) {
@@ -93,7 +125,8 @@ fun EditPasswordScreen(
                         descricao = senhaData.descricao
                         label = senhaData.categoria
 
-                        if (!defaultCategories.contains(label) && !userCategories.contains(label)) {
+                        // Garante que a categoria da senha editada está na lista de categorias do usuário
+                        if (!userCategories.contains(label)) {
                             userCategories.add(label)
                         }
 
@@ -175,7 +208,8 @@ fun EditPasswordScreen(
 
         Column(
             modifier = Modifier
-                .verticalScroll(scrollState) // Adicione este modificador
+                .imePadding()
+                .verticalScroll(scrollState)
                 .fillMaxWidth()
                 .padding(horizontal = 32.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -200,16 +234,33 @@ fun EditPasswordScreen(
                 shape = RoundedCornerShape(15.dp),
                 colors = OutlinedTextFieldDefaults.colors()
             )
+            // ---- CAMPO DA SENHA COM O OLHINHO ----
             OutlinedTextField(
                 value = senhaValor,
                 onValueChange = { senhaValor = it },
                 label = { Text("Senha", style = MaterialTheme.typography.bodyLarge) },
+                // VisualTransformation baseado no estado passwordVisible
+                visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                trailingIcon = {
+                    // Ícone de olho (aberto ou fechado)
+                    val image = if (passwordVisible)
+                        Icons.Filled.Visibility
+                    else Icons.Filled.VisibilityOff
+
+                    // Descrição para acessibilidade
+                    val description = if (passwordVisible) "Ocultar senha" else "Mostrar senha"
+
+                    IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                        Icon(imageVector = image, contentDescription = description)
+                    }
+                },
                 modifier = Modifier
                     .width(315.dp)
                     .padding(bottom = 8.dp),
                 shape = RoundedCornerShape(15.dp),
                 colors = OutlinedTextFieldDefaults.colors()
             )
+
             OutlinedTextField(
                 value = descricao,
                 onValueChange = { descricao = it },
@@ -253,6 +304,22 @@ fun EditPasswordScreen(
                                 mostrarCampoNovaCategoria = false
                                 novaCategoria = ""
                                 menuExpandido = false
+                            },
+                            // Adiciona um ícone de exclusão para categorias que podem ser excluídas
+                            trailingIcon = {
+                                if (categoria != "Sites Web") { // Apenas mostra o ícone para categorias que não são "Sites Web"
+                                    IconButton(onClick = {
+                                        categoryToDelete = categoria
+                                        showDeleteCategoryConfirmationDialog = true
+                                        menuExpandido = false // Fecha o menu
+                                    }) {
+                                        Icon(
+                                            imageVector = Icons.Default.Delete,
+                                            contentDescription = "Excluir categoria",
+                                            tint = MaterialTheme.colorScheme.error
+                                        )
+                                    }
+                                }
                             }
                         )
                     }
@@ -279,6 +346,44 @@ fun EditPasswordScreen(
                     colors = OutlinedTextFieldDefaults.colors()
                 )
             }
+
+            // Diálogo de confirmação de exclusão de categoria
+            if (showDeleteCategoryConfirmationDialog) {
+                AlertDialog(
+                    onDismissRequest = { showDeleteCategoryConfirmationDialog = false },
+                    title = { Text("Confirmar Exclusão") },
+                    text = { Text("Tem certeza que deseja excluir a categoria '${categoryToDelete}'? Senhas associadas a esta categoria não serão afetadas, apenas a categoria será removida da sua lista.") },
+                    confirmButton = {
+                        // Envolve a Row em um Box com Modifier.fillMaxWidth() para centralizar
+                        Box(
+                            modifier = Modifier.fillMaxWidth(), // Este Box se expande
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                // Botão "Cancelar"
+                                TextButton(
+                                    onClick = { showDeleteCategoryConfirmationDialog = false }
+                                ) {
+                                    Text("Cancelar")
+                                }
+                                // Botão "Excluir" (agora o segundo)
+                                Button(
+                                    onClick = {
+                                        deleteCategory(categoryToDelete)
+                                        showDeleteCategoryConfirmationDialog = false
+                                    }
+                                ) {
+                                    Text("Excluir")
+                                }
+                            }
+                        }
+                    }
+                )
+            }
+
 
             Button(
                 onClick = {

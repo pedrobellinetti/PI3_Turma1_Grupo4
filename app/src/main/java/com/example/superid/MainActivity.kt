@@ -72,7 +72,10 @@ fun AuthApp(modifier: Modifier = Modifier) {
     val uid = remember { mutableStateOf(FirebaseAuth.getInstance().currentUser?.uid ?: "") }
 
     // passwordDataToEdit: Estado mutável para passar os dados de uma senha para a tela de edição.
-    var passwordDataToEdit by remember { mutableStateOf<Senha?>(null) }
+    var passwordDataToEdit by remember { mutableStateOf<Senha?>(null) } // Supondo que 'Senha' é uma classe ou data class existente
+
+    // Estado para indicar sucesso no registro
+    var registrationSuccess by remember { mutableStateOf(false) }
 
     /**
      * LaunchedEffect(Unit): Um efeito colateral que é executado apenas uma vez durante a inicialização da tela.
@@ -105,7 +108,7 @@ fun AuthApp(modifier: Modifier = Modifier) {
     }
 
     /**
-     * Box:  atua como o host para a tela atualmente selecionada.
+     * Box: atua como o host para a tela atualmente selecionada.
      */
     Box(modifier = modifier.fillMaxSize()) {
         /**
@@ -113,7 +116,7 @@ fun AuthApp(modifier: Modifier = Modifier) {
          * com base no valor do estado `currentScreen`, controlando a navegação.
          */
         when (currentScreen) {
-            AuthScreen.LOADING -> { }
+            AuthScreen.LOADING -> { /* Pode exibir um indicador de carregamento aqui */ }
 
             AuthScreen.WELCOME -> WelcomeScreen(
                 onContinueClick = {
@@ -126,7 +129,6 @@ fun AuthApp(modifier: Modifier = Modifier) {
 
             AuthScreen.TERMS -> {
                 // Exibe a tela de Termos.
-                // Esta tela não recebe dados de registro diretamente neste ponto.
                 TermsOfServiceScreen(
                     onAcceptTermsAndRegisterSuccess = {
                         // Callback acionado quando o usuário aceita os termos.
@@ -145,63 +147,48 @@ fun AuthApp(modifier: Modifier = Modifier) {
 
             AuthScreen.REGISTER -> UserRegistrationForm(
                 onNavigateToLogin = { currentScreen = AuthScreen.LOGIN },
-                // onRegisterAttempt: Callback acionado pela UserRegistrationForm quando o usuário
-                // finaliza o preenchimento dos dados de registro.
                 onRegisterAttempt = { data ->
-                    // Inicia o processo de criação de usuário no Firebase Authentication.
+                    // Reinicia o estado de sucesso para evitar reexibição acidental do diálogo
+                    registrationSuccess = false
                     auth.createUserWithEmailAndPassword(data.email, data.senha)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                // Se a criação da conta no Firebase Auth for um sucesso:
-                                val user = auth.currentUser // Obtém o usuário recém-criado
-                                val currentUid = user?.uid // Obtém o UID (ID único) do usuário
-                                val androidId = getAndroidId(context) // Obtém o Android ID do dispositivo
+                                val user = auth.currentUser
+                                val currentUid = user?.uid
+                                val androidId = getAndroidId(context)
 
                                 if (currentUid != null && androidId.isNotEmpty()) {
-                                    // Prepara os dados do usuário para serem armazenados no Firestore.
                                     val userData = hashMapOf(
                                         "nome" to data.nome,
                                         "email" to data.email,
                                         "uid" to currentUid,
-                                        "imei(Android ID)" to androidId, // O requisito pedia IMEI, mas Android ID é mais acessível.
-                                        "data_criacao" to com.google.firebase.Timestamp.now() // Adiciona um timestamp de criação.
+                                        "imei(Android ID)" to androidId,
+                                        "data_criacao" to com.google.firebase.Timestamp.now()
                                     )
 
-                                    // Salva os dados do usuário em uma coleção "users" no Firestore,
-                                    // usando o UID como ID do documento.
                                     db.collection("users")
                                         .document(currentUid)
                                         .set(userData)
                                         .addOnSuccessListener {
-                                            // Se os dados forem salvos com sucesso no Firestore:
-                                            Toast.makeText(context, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show()
-
-                                            // Envia um e-mail de verificação para o usuário.
                                             user.sendEmailVerification()
                                                 ?.addOnCompleteListener { verificationTask ->
-                                                    if (verificationTask.isSuccessful) {
-                                                        Toast.makeText(context, "E-mail de verificação enviado. Por favor, verifique sua caixa de entrada.", Toast.LENGTH_SHORT).show()
-                                                    } else {
+                                                    if (!verificationTask.isSuccessful) {
                                                         Toast.makeText(context, "Falha ao enviar e-mail de verificação. Você ainda pode usar outras funcionalidades.", Toast.LENGTH_SHORT).show()
                                                     }
-                                                    // Após o cadastro e o envio do e-mail de verificação, navega para a tela de Login.
-                                                    currentScreen = AuthScreen.LOGIN
+                                                    registrationSuccess = true
                                                 }
                                         }
                                         .addOnFailureListener { e ->
                                             Toast.makeText(context, "Erro ao salvar dados do usuário: ${e.message}. Tente novamente.", Toast.LENGTH_LONG).show()
-                                            currentScreen = AuthScreen.REGISTER // Permanece na tela de registro para nova tentativa.
+                                            currentScreen = AuthScreen.REGISTER
                                         }
                                 } else {
-                                    // Caso raro onde UID ou Android ID não foram obtidos.
                                     Toast.makeText(context, "Erro: Não foi possível obter identificadores do dispositivo. Tente novamente.", Toast.LENGTH_LONG).show()
                                     currentScreen = AuthScreen.REGISTER
                                 }
                             } else {
-                                // Lida com erros na criação do usuário via Firebase Authentication.
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
-                                        // Mensagens de erro específicas para FirebaseAuth.
                                         when ((task.exception as FirebaseAuthException).errorCode) {
                                             "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está em uso. Por favor, faça login ou use outro e-mail."
                                             "ERROR_WEAK_PASSWORD" -> "A senha é muito fraca. Use no mínimo 6 caracteres para sua senha mestre."
@@ -211,10 +198,14 @@ fun AuthApp(modifier: Modifier = Modifier) {
                                     else -> "Ocorreu um erro inesperado durante o cadastro. Verifique sua conexão."
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
-                                currentScreen = AuthScreen.REGISTER // Permanece na tela de registro para que o usuário corrija.
+                                currentScreen = AuthScreen.REGISTER
                             }
                         }
-                }
+                },
+                onRegistrationSuccessAndDialogClosed = {
+                    currentScreen = AuthScreen.LOGIN
+                },
+                registrationSuccess = registrationSuccess
             )
 
             AuthScreen.LOGIN -> LoginForm(

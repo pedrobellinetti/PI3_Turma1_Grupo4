@@ -1,6 +1,7 @@
 package com.example.superid.ui.screens
 
 import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -48,7 +49,7 @@ fun PasswordManagerScreen(
     var listenerRegistration: ListenerRegistration? = null
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
-    val masterPasswordForDecryption by remember { mutableStateOf("PinMestrePI2025!") } // Sua senha mestre
+    val masterPasswordForDecryption by remember { mutableStateOf("PinMestrePI2025!") }
     val auth = FirebaseAuth.getInstance()
 
     var isEmailVerified by remember { mutableStateOf(auth.currentUser?.isEmailVerified ?: false) }
@@ -86,10 +87,6 @@ fun PasswordManagerScreen(
                             senhas.add(it)
                         }
                     }
-                    // O DocumentChange.Type é mais complexo para manter a ordem e evitar duplicações
-                    // se você não limpar a lista. Para LazyColumn, limpar e adicionar é mais simples
-                    // se a ordem não for crítica (que pode ser ajustada com um sort/orderBy do Firestore).
-                    // Se precisar de ordenação específica, adicione `.orderBy("sua_ordem")` no Firestore.
                 }
             }
         onDispose {
@@ -266,6 +263,8 @@ fun PasswordItem(
     onEditClicked: (Senha) -> Unit // Recebe o callback para editar
 ) {
     var expanded by remember { mutableStateOf(false) }
+    // Adicione esta nova variável de estado para controlar a visibilidade da senha
+    var showPassword by remember { mutableStateOf(false) }
     val context = LocalContext.current
 
     val masterPasswordToUse = if (masterPasswordInput.isNotBlank()) masterPasswordInput else "PinMestrePI2025!"
@@ -277,7 +276,8 @@ fun PasswordItem(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
+            .padding(vertical = 4.dp)
+            .clickable { showPassword = !showPassword },
         shape = MaterialTheme.shapes.medium,
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.secondaryContainer
@@ -294,7 +294,7 @@ fun PasswordItem(
                 Text(text = senha.nome, fontWeight = FontWeight.Medium)
                 Text(text = senha.login, color = Color.Black, fontSize = 14.sp)
                 Text(
-                    text = decryptedPassword ?: "Erro ao descriptografar",
+                    text = if (showPassword) decryptedPassword ?: "Erro ao descriptografar" else "********",
                     color = Color.Black,
                     fontSize = 14.sp
                 )

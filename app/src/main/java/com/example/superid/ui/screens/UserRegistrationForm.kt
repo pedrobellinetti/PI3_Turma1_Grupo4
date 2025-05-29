@@ -1,13 +1,12 @@
 package com.example.superid.ui.screens
 
-import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState // Importe este
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll // Importe este
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.*
@@ -21,12 +20,19 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.example.superid.R
 import com.example.superid.data.RegistrationData
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.material.icons.Icons
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserRegistrationForm(
     onNavigateToLogin: () -> Unit,
-    onRegisterAttempt: (data: RegistrationData) -> Unit
+    onRegisterAttempt: (data: RegistrationData) -> Unit,
+    onRegistrationSuccessAndDialogClosed: () -> Unit,
+    registrationSuccess: Boolean // Estado passado da MainActivity
 ) {
     val context = LocalContext.current
 
@@ -37,14 +43,25 @@ fun UserRegistrationForm(
     var emailError by remember { mutableStateOf(false) }
     var nomeError by remember { mutableStateOf(false) }
     var generalError by remember { mutableStateOf("") }
+    var showSuccessDialog by remember { mutableStateOf(false) }
 
-    // Adicione um ScrollState para controlar a rolagem
     val scrollState = rememberScrollState()
+
+    // Estado para controlar a visibilidade da senha no campo de texto
+    var passwordVisible by remember { mutableStateOf(false) }
+
+    // LaunchedEffect para observar o estado de sucesso do registro vindo da MainActivity
+    LaunchedEffect(registrationSuccess) {
+        if (registrationSuccess) {
+            showSuccessDialog = true // Se o registro for bem-sucedido, exibe o diálogo
+        }
+    }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(scrollState), // Adicione o modificador verticalScroll aqui
+            .imePadding()
+            .verticalScroll(scrollState),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
@@ -107,7 +124,11 @@ fun UserRegistrationForm(
             )
         )
         if (nomeError) {
-            Text(text = "Por favor, digite seu nome.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+            Text(
+                text = "Por favor, digite seu nome.",
+                color = Color.Red,
+                style = MaterialTheme.typography.bodySmall
+            )
         }
 
         OutlinedTextField(
@@ -134,7 +155,11 @@ fun UserRegistrationForm(
             )
         )
         if (emailError) {
-            Text(text = "Por favor, digite um e-mail válido.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+            Text(
+                text = "Por favor, digite um e-mail válido.",
+                color = Color.Red,
+                style = MaterialTheme.typography.bodySmall
+            )
         }
 
         OutlinedTextField(
@@ -144,8 +169,27 @@ fun UserRegistrationForm(
                 senhaError = false
                 generalError = ""
             },
-            label = { Text("Digite sua senha (mínimo 6 caracteres)", style = MaterialTheme.typography.labelLarge) },
-            visualTransformation = PasswordVisualTransformation(),
+            label = {
+                Text(
+                    "Digite sua senha (mínimo 6 caracteres)",
+                    style = MaterialTheme.typography.labelLarge
+                )
+            },
+            // VisualTransformation baseado no estado passwordVisible
+            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+            trailingIcon = {
+                // Ícone de olho (aberto ou fechado)
+                val image = if (passwordVisible)
+                    Icons.Filled.Visibility
+                else Icons.Filled.VisibilityOff
+
+                // Descrição para acessibilidade
+                val description = if (passwordVisible) "Ocultar senha" else "Mostrar senha"
+
+                IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                    Icon(imageVector = image, contentDescription = description)
+                }
+            },
             modifier = Modifier
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
@@ -162,13 +206,18 @@ fun UserRegistrationForm(
             )
         )
         if (senhaError) {
-            Text(text = "A senha precisa ter no mínimo 6 caracteres.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+            Text(
+                text = "A senha precisa ter no mínimo 6 caracteres.",
+                color = Color.Red,
+                style = MaterialTheme.typography.bodySmall
+            )
         }
 
         if (generalError.isNotEmpty()) {
             Text(text = generalError, color = Color.Red, style = MaterialTheme.typography.bodySmall)
         }
 
+        // Botão "Cadastrar"
         Button(
             onClick = {
                 var hasValidationError = false
@@ -178,7 +227,9 @@ fun UserRegistrationForm(
                     nomeError = true
                     hasValidationError = true
                 }
-                if (email.isBlank() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                if (email.isBlank() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email)
+                        .matches()
+                ) {
                     emailError = true
                     hasValidationError = true
                 }
@@ -188,9 +239,14 @@ fun UserRegistrationForm(
                 }
 
                 if (!hasValidationError) {
+                    // Chama a lógica de registro na MainActivity
                     onRegisterAttempt(RegistrationData(nome, email, senha))
                 } else {
-                    Toast.makeText(context, "Por favor, preencha todos os campos corretamente.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        context,
+                        "Por favor, preencha todos os campos corretamente.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             },
             modifier = Modifier
@@ -218,5 +274,32 @@ fun UserRegistrationForm(
                 )
             }
         }
+    }
+
+    // O diálogo de sucesso
+    if (showSuccessDialog) {
+        AlertDialog(
+            onDismissRequest = { },
+            title = {
+                Text("Cadastro Realizado com Sucesso!")
+            },
+            text = {
+                Text("Seu cadastro foi concluído. Você pode fazer login agora. A verificação do e-mail não é obrigatória para o login normal, mas é essencial para usar a funcionalidade de 'Login Sem Senha' no futuro. Recomendamos a verificação para sua segurança e conveniência.")
+            },
+            confirmButton = {
+                // Use a Row para centralizar o botão
+                Row(
+                    modifier = Modifier.fillMaxWidth(), // Faz a Row ocupar a largura total do diálogo
+                    horizontalArrangement = Arrangement.Center // Centraliza o conteúdo horizontalmente
+                ) {
+                    Button(onClick = {
+                        showSuccessDialog = false // Oculta o diálogo
+                        onRegistrationSuccessAndDialogClosed() // Notifica a MainActivity para navegar
+                    }) {
+                        Text("Fazer Login")
+                    }
+                }
+            },
+        )
     }
 }
