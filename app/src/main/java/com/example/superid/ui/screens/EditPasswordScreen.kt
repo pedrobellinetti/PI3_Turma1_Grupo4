@@ -447,7 +447,7 @@ fun EditPasswordScreen(
                 modifier = Modifier
                     .width(200.dp)
                     .padding(horizontal = 16.dp, vertical = 24.dp),
-                shape = RoundedCornerShape(15.dp),
+                shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors()
             ) {
                 Text("Salvar alterações", style = MaterialTheme.typography.labelLarge)

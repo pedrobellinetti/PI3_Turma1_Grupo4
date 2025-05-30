@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.ExitToApp
+import androidx.compose.material.icons.outlined.QrCodeScanner
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -228,18 +229,23 @@ fun PasswordListContent(
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.Bottom
         ) {
-            Button(
-                onClick = onReadQrCode, // Chama o callback para ler QR code
-                enabled = qrcodeButtonEnabled,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Transparent,
-                    contentColor = MaterialTheme.colorScheme.onBackground
-                ),
-                elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp, pressedElevation = 0.dp, focusedElevation = 0.dp),
-                modifier = Modifier.weight(1f),
-                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp)
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .weight(1f)
+                    .clickable(enabled = qrcodeButtonEnabled) { onReadQrCode() }
             ) {
-                Text("Ler QRcode", textAlign = TextAlign.Start)
+                Icon(
+                    imageVector = Icons.Outlined.QrCodeScanner,
+                    contentDescription = "Ler QR Code",
+                    tint = if (qrcodeButtonEnabled) MaterialTheme.colorScheme.onBackground else Color.Gray,
+                    modifier = Modifier.size(32.dp)
+                )
+                Text(
+                    text = "Ler QR Code",
+                    fontSize = 12.sp,
+                    color = if (qrcodeButtonEnabled) MaterialTheme.colorScheme.onBackground else Color.Gray
+                )
             }
 
             FloatingActionButton(

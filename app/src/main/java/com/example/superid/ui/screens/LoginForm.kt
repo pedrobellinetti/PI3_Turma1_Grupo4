@@ -248,10 +248,10 @@ fun LoginForm(
                                             "ERROR_WRONG_PASSWORD" -> "Senha incorreta."
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
-                                            else -> "Ocorreu um erro inesperado."
+                                            else -> "Usuário não encontrado."
                                         }
                                     }
-                                    else -> "Usuário não encontrada."
+                                    else -> "Ocorreu um erro inesperado."
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
@@ -289,18 +289,18 @@ fun LoginForm(
                     Row(
                         modifier = Modifier.fillMaxWidth(), // Faz a Row ocupar a largura total do diálogo
                         horizontalArrangement = Arrangement.Start, // Centraliza os botões horizontalmente
-                        verticalAlignment = Alignment.CenterVertically
+                        verticalAlignment = Alignment.CenterVertically,
                     ) {
                         // Botão "Reenviar E-mail de Verificação"
-                        TextButton(onClick = {
+                        Button(onClick = {
                             resendVerificationEmail() // Chame a função de reenviar
                             showEmailVerificationDialog = false // Fecha o diálogo
                         }) {
-                            Text("Reenviar E-mail")
+                            Text("Reenviar")
                         }
-                        Spacer(Modifier.width(8.dp)) // Espaço entre os botões
+                        Spacer(Modifier.width(30.dp)) // Espaço entre os botões
                         // Botão "Prosseguir"
-                        TextButton(onClick = {
+                        Button(onClick = {
                             showEmailVerificationDialog = false
                             onLoginSuccess()
                         }) {

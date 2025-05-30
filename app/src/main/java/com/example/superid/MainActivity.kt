@@ -266,6 +266,7 @@ fun AuthApp(modifier: Modifier = Modifier) {
             )
 
             AuthScreen.RECOVERY -> PasswordRecoveryScreen(
+                sharedPreferences = sharedPreferences,
                 onNavigateToLogin = { currentScreen = AuthScreen.LOGIN } // Após recuperação, volta para o login.
             )
         }
