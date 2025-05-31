@@ -1,115 +1,402 @@
 package com.example.superid.ui.screens
 
+import android.content.Context
 import android.util.Base64
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import android.widget.Toast
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.superid.Senha
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.SecureRandom
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import com.example.superid.utils.EncryptionUtil
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.material.icons.filled.Delete
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
+fun PasswordFormScreen(
+    uid: String,
+    onSuccess: () -> Unit,
+    onBack: () -> Unit
+) {
+    val context = LocalContext.current
     val db = Firebase.firestore
-    val categoriasDisponiveis = listOf("Sites Web", "Aplicativos", "Acesso Físico", "Outros")
+    val masterPasswordDemo = "PinMestrePI2025!"
 
-    var categoria by remember { mutableStateOf("Sites Web") }
+    // SharedPreferences instance
+    val sharedPreferences = remember { context.getSharedPreferences("SuperID_Prefs", Context.MODE_PRIVATE) }
+    val CATEGORIES_KEY = "user_custom_categories"
+    val CATEGORY_DELIMITER = "___" // Um delimitador improvável de aparecer nos nomes de categoria
+
+    // Definir as categorias iniciais (padrão)
+    val defaultCategories = remember { mutableStateListOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico") }
+
+    // Estado para as categorias do usuário (incluindo as padrão e as personalizadas)
+    val userCategories = remember { mutableStateListOf<String>() }
+
+    var nome by remember { mutableStateOf("") }
     var login by remember { mutableStateOf("") }
     var descricao by remember { mutableStateOf("") }
-    var senha by remember { mutableStateOf("") }
+    var senhaValor by remember { mutableStateOf("") }
+    var label by remember { mutableStateOf("") } // Irá refletir a categoria selecionada
     var menuExpandido by remember { mutableStateOf(false) }
+    var novaCategoria by remember { mutableStateOf("") }
+    var mostrarCampoNovaCategoria by remember { mutableStateOf(false) }
+
+    // Variável de estado para controlar a visibilidade do diálogo de confirmação
+    var showDeleteConfirmationDialog by remember { mutableStateOf(false) }
+    // Variável de estado para armazenar a categoria a ser excluída
+    var categoryToDelete by remember { mutableStateOf("") }
+
+    // Efeito para carregar as categorias personalizadas do SharedPreferences ao iniciar a tela
+    LaunchedEffect(Unit) { // Unit como chave para executar apenas uma vez
+        // Adiciona as categorias padrão primeiro
+        userCategories.addAll(defaultCategories)
+
+        // Carrega categorias personalizadas do SharedPreferences
+        val savedCategoriesString = sharedPreferences.getString(CATEGORIES_KEY, null)
+        if (!savedCategoriesString.isNullOrBlank()) {
+            val customCategories = savedCategoriesString.split(CATEGORY_DELIMITER).filter { it.isNotBlank() }
+            customCategories.forEach { categoryName ->
+                if (!userCategories.contains(categoryName)) { // Evita duplicatas
+                    userCategories.add(categoryName)
+                }
+            }
+        }
+
+        // Define a label inicial após carregar todas as categorias
+        if (label.isBlank() && userCategories.isNotEmpty()) {
+            label = userCategories.first()
+        }
+    }
+
+    // Função para salvar as categorias personalizadas no SharedPreferences
+    fun saveCategoriesToSharedPreferences() {
+        val customCategoriesToSave = userCategories.filter { it !in defaultCategories } // Salva apenas as personalizadas
+        val categoriesString = customCategoriesToSave.joinToString(CATEGORY_DELIMITER)
+        sharedPreferences.edit().putString(CATEGORIES_KEY, categoriesString).apply()
+    }
+
+    // Função para deletar uma categoria
+    fun deleteCategory(categoryName: String) {
+        if (categoryName == "Sites Web") {
+            Toast.makeText(context, "A categoria 'Sites Web' não pode ser excluída.", Toast.LENGTH_LONG).show()
+        } else {
+            // Verifica se a categoria existe e a remove
+            if (userCategories.remove(categoryName)) {
+                saveCategoriesToSharedPreferences()
+                Toast.makeText(context, "Categoria '$categoryName' excluída com sucesso!", Toast.LENGTH_SHORT).show()
+                // Se a categoria excluída era a selecionada, selecione a primeira disponível
+                if (label == categoryName) {
+                    label = userCategories.firstOrNull() ?: ""
+                }
+            } else {
+                Toast.makeText(context, "Erro: Categoria '$categoryName' não encontrada.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    fun gerarAccessToken(): String {
+        val random = SecureRandom()
+        val bytes = ByteArray(32)
+        random.nextBytes(bytes)
+        return Base64.encodeToString(bytes, Base64.NO_WRAP)
+    }
 
     val scrollState = rememberScrollState()
 
     Column(
         modifier = Modifier
-            .verticalScroll(scrollState)
-            .padding(16.dp)
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
     ) {
-        Text("Cadastrar nova senha", style = MaterialTheme.typography.headlineSmall)
+        // Barra Superior Personalizada
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(color = MaterialTheme.colorScheme.primaryContainer)
+                .padding(vertical = 43.dp)
+                .padding(bottom = 24.dp)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterStart),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(
+                    onClick = {
+                        onBack()
+                    },
+                    modifier = Modifier.padding(start = 16.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Voltar",
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
+                }
+                Text(
+                    "Adicionar Senha",
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(modifier = Modifier.width(60.dp))
+            }
+        }
 
-        Spacer(modifier = Modifier.padding(vertical = 8.dp))
-        OutlinedTextField(value = login, onValueChange = { login = it }, label = { Text("Login") })
-        OutlinedTextField(value = descricao, onValueChange = { descricao = it }, label = { Text("Descrição") })
-        OutlinedTextField(value = senha, onValueChange = { senha = it }, label = { Text("Senha") })
+        Spacer(Modifier.padding(24.dp))
 
-        ExposedDropdownMenuBox(
-            expanded = menuExpandido,
-            onExpandedChange = { menuExpandido = !menuExpandido }
+        Column(
+            modifier = Modifier
+                .imePadding()
+                .verticalScroll(scrollState)
+                .fillMaxWidth()
+                .padding(horizontal = 32.dp, vertical = 24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             OutlinedTextField(
-                value = categoria,
-                onValueChange = {},
-                readOnly = true,
-                label = { Text("Categoria") },
-                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = menuExpandido) },
-                modifier = Modifier.menuAnchor()
+                value = nome,
+                onValueChange = { nome = it },
+                label = { Text("Nome", style = MaterialTheme.typography.bodyLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 8.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors()
+            )
+            OutlinedTextField(
+                value = login,
+                onValueChange = { login = it },
+                label = { Text("Login (Opcional)", style = MaterialTheme.typography.bodyLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 8.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors()
+            )
+            OutlinedTextField(
+                value = senhaValor,
+                onValueChange = { senhaValor = it },
+                label = { Text("Senha", style = MaterialTheme.typography.bodyLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 8.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors()
+            )
+            OutlinedTextField(
+                value = descricao,
+                onValueChange = { descricao = it },
+                label = { Text("Descrição (Opcional)", style = MaterialTheme.typography.bodyLarge) },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 16.dp),
+                shape = RoundedCornerShape(15.dp),
+                colors = OutlinedTextFieldDefaults.colors()
             )
 
-            ExposedDropdownMenu(
+            ExposedDropdownMenuBox(
                 expanded = menuExpandido,
-                onDismissRequest = { menuExpandido = false }
+                onExpandedChange = { menuExpandido = !menuExpandido },
+                modifier = Modifier
+                    .width(315.dp)
+                    .padding(bottom = 8.dp)
             ) {
-                categoriasDisponiveis.forEach { opcao ->
+                OutlinedTextField(
+                    value = label,
+                    onValueChange = {},
+                    readOnly = true,
+                    label = { Text("Categoria", style = MaterialTheme.typography.bodyLarge) },
+                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = menuExpandido) },
+                    modifier = Modifier
+                        .menuAnchor()
+                        .width(315.dp),
+                    shape = RoundedCornerShape(15.dp),
+                    colors = OutlinedTextFieldDefaults.colors()
+                )
+
+                ExposedDropdownMenu(
+                    expanded = menuExpandido,
+                    onDismissRequest = { menuExpandido = false }
+                ) {
+                    userCategories.forEach { categoria ->
+                        DropdownMenuItem(
+                            text = { Text(categoria, style = MaterialTheme.typography.bodyLarge) },
+                            onClick = {
+                                label = categoria
+                                mostrarCampoNovaCategoria = false
+                                novaCategoria = ""
+                                menuExpandido = false
+                            },
+                            // Icone de exclusão para categorias que podem ser excluídas
+                            trailingIcon = {
+                                if (categoria != "Sites Web") { // Apenas mostra o ícone para categorias não-padrão
+                                    IconButton(onClick = {
+                                        categoryToDelete = categoria
+                                        showDeleteConfirmationDialog = true
+                                        menuExpandido = false // Fecha o menu
+                                    }) {
+                                        Icon(
+                                            imageVector = Icons.Default.Delete,
+                                            contentDescription = "Excluir categoria",
+                                            tint = MaterialTheme.colorScheme.error
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    }
                     DropdownMenuItem(
-                        text = { Text(opcao) },
+                        text = { Text("Adicionar nova categoria", style = MaterialTheme.typography.bodyLarge) },
                         onClick = {
-                            categoria = opcao
+                            mostrarCampoNovaCategoria = true
+                            label = ""
                             menuExpandido = false
                         }
                     )
                 }
             }
-        }
 
-        Spacer(modifier = Modifier.padding(8.dp))
+            if (mostrarCampoNovaCategoria) {
+                OutlinedTextField(
+                    value = novaCategoria,
+                    onValueChange = { novaCategoria = it },
+                    label = { Text("Nome da nova categoria", style = MaterialTheme.typography.bodyLarge) },
+                    modifier = Modifier
+                        .width(315.dp)
+                        .padding(bottom = 16.dp),
+                    shape = RoundedCornerShape(15.dp),
+                    colors = OutlinedTextFieldDefaults.colors()
+                )
+            }
 
-        Button(onClick = {
-            val novaSenha = Senha(
-                categoria = categoria,
-                login = login,
-                descricao = descricao,
-                senhaCriptografada = senha,
-                accessToken = gerarAccessToken()
-            )
+            // Diálogo de confirmação de exclusão
+            if (showDeleteConfirmationDialog) {
+                AlertDialog(
+                    onDismissRequest = { showDeleteConfirmationDialog = false },
+                    title = { Text("Confirmar Exclusão") },
+                    text = { Text("Tem certeza que deseja excluir a categoria '${categoryToDelete}'? Senhas associadas a esta categoria não serão afetadas, apenas a categoria será removida da sua lista.") },
+                    confirmButton = {
+                        Button(
+                            onClick = {
+                                deleteCategory(categoryToDelete)
+                                showDeleteConfirmationDialog = false
+                            }
+                        ) {
+                            Text("Excluir")
+                        }
+                    },
+                    dismissButton = {
+                        Button(
+                            onClick = { showDeleteConfirmationDialog = false }
+                        ) {
+                            Text("Cancelar")
+                        }
+                    }
+                )
+            }
 
-            db.collection("users").document(uid).collection("passwords")
-                .add(novaSenha)
-                .addOnSuccessListener {
-                    onSenhaSalva()
-                }
+            // Botão de criação da senha
+            Button(
+                onClick = {
+                    if (nome.isBlank()) {
+                        Toast.makeText(context, "Nome é obrigatório", Toast.LENGTH_SHORT).show()
+                    } else if (senhaValor.isBlank()) {
+                        Toast.makeText(context, "Senha é obrigatória", Toast.LENGTH_SHORT).show()
+                    } else if (label.isBlank() && !mostrarCampoNovaCategoria) {
+                        Toast.makeText(context, "Por favor, selecione ou adicione uma categoria.", Toast.LENGTH_SHORT).show()
+                    } else if (mostrarCampoNovaCategoria && novaCategoria.isBlank()) {
+                        Toast.makeText(context, "Nome da nova categoria é obrigatório.", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        val categoriaFinal = if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
+                            novaCategoria.trim()
+                        } else {
+                            label
+                        }
 
-            login = ""
-            descricao = ""
-            categoria = "Sites Web"
-            senha = ""
-        }) {
-            Text("Salvar senha")
+                        if (mostrarCampoNovaCategoria && novaCategoria.isNotBlank()) {
+                            if (!userCategories.contains(categoriaFinal)) {
+                                userCategories.add(categoriaFinal)
+                                saveCategoriesToSharedPreferences()
+                                Toast.makeText(context, "Nova categoria '${categoriaFinal}' adicionada!", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(context, "Categoria '${categoriaFinal}' já existe.", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        val saltBytes = EncryptionUtil.generateSalt()
+
+                        val encryptedResult = EncryptionUtil.encrypt(senhaValor, masterPasswordDemo, saltBytes)
+
+                        var encryptedPass: String? = null
+                        var iv: String? = null
+                        var saltBase64: String? = null
+
+                        if (encryptedResult != null) {
+                            val (tempEncryptedPass, tempIv, tempSaltBase64) = encryptedResult
+                            encryptedPass = tempEncryptedPass
+                            iv = tempIv
+                            saltBase64 = tempSaltBase64
+                        } else {
+                            Toast.makeText(context, "Erro ao criptografar a senha.", Toast.LENGTH_SHORT).show()
+                        }
+
+                        if (encryptedPass != null && iv != null && saltBase64 != null) {
+                            val novaSenha = Senha(
+                                categoria = categoriaFinal,
+                                login = login,
+                                descricao = descricao,
+                                senhaCriptografada = encryptedPass,
+                                iv = iv,
+                                salt = saltBase64,
+                                accessToken = gerarAccessToken(),
+                                nome = nome
+                            )
+
+                            db.collection("users").document(uid).collection("passwords")
+                                .add(novaSenha)
+                                .addOnSuccessListener {
+                                    Toast.makeText(context, "Senha cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
+                                    onSuccess()
+                                    nome = ""
+                                    login = ""
+                                    descricao = ""
+                                    label = userCategories.firstOrNull() ?: ""
+                                    senhaValor = ""
+                                    novaCategoria = ""
+                                    mostrarCampoNovaCategoria = false
+                                }
+                                .addOnFailureListener { e ->
+                                    Toast.makeText(context, "Erro ao cadastrar senha: ${e.message}", Toast.LENGTH_SHORT).show()
+                                }
+                        }
+                    }
+                },
+                modifier = Modifier
+                    .width(161.dp)
+                    .padding(horizontal = 16.dp, vertical = 24.dp),
+                shape = RoundedCornerShape(20.dp),
+                colors = ButtonDefaults.buttonColors()
+            ) {
+                Text("Cadastrar", style = MaterialTheme.typography.labelLarge)
+            }
         }
     }
 }
-
