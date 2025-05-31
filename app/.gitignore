@@ -1,1 +1,16 @@
-/build
+# Ignorar arquivos gerados
+/build/
+**/build/
+*.apk
+*.dex
+*.jar
+*.tflite
+*.so
+*.iml
+.gradle
+/local.properties
+.DS_Store
+.cxx/
+
+# Ignorar Logs de Android Studio
+/captures/

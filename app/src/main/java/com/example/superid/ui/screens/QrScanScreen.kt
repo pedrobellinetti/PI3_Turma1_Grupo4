@@ -33,7 +33,10 @@ import com.google.mlkit.vision.common.InputImage
 @androidx.annotation.OptIn(androidx.camera.core.ExperimentalGetImage::class)
 @ExperimentalGetImage
 @Composable
-fun QrScanScreen(onLoginAprovado: () -> Unit) {
+fun QrScanScreen(
+    onLoginAprovado: () -> Unit,
+    onBack: () -> Unit // <-- Garanta que este parâmetro está presente!
+) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val previewView = remember { PreviewView(context) }

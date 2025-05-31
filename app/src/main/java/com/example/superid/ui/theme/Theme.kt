@@ -15,11 +15,13 @@ import com.example.superid.ui.theme.TopContainer
 private val LightColorScheme = lightColorScheme(
     primary = ButtonColor,
     onPrimary = TextOnPrimary,
+    onSecondary = TextSecondary,
     background = BackgroundColor,
     surface = InputFieldColor,
     onSurface = TextPrimary,
     primaryContainer = TopContainer,
-    onPrimaryContainer = BackgroundColor
+    onPrimaryContainer = BackgroundColor,
+    secondaryContainer = UserItemContainer
     /*
     secondary = ...,
     onSecondary = ...,
@@ -34,12 +36,14 @@ private val LightColorScheme = lightColorScheme(
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = ButtonColor,
-    onPrimary = TextOnPrimary,
-    background = TopContainer,
-    onBackground = BackgroundColor,
-    surface = InputFieldColor,
-    onSurface = TextPrimary
+    primary = DarkButtonColor,
+    onPrimary = DarkButtonText,
+    onSecondary = DarkTextSecondary,
+    background = DarkBackgroundColor,
+    surface = DarkTopContainer,
+    onBackground = DarkTextPrimary,
+    onSurface = DarkTextSecondary,
+    secondaryContainer = DarkUserItemContainer
 )
 
 @Composable

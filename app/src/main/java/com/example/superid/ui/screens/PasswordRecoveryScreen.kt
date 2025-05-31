@@ -1,6 +1,6 @@
 package com.example.superid.ui.screens
 
-import android.content.Intent
+import android.content.SharedPreferences // Import necessário para SharedPreferences
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,7 +22,10 @@ import com.google.firebase.auth.FirebaseAuthException
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
+fun PasswordRecoveryScreen(
+    sharedPreferences: SharedPreferences,
+    onNavigateToLogin: () -> Unit
+) {
     val context = LocalContext.current
     var email by remember { mutableStateOf("") }
     var status by remember { mutableStateOf("") }
@@ -114,11 +117,14 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
                     FirebaseAuth.getInstance().sendPasswordResetEmail(email.trim())
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
+                                sharedPreferences.edit().putBoolean("senhaRedefinida", true).apply()
                                 Toast.makeText(
                                     context,
-                                    "Enviamos um link para seu e-mail para redefinir(caso esteja cadastrado)",
+                                    "Enviamos um link para seu e-mail para redefinir (caso esteja cadastrado).",
                                     Toast.LENGTH_LONG
                                 ).show()
+                                // Opcional: Navegar de volta para a tela de login após o sucesso
+                                onNavigateToLogin()
                             } else {
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
@@ -131,6 +137,7 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
                                     else -> "Erro inesperado. Verifique o e-mail digitado e tente novamente."
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
+                                // Não definir o flag se a recuperação falhou
                             }
                         }
                 } else {
@@ -150,13 +157,13 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Mensagem de Status
+        // Mensagem de Status (pode ser usado para feedback visual se necessário)
         if (status.isNotEmpty()) {
             Text(text = status, color = MaterialTheme.colorScheme.error)
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        // Link para Voltar ao Login (agora como TextButton na parte inferior)
+        // Link para Voltar ao Login
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
@@ -167,7 +174,7 @@ fun PasswordRecoveryScreen(onNavigateToLogin: () -> Unit) {
                 Text(
                     "Voltar para Login",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
             }
         }

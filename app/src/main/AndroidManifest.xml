@@ -7,6 +7,15 @@
         android:required="false" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- Oferece para dispositivos que tem camera -->
+    <uses-feature android:name="android.hardware.camera.any"/>
+
+    <!-- Usuário tem que permitir manualmente -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- usa internet para fazer o compartilhamento da foto (se necessário) -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
 
         android:allowBackup="true"
@@ -24,6 +33,17 @@
         <!--            &lt;!&ndash; other activity settings like intent filters &ndash;&gt;-->
         <!--            </application>-->
 
+        <provider
+            android:authorities="br.com.cameraandroid.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/filepaths"/>
+
+        </provider>
 
         <activity
             android:name=".MainActivity"
@@ -38,11 +58,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginFormActivity" />
-        <activity android:name=".RecuperacaoSenhaActivity" />
-        <activity android:name=".PasswordManagerScreenActivity" />
-        <activity android:name=".UserRegistrationActivity" />
-
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false"
+            android:label="Camera"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi, LockedOrientationActivity" />
     </application>
-
 </manifest>
