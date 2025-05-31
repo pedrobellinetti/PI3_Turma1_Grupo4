@@ -19,18 +19,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.superid.Senha
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
 import java.security.SecureRandom
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
+fun PasswordFormScreen(
+    uid: String,
+    onBack: () -> Unit
+) {
     val context = LocalContext.current
-    val db = Firebase.firestore
+    val db = FirebaseFirestore.getInstance()
+
     val categoriasIniciais = remember { mutableStateListOf("Sites Web", "Aplicativos", "Teclados de Acesso Físico") }
     var senhaCriada by remember { mutableStateOf("") }
-
     var nome by remember { mutableStateOf("") }
     var login by remember { mutableStateOf("") }
     var descricao by remember { mutableStateOf("") }
@@ -226,8 +228,6 @@ fun PasswordFormScreen(uid: String, onSenhaSalva: () -> Unit) {
                             .add(novaSenha)
                             .addOnSuccessListener {
                                 Toast.makeText(context, "Senha cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
-                                onSenhaSalva()
-
                                 val intent = Intent()
                                 intent.putExtra("senhaCriptografada", senhaValor)
                                 intent.putExtra("login", login)

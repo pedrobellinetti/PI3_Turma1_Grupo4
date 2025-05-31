@@ -1,6 +1,5 @@
 package com.example.superid
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -29,7 +27,6 @@ import com.example.superid.ui.theme.SuperIDTheme
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
-import java.util.UUID
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,11 +57,10 @@ fun AuthApp(modifier: Modifier = Modifier) {
     when (currentScreen) {
         AuthScreen.LOGIN -> LoginForm(
             onNavigateToRegister = { currentScreen = AuthScreen.REGISTER },
-            onLoginSuccess = { currentScreen = AuthScreen.MAIN },
-            onNavigateToForgotPassword = {
-                context.startActivity(Intent(context, RecuperacaoSenhaActivity::class.java))
-            }
-        )
+            onLoginSuccess = { currentScreen = AuthScreen.MAIN }
+        ) {
+            context.startActivity(Intent(context, RecuperacaoSenhaActivity::class.java))
+        }
 
         AuthScreen.REGISTER -> UserRegistrationForm(
             onNavigateToLogin = { currentScreen = AuthScreen.LOGIN }

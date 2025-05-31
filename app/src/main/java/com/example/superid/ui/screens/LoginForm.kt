@@ -13,13 +13,16 @@ import com.google.firebase.auth.FirebaseAuth
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.SearchBarDefaults.colors
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.VisualTransformation
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuthException
 
@@ -32,10 +35,13 @@ fun LoginForm(
     onNavigateToForgotPassword: () -> Unit
 ) {
     val context = LocalContext.current
+    val auth = FirebaseAuth.getInstance()
+
     var email by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
     var status by remember { mutableStateOf("") }
-    val auth = FirebaseAuth.getInstance()
+    var passwordVisible by remember { mutableStateOf(false) }
+    var showEmailVerificationDialog by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -101,7 +107,10 @@ fun LoginForm(
             value = email,
             onValueChange = { email = it },
             label = { Text("Digite seu e-mail", style = MaterialTheme.typography.labelLarge) },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier
+                .fillMaxWidth()
                 .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
@@ -119,9 +128,22 @@ fun LoginForm(
             value = senha,
             onValueChange = { senha = it },
             label = { Text("Digite sua senha", style = MaterialTheme.typography.labelLarge) },
-            visualTransformation = PasswordVisualTransformation(),
+            visualTransformation = if (passwordVisible) VisualTransformation.None
+            else PasswordVisualTransformation(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            trailingIcon = {
+                IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                    Icon(
+                        imageVector = if (passwordVisible) Icons.Filled.Visibility
+                        else Icons.Filled.VisibilityOff,
+                        contentDescription = if (passwordVisible) "Ocultar senha"
+                        else "Mostrar senha"
+                    )
+                }
+            },
             modifier = Modifier
-                .width(315.dp)
+                .fillMaxWidth()
+//                .width(315.dp)
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(15.dp),
             colors = OutlinedTextFieldDefaults.colors(
@@ -134,18 +156,30 @@ fun LoginForm(
                 unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
-        TextButton(
-            onClick = onNavigateToForgotPassword,
-            modifier = Modifier
-                .align(Alignment.Start)
-                .padding(start = 72.dp)
-        ) {
-            Text(
-                "Esqueceu sua senha?",
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onSecondary
-            )
+//        Spacer(modifier = Modifier.height(8.dp))
+
+        Box(modifier = Modifier.fillMaxWidth()) {
+            TextButton(
+                onClick = onNavigateToForgotPassword,
+                modifier = Modifier.align(Alignment.CenterEnd)
+            ) {
+                Text("Esqueceu a senha?")
+            }
         }
+        
+//        Spacer(modifier = Modifier.height())
+//        TextButton(
+//            onClick = onNavigateToForgotPassword,
+//            modifier = Modifier
+//                .align(Alignment.Start)
+//                .padding(start = 72.dp)
+//        ) {
+//            Text(
+//                "Esqueceu sua senha?",
+//                style = MaterialTheme.typography.labelLarge,
+//                color = MaterialTheme.colorScheme.onSecondary
+//            )
+//        }
 
         // Botão Entrar
         Button(
