@@ -356,7 +356,6 @@ fun PasswordFormScreen(
                             saltBase64 = tempSaltBase64
                         } else {
                             Toast.makeText(context, "Erro ao criptografar a senha.", Toast.LENGTH_SHORT).show()
-                            return@Button
                         }
 
                         if (encryptedPass != null && iv != null && saltBase64 != null) {

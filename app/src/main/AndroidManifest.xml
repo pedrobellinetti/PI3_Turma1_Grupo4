@@ -10,10 +10,8 @@
     <!-- Oferece para dispositivos que tem camera -->
     <uses-feature android:name="android.hardware.camera.any"/>
 
-    <!-- Usuário tem q permitir manualmente -->
+    <!-- Usuário tem que permitir manualmente -->
     <uses-permission android:name="android.permission.CAMERA"/>
-    <!-- Se eu quiser fazer de áudio mudar "CAMERA" para "RECORD_AUDIO", vai ficar assim: -->
-    <!-- <uses-permission android:name="android.permission.RECORD_AUDIO"/> -->
 
     <!-- usa internet para fazer o compartilhamento da foto (se necessário) -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -35,7 +33,6 @@
         <!--            &lt;!&ndash; other activity settings like intent filters &ndash;&gt;-->
         <!--            </application>-->
 
-        <!-- Adicionamos essas linhas (provider)-->
         <provider
             android:authorities="br.com.cameraandroid.fileprovider"
             android:name="androidx.core.content.FileProvider"

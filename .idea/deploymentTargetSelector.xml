@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="SuperID.app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-05-28T22:11:49.135894611Z">
+        <DropdownSelection timestamp="2025-05-31T00:59:04.493104740Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=/home/skylar/.var/app/com.google.AndroidStudio/config/.android/avd/Medium_Phone.avd" />

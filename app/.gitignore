@@ -11,3 +11,6 @@
 /local.properties
 .DS_Store
 .cxx/
+
+# Ignorar Logs de Android Studio
+/captures/

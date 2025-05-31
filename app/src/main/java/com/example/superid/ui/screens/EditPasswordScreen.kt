@@ -111,54 +111,59 @@ fun EditPasswordScreen(
         if (senhaToEdit?.id == null) {
             Toast.makeText(context, "Senha para edição não fornecida.", Toast.LENGTH_SHORT).show()
             onBack()
-            return@LaunchedEffect
-        }
+        } else {
+            db.collection("users").document(uid).collection("passwords").document(senhaToEdit.id)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val senhaData = document.toObject(Senha::class.java)
+                        if (senhaData != null) {
+                            nome = senhaData.nome
+                            login = senhaData.login
+                            descricao = senhaData.descricao
+                            label = senhaData.categoria
 
-        db.collection("users").document(uid).collection("passwords").document(senhaToEdit.id)
-            .get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    val senhaData = document.toObject(Senha::class.java)
-                    if (senhaData != null) {
-                        nome = senhaData.nome
-                        login = senhaData.login
-                        descricao = senhaData.descricao
-                        label = senhaData.categoria
+                            // Garante que a categoria da senha editada está na lista de categorias do usuário
+                            if (!userCategories.contains(label)) {
+                                userCategories.add(label)
+                            }
 
-                        // Garante que a categoria da senha editada está na lista de categorias do usuário
-                        if (!userCategories.contains(label)) {
-                            userCategories.add(label)
-                        }
+                            originalEncryptedPass = senhaData.senhaCriptografada
+                            originalIv = senhaData.iv
+                            originalSalt = senhaData.salt
 
-                        originalEncryptedPass = senhaData.senhaCriptografada
-                        originalIv = senhaData.iv
-                        originalSalt = senhaData.salt
+                            if (originalEncryptedPass != null && originalIv != null && originalSalt != null) {
+                                val decrypted = EncryptionUtil.decrypt(
+                                    originalEncryptedPass!!,
+                                    originalIv!!,
+                                    originalSalt!!,
+                                    masterPasswordDemo
+                                )
+                                senhaValor = decrypted ?: "Erro ao descriptografar"
+                            } else {
+                                senhaValor = "Dados de criptografia ausentes"
+                            }
 
-                        if (originalEncryptedPass != null && originalIv != null && originalSalt != null) {
-                            val decrypted = EncryptionUtil.decrypt(
-                                originalEncryptedPass!!,
-                                originalIv!!,
-                                originalSalt!!,
-                                masterPasswordDemo
-                            )
-                            senhaValor = decrypted ?: "Erro ao descriptografar"
                         } else {
-                            senhaValor = "Dados de criptografia ausentes"
+                            Toast.makeText(context, "Dados da senha inválidos", Toast.LENGTH_SHORT)
+                                .show()
+                            onBack()
                         }
-
                     } else {
-                        Toast.makeText(context, "Dados da senha inválidos", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Senha não encontrada", Toast.LENGTH_SHORT).show()
                         onBack()
                     }
-                } else {
-                    Toast.makeText(context, "Senha não encontrada", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(
+                        context,
+                        "Erro ao carregar senha: ${e.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     onBack()
                 }
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(context, "Erro ao carregar senha: ${e.message}", Toast.LENGTH_SHORT).show()
-                onBack()
-            }
+        }
+
     }
 
     val scrollState = rememberScrollState()
