@@ -40,3 +40,4 @@ string title_activity_camera
 style Theme.SuperID
 xml backup_rules
 xml data_extraction_rules
+xml filepaths

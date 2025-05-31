@@ -18,556 +18,602 @@
 15    <uses-permission android:name="android.permission.CAMERA" />
 15-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:5-65
 15-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:22-62
-16    <uses-permission android:name="android.permission.INTERNET" />
-16-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:25:5-67
-16-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:25:22-64
-17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:26:5-79
-17-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:26:22-76
-18    <uses-permission android:name="android.permission.WAKE_LOCK" />
-18-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:25:5-68
-18-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:25:22-65
-19    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-19-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:26:5-110
-19-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:26:22-107
-20    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-20-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:25:5-79
-20-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:25:22-76
-21    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-21-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:26:5-88
-21-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:26:22-85
-22    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-22-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:27:5-82
-22-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:27:22-79
-23    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-23-->[com.google.android.recaptcha:recaptcha:18.6.1] /home/skylar/.gradle/caches/8.11.1/transforms/290fe9217f4b4b879ffe8d2a89d2ccc6/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:5-98
-23-->[com.google.android.recaptcha:recaptcha:18.6.1] /home/skylar/.gradle/caches/8.11.1/transforms/290fe9217f4b4b879ffe8d2a89d2ccc6/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:22-95
+16
+17    <!-- Oferece para dispositivos que tem camera -->
+18    <uses-feature android:name="android.hardware.camera.any" />
+18-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:11:5-63
+18-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:11:19-61
+19
+20    <!-- Usuário tem q permitir manualmente -->
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:5-65
+21-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:8:22-62
+22    <!-- Se eu quiser fazer de áudio mudar "CAMERA" para "RECORD_AUDIO", vai ficar assim: -->
+23    <!-- <uses-permission android:name="android.permission.RECORD_AUDIO"/> -->
 24
-25    <permission
-25-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/80e66440a9037a24e7f01218c434d460/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
-26        android:name="com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-26-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/80e66440a9037a24e7f01218c434d460/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
-27        android:protectionLevel="signature" />
-27-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/80e66440a9037a24e7f01218c434d460/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
-28
-29    <uses-permission android:name="com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-29-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/80e66440a9037a24e7f01218c434d460/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
-29-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/80e66440a9037a24e7f01218c434d460/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
-30
-31    <application
-31-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:10:5-40:19
-32        android:allowBackup="true"
-32-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:12:9-35
-33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/80e66440a9037a24e7f01218c434d460/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
-34        android:dataExtractionRules="@xml/data_extraction_rules"
-34-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:13:9-65
-35        android:debuggable="true"
-36        android:extractNativeLibs="false"
-37        android:fullBackupContent="@xml/backup_rules"
-37-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:14:9-54
-38        android:icon="@mipmap/ic_launcher"
-38-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:15:9-43
-39        android:label="@string/app_name"
-39-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:16:9-41
-40        android:roundIcon="@mipmap/ic_launcher"
-40-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:17:9-48
-41        android:supportsRtl="true"
-41-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:18:9-35
-42        android:testOnly="true"
-43        android:theme="@style/Theme.SuperID" >
-43-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:19:9-45
-44
-45        <!-- <application -->
-46        <!-- android:label="@string/title_activity_settings" -->
-47        <!-- android:icon="@mipmap/ic_settings_launcher">  &lt;!&ndash; Corrected line &ndash;&gt; -->
-48        <!-- &lt;!&ndash; other activity settings like intent filters &ndash;&gt; -->
-49        <!-- </application> -->
-50
-51        <activity
-51-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:28:9-39:20
-52            android:name="com.example.superid.MainActivity"
-52-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:29:13-41
-53            android:exported="true"
-53-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:30:13-36
-54            android:label="@string/app_name"
-54-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:31:13-45
-55            android:theme="@style/Theme.SuperID" >
-55-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:32:13-49
-56            <intent-filter>
-56-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:34:13-38:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:35:17-69
-57-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:35:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:37:17-77
-59-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:37:27-74
-60            </intent-filter>
-61        </activity>
-62        <activity
-62-->[androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a7f12c724be602f5926a30f7f579dcb3/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
-63            android:name="androidx.compose.ui.tooling.PreviewActivity"
-63-->[androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a7f12c724be602f5926a30f7f579dcb3/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
-64            android:exported="true" />
-64-->[androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a7f12c724be602f5926a30f7f579dcb3/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
-65        <activity
-65-->[androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/44341f99e7e4cdc517e2706f1a3795b1/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:23:9-25:39
-66            android:name="androidx.activity.ComponentActivity"
-66-->[androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/44341f99e7e4cdc517e2706f1a3795b1/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:24:13-63
-67            android:exported="true" />
-67-->[androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/44341f99e7e4cdc517e2706f1a3795b1/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:25:13-36
-68
-69        <service
-69-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/cfc13102359a7b907fa71b54ab97bffe/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:8:9-14:19
-70            android:name="com.google.firebase.components.ComponentDiscoveryService"
-70-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/cfc13102359a7b907fa71b54ab97bffe/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:9:13-84
-71            android:directBootAware="true"
-71-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
-72            android:exported="false" >
-72-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/cfc13102359a7b907fa71b54ab97bffe/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:10:13-37
-73            <meta-data
-73-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/cfc13102359a7b907fa71b54ab97bffe/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:11:13-13:85
-74                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
-74-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/cfc13102359a7b907fa71b54ab97bffe/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:12:17-119
-75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/cfc13102359a7b907fa71b54ab97bffe/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:13:17-82
-76            <meta-data
-76-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:69:13-71:85
-77                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-77-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:70:17-109
-78                android:value="com.google.firebase.components.ComponentRegistrar" />
-78-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:71:17-82
-79            <meta-data
-79-->[com.google.firebase:firebase-firestore-ktx:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/38875bf2fbde01bd1b45689496b35609/transformed/firebase-firestore-ktx-25.1.3/AndroidManifest.xml:12:13-14:85
-80                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
-80-->[com.google.firebase:firebase-firestore-ktx:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/38875bf2fbde01bd1b45689496b35609/transformed/firebase-firestore-ktx-25.1.3/AndroidManifest.xml:13:17-129
-81                android:value="com.google.firebase.components.ComponentRegistrar" />
-81-->[com.google.firebase:firebase-firestore-ktx:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/38875bf2fbde01bd1b45689496b35609/transformed/firebase-firestore-ktx-25.1.3/AndroidManifest.xml:14:17-82
-82            <meta-data
-82-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/6f270281e665d27ec530ff3ccf650975/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:17:13-19:85
-83                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-83-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/6f270281e665d27ec530ff3ccf650975/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:18:17-122
-84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/6f270281e665d27ec530ff3ccf650975/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:19:17-82
-85            <meta-data
-85-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/6f270281e665d27ec530ff3ccf650975/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:20:13-22:85
-86                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-86-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/6f270281e665d27ec530ff3ccf650975/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:21:17-111
-87                android:value="com.google.firebase.components.ComponentRegistrar" />
-87-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/6f270281e665d27ec530ff3ccf650975/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:22:17-82
-88            <meta-data
-88-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:33:13-35:85
-89                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-89-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:34:17-139
-90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/2269f6a490db479487e1f60b8c759e15/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:35:17-82
-91            <meta-data
-91-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/2b620626b012543ada914786fa02c5c7/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:12:13-14:85
-92                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar"
-92-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/2b620626b012543ada914786fa02c5c7/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:13:17-125
-93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/2b620626b012543ada914786fa02c5c7/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:14:17-82
-94            <meta-data
-94-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/09a8e16ba0fe72f59aed493c8b7d58e0/transformed/firebase-storage-21.0.1/AndroidManifest.xml:30:13-32:85
-95                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
-95-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/09a8e16ba0fe72f59aed493c8b7d58e0/transformed/firebase-storage-21.0.1/AndroidManifest.xml:31:17-118
-96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/09a8e16ba0fe72f59aed493c8b7d58e0/transformed/firebase-storage-21.0.1/AndroidManifest.xml:32:17-82
-97            <meta-data
-97-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/09a8e16ba0fe72f59aed493c8b7d58e0/transformed/firebase-storage-21.0.1/AndroidManifest.xml:33:13-35:85
-98                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-98-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/09a8e16ba0fe72f59aed493c8b7d58e0/transformed/firebase-storage-21.0.1/AndroidManifest.xml:34:17-107
-99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/09a8e16ba0fe72f59aed493c8b7d58e0/transformed/firebase-storage-21.0.1/AndroidManifest.xml:35:17-82
-100            <meta-data
-100-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/56a5e25c257d00e079c8e5b92f87e519/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:25:13-27:85
-101                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
-101-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/56a5e25c257d00e079c8e5b92f87e519/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:26:17-120
-102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/56a5e25c257d00e079c8e5b92f87e519/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:27:17-82
-103            <meta-data
-103-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/56a5e25c257d00e079c8e5b92f87e519/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:28:13-30:85
-104                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
-104-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/56a5e25c257d00e079c8e5b92f87e519/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:29:17-117
-105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/56a5e25c257d00e079c8e5b92f87e519/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:30:17-82
-106            <meta-data
-106-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/c0bee4dfb4ff2210a03fbf849e493a40/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
-107                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-107-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/c0bee4dfb4ff2210a03fbf849e493a40/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
-108                android:value="com.google.firebase.components.ComponentRegistrar" />
-108-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/c0bee4dfb4ff2210a03fbf849e493a40/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
-109            <meta-data
-109-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/c0bee4dfb4ff2210a03fbf849e493a40/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
-110                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-110-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/c0bee4dfb4ff2210a03fbf849e493a40/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
-111                android:value="com.google.firebase.components.ComponentRegistrar" />
-111-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/c0bee4dfb4ff2210a03fbf849e493a40/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
-112            <meta-data
-112-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/2a8a49351139c0acd4d23330a6344893/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
-113                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-113-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/2a8a49351139c0acd4d23330a6344893/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
-114                android:value="com.google.firebase.components.ComponentRegistrar" />
-114-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/2a8a49351139c0acd4d23330a6344893/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
-115            <meta-data
-115-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
-116                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-116-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
-117                android:value="com.google.firebase.components.ComponentRegistrar" />
-117-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
-118        </service>
-119
-120        <activity
-120-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:29:9-46:20
-121            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-121-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:30:13-80
-122            android:excludeFromRecents="true"
-122-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:31:13-46
-123            android:exported="true"
-123-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:32:13-36
-124            android:launchMode="singleTask"
-124-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:33:13-44
-125            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-125-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:34:13-72
-126            <intent-filter>
-126-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:35:13-45:29
-127                <action android:name="android.intent.action.VIEW" />
-127-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:17-69
-127-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:25-66
-128
-129                <category android:name="android.intent.category.DEFAULT" />
-129-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
-129-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
-130                <category android:name="android.intent.category.BROWSABLE" />
-130-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
-130-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
-131
-132                <data
-132-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:41:17-44:51
-133                    android:host="firebase.auth"
-133-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:42:21-49
-134                    android:path="/"
-134-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:43:21-37
-135                    android:scheme="genericidp" />
-135-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:44:21-48
-136            </intent-filter>
-137        </activity>
-138        <activity
-138-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:47:9-64:20
-139            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-139-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:48:13-79
-140            android:excludeFromRecents="true"
-140-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:49:13-46
-141            android:exported="true"
-141-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:50:13-36
-142            android:launchMode="singleTask"
-142-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:51:13-44
-143            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-143-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:52:13-72
-144            <intent-filter>
-144-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:53:13-63:29
-145                <action android:name="android.intent.action.VIEW" />
-145-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:17-69
-145-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:25-66
-146
-147                <category android:name="android.intent.category.DEFAULT" />
-147-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
-147-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
-148                <category android:name="android.intent.category.BROWSABLE" />
-148-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
-148-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
-149
-150                <data
-150-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:41:17-44:51
-151                    android:host="firebase.auth"
-151-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:42:21-49
-152                    android:path="/"
-152-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:43:21-37
-153                    android:scheme="recaptcha" />
-153-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/9f42d4337d38d5a27f9d8b3286d1c2fd/transformed/firebase-auth-23.2.0/AndroidManifest.xml:44:21-48
-154            </intent-filter>
-155        </activity>
+25
+26    <!-- usa internet para fazer o compartilhamento da foto (se necessário) -->
+27    <uses-permission android:name="android.permission.INTERNET" />
+27-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:19:5-66
+27-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:19:22-64
+28    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+28-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:26:5-79
+28-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:26:22-76
+29    <uses-permission android:name="android.permission.WAKE_LOCK" />
+29-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:25:5-68
+29-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:25:22-65
+30    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+30-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:26:5-110
+30-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:26:22-107
+31    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+31-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:25:5-79
+31-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:25:22-76
+32    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+32-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:26:5-88
+32-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:26:22-85
+33    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+33-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:27:5-82
+33-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:27:22-79
+34    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+34-->[com.google.android.recaptcha:recaptcha:18.6.1] /home/skylar/.gradle/caches/8.11.1/transforms/462ac20293958f35feece604afed5082/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:5-98
+34-->[com.google.android.recaptcha:recaptcha:18.6.1] /home/skylar/.gradle/caches/8.11.1/transforms/462ac20293958f35feece604afed5082/transformed/recaptcha-18.6.1/AndroidManifest.xml:9:22-95
+35
+36    <permission
+36-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/7e7b9df258ba00423844a58852584e8d/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+37        android:name="com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+37-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/7e7b9df258ba00423844a58852584e8d/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+38        android:protectionLevel="signature" />
+38-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/7e7b9df258ba00423844a58852584e8d/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+39
+40    <uses-permission android:name="com.example.superid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+40-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/7e7b9df258ba00423844a58852584e8d/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+40-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/7e7b9df258ba00423844a58852584e8d/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+41
+42    <application
+42-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:21:5-70:19
+43        android:allowBackup="true"
+43-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:23:9-35
+44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+44-->[androidx.core:core:1.15.0] /home/skylar/.gradle/caches/8.11.1/transforms/7e7b9df258ba00423844a58852584e8d/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+45        android:dataExtractionRules="@xml/data_extraction_rules"
+45-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:24:9-65
+46        android:debuggable="true"
+47        android:extractNativeLibs="false"
+48        android:fullBackupContent="@xml/backup_rules"
+48-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:25:9-54
+49        android:icon="@mipmap/ic_launcher"
+49-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:26:9-43
+50        android:label="@string/app_name"
+50-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:27:9-41
+51        android:roundIcon="@mipmap/ic_launcher"
+51-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:28:9-48
+52        android:supportsRtl="true"
+52-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:29:9-35
+53        android:testOnly="true"
+54        android:theme="@style/Theme.SuperID" >
+54-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:30:9-45
+55
+56        <!-- <application -->
+57        <!-- android:label="@string/title_activity_settings" -->
+58        <!-- android:icon="@mipmap/ic_settings_launcher">  &lt;!&ndash; Corrected line &ndash;&gt; -->
+59        <!-- &lt;!&ndash; other activity settings like intent filters &ndash;&gt; -->
+60        <!-- </application> -->
+61
+62
+63        <!-- Adicionamos essas linhas (provider) -->
+64        <provider
+64-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:39:9-49:20
+65            android:name="androidx.core.content.FileProvider"
+65-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:41:13-62
+66            android:authorities="br.com.cameraandroid.fileprovider"
+66-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:40:13-68
+67            android:exported="false"
+67-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:43:13-37
+68            android:grantUriPermissions="true" >
+68-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:42:13-47
+69            <meta-data
+69-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:45:9-47:48
+70                android:name="android.support.FILE_PROVIDER_PATHS"
+70-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:46:13-63
+71                android:resource="@xml/filepaths" />
+71-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:47:13-46
+72        </provider>
+73
+74        <activity
+74-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:51:9-62:20
+75            android:name="com.example.superid.MainActivity"
+75-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:52:13-41
+76            android:exported="true"
+76-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:53:13-36
+77            android:label="@string/app_name"
+77-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:54:13-45
+78            android:theme="@style/Theme.SuperID" >
+78-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:55:13-49
+79            <intent-filter>
+79-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:57:13-61:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:58:17-69
+80-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:58:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:60:17-77
+82-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:60:27-74
+83            </intent-filter>
+84        </activity>
+85        <activity
+85-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:64:9-69:72
+86            android:name="com.example.superid.CameraActivity"
+86-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:65:13-43
+87            android:exported="false"
+87-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:66:13-37
+88            android:label="Camera"
+88-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:67:13-35
+89            android:screenOrientation="portrait" />
+89-->/home/skylar/StudioProjects/PI3_Turma1_Grupo4/app/src/main/AndroidManifest.xml:68:13-49
+90        <activity
+90-->[androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/93158102ca8847f88c1eef737c2ce3cc/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+91            android:name="androidx.compose.ui.tooling.PreviewActivity"
+91-->[androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/93158102ca8847f88c1eef737c2ce3cc/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+92            android:exported="true" />
+92-->[androidx.compose.ui:ui-tooling-android:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/93158102ca8847f88c1eef737c2ce3cc/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+93        <activity
+93-->[androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/d25baf99be3267b8353c25ab88b59b1b/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:23:9-25:39
+94            android:name="androidx.activity.ComponentActivity"
+94-->[androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/d25baf99be3267b8353c25ab88b59b1b/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:24:13-63
+95            android:exported="true" />
+95-->[androidx.compose.ui:ui-test-manifest:1.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/d25baf99be3267b8353c25ab88b59b1b/transformed/ui-test-manifest-1.7.0/AndroidManifest.xml:25:13-36
+96
+97        <service
+97-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/267ba070749050d0328b363c0343ce94/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:8:9-14:19
+98            android:name="com.google.firebase.components.ComponentDiscoveryService"
+98-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/267ba070749050d0328b363c0343ce94/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:9:13-84
+99            android:directBootAware="true"
+99-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+100            android:exported="false" >
+100-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/267ba070749050d0328b363c0343ce94/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:10:13-37
+101            <meta-data
+101-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/267ba070749050d0328b363c0343ce94/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:11:13-13:85
+102                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+102-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/267ba070749050d0328b363c0343ce94/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:12:17-119
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-auth-ktx:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/267ba070749050d0328b363c0343ce94/transformed/firebase-auth-ktx-23.2.0/AndroidManifest.xml:13:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:69:13-71:85
+105                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+105-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:70:17-109
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:71:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-firestore-ktx:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/9090dbb54234385773b35b84929d6b1a/transformed/firebase-firestore-ktx-25.1.3/AndroidManifest.xml:12:13-14:85
+108                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
+108-->[com.google.firebase:firebase-firestore-ktx:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/9090dbb54234385773b35b84929d6b1a/transformed/firebase-firestore-ktx-25.1.3/AndroidManifest.xml:13:17-129
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-firestore-ktx:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/9090dbb54234385773b35b84929d6b1a/transformed/firebase-firestore-ktx-25.1.3/AndroidManifest.xml:14:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/f7bebdbe2d5bc56b545323246062cebe/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:17:13-19:85
+111                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+111-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/f7bebdbe2d5bc56b545323246062cebe/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:18:17-122
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/f7bebdbe2d5bc56b545323246062cebe/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:19:17-82
+113            <meta-data
+113-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/f7bebdbe2d5bc56b545323246062cebe/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:20:13-22:85
+114                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+114-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/f7bebdbe2d5bc56b545323246062cebe/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:21:17-111
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[com.google.firebase:firebase-firestore:25.1.3] /home/skylar/.gradle/caches/8.11.1/transforms/f7bebdbe2d5bc56b545323246062cebe/transformed/firebase-firestore-25.1.3/AndroidManifest.xml:22:17-82
+116            <meta-data
+116-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:33:13-35:85
+117                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+117-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:34:17-139
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.android.gms:play-services-measurement-api:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/4e0e4555a50038978d48fc703384a22d/transformed/play-services-measurement-api-22.4.0/AndroidManifest.xml:35:17-82
+119            <meta-data
+119-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5358c79bdc6da3a6ff4db0d8b1024ee3/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:12:13-14:85
+120                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar"
+120-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5358c79bdc6da3a6ff4db0d8b1024ee3/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:13:17-125
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5358c79bdc6da3a6ff4db0d8b1024ee3/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:14:17-82
+122            <meta-data
+122-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5e522f0c0ddf91205e0ceadcaf27a93c/transformed/firebase-storage-21.0.1/AndroidManifest.xml:30:13-32:85
+123                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+123-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5e522f0c0ddf91205e0ceadcaf27a93c/transformed/firebase-storage-21.0.1/AndroidManifest.xml:31:17-118
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5e522f0c0ddf91205e0ceadcaf27a93c/transformed/firebase-storage-21.0.1/AndroidManifest.xml:32:17-82
+125            <meta-data
+125-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5e522f0c0ddf91205e0ceadcaf27a93c/transformed/firebase-storage-21.0.1/AndroidManifest.xml:33:13-35:85
+126                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+126-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5e522f0c0ddf91205e0ceadcaf27a93c/transformed/firebase-storage-21.0.1/AndroidManifest.xml:34:17-107
+127                android:value="com.google.firebase.components.ComponentRegistrar" />
+127-->[com.google.firebase:firebase-storage:21.0.1] /home/skylar/.gradle/caches/8.11.1/transforms/5e522f0c0ddf91205e0ceadcaf27a93c/transformed/firebase-storage-21.0.1/AndroidManifest.xml:35:17-82
+128            <meta-data
+128-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d6721fe1c79c67479a404c64db601eae/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:25:13-27:85
+129                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+129-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d6721fe1c79c67479a404c64db601eae/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:26:17-120
+130                android:value="com.google.firebase.components.ComponentRegistrar" />
+130-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d6721fe1c79c67479a404c64db601eae/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:27:17-82
+131            <meta-data
+131-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d6721fe1c79c67479a404c64db601eae/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:28:13-30:85
+132                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+132-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d6721fe1c79c67479a404c64db601eae/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:29:17-117
+133                android:value="com.google.firebase.components.ComponentRegistrar" />
+133-->[com.google.firebase:firebase-appcheck:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d6721fe1c79c67479a404c64db601eae/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:30:17-82
+134            <meta-data
+134-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d279aeeebe7da292f9035f9145d79b74/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+135                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+135-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d279aeeebe7da292f9035f9145d79b74/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+136                android:value="com.google.firebase.components.ComponentRegistrar" />
+136-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d279aeeebe7da292f9035f9145d79b74/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+137            <meta-data
+137-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d279aeeebe7da292f9035f9145d79b74/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+138                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+138-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d279aeeebe7da292f9035f9145d79b74/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+139                android:value="com.google.firebase.components.ComponentRegistrar" />
+139-->[com.google.firebase:firebase-installations:18.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/d279aeeebe7da292f9035f9145d79b74/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+140            <meta-data
+140-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/535bf58feaa458617349493a37d0488d/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+141                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+141-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/535bf58feaa458617349493a37d0488d/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+142                android:value="com.google.firebase.components.ComponentRegistrar" />
+142-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/535bf58feaa458617349493a37d0488d/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+143            <meta-data
+143-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+144                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+144-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+145                android:value="com.google.firebase.components.ComponentRegistrar" />
+145-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+146        </service>
+147
+148        <activity
+148-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:29:9-46:20
+149            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+149-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:30:13-80
+150            android:excludeFromRecents="true"
+150-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:31:13-46
+151            android:exported="true"
+151-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:32:13-36
+152            android:launchMode="singleTask"
+152-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:33:13-44
+153            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+153-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:34:13-72
+154            <intent-filter>
+154-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:35:13-45:29
+155                <action android:name="android.intent.action.VIEW" />
+155-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:17-69
+155-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:25-66
 156
-157        <service
-157-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/5e14aab2d917b8ff99887571566a8b77/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:9:9-15:19
-158            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
-158-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/5e14aab2d917b8ff99887571566a8b77/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:10:13-91
-159            android:directBootAware="true"
-159-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:17:13-43
-160            android:exported="false" >
-160-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/5e14aab2d917b8ff99887571566a8b77/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:11:13-37
-161            <meta-data
-161-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/5e14aab2d917b8ff99887571566a8b77/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:12:13-14:85
-162                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
-162-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/5e14aab2d917b8ff99887571566a8b77/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:13:17-120
-163                android:value="com.google.firebase.components.ComponentRegistrar" />
-163-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/5e14aab2d917b8ff99887571566a8b77/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:14:17-82
-164            <meta-data
-164-->[com.google.mlkit:vision-common:17.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/c8f31808fab275a6f285f3512a8022e6/transformed/vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
-165                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
-165-->[com.google.mlkit:vision-common:17.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/c8f31808fab275a6f285f3512a8022e6/transformed/vision-common-17.3.0/AndroidManifest.xml:13:17-124
-166                android:value="com.google.firebase.components.ComponentRegistrar" />
-166-->[com.google.mlkit:vision-common:17.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/c8f31808fab275a6f285f3512a8022e6/transformed/vision-common-17.3.0/AndroidManifest.xml:14:17-82
-167            <meta-data
-167-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:20:13-22:85
-168                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
-168-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:21:17-120
-169                android:value="com.google.firebase.components.ComponentRegistrar" />
-169-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:22:17-82
-170        </service>
-171
-172        <provider
-172-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:9:9-13:38
-173            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
-173-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:10:13-78
-174            android:authorities="com.example.superid.mlkitinitprovider"
-174-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:11:13-69
-175            android:exported="false"
-175-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:12:13-37
-176            android:initOrder="99" />
-176-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/5948066d4bf8d73d586eb8357113956c/transformed/common-18.9.0/AndroidManifest.xml:13:13-35
+157                <category android:name="android.intent.category.DEFAULT" />
+157-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
+157-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
+158                <category android:name="android.intent.category.BROWSABLE" />
+158-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
+158-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
+159
+160                <data
+160-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:41:17-44:51
+161                    android:host="firebase.auth"
+161-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:42:21-49
+162                    android:path="/"
+162-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:43:21-37
+163                    android:scheme="genericidp" />
+163-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:44:21-48
+164            </intent-filter>
+165        </activity>
+166        <activity
+166-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:47:9-64:20
+167            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+167-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:48:13-79
+168            android:excludeFromRecents="true"
+168-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:49:13-46
+169            android:exported="true"
+169-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:50:13-36
+170            android:launchMode="singleTask"
+170-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:51:13-44
+171            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+171-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:52:13-72
+172            <intent-filter>
+172-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:53:13-63:29
+173                <action android:name="android.intent.action.VIEW" />
+173-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:17-69
+173-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:36:25-66
+174
+175                <category android:name="android.intent.category.DEFAULT" />
+175-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
+175-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
+176                <category android:name="android.intent.category.BROWSABLE" />
+176-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
+176-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
 177
-178        <receiver
-178-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:29:9-33:20
-179            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-179-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:30:13-85
-180            android:enabled="true"
-180-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:31:13-35
-181            android:exported="false" >
-181-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:32:13-37
-182        </receiver>
-183
-184        <service
-184-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:35:9-38:40
-185            android:name="com.google.android.gms.measurement.AppMeasurementService"
-185-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:36:13-84
-186            android:enabled="true"
-186-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:37:13-35
-187            android:exported="false" />
-187-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:38:13-37
-188        <service
-188-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:39:9-43:72
-189            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-189-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:40:13-87
-190            android:enabled="true"
-190-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:41:13-35
-191            android:exported="false"
-191-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:42:13-37
-192            android:permission="android.permission.BIND_JOB_SERVICE" />
-192-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/331fb39f64dec4b5fe9c1469dc37ed22/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:43:13-69
-193        <service
-193-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
-194            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-194-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
-195            android:enabled="true"
-195-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
-196            android:exported="false" >
-196-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
-197            <meta-data
-197-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
-198                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-198-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
-199                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-199-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
-200        </service>
-201
-202        <activity
-202-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
-203            android:name="androidx.credentials.playservices.HiddenActivity"
-203-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
-204            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-204-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
-205            android:enabled="true"
-205-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
-206            android:exported="false"
-206-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
-207            android:fitsSystemWindows="true"
-207-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
-208            android:theme="@style/Theme.Hidden" >
-208-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/518565318f569a8f40477eeed556b992/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
-209        </activity>
-210        <activity
-210-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-211            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-211-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-212            android:excludeFromRecents="true"
-212-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-213            android:exported="false"
-213-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-214            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-214-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-215        <!--
-216            Service handling Google Sign-In user revocation. For apps that do not integrate with
-217            Google Sign-In, this service will never be started.
-218        -->
-219        <service
-219-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-220            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-220-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-221            android:exported="true"
-221-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-222            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-222-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-223            android:visibleToInstantApps="true" />
-223-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/60a93836d30073ec518084db27eb686c/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-224
-225        <provider
-225-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
-226            android:name="com.google.firebase.provider.FirebaseInitProvider"
-226-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
-227            android:authorities="com.example.superid.firebaseinitprovider"
-227-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
-228            android:directBootAware="true"
-228-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
-229            android:exported="false"
-229-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
-230            android:initOrder="100" />
-230-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/aa1ea386aa7fabbac5e69176683fd0f4/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
-231
-232        <service
-232-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:26:9-35:19
-233            android:name="androidx.camera.core.impl.MetadataHolderService"
-233-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:27:13-75
-234            android:enabled="false"
-234-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:28:13-36
-235            android:exported="false" >
-235-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:29:13-37
-236            <meta-data
-236-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:32:13-34:89
-237                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-237-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:33:17-103
-238                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-238-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/d3cd5e23cb20d150c5563d8de912a272/transformed/camera-camera2-1.1.0/AndroidManifest.xml:34:17-86
-239        </service>
-240
-241        <provider
-241-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-242            android:name="androidx.startup.InitializationProvider"
-242-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-243            android:authorities="com.example.superid.androidx-startup"
-243-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-244            android:exported="false" >
-244-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-245            <meta-data
-245-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-246                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-246-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-247                android:value="androidx.startup" />
-247-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/f97780ad0920f6e19384830ccc4c0c93/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-248            <meta-data
-248-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/3b2d459fd073c606760ca12397d19b43/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
-249                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-249-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/3b2d459fd073c606760ca12397d19b43/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
-250                android:value="androidx.startup" />
-250-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/3b2d459fd073c606760ca12397d19b43/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
-251            <meta-data
-251-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-252                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-252-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-253                android:value="androidx.startup" />
-253-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-254        </provider>
-255
-256        <activity
-256-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/9cef95d772ca94c574c1d7981123fcc6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-257            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-257-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/9cef95d772ca94c574c1d7981123fcc6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-258            android:exported="false"
-258-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/9cef95d772ca94c574c1d7981123fcc6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-259            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-259-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/9cef95d772ca94c574c1d7981123fcc6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-260
-261        <uses-library
-261-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/aec5efcf300c1ea9f0193c5ce10a1517/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:23:9-25:40
-262            android:name="android.ext.adservices"
-262-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/aec5efcf300c1ea9f0193c5ce10a1517/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:24:13-50
-263            android:required="false" />
-263-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/aec5efcf300c1ea9f0193c5ce10a1517/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:25:13-37
-264
-265        <meta-data
-265-->[com.google.android.gms:play-services-basement:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/63ccc495eef38375f13c6ff523cfbb5a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:21:9-23:69
-266            android:name="com.google.android.gms.version"
-266-->[com.google.android.gms:play-services-basement:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/63ccc495eef38375f13c6ff523cfbb5a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:22:13-58
-267            android:value="@integer/google_play_services_version" />
-267-->[com.google.android.gms:play-services-basement:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/63ccc495eef38375f13c6ff523cfbb5a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:23:13-66
+178                <data
+178-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:41:17-44:51
+179                    android:host="firebase.auth"
+179-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:42:21-49
+180                    android:path="/"
+180-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:43:21-37
+181                    android:scheme="recaptcha" />
+181-->[com.google.firebase:firebase-auth:23.2.0] /home/skylar/.gradle/caches/8.11.1/transforms/ac86bdcf5e5a22c95e4ae69b94708095/transformed/firebase-auth-23.2.0/AndroidManifest.xml:44:21-48
+182            </intent-filter>
+183        </activity>
+184
+185        <service
+185-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/56daff66e3535947c582661bddddd173/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:9:9-15:19
+186            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+186-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/56daff66e3535947c582661bddddd173/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:10:13-91
+187            android:directBootAware="true"
+187-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:17:13-43
+188            android:exported="false" >
+188-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/56daff66e3535947c582661bddddd173/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:11:13-37
+189            <meta-data
+189-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/56daff66e3535947c582661bddddd173/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:12:13-14:85
+190                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+190-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/56daff66e3535947c582661bddddd173/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:13:17-120
+191                android:value="com.google.firebase.components.ComponentRegistrar" />
+191-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/56daff66e3535947c582661bddddd173/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:14:17-82
+192            <meta-data
+192-->[com.google.mlkit:vision-common:17.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/ef8aec71d14c9daa7378fb52311dc3b3/transformed/vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
+193                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+193-->[com.google.mlkit:vision-common:17.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/ef8aec71d14c9daa7378fb52311dc3b3/transformed/vision-common-17.3.0/AndroidManifest.xml:13:17-124
+194                android:value="com.google.firebase.components.ComponentRegistrar" />
+194-->[com.google.mlkit:vision-common:17.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/ef8aec71d14c9daa7378fb52311dc3b3/transformed/vision-common-17.3.0/AndroidManifest.xml:14:17-82
+195            <meta-data
+195-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:20:13-22:85
+196                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+196-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:21:17-120
+197                android:value="com.google.firebase.components.ComponentRegistrar" />
+197-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:22:17-82
+198        </service>
+199
+200        <provider
+200-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:9:9-13:38
+201            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+201-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:10:13-78
+202            android:authorities="com.example.superid.mlkitinitprovider"
+202-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:11:13-69
+203            android:exported="false"
+203-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:12:13-37
+204            android:initOrder="99" />
+204-->[com.google.mlkit:common:18.9.0] /home/skylar/.gradle/caches/8.11.1/transforms/2fd3aedefc6265f64ca48c98811fa572/transformed/common-18.9.0/AndroidManifest.xml:13:13-35
+205
+206        <receiver
+206-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:29:9-33:20
+207            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+207-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:30:13-85
+208            android:enabled="true"
+208-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:31:13-35
+209            android:exported="false" >
+209-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:32:13-37
+210        </receiver>
+211
+212        <service
+212-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:35:9-38:40
+213            android:name="com.google.android.gms.measurement.AppMeasurementService"
+213-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:36:13-84
+214            android:enabled="true"
+214-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:37:13-35
+215            android:exported="false" />
+215-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:38:13-37
+216        <service
+216-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:39:9-43:72
+217            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+217-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:40:13-87
+218            android:enabled="true"
+218-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:41:13-35
+219            android:exported="false"
+219-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:42:13-37
+220            android:permission="android.permission.BIND_JOB_SERVICE" />
+220-->[com.google.android.gms:play-services-measurement:22.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/fc725cd6fef9e03194e59fc0ecd83d52/transformed/play-services-measurement-22.4.0/AndroidManifest.xml:43:13-69
+221        <service
+221-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+222            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+222-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+223            android:enabled="true"
+223-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+224            android:exported="false" >
+224-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+225            <meta-data
+225-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+226                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+226-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+227                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+227-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+228        </service>
+229
+230        <activity
+230-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+231            android:name="androidx.credentials.playservices.HiddenActivity"
+231-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+232            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+232-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+233            android:enabled="true"
+233-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+234            android:exported="false"
+234-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+235            android:fitsSystemWindows="true"
+235-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+236            android:theme="@style/Theme.Hidden" >
+236-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/skylar/.gradle/caches/8.11.1/transforms/a8d92f53b3a2e7f05d90abc74248af9a/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+237        </activity>
+238        <activity
+238-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+239            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+239-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+240            android:excludeFromRecents="true"
+240-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+241            android:exported="false"
+241-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+242            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+242-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+243        <!--
+244            Service handling Google Sign-In user revocation. For apps that do not integrate with
+245            Google Sign-In, this service will never be started.
+246        -->
+247        <service
+247-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+248            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+248-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+249            android:exported="true"
+249-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+250            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+250-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+251            android:visibleToInstantApps="true" />
+251-->[com.google.android.gms:play-services-auth:20.7.0] /home/skylar/.gradle/caches/8.11.1/transforms/a620162a458d29aa7177f291069e4530/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+252
+253        <provider
+253-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+254            android:name="com.google.firebase.provider.FirebaseInitProvider"
+254-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+255            android:authorities="com.example.superid.firebaseinitprovider"
+255-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+256            android:directBootAware="true"
+256-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+257            android:exported="false"
+257-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+258            android:initOrder="100" />
+258-->[com.google.firebase:firebase-common:21.0.0] /home/skylar/.gradle/caches/8.11.1/transforms/93dbfab970e98228b9778dbb7e88d8b5/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+259
+260        <service
+260-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:26:9-35:19
+261            android:name="androidx.camera.core.impl.MetadataHolderService"
+261-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:27:13-75
+262            android:enabled="false"
+262-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:28:13-36
+263            android:exported="false" >
+263-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:29:13-37
+264            <meta-data
+264-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:32:13-34:89
+265                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+265-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:33:17-103
+266                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+266-->[androidx.camera:camera-camera2:1.1.0] /home/skylar/.gradle/caches/8.11.1/transforms/98baf3c0e0eb4bd8cf5630ec6ca5c389/transformed/camera-camera2-1.1.0/AndroidManifest.xml:34:17-86
+267        </service>
 268
-269        <service
-269-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/07ab4ec452093b58e31a6c7e8fcde1aa/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
-270            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-270-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/07ab4ec452093b58e31a6c7e8fcde1aa/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
-271            android:exported="false" >
-271-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/07ab4ec452093b58e31a6c7e8fcde1aa/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
-272            <meta-data
-272-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/07ab4ec452093b58e31a6c7e8fcde1aa/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
-273                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-273-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/07ab4ec452093b58e31a6c7e8fcde1aa/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
-274                android:value="cct" />
-274-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/07ab4ec452093b58e31a6c7e8fcde1aa/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
-275        </service>
-276        <service
-276-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
-277            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-277-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
-278            android:exported="false"
-278-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
-279            android:permission="android.permission.BIND_JOB_SERVICE" >
-279-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
-280        </service>
-281
-282        <receiver
-282-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
-283            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-283-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
-284            android:exported="false" />
-284-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/21cb62a22d53caba1a72ab26a3c8d5f9/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
-285        <receiver
-285-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
-286            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-286-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
-287            android:directBootAware="false"
-287-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
-288            android:enabled="true"
-288-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
-289            android:exported="true"
-289-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
-290            android:permission="android.permission.DUMP" >
-290-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
-291            <intent-filter>
-291-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
-292                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-292-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
-292-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
-293            </intent-filter>
-294            <intent-filter>
-294-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
-295                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-295-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
-295-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
-296            </intent-filter>
-297            <intent-filter>
-297-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
-298                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-298-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
-298-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
-299            </intent-filter>
-300            <intent-filter>
-300-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
-301                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-301-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
-301-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/94ad64668a88e176fd1b7b5afefb3866/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
-302            </intent-filter>
-303        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
-304        <activity
-304-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/bafe67932525e9d41a7253ce026a7fa1/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
-305            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-305-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/bafe67932525e9d41a7253ce026a7fa1/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
-306            android:exported="false"
-306-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/bafe67932525e9d41a7253ce026a7fa1/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
-307            android:stateNotNeeded="true"
-307-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/bafe67932525e9d41a7253ce026a7fa1/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
-308            android:theme="@style/Theme.PlayCore.Transparent" />
-308-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/bafe67932525e9d41a7253ce026a7fa1/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
-309    </application>
-310
-311</manifest>
+269        <provider
+269-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+270            android:name="androidx.startup.InitializationProvider"
+270-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+271            android:authorities="com.example.superid.androidx-startup"
+271-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+272            android:exported="false" >
+272-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+273            <meta-data
+273-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+274                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+274-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+275                android:value="androidx.startup" />
+275-->[androidx.emoji2:emoji2:1.3.0] /home/skylar/.gradle/caches/8.11.1/transforms/1540aa3db93728ba7c2e7cfdafd376f5/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+276            <meta-data
+276-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/a6788429298e0b5057e01b0c9f628a49/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+277                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+277-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/a6788429298e0b5057e01b0c9f628a49/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+278                android:value="androidx.startup" />
+278-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/skylar/.gradle/caches/8.11.1/transforms/a6788429298e0b5057e01b0c9f628a49/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+279            <meta-data
+279-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+280                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+280-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+281                android:value="androidx.startup" />
+281-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+282        </provider>
+283
+284        <activity
+284-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/f02f6359133749f49d70b612dbc82285/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+285            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+285-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/f02f6359133749f49d70b612dbc82285/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+286            android:exported="false"
+286-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/f02f6359133749f49d70b612dbc82285/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+287            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+287-->[com.google.android.gms:play-services-base:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/f02f6359133749f49d70b612dbc82285/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+288
+289        <uses-library
+289-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/a074c9b056513c2ef94b80155f9b3b11/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:23:9-25:40
+290            android:name="android.ext.adservices"
+290-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/a074c9b056513c2ef94b80155f9b3b11/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:24:13-50
+291            android:required="false" />
+291-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/skylar/.gradle/caches/8.11.1/transforms/a074c9b056513c2ef94b80155f9b3b11/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:25:13-37
+292
+293        <meta-data
+293-->[com.google.android.gms:play-services-basement:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/92cfc023898f7fa8eafafc89a0d3d5cd/transformed/play-services-basement-18.5.0/AndroidManifest.xml:21:9-23:69
+294            android:name="com.google.android.gms.version"
+294-->[com.google.android.gms:play-services-basement:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/92cfc023898f7fa8eafafc89a0d3d5cd/transformed/play-services-basement-18.5.0/AndroidManifest.xml:22:13-58
+295            android:value="@integer/google_play_services_version" />
+295-->[com.google.android.gms:play-services-basement:18.5.0] /home/skylar/.gradle/caches/8.11.1/transforms/92cfc023898f7fa8eafafc89a0d3d5cd/transformed/play-services-basement-18.5.0/AndroidManifest.xml:23:13-66
+296
+297        <receiver
+297-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+298            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+298-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+299            android:directBootAware="false"
+299-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+300            android:enabled="true"
+300-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+301            android:exported="true"
+301-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+302            android:permission="android.permission.DUMP" >
+302-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+303            <intent-filter>
+303-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+304                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+304-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+304-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+305            </intent-filter>
+306            <intent-filter>
+306-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+307                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+307-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+307-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+308            </intent-filter>
+309            <intent-filter>
+309-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+310                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+310-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+310-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+311            </intent-filter>
+312            <intent-filter>
+312-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+313                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+313-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+313-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/skylar/.gradle/caches/8.11.1/transforms/0edd35e2789ccc907d1e24a5df7f15b3/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+314            </intent-filter>
+315        </receiver>
+316
+317        <service
+317-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/579b5f10c7399b74c638210bd38712f8/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+318            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+318-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/579b5f10c7399b74c638210bd38712f8/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+319            android:exported="false" >
+319-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/579b5f10c7399b74c638210bd38712f8/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+320            <meta-data
+320-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/579b5f10c7399b74c638210bd38712f8/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+321                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+321-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/579b5f10c7399b74c638210bd38712f8/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+322                android:value="cct" />
+322-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/skylar/.gradle/caches/8.11.1/transforms/579b5f10c7399b74c638210bd38712f8/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+323        </service>
+324        <service
+324-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+325            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+325-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+326            android:exported="false"
+326-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+327            android:permission="android.permission.BIND_JOB_SERVICE" >
+327-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+328        </service>
+329
+330        <receiver
+330-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+331            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+331-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+332            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+332-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/skylar/.gradle/caches/8.11.1/transforms/688b13fda6e5daf4039c7e581004f89c/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+333        <activity
+333-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/4df523cba1040aeca76de75cd79b0af9/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+334            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+334-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/4df523cba1040aeca76de75cd79b0af9/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
+335            android:exported="false"
+335-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/4df523cba1040aeca76de75cd79b0af9/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+336            android:stateNotNeeded="true"
+336-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/4df523cba1040aeca76de75cd79b0af9/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+337            android:theme="@style/Theme.PlayCore.Transparent" />
+337-->[com.google.android.play:core-common:2.0.3] /home/skylar/.gradle/caches/8.11.1/transforms/4df523cba1040aeca76de75cd79b0af9/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+338    </application>
+339
+340</manifest>
