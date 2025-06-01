@@ -78,11 +78,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.superid.CameraActivity"
-            android:exported="false"
-            android:label="Camera"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />
         <activity

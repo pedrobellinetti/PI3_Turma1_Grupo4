@@ -369,7 +369,7 @@ fun EditPasswordScreen(
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 // Botão "Cancelar"
-                                TextButton(
+                                Button(
                                     onClick = { showDeleteCategoryConfirmationDialog = false }
                                 ) {
                                     Text("Cancelar")

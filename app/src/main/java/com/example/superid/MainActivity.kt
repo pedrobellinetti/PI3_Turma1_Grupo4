@@ -35,7 +35,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.firestore
 import com.example.superid.ui.screens.getAndroidId
-import android.content.Intent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -236,7 +235,7 @@ fun AuthApp(modifier: Modifier = Modifier) {
                     passwordDataToEdit = senhaToEdit // Define a senha a ser editada.
                     currentScreen = AuthScreen.EDIT_PASSWORD // Navega para a tela de edição.
                 },
-                onReadQrCode = { currentScreen = AuthScreen.CAMERA_SCREEN } // Navega para a leitura de QR Code.
+                onReadQrCode = { currentScreen = AuthScreen.QR_LOGIN }
             )
 
             AuthScreen.CREATE_PASSWORD -> PasswordFormScreen(
@@ -263,25 +262,21 @@ fun AuthApp(modifier: Modifier = Modifier) {
             )
 
             AuthScreen.QR_LOGIN -> QrScanScreen(
-                onLoginAprovado = { currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER }, // Login via QR aprovado, vai para o gerenciador.
-                onBack = { currentScreen = AuthScreen.LOGIN } // Retorna para a tela de login.
+                onLoginAprovado = {
+                    // Após o login via QR ser aprovado na QrScanScreen, retorne ao gerenciador de senhas
+                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER
+                },
+                onBack = {
+                    // Se o usuário cancelar o scan ou houver um erro e quiser voltar
+                    Toast.makeText(context, "Escaneamento cancelado.", Toast.LENGTH_SHORT).show()
+                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER
+                }
             )
 
             AuthScreen.RECOVERY -> PasswordRecoveryScreen(
                 sharedPreferences = sharedPreferences,
                 onNavigateToLogin = { currentScreen = AuthScreen.LOGIN } // Após recuperação, volta para o login.
             )
-
-            AuthScreen.CAMERA_SCREEN -> {
-                // Inicia a CameraActivity
-                LaunchedEffect(Unit) { // Usa LaunchedEffect para executar o Intent uma única vez
-                    val intent = Intent(context, CameraActivity::class.java)
-                    context.startActivity(intent)
-                    // A tela de navegação subjacente muda para MAIN_PASSWORD_MANAGER imediatamente após o lançamento da CameraActivity.
-                    // A CameraActivity continuará a ser exibida sobre MAIN_PASSWORD_MANAGER.
-                    currentScreen = AuthScreen.MAIN_PASSWORD_MANAGER
-                }
-            }
         }
     }
 }

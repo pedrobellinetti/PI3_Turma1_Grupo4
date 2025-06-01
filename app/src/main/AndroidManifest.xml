@@ -39,9 +39,9 @@
             android:grantUriPermissions="true"
             android:exported="false">
 
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/filepaths"/>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
 
         </provider>
 
@@ -57,12 +57,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".CameraActivity"
-            android:exported="false"
-            android:label="Camera"
-            android:screenOrientation="portrait"
-            tools:ignore="DiscouragedApi, LockedOrientationActivity" />
     </application>
 </manifest>

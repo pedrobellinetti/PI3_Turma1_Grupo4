@@ -74,7 +74,8 @@ fun WelcomeScreen(onContinueClick: () -> Unit) {
                     Text("Continuar", fontSize = 18.sp, style = MaterialTheme.typography.labelLarge)
                 }
             }
-        }
+        },
+        containerColor = MaterialTheme.colorScheme.background // Garante que o fundo do Scaffold seja opaco
     ) { paddingValues ->
         // Conteúdo principal que pode rolar
         Column(

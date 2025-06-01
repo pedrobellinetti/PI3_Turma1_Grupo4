@@ -11,6 +11,5 @@ enum class AuthScreen {
     CREATE_PASSWORD,       // Tela para criar uma nova senha
     EDIT_PASSWORD,         // Tela para editar uma senha existente
     QR_LOGIN,              // Tela de login por QR Code
-    RECOVERY,               // Tela de recuperação de senha
-    CAMERA_SCREEN
+    RECOVERY               // Tela de recuperação de senha
 }
