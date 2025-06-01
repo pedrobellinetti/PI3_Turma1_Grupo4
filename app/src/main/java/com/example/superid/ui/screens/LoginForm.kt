@@ -28,6 +28,7 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import com.google.firebase.firestore.FirebaseFirestore
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,6 +44,7 @@ fun LoginForm(
     var emailError by remember { mutableStateOf(false) }
     var senhaError by remember { mutableStateOf(false) }
     val auth = FirebaseAuth.getInstance()
+    val db = FirebaseFirestore.getInstance()
 
     // Estado para controlar a visibilidade do primeiro AlertDialog
     var showEmailVerificationDialog by remember { mutableStateOf(false) }
@@ -232,14 +234,35 @@ fun LoginForm(
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 val user = auth.currentUser
-                                if (user != null && !user.isEmailVerified) {
-                                    // Se o e-mail NÃO estiver verificado, mostra o diálogo
-                                    showEmailVerificationDialog = true
+                                if (user != null) {
+                                    if (!user.isEmailVerified) {
+                                        // Se o e-mail NÃO estiver verificado, mostra o diálogo
+                                        showEmailVerificationDialog = true
+                                    } else {
+                                        // Se o e-mail ESTIVER verificado, procede com o login normalmente
+                                        // 1. Atualiza o Firestore para isEmailVerified = true
+                                        user.uid?.let { uid ->
+                                            val userDocRef = db.collection("users").document(uid)
+                                            userDocRef.update("isEmailVerified", true)
+                                                .addOnSuccessListener {
+                                                    Toast.makeText(context, "Login realizado com sucesso! E-mail verificado.", Toast.LENGTH_LONG).show()
+                                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply()
+                                                    onLoginSuccess()
+                                                }
+                                                .addOnFailureListener { e ->
+                                                    Toast.makeText(context, "Erro ao atualizar status de verificação de e-mail: ${e.message}", Toast.LENGTH_LONG).show()
+                                                    // Mesmo que a atualização no Firestore falhe, o usuário pode prosseguir se o e-mail foi verificado no Firebase Auth
+                                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply()
+                                                    onLoginSuccess()
+                                                }
+                                        } ?: run {
+                                            Toast.makeText(context, "Login realizado com sucesso! Mas não foi possível atualizar o status de verificação.", Toast.LENGTH_LONG).show()
+                                            sharedPreferences.edit().putBoolean("emailValidado", true).apply()
+                                            onLoginSuccess()
+                                        }
+                                    }
                                 } else {
-                                    // Se o e-mail ESTIVER verificado, procede com o login normalmente
-                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply()
-                                    Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
-                                    onLoginSuccess()
+                                    Toast.makeText(context, "Erro: Usuário não encontrado após login.", Toast.LENGTH_LONG).show()
                                 }
                             } else {
                                 val errorMessage = when (task.exception) {
@@ -248,10 +271,11 @@ fun LoginForm(
                                             "ERROR_WRONG_PASSWORD" -> "Senha incorreta."
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
-                                            else -> "Usuário não encontrado."
+                                            "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
+                                            else -> "Ocorreu um erro inesperado: ${task.exception?.message}"
                                         }
                                     }
-                                    else -> "Ocorreu um erro inesperado."
+                                    else -> "Ocorreu um erro inesperado: ${task.exception?.message}"
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
@@ -302,7 +326,7 @@ fun LoginForm(
                         // Botão "Prosseguir"
                         Button(onClick = {
                             showEmailVerificationDialog = false
-                            onLoginSuccess()
+                            onLoginSuccess() // Permite que o usuário prossiga mesmo sem verificar, mas o status no Firestore permanecerá false
                         }) {
                             Text("Prosseguir")
                         }

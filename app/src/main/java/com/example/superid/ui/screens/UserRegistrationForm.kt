@@ -289,12 +289,12 @@ fun UserRegistrationForm(
             confirmButton = {
                 // Use a Row para centralizar o botão
                 Row(
-                    modifier = Modifier.fillMaxWidth(), // Faz a Row ocupar a largura total do diálogo
-                    horizontalArrangement = Arrangement.Center // Centraliza o conteúdo horizontalmente
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
                 ) {
                     Button(onClick = {
                         showSuccessDialog = false // Oculta o diálogo
-                        onRegistrationSuccessAndDialogClosed() // Notifica a MainActivity para navegar
+                        onRegistrationSuccessAndDialogClosed()
                     }) {
                         Text("Fazer Login")
                     }

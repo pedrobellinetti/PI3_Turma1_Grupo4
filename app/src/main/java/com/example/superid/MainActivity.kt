@@ -164,7 +164,8 @@ fun AuthApp(modifier: Modifier = Modifier) {
                                         "email" to data.email,
                                         "uid" to currentUid,
                                         "imei(Android ID)" to androidId,
-                                        "data_criacao" to com.google.firebase.Timestamp.now()
+                                        "data_criacao" to com.google.firebase.Timestamp.now(),
+                                        "isEmailVerified" to false
                                     )
 
                                     db.collection("users")
