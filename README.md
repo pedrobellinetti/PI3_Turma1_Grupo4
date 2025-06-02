@@ -45,7 +45,7 @@ O SuperID é um aplicativo de gerenciamento de senhas para Android desenvolvido 
   
 ## Instalação e Uso do Aplicativo (Para Usuários)
 
-Esta seção é dedicada aos usuários finais que desejam instalar e começar a usar o SuperID em seus dispositivos Android. Se você é um desenvolvedor e deseja configurar o ambiente para contribuir com o projeto, consulte a seção **"4. Instalação e Configuração (Para Desenvolvedores)"** abaixo.
+Esta seção é dedicada aos usuários finais que desejam instalar e começar a usar o SuperID em seus dispositivos Android. Se você é um desenvolvedor e deseja configurar o ambiente para contribuir com o projeto, consulte a seção **"Instalação e Configuração (Para Desenvolvedores)"** abaixo.
 
 ### Como Baixar e Instalar o SuperID
 
