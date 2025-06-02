@@ -35,9 +35,8 @@ import androidx.compose.material.icons.filled.Delete
  *
  * @param uid O User ID do Firebase do usuário logado, usado para armazenar a senha em sua coleção.
  * @param onSuccess Callback a ser executado após o cadastro bem-sucedido da senha.
- * @param onBack Callback para retornar a Home.
+ * @param onBack Callback para retornar à tela anterior (Home).
  */
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PasswordFormScreen(

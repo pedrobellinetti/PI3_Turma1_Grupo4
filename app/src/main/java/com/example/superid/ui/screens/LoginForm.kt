@@ -271,10 +271,10 @@ fun LoginForm(
                                             "ERROR_USER_DISABLED" -> "Esta conta de usuário foi desativada."
                                             "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas de login. Tente novamente mais tarde."
                                             "ERROR_USER_NOT_FOUND" -> "Usuário não encontrado."
-                                            else -> "Ocorreu um erro inesperado: ${task.exception?.message}"
+                                            else -> "Ocorreu um erro inesperado. Verifique sua senha e e-mail"
                                         }
                                     }
-                                    else -> "Ocorreu um erro inesperado: ${task.exception?.message}"
+                                    else -> "Ocorreu um erro inesperado. Verifique sua senha e e-mail"
                                 }
                                 Toast.makeText(context, "Erro: $errorMessage", Toast.LENGTH_LONG).show()
                             }
