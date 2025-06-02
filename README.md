@@ -1,18 +1,21 @@
 # PROJETO INTEGRADOR 3 - Puc Campinas / Engenheira De Software 3° Semestre
 
 ## Integrantes:
--  Gabriel Branco De Medeiros
--  Pedro Bellinetti Silva
--  Priscila Amorim Dos Santos
--  Wesley Caires Da Costa
+- Gabriel Branco De Medeiros
+- Pedro Bellinetti Silva
+- Priscila Amorim Dos Santos
+- Wesley Caires Da Costa
 
 # Documentação Completa do Projeto SuperID
 
 ## Índice
 1. [Visão Geral do Projeto](#visão-geral-do-projeto)
 2. [Requisitos](#requisitos)
-3. [Instalação e configuração](#instalação-e-configuração)
-4. [Guia de Uso das Telas](#guia-de-uso-das-telas)
+3. [Instalação e Uso do Aplicativo (Para Usuários)](#instalação-e-uso-do-aplicativo-para-usuários)
+4. [Instalação e Configuração (Para Desenvolvedores)](#instalação-e-configuração-para-desenvolvedores)
+5. [Guia de Uso das Telas](#guia-de-uso-das-telas)
+6. [Fluxos de Usuário](#fluxos-de-usuário)
+7. [Segurança](#segurança)
 
 ## Visão Geral do Projeto
 
@@ -43,36 +46,77 @@ O SuperID é um aplicativo de gerenciamento de senhas para Android desenvolvido 
 - Conexão com a internet para autenticação e sincronização de dados
 - Google Play Services atualizado
 
-## Instalação e Configuração
+---
+
+## Instalação e Uso do Aplicativo (Para Usuários)
+
+Esta seção é dedicada aos usuários finais que desejam instalar e começar a usar o SuperID em seus dispositivos Android. Se você é um desenvolvedor e deseja configurar o ambiente para contribuir com o projeto, consulte a seção **"Instalação e Configuração (Para Desenvolvedores)"** abaixo.
+
+### Como Baixar e Instalar o SuperID
+
+1.  **Baixe o Arquivo APK:**
+    * O aplicativo SuperID está disponível para download como um arquivo APK (Android Package Kit) nesta página de release (role para baixo até a seção "Assets" ou "Ativos").
+    * Clique no arquivo **`app-debug.apk`** para iniciar o download em seu dispositivo.
+
+2.  **Permitir Instalações de Fontes Desconhecidas:**
+    * Por padrão, o Android bloqueia a instalação de aplicativos obtidos fora da Google Play Store por razões de segurança. Você precisará permitir esta opção temporariamente:
+        * Vá para as **Configurações** do seu dispositivo Android.
+        * Procure por opções como **"Aplicativos e notificações"**, **"Segurança"**, **"Biometria e segurança"** ou **"Privacidade"** (o nome exato pode variar dependendo da versão do Android e do fabricante do seu telefone).
+        * Dentro dessas configurações, procure por **"Instalar aplicativos desconhecidos"** ou **"Fontes desconhecidas"**.
+        * Localize o aplicativo que você usou para baixar o APK (geralmente seu navegador, como Google Chrome ou Firefox, ou o aplicativo "Meus Arquivos"/"Gerenciador de Arquivos") e **permita a instalação** a partir dessa fonte.
+        * *É altamente recomendável desativar essa permissão após a instalação do SuperID para manter a segurança do seu dispositivo.*
+
+3.  **Instalar o APK:**
+    * Após baixar o arquivo `app-debug.apk` e permitir as instalações de fontes desconhecidas, vá até a pasta onde o arquivo foi salvo em seu dispositivo (geralmente a pasta **"Downloads"**).
+    * Toque no arquivo `app-debug.apk` para iniciar o processo de instalação.
+    * Siga as instruções na tela para concluir a instalação do SuperID.
+
+### Como Começar a Usar o SuperID
+
+Após a instalação, abra o aplicativo SuperID em seu dispositivo:
+
+1.  **Registro:**
+    * Se você é um novo usuário, clique em "Registrar" ou "Criar Conta".
+    * Preencha seu e-mail e crie uma código.
+    * **Importante:** Verifique sua caixa de entrada (incluindo a pasta de spam) para um e-mail de verificação enviado pelo Firebase Authentication. Clique no link para verificar sua conta.
+
+2.  **Login:**
+    * Após o registro (e verificação, se aplicável), retorne à tela de login.
+    * Insira seu e-mail e código cadastrados.
+    * Clique em "Login" para acessar a tela principal do SuperID.
+
+3.  **Gerenciamento de Senhas:**
+    * Na tela principal, você poderá adicionar novas senhas, visualizar suas senhas criptografadas e gerenciá-las.
+    * **Dica:** Você pode definir uma senha mestre no aplicativo para uma camada extra de segurança ao visualizar suas credenciais.
+
+---
+
+## Instalação e Configuração (Para Desenvolvedores)
 
 ### Passo 1: Clonar o Repositório
 
 ```bash
-git clone https://github.com/pedrobellinetti/PI3_Turma1_Grupo4.git
-cd PI3_Turma1_Grupo4
-```
-
-### Passo 2: Configurar o Firebase
-
-1. Acesse o [Console do Firebase](https://console.firebase.google.com/)
-2. Crie um novo projeto ou use um existente
-3. Adicione um aplicativo Android:
-   - Pacote: `com.example.superid`
-   - Apelido: `SuperID`
-4. Baixe o arquivo `google-services.json` e coloque-o na pasta `app/` do projeto
-5. Ative o Firebase Authentication:
-   - No console do Firebase, vá para "Authentication" > "Sign-in method"
-   - Ative o provedor "Email/Password"
-6. Configure o Firestore:
-   - No console do Firebase, vá para "Firestore Database"
-   - Crie um banco de dados em modo de produção
-   - Escolha a região mais próxima de seus usuários
-
-### Passo 3: Configurar as Regras de Segurança do Firestore
-
+git clone [https://github.com/pedrobellinetti/PI3_Turma1_Grupo4.git](https://github.com/pedrobellinetti/PI3_Turma1_Grupo4.git)
+cd superid
+Passo 2: Configurar o Firebase
+Acesse o Console do Firebase
+Crie um novo projeto ou use um existente
+Adicione um aplicativo Android:
+Pacote: com.example.superid
+Apelido: SuperID
+Baixe o arquivo google-services.json e coloque-o na pasta app/ do projeto
+Ative o Firebase Authentication:
+No console do Firebase, vá para "Authentication" > "Sign-in method"
+Ative o provedor "Email/Password"
+Configure o Firestore:
+No console do Firebase, vá para "Firestore Database"
+Crie um banco de dados em modo de produção
+Escolha a região mais próxima de seus usuários
+Passo 3: Configurar as Regras de Segurança do Firestore
 No console do Firebase, vá para "Firestore Database" > "Rules" e substitua as regras existentes por:
 
-```javascript
+JavaScript
+
 {
   "rules": {
     "senhas": {
@@ -95,30 +139,28 @@ No console do Firebase, vá para "Firestore Database" > "Rules" e substitua as r
     }
   }
 }
-```
+Passo 4: Configurar o Projeto no Android Studio
+Abra o projeto no Android Studio
+Atualize o arquivo build.gradle (nível do projeto):
+<!-- end list -->
 
-### Passo 4: Configurar o Projeto no Android Studio
+Gradle
 
-1. Abra o projeto no Android Studio
-2. Atualize o arquivo `build.gradle` (nível do projeto):
-
-```gradle
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     id("com.google.gms.google-services") version "4.4.2" apply false
 }
-```
+Atualize o arquivo build.gradle (nível do módulo):
+<!-- end list -->
 
-3. Atualize o arquivo `build.gradle` (nível do módulo):
+Gradle
 
-```gradle
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
 
     id("com.google.gms.google-services")
 
@@ -162,7 +204,6 @@ android {
 
 dependencies {
 
-
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
 
@@ -171,7 +212,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
     // Add the dependencies for any other desired Firebase products
-    // https://firebase.google.com/docs/android/setup#available-libraries
+    // [https://firebase.google.com/docs/android/setup#available-libraries](https://firebase.google.com/docs/android/setup#available-libraries)
 
     // Banco de Dados
     implementation("com.google.firebase:firebase-firestore")
@@ -217,37 +258,28 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended")
 
 }
-```
-
-### Passo 5: Sincronizar o Projeto
-
+Passo 5: Sincronizar o Projeto
 Clique em "Sync Now" quando solicitado pelo Android Studio para sincronizar as alterações do Gradle.
 
-### Telas Principais
-
-#### LoginForm.kt
-
+Guia de Uso das Telas
+LoginForm.kt
 Tela de login que permite aos usuários acessarem suas contas.
 
-#### RegisterScreen.kt
-
+RegisterScreen.kt
 Tela de registro para novos usuários.
 
-#### PasswordManagerScreen.kt
-
+PasswordManagerScreen.kt
 Tela principal que exibe a lista de senhas do usuário.
 
-#### PasswordFormScreen.kt
-
+PasswordFormScreen.kt
 Formulário para adicionar ou editar senhas.
 
-### Utilitários
-
-#### EncryptionUtil.kt
-
+Utilitários
+EncryptionUtil.kt
 Utilitário para criptografar e descriptografar senhas.
 
-```kotlin
+Kotlin
+
 object EncryptionUtil {
     fun encrypt(plainText: String, password: String): EncryptionResult? {
         // Implementação da criptografia
@@ -263,77 +295,66 @@ data class EncryptionResult(
     val iv: String,
     val salt: String
 )
-```
+Fluxos de Usuário
+Fluxo de Autenticação
+Registro:
 
-## Fluxos de Usuário
+Usuário acessa a tela de registro
+Preenche e-mail e código
+Submete o formulário
+Recebe e-mail de verificação
+Confirma e-mail (opcional)
+Login:
 
-### Fluxo de Autenticação
+Usuário acessa a tela de login
+Insere credenciais
+Sistema verifica autenticação
+Se e-mail não verificado, mostra alerta
+Se autenticado, acessa tela principal
+Recuperação de Senha:
 
-1. **Registro**:
-   - Usuário acessa a tela de registro
-   - Preenche e-mail e senha
-   - Submete o formulário
-   - Recebe e-mail de verificação
-   - Confirma e-mail (opcional)
+Usuário acessa tela de recuperação
+Insere e-mail
+Recebe link de recuperação
+Redefine senha
+Fluxo de Gerenciamento de Senhas
+Visualização de Senhas:
 
-2. **Login**:
-   - Usuário acessa a tela de login
-   - Insere credenciais
-   - Sistema verifica autenticação
-   - Se e-mail não verificado, mostra alerta
-   - Se autenticado, acessa tela principal
+Usuário acessa tela principal
+Sistema carrega senhas do usuário
+Usuário pode definir senha mestre para visualização
+Adição de Senha:
 
-3. **Recuperação de Senha**:
-   - Usuário acessa tela de recuperação
-   - Insere e-mail
-   - Recebe link de recuperação
-   - Redefine senha
+Usuário clica no botão de adicionar
+Preenche formulário com detalhes da senha
+Sistema criptografa e salva a senha
+Edição/Exclusão de Senha:
 
-### Fluxo de Gerenciamento de Senhas
+Usuário seleciona opções em uma senha
+Escolhe editar ou excluir
+Sistema processa a operação
+Escaneamento de QR Code:
 
-1. **Visualização de Senhas**:
-   - Usuário acessa tela principal
-   - Sistema carrega senhas do usuário
-   - Usuário pode definir senha mestre para visualização
-
-2. **Adição de Senha**:
-   - Usuário clica no botão de adicionar
-   - Preenche formulário com detalhes da senha
-   - Sistema criptografa e salva a senha
-
-3. **Edição/Exclusão de Senha**:
-   - Usuário seleciona opções em uma senha
-   - Escolhe editar ou excluir
-   - Sistema processa a operação
-
-4. **Escaneamento de QR Code**:
-   - Usuário seleciona opção de QR Code
-   - Escaneia código com a câmera
-   - Sistema processa informações do QR Code
-
-## Segurança
-
-### Autenticação
-
+Usuário seleciona opção de QR Code
+Escaneia código com a câmera
+Sistema processa informações do QR Code
+Segurança
+Autenticação
 O SuperID utiliza o Firebase Authentication para gerenciar a autenticação de usuários:
 
-- Registro e login com e-mail e senha
-- Verificação de e-mail para segurança adicional
-- Recuperação de senha via e-mail
-
-### Armazenamento Seguro
-
+Registro e login com e-mail e código
+Verificação de e-mail para segurança adicional
+Recuperação de senha via e-mail
+Armazenamento Seguro
 As senhas são armazenadas de forma segura:
 
-1. **Criptografia Local**: Antes de serem enviadas ao Firestore, as senhas são criptografadas localmente usando AES
-2. **Senha Mestre**: O usuário pode definir uma senha mestre para visualização das senhas
-3. **Armazenamento Seguro**: Os dados criptografados são armazenados no Firestore
-
-### Regras de Segurança do Firestore
-
+Criptografia Local: Antes de serem enviadas ao Firestore, as senhas são criptografadas localmente usando AES
+Senha Mestre: O usuário pode definir uma senha mestre para visualização das senhas
+Armazenamento Seguro: Os dados criptografados são armazenados no Firestore
+Regras de Segurança do Firestore
 As regras de segurança garantem que:
 
-- Cada usuário só pode acessar suas próprias senhas
-- Não é possível modificar senhas de outros usuários
-- Todas as operações exigem autenticação
-- Validação de dados é aplicada para garantir integridade
+Cada usuário só pode acessar suas próprias senhas
+Não é possível modificar senhas de outros usuários
+Todas as operações exigem autenticação
+Validação de dados é aplicada para garantir integridade
