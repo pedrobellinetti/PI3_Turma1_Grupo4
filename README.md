@@ -49,7 +49,7 @@ O SuperID é um aplicativo de gerenciamento de senhas para Android desenvolvido 
 
 ```bash
 git clone https://github.com/pedrobellinetti/PI3_Turma1_Grupo4.git
-cd superid
+cd PI3_Turma1_Grupo4
 ```
 
 ### Passo 2: Configurar o Firebase
