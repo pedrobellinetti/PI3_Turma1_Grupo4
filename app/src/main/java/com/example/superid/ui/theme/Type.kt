@@ -10,9 +10,9 @@ import com.example.superid.R
 
 // Fonte Inter
 val Inter = FontFamily(
-    Font(R.font.inter_18pt_regular, FontWeight.Normal), // Ou R.font.inter_24pt_regular, ou R.font.inter_regular
-    Font(R.font.inter_18pt_medium, FontWeight.Medium),   // Ou R.font.inter_24pt_medium, ou R.font.inter_medium
-    Font(R.font.inter_18pt_bold, FontWeight.Bold)     // Ou R.font.inter_24pt_bold, ou R.font.inter_bold
+    Font(R.font.inter_18pt_regular, FontWeight.Normal),
+    Font(R.font.inter_18pt_medium, FontWeight.Medium),
+    Font(R.font.inter_18pt_bold, FontWeight.Bold)
 )
 
 // Tipografia personalizada

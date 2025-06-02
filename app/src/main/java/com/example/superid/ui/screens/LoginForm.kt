@@ -30,6 +30,12 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import com.google.firebase.firestore.FirebaseFirestore
 
+/**
+ * @param sharedPreferences Instância de [SharedPreferences] para gerenciar o estado da sessão.
+ * @param onNavigateToRegister Callback para navegar para a tela de registro.
+ * @param onLoginSuccess Callback para executar após um login bem-sucedido.
+ * @param onNavigateToForgotPassword Callback para navegar para a tela de recuperação de senha.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginForm(
@@ -38,23 +44,26 @@ fun LoginForm(
     onLoginSuccess: () -> Unit,
     onNavigateToForgotPassword: () -> Unit
 ) {
-    val context = LocalContext.current
-    var email by remember { mutableStateOf("") }
-    var senha by remember { mutableStateOf("") }
-    var emailError by remember { mutableStateOf(false) }
-    var senhaError by remember { mutableStateOf(false) }
-    val auth = FirebaseAuth.getInstance()
-    val db = FirebaseFirestore.getInstance()
+    val context = LocalContext.current // Obtém o contexto atual para exibir Toasts.
+    var email by remember { mutableStateOf("") } // Estado para o campo de e-mail.
+    var senha by remember { mutableStateOf("") } // Estado para o campo de senha.
+    var emailError by remember { mutableStateOf(false) } // Estado para erro de validação do e-mail.
+    var senhaError by remember { mutableStateOf(false) } // Estado para erro de validação da senha.
+    val auth = FirebaseAuth.getInstance() // Instância do Firebase Authentication.
+    val db = FirebaseFirestore.getInstance() // Instância do Firebase Firestore.
 
-    // Estado para controlar a visibilidade do primeiro AlertDialog
+    // Estado para controlar a visibilidade do diálogo de e-mail não verificado.
     var showEmailVerificationDialog by remember { mutableStateOf(false) }
 
-    // Estado para controlar a visibilidade da senha no campo de texto
+    // Estado para controlar a visibilidade da senha no campo de texto (ícone de "olho").
     var passwordVisible by remember { mutableStateOf(false) }
 
-    val scrollState = rememberScrollState()
+    val scrollState = rememberScrollState() // Estado para permitir rolagem da tela.
 
-    // Função para reenviar o e-mail de verificação
+    /**
+     * Reenvia o e-mail de verificação para o usuário logado atualmente.
+     * Exibe um Toast com o resultado da operação.
+     */
     fun resendVerificationEmail() {
         val user = auth.currentUser
         user?.sendEmailVerification()
@@ -68,16 +77,15 @@ fun LoginForm(
             }
     }
 
-
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .imePadding()
-            .verticalScroll(scrollState),
+            .imePadding() // Ajusta o layout para o teclado virtual.
+            .verticalScroll(scrollState), // Permite rolagem do conteúdo.
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Container superior personalizado
+        // --- Container Superior Personalizado com Título e Logo ---
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -87,7 +95,7 @@ fun LoginForm(
                 .padding(vertical = 30.dp),
             contentAlignment = Alignment.Center
         ) {
-            // Botão de voltar alinhado à esquerda
+            // Botão de voltar para a tela de Cadastro.
             IconButton(
                 onClick = onNavigateToRegister,
                 modifier = Modifier
@@ -121,6 +129,7 @@ fun LoginForm(
                 )
             }
         }
+        // Título da tela de login.
         Text(
             text = "Entre na sua conta",
             style = MaterialTheme.typography.titleMedium,
@@ -128,7 +137,7 @@ fun LoginForm(
             modifier = Modifier.padding(top = 30.dp)
         )
 
-        // Campos de Email e Senha
+        // --- Campo de Entrada de E-mail ---
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -148,26 +157,20 @@ fun LoginForm(
                 unfocusedLabelColor = if (emailError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        // Mensagem de erro para o e-mail.
         if (emailError) {
             Text(text = "Por favor, digite seu e-mail.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
         }
 
-        // ---- CAMPO DA SENHA COM O OLHINHO ----
+        // --- Campo de Entrada de Senha com Controle de Visibilidade ---
         OutlinedTextField(
             value = senha,
             onValueChange = { senha = it },
             label = { Text("Digite sua senha", style = MaterialTheme.typography.labelLarge) },
-            // VisualTransformation baseado no estado passwordVisible
             visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
             trailingIcon = {
-                // Ícone de olho (aberto ou fechado)
-                val image = if (passwordVisible)
-                    Icons.Filled.Visibility
-                else Icons.Filled.VisibilityOff
-
-                // Descrição para acessibilidade
+                val image = if (passwordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
                 val description = if (passwordVisible) "Ocultar senha" else "Mostrar senha"
-
                 IconButton(onClick = { passwordVisible = !passwordVisible }) {
                     Icon(imageVector = image, contentDescription = description)
                 }
@@ -187,10 +190,12 @@ fun LoginForm(
                 unfocusedLabelColor = if (senhaError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant
             )
         )
+        // Mensagem de erro para a senha.
         if (senhaError) {
-            Text(text = "Sua senha contém no mínimo 6 caracteres.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+            Text(text = "Sua senha contém no mínimo 8 caracteres.", color = Color.Red, style = MaterialTheme.typography.bodySmall)
         }
 
+        // Botão para navegar para a recuperação de senha.
         TextButton(
             onClick = onNavigateToForgotPassword,
             modifier = Modifier
@@ -204,31 +209,28 @@ fun LoginForm(
             )
         }
 
-        // Botão Entrar
+        // --- Botão de Entrar ---
         Button(
             onClick = {
-                var hasValidationError = false
+                var hasValidationError = false // Flag para controle de erros de validação.
 
-                if (email.isBlank()) {
-                    emailError = true
-                    hasValidationError = true
-                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                // Validação do campo de e-mail.
+                if (email.isBlank() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     emailError = true
                     hasValidationError = true
                 } else {
                     emailError = false
                 }
 
-                if (senha.length < 6) {
-                    senhaError = true
-                    hasValidationError = true
-                } else if (senha.isBlank()) {
+                // Validação do campo de senha.
+                if (senha.length < 8 || senha.isBlank()) {
                     senhaError = true
                     hasValidationError = true
                 } else {
                     senhaError = false
                 }
 
+                // Se não houver erros de validação, tenta fazer login no Firebase.
                 if (!hasValidationError) {
                     auth.signInWithEmailAndPassword(email, senha)
                         .addOnCompleteListener { task ->
@@ -236,28 +238,24 @@ fun LoginForm(
                                 val user = auth.currentUser
                                 if (user != null) {
                                     if (!user.isEmailVerified) {
-                                        // Se o e-mail NÃO estiver verificado, mostra o diálogo
+                                        // Se o e-mail não estiver verificado, exibe o diálogo de verificação.
                                         showEmailVerificationDialog = true
                                     } else {
-                                        // Se o e-mail ESTIVER verificado, procede com o login normalmente
-                                        // 1. Atualiza o Firestore para isEmailVerified = true
+                                        // Se o e-mail estiver verificado, atualiza o Firestore e prossegue.
                                         user.uid?.let { uid ->
                                             val userDocRef = db.collection("users").document(uid)
                                             userDocRef.update("isEmailVerified", true)
                                                 .addOnSuccessListener {
-                                                    Toast.makeText(context, "Login realizado com sucesso! E-mail verificado.", Toast.LENGTH_LONG).show()
-                                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply()
-                                                    onLoginSuccess()
+                                                    Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
+                                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply() // Marca e-mail como validado.
+                                                    onLoginSuccess() // Callback de sucesso de login.
                                                 }
                                                 .addOnFailureListener { e ->
                                                     Toast.makeText(context, "Erro ao atualizar status de verificação de e-mail: ${e.message}", Toast.LENGTH_LONG).show()
-                                                    // Mesmo que a atualização no Firestore falhe, o usuário pode prosseguir se o e-mail foi verificado no Firebase Auth
-                                                    sharedPreferences.edit().putBoolean("emailValidado", true).apply()
-                                                    onLoginSuccess()
+                                                    onLoginSuccess() // Ainda permite prosseguir mesmo com erro de atualização.
                                                 }
                                         } ?: run {
                                             Toast.makeText(context, "Login realizado com sucesso! Mas não foi possível atualizar o status de verificação.", Toast.LENGTH_LONG).show()
-                                            sharedPreferences.edit().putBoolean("emailValidado", true).apply()
                                             onLoginSuccess()
                                         }
                                     }
@@ -265,6 +263,7 @@ fun LoginForm(
                                     Toast.makeText(context, "Erro: Usuário não encontrado após login.", Toast.LENGTH_LONG).show()
                                 }
                             } else {
+                                // Lida com erros de login do Firebase Authentication.
                                 val errorMessage = when (task.exception) {
                                     is FirebaseAuthException -> {
                                         when ((task.exception as FirebaseAuthException).errorCode) {
@@ -293,7 +292,7 @@ fun LoginForm(
             Text("Entrar", style = MaterialTheme.typography.labelLarge)
         }
 
-        // --- Diálogos ---
+        // --- Diálogo de Verificação de E-mail Pendente ---
         if (showEmailVerificationDialog) {
             AlertDialog(
                 onDismissRequest = {
@@ -309,24 +308,23 @@ fun LoginForm(
                     Text("Seu e-mail ainda não foi verificado. Deseja reenviar o e-mail de verificação ou prosseguir mesmo assim?")
                 },
                 confirmButton = {
-                    // Use uma Row para agrupar e centralizar os dois botões
                     Row(
-                        modifier = Modifier.fillMaxWidth(), // Faz a Row ocupar a largura total do diálogo
-                        horizontalArrangement = Arrangement.Start, // Centraliza os botões horizontalmente
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Start,
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        // Botão "Reenviar E-mail de Verificação"
+                        // Botão para reenviar o e-mail de verificação.
                         Button(onClick = {
-                            resendVerificationEmail() // Chame a função de reenviar
-                            showEmailVerificationDialog = false // Fecha o diálogo
+                            resendVerificationEmail()
+                            showEmailVerificationDialog = false
                         }) {
                             Text("Reenviar")
                         }
-                        Spacer(Modifier.width(30.dp)) // Espaço entre os botões
-                        // Botão "Prosseguir"
+                        Spacer(Modifier.width(30.dp))
+                        // Botão para prosseguir mesmo sem verificação (o status no Firestore não será atualizado).
                         Button(onClick = {
                             showEmailVerificationDialog = false
-                            onLoginSuccess() // Permite que o usuário prossiga mesmo sem verificar, mas o status no Firestore permanecerá false
+                            onLoginSuccess()
                         }) {
                             Text("Prosseguir")
                         }
@@ -335,8 +333,7 @@ fun LoginForm(
             )
         }
 
-
-        // Link inferior
+        // --- Link para Cadastrar-se ---
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp),

@@ -21,34 +21,43 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.FirebaseFirestore
 
+/**
+ * Tela de Recuperação de Senha.
+ * Permite que o usuário solicite um link de redefinição de senha para seu e-mail.
+ * Inclui validação do status de verificação do e-mail no Firestore
+ * antes de enviar o link de redefinição.
+ *
+ * @param sharedPreferences Instância de [SharedPreferences] para armazenar o status de redefinição de senha.
+ * @param onNavigateToLogin Callback para navegar de volta à tela de login.
+ */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PasswordRecoveryScreen(
     sharedPreferences: SharedPreferences,
     onNavigateToLogin: () -> Unit
 ) {
-    val context = LocalContext.current
-    var email by remember { mutableStateOf("") }
-    var status by remember { mutableStateOf("") }
-    val db = FirebaseFirestore.getInstance()
+    val context = LocalContext.current // Obtém o contexto atual para exibir Toasts.
+    var email by remember { mutableStateOf("") } // Estado para o campo de e-mail.
+    var status by remember { mutableStateOf("") } // Estado para mensagens de status (feedback).
+    val db = FirebaseFirestore.getInstance() // Instância do Firestore para interagir com o banco de dados.
 
-    // Estado para controlar a visibilidade do diálogo de e-mail não verificado
+    // Estado para controlar a visibilidade do diálogo de e-mail não verificado.
     var showUnverifiedEmailDialog by remember { mutableStateOf(false) }
 
     Column(
-        modifier = Modifier
-            .fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Barra Superior Personalizada
+        // --- Barra Superior Personalizada com Logo e Título ---
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = MaterialTheme.colorScheme.primaryContainer)
                 .padding(vertical = 33.dp)
         ) {
-            // Botão de voltar alinhado à esquerda
+            // Botão de voltar para a tela de Login.
             IconButton(
                 onClick = onNavigateToLogin,
                 modifier = Modifier
@@ -62,7 +71,7 @@ fun PasswordRecoveryScreen(
                 )
             }
 
-            // Conteúdo centralizado: Título + Logo
+            // Conteúdo centralizado na barra superior: Título do App e Logo.
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
@@ -85,7 +94,7 @@ fun PasswordRecoveryScreen(
             }
         }
 
-        // Título da Tela
+        // --- Título da Tela de Recuperação ---
         Text(
             text = "Recuperar Senha",
             style = MaterialTheme.typography.titleMedium,
@@ -94,7 +103,7 @@ fun PasswordRecoveryScreen(
         )
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Campo de E-mail
+        // --- Campo de Entrada de E-mail ---
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -116,40 +125,43 @@ fun PasswordRecoveryScreen(
         )
         Spacer(modifier = Modifier.height(24.dp))
 
+        // --- Botão de Recuperar Senha ---
         Button(
             onClick = {
                 if (email.isNotBlank()) {
-                    // Consultar o Firestore para verificar o status de verificação do e-mail
+                    // Consulta o Firestore para verificar se o e-mail está cadastrado e verificado.
                     db.collection("users")
-                        .whereEqualTo("email", email.trim()) // Consultar pelo e-mail
+                        .whereEqualTo("email", email.trim())
                         .get()
                         .addOnSuccessListener { documents ->
                             if (documents.isEmpty) {
-                                // Nenhuma conta encontrada com este e-mail no Firestore.
-                                // Para fins de segurança, o Firebase Auth não informa se um e-mail existe
+                                // E-mail não encontrado no Firestore.
+                                // Para segurança, o Firebase Auth não diferencia e-mail inexistente de não verificado.
                                 Toast.makeText(
                                     context,
                                     "Se o e-mail estiver correto, pode não haver conta associada a ele ou não verificada.",
                                     Toast.LENGTH_LONG
                                 ).show()
                             } else {
-                                // Assumindo que o e-mail é único e obtemos apenas um documento
+                                // E-mail encontrado, obtém o status de verificação.
                                 val userDoc = documents.first()
-                                val isEmailVerified = userDoc.getBoolean("isEmailVerified") ?: false // Obter o status
+                                val isEmailVerified = userDoc.getBoolean("isEmailVerified") ?: false
 
                                 if (isEmailVerified) {
-                                    // Se o e-mail estiver verificado, enviar o e-mail de redefinição de senha
+                                    // Se o e-mail estiver verificado, envia o link de redefinição de senha via Firebase Auth.
                                     FirebaseAuth.getInstance().sendPasswordResetEmail(email.trim())
                                         .addOnCompleteListener { task ->
                                             if (task.isSuccessful) {
+                                                // Marca no SharedPreferences que a senha foi redefinida.
                                                 sharedPreferences.edit().putBoolean("senhaRedefinida", true).apply()
                                                 Toast.makeText(
                                                     context,
                                                     "Enviamos um link para seu e-mail para redefinir a senha.",
                                                     Toast.LENGTH_LONG
                                                 ).show()
-                                                onNavigateToLogin()
+                                                onNavigateToLogin() // Navega de volta para a tela de login.
                                             } else {
+                                                // Lida com erros específicos do Firebase Auth durante o envio do e-mail.
                                                 val errorMessage = when (task.exception) {
                                                     is FirebaseAuthException -> {
                                                         when ((task.exception as FirebaseAuthException).errorCode) {
@@ -164,15 +176,17 @@ fun PasswordRecoveryScreen(
                                             }
                                         }
                                 } else {
-                                    // Se o e-mail NÃO estiver verificado, mostrar o diálogo
+                                    // Se o e-mail não estiver verificado, exibe um diálogo de aviso.
                                     showUnverifiedEmailDialog = true
                                 }
                             }
                         }
                         .addOnFailureListener { e ->
+                            // Lida com falhas na consulta ao Firestore.
                             Toast.makeText(context, "Erro ao verificar o e-mail: ${e.message}", Toast.LENGTH_LONG).show()
                         }
                 } else {
+                    // Solicita ao usuário que digite o e-mail.
                     Toast.makeText(context, "Por favor, digite seu e-mail.", Toast.LENGTH_SHORT).show()
                 }
             },
@@ -189,16 +203,16 @@ fun PasswordRecoveryScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Mensagem de Status (pode ser usado para feedback visual se necessário)
+        // --- Mensagem de Status (se houver) ---
         if (status.isNotEmpty()) {
             Text(text = status, color = MaterialTheme.colorScheme.error)
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        // Diálogo para e-mail não verificado
+        // --- Diálogo para E-mail Não Verificado ---
         if (showUnverifiedEmailDialog) {
             AlertDialog(
-                onDismissRequest = { showUnverifiedEmailDialog = false },
+                onDismissRequest = { showUnverifiedEmailDialog = false }, // Fecha o diálogo ao clicar fora.
                 title = { Text("E-mail Não Verificado") },
                 text = {
                     Text("Não é possível redefinir a senha para e-mails que não foram verificados. Por favor, verifique seu e-mail para prosseguir. Caso precise de um novo e-mail de verificação, faça login novamente e clique em 'Reenviar' ")
@@ -216,8 +230,7 @@ fun PasswordRecoveryScreen(
             )
         }
 
-
-        // Link para Voltar ao Login
+        // --- Link para Voltar ao Login ---
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier

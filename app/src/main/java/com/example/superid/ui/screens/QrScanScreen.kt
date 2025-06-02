@@ -43,6 +43,14 @@ import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
 import java.util.concurrent.Executors
 
+/**
+ * Tela para escanear QR Codes e realizar login via autenticação externa.
+ * Solicita permissão da câmera e utiliza o ML Kit Barcode Scanning para processar imagens.
+ * Em caso de QR Code válido, atualiza o status de login no Firestore.
+ *
+ * @param onLoginAprovado Callback executado quando o login é aprovado com sucesso.
+ * @param onBack Callback para retornar à tela anterior.
+ */
 @androidx.annotation.OptIn(ExperimentalGetImage::class)
 @ExperimentalGetImage
 @OptIn(ExperimentalMaterial3Api::class)
@@ -51,12 +59,12 @@ fun QrScanScreen(
     onLoginAprovado: () -> Unit,
     onBack: () -> Unit
 ) {
-    val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
-    val previewView = remember { PreviewView(context) }
+    val context = LocalContext.current // Contexto atual para operações Android.
+    val lifecycleOwner = LocalLifecycleOwner.current // Owner do ciclo de vida para a câmera.
+    val previewView = remember { PreviewView(context) } // View para exibir a prévia da câmera.
 
-    var mensagem by remember { mutableStateOf("Escaneie o QR code para login: ") }
-    var isScanningActive by remember { mutableStateOf(true) }
+    var mensagem by remember { mutableStateOf("Escaneie o QR code para login: ") } // Mensagem exibida ao usuário.
+    var isScanningActive by remember { mutableStateOf(true) } // Controla se o scanner está ativo.
 
     Scaffold(
         topBar = {
@@ -71,103 +79,109 @@ fun QrScanScreen(
             )
         }
     ) { paddingValues ->
-        // Box para empilhar os elementos.
+        // Box que empilha a prévia da câmera e o controle de permissão.
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues),
             contentAlignment = Alignment.Center
         ) {
-            // O AndroidView que exibe a câmera. Ele deve estar por baixo.
+            // AndroidView para exibir a prévia da câmera, ocupando todo o espaço.
             AndroidView(factory = { previewView }, modifier = Modifier.fillMaxSize())
 
-            // O WithPermission deve estar por cima para mostrar o botão de permissão
-            // quando a permissão não for concedida.
+            // O Composable 'WithPermission' gerencia a solicitação da permissão da câmera.
+            // Se a permissão não for concedida, ele exibe um botão de solicitação.
             WithPermission(
                 modifier = Modifier
                     .padding(horizontal = 24.dp, vertical = 12.dp),
                 permission = Manifest.permission.CAMERA,
                 permissionActionLabel = "Conceder permissão da câmera"
             ) {
-                // Conteúdo que só será exibido se a permissão for concedida.
-                // Neste caso, o LaunchedEffect que inicializa a câmera.
+                // Bloco executado somente se a permissão da câmera for concedida.
                 LaunchedEffect(previewView, lifecycleOwner) {
-                    val cameraProvider = ProcessCameraProvider.getInstance(context).get()
+                    val cameraProvider = ProcessCameraProvider.getInstance(context).get() // Obtém o provedor da câmera.
                     val preview = androidx.camera.core.Preview.Builder().build().also {
-                        it.setSurfaceProvider(previewView.surfaceProvider)
+                        it.setSurfaceProvider(previewView.surfaceProvider) // Associa a prévia à PreviewView.
                     }
 
-                    val scanner = BarcodeScanning.getClient()
+                    val scanner = BarcodeScanning.getClient() // ML Kit para leitura de códigos de barra.
                     val imageAnalysis = ImageAnalysis.Builder()
-                        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST) // Processa apenas o frame mais recente.
                         .build()
 
+                    // Configura o analisador de imagem para processar frames da câmera.
                     imageAnalysis.setAnalyzer(Executors.newSingleThreadExecutor()) { imageProxy ->
-                        if (isScanningActive) {
+                        if (isScanningActive) { // Verifica se o scanner está ativo.
                             val mediaImage = imageProxy.image
                             if (mediaImage != null) {
+                                // Cria um InputImage a partir do MediaImage do ImageProxy.
                                 val inputImage = InputImage.fromMediaImage(
                                     mediaImage,
                                     imageProxy.imageInfo.rotationDegrees
                                 )
+                                // Processa a imagem para detectar códigos de barra.
                                 scanner.process(inputImage)
                                     .addOnSuccessListener { barcodes ->
+                                        // Se o scanner estiver ativo e códigos de barra forem detectados.
                                         if (isScanningActive && barcodes.isNotEmpty()) {
+                                            // Encontra o primeiro QR Code.
                                             val qrCode = barcodes.firstOrNull { it.format == Barcode.FORMAT_QR_CODE }
 
                                             qrCode?.rawValue?.let { sessionId ->
-                                                isScanningActive = false
+                                                isScanningActive = false // Desativa o scanner após o primeiro QR code.
 
-                                                val userId = FirebaseAuth.getInstance().currentUser?.uid
+                                                val userId = FirebaseAuth.getInstance().currentUser?.uid // Obtém o UID do usuário logado.
                                                 if (userId != null) {
-                                                    val db = Firebase.firestore
+                                                    val db = Firebase.firestore // Instância do Firestore.
+                                                    // Atualiza o documento de login no Firestore.
                                                     db.collection("login").document(sessionId)
                                                         .update(
-                                                            "status", "approved",
-                                                            "user", userId,
-                                                            "loggedInAt", FieldValue.serverTimestamp()
+                                                            "status", "approved", // Define status como aprovado.
+                                                            "user", userId, // Associa o usuário.
+                                                            "loggedInAt", FieldValue.serverTimestamp() // Registra timestamp do login.
                                                         )
                                                         .addOnSuccessListener {
-                                                            mensagem = "Login via QR Code aprovado!"
+                                                            mensagem = "QR Code escaneado! Acesso liberado."
                                                             Toast.makeText(context, mensagem, Toast.LENGTH_SHORT).show()
-                                                            cameraProvider.unbindAll() // Importante desvincular
-                                                            onLoginAprovado()
+                                                            cameraProvider.unbindAll() // Desvincula a câmera para parar o preview.
+                                                            onLoginAprovado() // Callback de sucesso de login.
                                                         }
                                                         .addOnFailureListener { e ->
                                                             mensagem = "Erro ao autorizar login: ${e.message}"
                                                             Toast.makeText(context, mensagem, Toast.LENGTH_LONG).show()
-                                                            isScanningActive = true
+                                                            isScanningActive = true // Reativa o scanner em caso de falha.
                                                         }
                                                 } else {
                                                     mensagem = "Erro: Usuário não logado no aplicativo."
                                                     Toast.makeText(context, mensagem, Toast.LENGTH_LONG).show()
-                                                    isScanningActive = true
+                                                    isScanningActive = true // Reativa o scanner se não houver usuário logado.
                                                 }
                                             }
                                         }
                                     }
                                     .addOnFailureListener { e ->
-                                        e.printStackTrace()
+                                        e.printStackTrace() // Imprime o erro em caso de falha no scanner.
                                     }
                                     .addOnCompleteListener {
-                                        imageProxy.close()
+                                        imageProxy.close() // Fecha o ImageProxy para liberar o buffer.
                                     }
                             } else {
-                                imageProxy.close()
+                                imageProxy.close() // Fecha o ImageProxy se mediaImage for nulo.
                             }
                         } else {
-                            imageProxy.close()
+                            imageProxy.close() // Fecha o ImageProxy se o scanner não estiver ativo.
                         }
                     }
 
-                    val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-                    cameraProvider.unbindAll()
+                    val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA // Seleciona a câmera traseira padrão.
+                    cameraProvider.unbindAll() // Garante que nenhuma câmera esteja vinculada antes de vincular novamente.
                     try {
+                        // Vincula o ciclo de vida da câmera, seletor, prévia e análise de imagem.
                         cameraProvider.bindToLifecycle(lifecycleOwner, cameraSelector, preview, imageAnalysis)
                     } catch (exc: Exception) {
                         mensagem = "Erro ao iniciar câmera: ${exc.message}"
                         Toast.makeText(context, mensagem, Toast.LENGTH_LONG).show()
-                        onBack()
+                        onBack() // Volta à tela anterior em caso de erro na câmera.
                     }
                 }
             }
