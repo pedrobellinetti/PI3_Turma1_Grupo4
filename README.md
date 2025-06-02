@@ -48,7 +48,7 @@ O SuperID é um aplicativo de gerenciamento de senhas para Android desenvolvido 
 ### Passo 1: Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/superid.git
+git clone https://github.com/pedrobellinetti/PI3_Turma1_Grupo4.git
 cd superid
 ```
 
