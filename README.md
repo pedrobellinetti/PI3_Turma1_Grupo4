@@ -5,6 +5,10 @@
 -  Pedro Bellinetti Silva
 -  Priscila Amorim Dos Santos
 -  Wesley Caires Da Costa
+-  
+## Repositórios Relacionados
+
+- [Repositório do Site Estático](https://github.com/wcaires/site_est-tico_PI3_2025)
 
 # Documentação Completa do Projeto SuperID
 
